@@ -14,7 +14,7 @@
 <body>
     <!-- Splash Screen Animation -->
     <div class="splash-screen" role="banner">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/logo.webp" alt="Jade Bowen Logo" class="logo">
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo">
     </div>
     <!-- Sticky Navbar -->
     <header class="navbar" role="navigation" aria-label="Main Navigation">
@@ -200,22 +200,6 @@
                 <h4>Cover Letter</h4>
                 <p>I am excited to introduce myself as an experienced professional in the construction and telecommunications industries...</p>
             </div>
-            <button onclick="toggleDetails('job13')">Proficiencies</button>
-            <div id="job13" class="details">
-                <h4>Proficiencies</h4>
-                <ul>
-                    <li>Wireless Communication Technology: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
-                    <li>Safety Management Standards: OSHA compliance, safety inspections, regulatory adherence</li>
-                    <li>Project Management Tools: Microsoft Office Suite, Google Workspace</li>
-                    <li>Client & Relationship Management: CRM tools, stakeholder engagement, client satisfaction tracking</li>
-                    <li>Fiber Optic Technology: Installation, testing, and maintenance of fiber optic systems</li>
-                </ul>
-            </div>
-            <button onclick="toggleDetails('job14')">Cover Letter</button>
-            <div id="job14" class="details">
-                <h4>Cover Letter</h4>
-                <p>I am excited to introduce myself as an experienced professional in the construction and telecommunications industries...</p>
-            </div>
             <button onclick="toggleDetails('job15')">Mission and Impact Statements</button>
             <div id="job15" class="details">
                 <h4>Mission Statement</h4>
@@ -247,36 +231,34 @@
             <li>Commscope & Andrew’s Certification</li>
         </ul>
     </section>
-    <!-- Contact Section -->
-    <section id="contact" class="scroll-animate">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+            <button onclick="toggleDetails('job15')">Mission and Impact Statements</button>
+            <div id="job15" class="details">
+                <h4>Mission Statement</h4>
+                <p>As a results-driven professional with over 20 years of experience in construction and telecommunications...</p>
+                <h4>Impact Statement</h4>
+                <p>Through strategic leadership and a relentless focus on operational efficiency, my goal is to help companies build stronger brands...</p>
+            </div>
+        </div>
     </section>
-    <!-- Social Media Sharing -->
-    <section id="social-share">
-        <h3>Share My Resume</h3>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on LinkedIn</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on Facebook</a>
+    <!-- Skills Section -->
+    <section id="skills" class="scroll-animate">
+        <h2>Skills</h2>
+        <ul>
+            <li>Telecommunications</li>
+            <li>Construction Management</li>
+            <li>Safety Standards</li>
+            <li>Fiber Optics</li>
+        </ul>
     </section>
-    <!-- QR Codes -->
-    <section id="qr-codes">
-        <h3>Connect with me:</h3>
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
-        <p>GitHub Profile</p>
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-        <p>LinkedIn Profile</p>
-        <img src="QR_CODE_URL" alt="Resume QR Code">
-        <p>Resume</p>
+    <!-- Certifications Section -->
+    <section id="certifications" class="scroll-animate">
+        <h2>Certifications</h2>
+        <ul>
+            <li>OSHA 10 & 30 Certified</li>
+            <li>First Aid and CPR Certified</li>
+            <li>Bloodborne Pathogens Certified</li>
+            <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
+            <li>ODM Fiber Testing & Cleaning Certified</li>
+            <li>Commscope & Andrew’s Certification</li>
+        </ul>
     </section>
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
-</body>
-</html>
