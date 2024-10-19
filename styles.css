@@ -1,41 +1,47 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #333;
+    color: #ffffff; /* Bright text color */
     margin: 0;
     padding: 0;
     background: url('https://github.com/JadeBowen/jaderesume/blob/main/1676625570373.jpeg?raw=true') no-repeat center center fixed;
     background-size: cover;
 }
+
+/* Section Headers */
 h1, h2 {
-    color: #333;
+    color: #ffffff; /* Bright text color */
     text-align: center;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow for readability */
 }
 
-/* Sticky Navbar */
-.navbar {
-    position: sticky;
-    top: 0;
-    background-color: rgba(51, 51, 51, 0.9);
-    padding: 10px 0;
-    z-index: 1000;
+/* Paragraph Text */
+p {
+    color: #ffffff; /* Bright text color */
+    text-shadow: 1px 1px 3px #000000; /* Text shadow for readability */
 }
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-}
+/* Navbar */
 .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
 }
-.navbar ul li a:hover {
-    background-color: #555;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+
+/* About Me Section */
+.headshot {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff; /* White border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for photo */
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .headshot {
+        width: 100px;
+    }
 }
 /* Scroll Animation */
 .scroll-animate {
@@ -63,6 +69,7 @@ button:hover, .btn:hover {
     background-color: #005f73;
     transform: scale(1.05);
 }
+
 /* Testimonials */
 #testimonials {
     padding: 50px;
@@ -80,6 +87,7 @@ button:hover, .btn:hover {
     width: 150px;
     margin: 10px;
 }
+
 /* Splash Screen */
 .splash-screen {
     position: fixed;
