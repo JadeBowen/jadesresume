@@ -14,12 +14,12 @@ h1, h2 {
     text-align: center;
     text-shadow: 2px 2px 5px #000000; /* Text shadow for readability */
 }
-
 /* Paragraph Text */
 p {
     color: #ffffff; /* Bright text color */
     text-shadow: 1px 1px 3px #000000; /* Text shadow for readability */
 }
+
 /* Navbar */
 .navbar ul li a {
     color: #ffffff;
@@ -123,4 +123,11 @@ body.dark-mode {
 }
 body.dark-mode .navbar {
     background-color: #555;
+}
+
+/* Sticky Menu */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
