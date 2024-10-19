@@ -7,7 +7,6 @@ body {
     background: url('https://github.com/JadeBowen/jaderesume/blob/main/1676625570373.jpeg?raw=true') no-repeat center center fixed;
     background-size: cover;
 }
-
 h1, h2 {
     color: #333;
     text-align: center;
@@ -21,33 +20,29 @@ h1, h2 {
     padding: 10px 0;
     z-index: 1000;
 }
-
 .navbar ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
     padding: 0;
 }
-
 .navbar ul li a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
     font-size: 16px;
 }
-
 .navbar ul li a:hover {
     background-color: #555;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
-
 /* Scroll Animation */
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .scroll-visible {
     opacity: 1;
     transform: translateY(0);
@@ -64,19 +59,16 @@ button, .btn {
     font-size: 16px;
     transition: all 0.3s ease;
 }
-
 button:hover, .btn:hover {
     background-color: #005f73;
     transform: scale(1.05);
 }
-
 /* Testimonials */
 #testimonials {
     padding: 50px;
     text-align: center;
     background-color: #f4f4f4;
 }
-
 .testimonial {
     margin: 20px 0;
     font-style: italic;
@@ -88,7 +80,6 @@ button:hover, .btn:hover {
     width: 150px;
     margin: 10px;
 }
-
 /* Splash Screen */
 .splash-screen {
     position: fixed;
@@ -102,10 +93,26 @@ button:hover, .btn:hover {
     z-index: 1001;
     animation: fadeOut 2s ease-out 3s forwards;
 }
-
 @keyframes fadeOut {
     100% {
         opacity: 0;
         visibility: hidden;
     }
+}
+/* 3D Transformations */
+button, .btn {
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.3s ease-in-out;
+}
+button:hover, .btn:hover {
+    transform: rotateX(10deg) rotateY(10deg);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1d1d1d;
+    color: white;
+}
+body.dark-mode .navbar {
+    background-color: #555;
 }

@@ -2,7 +2,7 @@
 const animateOnScroll = () => {
   const sections = document.querySelectorAll('.scroll-animate');
   const triggerBottom = window.innerHeight * 0.85;
-  
+
   sections.forEach(section => {
     const sectionTop = section.getBoundingClientRect().top;
     if (sectionTop < triggerBottom) {
@@ -18,13 +18,11 @@ window.addEventListener('scroll', function() {
   clearTimeout(debounce);
   debounce = setTimeout(animateOnScroll, 20);
 });
-
 // Expand/Collapse Job Details
 function toggleDetails(id) {
   const section = document.getElementById(id);
   section.classList.toggle('visible');
 }
-
 // Contact Form Submission with Error Handling
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -39,13 +37,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     alert('Please fill in all fields.');
   }
 });
-
 // Splash Screen Fade Out
 window.addEventListener('load', function() {
   const splash = document.querySelector('.splash-screen');
   splash.classList.add('fade-out');
 });
-
 // Smooth Scroll for Navigation
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -56,8 +52,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
   });
 });
-
-// Enhanced 3D Animations (Example of Adding a Sphere with Three.js)
+// Enhanced 3D Animations (Example with Three.js)
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 400, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
