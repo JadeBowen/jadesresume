@@ -30,7 +30,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
 
-  if (name && email and message) {
+  if (name && email && message) {
     alert('Thank you for your message! I will get back to you soon.');
     this.reset();
   } else {
@@ -42,16 +42,17 @@ window.addEventListener('load', function() {
   const splash = document.querySelector('.splash-screen');
   splash.classList.add('fade-out');
 });
-// Smooth Scroll for Navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    document.getElementById(targetId).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
+// Enhanced 3D Animations (Example with Three.js)
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 400, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, 400);
+document.getElementById('webgl-canvas').appendChild(renderer.domElement);
+
+const geometry = new THREE.SphereGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0xff6347 });
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
 // Enhanced 3D Animations (Example with Three.js)
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 400, 0.1, 1000);
