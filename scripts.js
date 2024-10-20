@@ -30,7 +30,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
 
-  if (name && email && message) {
+  if (name && email and message) {
     alert('Thank you for your message! I will get back to you soon.');
     this.reset();
   } else {
