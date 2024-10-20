@@ -4,7 +4,7 @@ body {
     color: #ffffff; /* Bright text color */
     margin: 0;
     padding: 0;
-    background: rgba(0, 0, 0, 0.9) url('https://github.com/JadeBowen/jaderesume/blob/main/1676625570373.jpeg?raw=true') no-repeat center center fixed;
+    background: rgba(0, 0, 0, 0.9) url('https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241019_181724_Chrome.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -78,6 +78,7 @@ button, .btn {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease;
+    width: auto; /* Adjust button size */
 }
 button:hover, .btn:hover {
     background-color: #005f73;
@@ -97,6 +98,11 @@ button:hover, .btn:hover {
 }
 
 /* QR Code Section */
+#qr-codes {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
 #qr-codes img {
     width: 150px;
     margin: 10px;
@@ -104,8 +110,8 @@ button:hover, .btn:hover {
 /* Splash Screen */
 .splash-screen {
     position: fixed;
-    width: 50%; /* Reduced size */
-    height: auto;
+    width: 100%; /* Fit to screen */
+    height: 100%;
     background-color: #000;
     color: #fff;
     display: flex;
@@ -173,7 +179,7 @@ body.dark-mode .navbar {
 .job-section button {
     margin-top: 0;
     font-size: 1.2em;
-    width: 100%;
+    width: auto; /* Adjust button size */
     text-align: left;
 }
 
