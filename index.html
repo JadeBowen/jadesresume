@@ -3,259 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Resume of Jade Bowen - Telecommunications and Construction Expert with 21+ years of experience.">
-    <meta name="keywords" content="Jade Bowen, Telecommunications, Construction, Resume">
-    <meta name="author" content="Jade Bowen">
-    <meta name="robots" content="index, follow">
-    <title>Jade Bowen | Resume</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <meta name="description" content="Jade Bowen's Professional Resume Portfolio. Telecommunications and Construction expert with 21+ years of experience.">
+    <title>Jade Bowen | Portfolio Resume</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
-    <!-- Splash Screen Animation -->
-    <div class="splash-screen" role="banner">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo" style="width: 50%; height: auto;">
+    <!-- Splash Screen -->
+    <div class="splash-screen">
+        <h1>Jade Bowen</h1>
+        <p>Telecommunications & Construction Professional</p>
     </div>
+
     <!-- Sticky Navbar -->
-    <header class="navbar" role="navigation" aria-label="Main Navigation">
+    <header class="navbar">
         <nav>
             <ul>
-                <li><a href="#about" aria-label="About Me Section">About Me</a></li>
-                <li><a href="#resume" aria-label="Resume Section">Resume</a></li>
-                <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
-                <li><a href="#certifications" aria-label="Certifications Section">Certifications</a></li>
-                <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button onclick="toggleDarkMode()">Dark Mode</button></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Jade Bowen</h1>
+        <p>21+ Years in Telecommunications & Construction Management</p>
+        <a href="#resume" class="btn">View Resume</a>
+        <a href="assets/JadeBowen_Resume.pdf" class="btn" download>Download Resume</a>
+    </section>
+
     <!-- About Me Section -->
     <section id="about" class="scroll-animate">
-        <h1>About Me</h1>
+        <h2>About Me</h2>
         <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot" class="headshot">
         <div class="about-details">
             <div class="left">
-                <p>From an early age, I was captivated by telecommunications... [Full Career Story Text]</p>
+                <p>From an early age, I was captivated by telecommunications. Over the past 21 years, I’ve honed my skills... (full story here)</p>
             </div>
             <div class="right">
-                <p>Jade Bowen<br>Boise, ID 83709<br><a href="tel:2083710647">208-371-0647</a><br><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a><br><a href="https://linkedin.com/in/jadebowen">LinkedIn</a><br><a href="https://github.com/JadeBowen">GitHub</a></p>
-                <div class="qr-codes">
-                    <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
-                    <a href="https://github.com/JadeBowen">GitHub Profile</a>
-                    <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-                    <a href="https://linkedin.com/in/jadebowen">LinkedIn Profile</a>
-                    <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code">
-                    <a href="https://jadebowen.github.io/jadesresume/">Resume</a>
-                </div>
+                <p>
+                    Boise, ID 83709<br>
+                    <a href="tel:2083710647">208-371-0647</a><br>
+                    <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a><br>
+                    <a href="https://linkedin.com/in/jadebowen" target="_blank">LinkedIn</a><br>
+                    <a href="https://github.com/JadeBowen" target="_blank">GitHub</a>
+                </p>
             </div>
         </div>
     </section>
-    <!-- Full Resume Section -->
+
+    <!-- Resume Section -->
     <section id="resume" class="scroll-animate">
-        <h2>Full Resume</h2>
-        <p>Below is the downloadable version of my full resume...</p>
+        <h2>Professional Experience</h2>
+
+        <!-- Job 1 -->
         <div class="job-section">
             <p>Boise's Best Auto Sales</p>
-            <button onclick="toggleDetails('job1')">Project and Construction Manager</button>
+            <button onclick="toggleDetails('job1')">Finance and Marketing Manager</button>
             <div id="job1" class="details">
-                <p>Jade Bowen<br>Boise, ID 83709 | 208-371-0647 | Jade.Bowen.career@gmail.com | LinkedIn: linkedin.com/in/jadebowen</p>
-                <h3>Professional Summary</h3>
-                <p>Results-driven construction and telecommunications professional with over 21 years of experience in both hands-on fieldwork and management roles...</p>
-                <h3>Technical Skills</h3>
+                <p>Spearheaded financial strategy, managing budgeting, forecasting, and financial reporting... (full details)</p>
                 <ul>
-                    <li>Wireless communication systems, tower construction, fiber optics (OSP, FTTH, FTTC)...</li>
+                    <li>Developed and executed advanced marketing strategies, including digital advertising, social media campaigns, and public relations efforts.</li>
+                    <li>Increased gross profit margin through strategic cost management and marketing initiatives.</li>
                 </ul>
-                <h3>Professional Experience</h3>
-                <h4>Project and Construction Manager</h4>
-                <p>Boise's Best Auto Sales – Boise, ID | June 2023 – Present</p>
-                <ul>
-                    <li>Spearheaded financial strategy, managing budgeting, forecasting, and financial reporting to enhance profitability...</li>
-                </ul>
-            </div>
-            <p>Westland Towers</p>
-            <button onclick="toggleDetails('job2')">Senior Field Technician (Contract)</button>
-            <div id="job2" class="details">
-                <h4>Senior Field Technician (Contract)</h4>
-                <p>Westland Towers – Boise, ID | July 2022 – June 2023</p>
-                <ul>
-                    <li>Directed the installation, commissioning, and calibration of wireless communication systems...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Spearheaded successful cellular site upgrades, improving network performance and reducing downtime...</li>
-                </ul>
-            </div>
-            <p>First Point Group – Ericsson</p>
-            <button onclick="toggleDetails('job3')">Telecommunications Construction Coordinator / Network Engineer (Contract)</button>
-            <div id="job3" class="details">
-                <h4>Telecommunications Construction Coordinator / Network Engineer (Contract)</h4>
-                <p>First Point Group – Ericsson – Boise, ID | October 2021 – July 2022</p>
-                <ul>
-                    <li>Coordinated all aspects of cell tower construction and network projects...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Significantly reduced project delays and cost overruns by improving coordination, resource allocation...</li>
-                </ul>
-            </div>
-            <p>KGP Co</p>
-            <button onclick="toggleDetails('job4')">Outside Plant (OSP) Construction Manager (Contract)</button>
-            <div id="job4" class="details">
-                <h4>Outside Plant (OSP) Construction Manager (Contract)</h4>
-                <p>KGP Co – Boise, ID | February 2021 – October 2021</p>
-                <ul>
-                    <li>Managed high-profile Fiber-to-the-Home (FTTH) and Fiber-to-the-Curb (FTTC) projects...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Successfully completed a major fiber installation project ahead of schedule...</li>
-                </ul>
-            </div>
-            <p>MasTec Network Solutions</p>
-            <button onclick="toggleDetails('job5')">Construction Manager</button>
-            <div id="job5" class="details">
-                <h4>Construction Manager</h4>
-                <p>MasTec Network Solutions – Boise, ID | January 2018 – April 2020</p>
-                <ul>
-                    <li>Directed large-scale construction projects across multiple states, overseeing new builds...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Delivered multiple cell site construction projects on time and within budget...</li>
-                </ul>
-            </div>
-            <p>Broken Arrow Communications</p>
-            <button onclick="toggleDetails('job6')">Regional Manager – Cell Tower Infrastructure</button>
-            <div id="job6" class="details">
-                <h4>Regional Manager – Cell Tower Infrastructure</h4>
-                <p>Broken Arrow Communications – Boise, ID | July 2015 – May 2017</p>
-                <ul>
-                    <li>Managed 8 four-man crews across multiple cell tower construction and maintenance sites...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Improved project efficiency by developing a scheduling and crew coordination strategy...</li>
-                </ul>
-            </div>
-            <p>Benchmark Electric</p>
-            <button onclick="toggleDetails('job7')">Construction Manager / Foreman – Cell Tower Infrastructure</button>
-            <div id="job7" class="details">
-                <h4>Construction Manager / Foreman – Cell Tower Infrastructure</h4>
-                <p>Benchmark Electric – Boise, ID | March 2012 – July 2015</p>
-                <ul>
-                    <li>Led and supervised construction teams, overseeing civil excavation, site restoration...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Successfully directed the installation of antenna systems, coaxial cabling, and lighting systems...</li>
-                </ul>
-            </div>
-            <p>Cold Souls LLC</p>
-            <button onclick="toggleDetails('job8')">Owner/Operator</button>
-            <div id="job8" class="details">
-                <h4>Owner/Operator</h4>
-                <p>Cold Souls LLC – Boise, ID | December 2007 – March 2013</p>
-                <ul>
-                    <li>Managed all aspects of business operations, including product design, marketing, sales...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Increased customer satisfaction by streamlining delivery processes and enhancing operational efficiency...</li>
-                </ul>
-            </div>
-            <p>Unit Drilling</p>
-            <button onclick="toggleDetails('job9')">Floor Hand/Chain Hand</button>
-            <div id="job9" class="details">
-                <h4>Floor Hand/Chain Hand</h4>
-                <p>Unit Drilling – Utah Market | March 2005 – November 2007</p>
-                <ul>
-                    <li>Serviced and operated hydraulic equipment such as winches, forklifts, skid steers, and loaders in hazardous conditions...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Played a key role in reducing on-site accidents through active participation in safety programs...</li>
-                </ul>
-            </div>
-            <p>Comprehensive Career Summary</p>
-            <button onclick="toggleDetails('job10')">Tower Technician</button>
-            <div id="job10" class="details">
-                <h4>Tower Technician</h4>
-                <p>Comprehensive Career Summary (1999 - 2005)</p>
-                <ul>
-                    <li>Expertly assembled steel towers, ensuring structural integrity and precise alignment...</li>
-                </ul>
-                <h4>Key Achievements:</h4>
-                <ul>
-                    <li>Successfully installed and tested communication towers across Utah and Idaho...</li>
-                </ul>
-            </div>
-            <button onclick="toggleDetails('job11')">Core Competencies</button>
-            <div id="job11" class="details">
-                <h4>Core Competencies</h4>
-                <ul>
-                    <li>Project Management: Expertise in planning, execution, site supervision, resource allocation, and quality control...</li>
-                    <li>Financial Management: Skilled in budgeting, forecasting, cash flow monitoring, cost control, and financial reporting...</li>
-                    <li>Telecommunications Expertise: Extensive experience in the design, installation, maintenance, and troubleshooting of wireless communication systems...</li>
-                </ul>
-            </div>
-            <button onclick="toggleDetails('job12')">Certifications</button>
-            <div id="job12" class="details">
-                <h4>Certifications</h4>
-                <ul>
-                    <li>OSHA 10 & 30 Certified</li>
-                    <li>First Aid and CPR Certified</li>
-                    <li>Bloodborne Pathogens Certified</li>
-                    <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-                    <li>ODM Fiber Testing & Cleaning Certified</li>
-                    <li>Commscope & Andrew’s Certification</li>
-                </ul>
-            </div>
-            <button onclick="toggleDetails('job13')">Proficiencies</button>
-            <div id="job13" class="details">
-                <h4>Proficiencies</h4>
-                <ul>
-                    <li>Wireless Communication Technology: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
-                    <li>Safety Management Standards: OSHA compliance, safety inspections, regulatory adherence</li>
-                    <li>Project Management Tools: Microsoft Office Suite, Google Workspace</li>
-                    <li>Client & Relationship Management: CRM tools, stakeholder engagement, client satisfaction tracking</li>
-                    <li>Fiber Optic Technology: Installation, testing, and maintenance of fiber optic systems</li>
-                </ul>
-            </div>
-            <button onclick="toggleDetails('job14')">Cover Letter</button>
-            <div id="job14" class="details">
-                <h4>Cover Letter</h4>
-                <p>I am excited to introduce myself as an experienced professional in the construction and telecommunications industries...</p>
-            </div>
-            <button onclick="toggleDetails('job15')">Mission and Impact Statements</button>
-            <div id="job15" class="details">
-                <h4>Mission Statement</h4>
-                <p>As a results-driven professional with over 20 years of experience in construction and telecommunications...</p>
-                <h4>Impact Statement</h4>
-                <p>Through strategic leadership and a relentless focus on operational efficiency, my goal is to help companies build stronger brands...</p>
             </div>
         </div>
+
+        <!-- Add more jobs here following the same pattern -->
     </section>
+
     <!-- Skills Section -->
     <section id="skills" class="scroll-animate">
         <h2>Skills</h2>
         <ul>
-            <li>Telecommunications</li>
+            <li>Telecommunications Systems</li>
             <li>Construction Management</li>
-            <li>Safety Standards</li>
-            <li>Fiber Optics</li>
+            <li>Fiber Optics Installation</li>
+            <li>Safety Standards (OSHA, etc.)</li>
         </ul>
     </section>
+
     <!-- Certifications Section -->
     <section id="certifications" class="scroll-animate">
         <h2>Certifications</h2>
         <ul>
             <li>OSHA 10 & 30 Certified</li>
             <li>First Aid and CPR Certified</li>
-            <li>Bloodborne Pathogens Certified</li>
-            <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-            <li>ODM Fiber Testing & Cleaning Certified</li>
-            <li>Commscope & Andrew’s Certification</li>
+            <li>ComTrain Certified (Tower Rescue)</li>
         </ul>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="scroll-animate">
         <h2>Contact Me</h2>
@@ -269,36 +111,7 @@
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
-    <!-- Social Media Sharing -->
-    <section id="social-share">
-        <h3>Share My Resume</h3>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on LinkedIn</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on Facebook</a>
-    </section>
-    <!-- QR Codes -->
-    <section id="qr-codes">
-        <h3>Connect with me:</h3>
-        <div class="qr-row">
-            <div class="qr-item">
-                <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
-                <a href="https://github.com/JadeBowen">GitHub Profile</a>
-            </div>
-            <div class="qr-item">
-                <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-                <a href="https://linkedin.com/in/jadebowen">LinkedIn Profile</a>
-            </div>
-            <div class="qr-item">
-                <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code">
-                <a href="https://jadebowen.github.io/jadesresume/">Resume</a>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Info -->
-    <section id="contact-info" class="scroll-animate">
-        <h3>Contact Information</h3>
-        <p>Jade Bowen<br>Boise, ID 83709<br><a href="tel:2083710647">208-371-0647</a><br><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a><br><a href="https://linkedin.com/in/jadebowen">LinkedIn</a><br><a href="https://github.com/JadeBowen">GitHub</a></p>
-    </section>
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
