@@ -133,7 +133,7 @@ button, .btn {
     transition: transform 0.3s ease-in-out;
 }
 button:hover, .btn:hover {
-    transform: rotateX(10deg) rotateY(10deg);
+    transform: rotateX(3deg) rotateY(3deg); /* Less aggressive flip */
 }
 
 /* Dark Mode */
