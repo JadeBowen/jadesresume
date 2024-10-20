@@ -14,7 +14,7 @@
 <body>
     <!-- Splash Screen Animation -->
     <div class="splash-screen" role="banner">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo">
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo" style="width: 50%;">
     </div>
     <!-- Sticky Navbar -->
     <header class="navbar" role="navigation" aria-label="Main Navigation">
@@ -32,13 +32,22 @@
     <section id="about" class="scroll-animate">
         <h1>About Me</h1>
         <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot" class="headshot">
-        <p>From an early age, I was captivated by telecommunications... [Full About Me Text]</p>
+        <div class="about-details">
+            <div class="left">
+                <p>From an early age, I was captivated by telecommunications... [Full Career Story Text]</p>
+            </div>
+            <div class="right">
+                <p>Jade Bowen<br>Boise, ID 83709<br>208-371-0647<br>Jade.Bowen.career@gmail.com<br>LinkedIn: linkedin.com/in/jadebowen<br>GitHub: github.com/JadeBowen</p>
+                <!-- Add QR Codes Here -->
+            </div>
+        </div>
     </section>
     <!-- Full Resume Section -->
     <section id="resume" class="scroll-animate">
         <h2>Full Resume</h2>
         <p>Below is the downloadable version of my full resume...</p>
         <div class="job-section">
+            <p>Boise's Best Auto Sales</p>
             <button onclick="toggleDetails('job1')">Project and Construction Manager</button>
             <div id="job1" class="details">
                 <p>Jade Bowen<br>Boise, ID 83709 | 208-371-0647 | Jade.Bowen.career@gmail.com | LinkedIn: linkedin.com/in/jadebowen</p>
@@ -55,6 +64,7 @@
                     <li>Spearheaded financial strategy, managing budgeting, forecasting, and financial reporting to enhance profitability...</li>
                 </ul>
             </div>
+            <p>Westland Towers</p>
             <button onclick="toggleDetails('job2')">Senior Field Technician (Contract)</button>
             <div id="job2" class="details">
                 <h4>Senior Field Technician (Contract)</h4>
@@ -67,6 +77,7 @@
                     <li>Spearheaded successful cellular site upgrades, improving network performance and reducing downtime...</li>
                 </ul>
             </div>
+            <p>First Point Group – Ericsson</p>
             <button onclick="toggleDetails('job3')">Telecommunications Construction Coordinator / Network Engineer (Contract)</button>
             <div id="job3" class="details">
                 <h4>Telecommunications Construction Coordinator / Network Engineer (Contract)</h4>
@@ -79,6 +90,7 @@
                     <li>Significantly reduced project delays and cost overruns by improving coordination, resource allocation...</li>
                 </ul>
             </div>
+            <p>KGP Co</p>
             <button onclick="toggleDetails('job4')">Outside Plant (OSP) Construction Manager (Contract)</button>
             <div id="job4" class="details">
                 <h4>Outside Plant (OSP) Construction Manager (Contract)</h4>
@@ -91,6 +103,7 @@
                     <li>Successfully completed a major fiber installation project ahead of schedule...</li>
                 </ul>
             </div>
+            <p>MasTec Network Solutions</p>
             <button onclick="toggleDetails('job5')">Construction Manager</button>
             <div id="job5" class="details">
                 <h4>Construction Manager</h4>
@@ -103,6 +116,7 @@
                     <li>Delivered multiple cell site construction projects on time and within budget...</li>
                 </ul>
             </div>
+            <p>Broken Arrow Communications</p>
             <button onclick="toggleDetails('job6')">Regional Manager – Cell Tower Infrastructure</button>
             <div id="job6" class="details">
                 <h4>Regional Manager – Cell Tower Infrastructure</h4>
@@ -115,6 +129,7 @@
                     <li>Improved project efficiency by developing a scheduling and crew coordination strategy...</li>
                 </ul>
             </div>
+            <p>Benchmark Electric</p>
             <button onclick="toggleDetails('job7')">Construction Manager / Foreman – Cell Tower Infrastructure</button>
             <div id="job7" class="details">
                 <h4>Construction Manager / Foreman – Cell Tower Infrastructure</h4>
@@ -127,6 +142,7 @@
                     <li>Successfully directed the installation of antenna systems, coaxial cabling, and lighting systems...</li>
                 </ul>
             </div>
+            <p>Cold Souls LLC</p>
             <button onclick="toggleDetails('job8')">Owner/Operator</button>
             <div id="job8" class="details">
                 <h4>Owner/Operator</h4>
@@ -139,6 +155,7 @@
                     <li>Increased customer satisfaction by streamlining delivery processes and enhancing operational efficiency...</li>
                 </ul>
             </div>
+            <p>Unit Drilling</p>
             <button onclick="toggleDetails('job9')">Floor Hand/Chain Hand</button>
             <div id="job9" class="details">
                 <h4>Floor Hand/Chain Hand</h4>
@@ -151,6 +168,7 @@
                     <li>Played a key role in reducing on-site accidents through active participation in safety programs...</li>
                 </ul>
             </div>
+            <p>Comprehensive Career Summary</p>
             <button onclick="toggleDetails('job10')">Tower Technician</button>
             <div id="job10" class="details">
                 <h4>Tower Technician</h4>
@@ -231,34 +249,36 @@
             <li>Commscope & Andrew’s Certification</li>
         </ul>
     </section>
-            <button onclick="toggleDetails('job15')">Mission and Impact Statements</button>
-            <div id="job15" class="details">
-                <h4>Mission Statement</h4>
-                <p>As a results-driven professional with over 20 years of experience in construction and telecommunications...</p>
-                <h4>Impact Statement</h4>
-                <p>Through strategic leadership and a relentless focus on operational efficiency, my goal is to help companies build stronger brands...</p>
-            </div>
-        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-animate">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
     </section>
-    <!-- Skills Section -->
-    <section id="skills" class="scroll-animate">
-        <h2>Skills</h2>
-        <ul>
-            <li>Telecommunications</li>
-            <li>Construction Management</li>
-            <li>Safety Standards</li>
-            <li>Fiber Optics</li>
-        </ul>
+    <!-- Social Media Sharing -->
+    <section id="social-share">
+        <h3>Share My Resume</h3>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on LinkedIn</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on Facebook</a>
     </section>
-    <!-- Certifications Section -->
-    <section id="certifications" class="scroll-animate">
-        <h2>Certifications</h2>
-        <ul>
-            <li>OSHA 10 & 30 Certified</li>
-            <li>First Aid and CPR Certified</li>
-            <li>Bloodborne Pathogens Certified</li>
-            <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-            <li>ODM Fiber Testing & Cleaning Certified</li>
-            <li>Commscope & Andrew’s Certification</li>
-        </ul>
+    <!-- QR Codes -->
+    <section id="qr-codes">
+        <h3>Connect with me:</h3>
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
+        <p>GitHub Profile</p>
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
+        <p>LinkedIn Profile</p>
+        <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code">
+        <p>Resume</p>
     </section>
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>
