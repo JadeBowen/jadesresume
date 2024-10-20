@@ -63,7 +63,6 @@ const geometry = new THREE.SphereGeometry();
 const material = new THREE.MeshBasicMaterial({ color: 0xff6347 });
 const sphere = new THREE.Mesh(geometry, material);
 scene.add(sphere);
-
 camera.position.z = 5;
 
 function animate() {
