@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #ffffff;
+    color: #ffffff; /* Bright text color */
     margin: 0;
     padding: 0;
     background: rgba(0, 0, 0, 0.95) url('https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241019_181724_Chrome.jpg?raw=true') no-repeat center center fixed;
@@ -11,135 +11,130 @@ body {
 /* Text Readability */
 h1, h2, p {
     color: #ffffff;
-    text-shadow: 3px 3px 12px #000000;
+    text-shadow: 3px 3px 12px #000000; /* Stronger shadow for better readability */
     font-weight: bold;
 }
 
-/* Navigation Bar Styling */
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 0;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* Button Text as Button */
+button, .btn {
+    background: none;
+    color: #008CBA;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow */
+}
+button:hover, .btn:hover {
+    color: #005f73;
+    transform: scale(1.05); /* Subtle hover effect */
 }
 
-.navbar ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-}
-
-.navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Splash Screen */
-.splash-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
-    animation: fadeOut 2s forwards;
-}
-
-.splash-screen .logo {
-    max-width: 300px;
-    height: auto;
-}
-
-/* About Me Section Styling */
+/* Left and Right Sections in About Me */
 .about-details {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    margin-top: 100px;
 }
-
-/* Left column with image */
 .about-details .left {
-    width: 30%;
-    text-align: center;
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    top: -50px; /* Move text up */
 }
-
-.about-details .left img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
 .about-details .right {
-    width: 60%;
-    padding: 20px;
-    text-align: left;
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    top: 10px; /* Adjust if needed to align properly */
 }
 
 /* QR Code Section */
 #qr-codes {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: space-around;
+    margin: 20px 0;
 }
-
 #qr-codes img {
-    width: 120px;
-    height: auto;
+    width: 150px; /* Match footer size */
+    margin: 10px;
 }
 
-@media (max-width: 768px) {
-    .about-details {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-details .left,
-    .about-details .right {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .about-details .left img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .navbar ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    #qr-codes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #qr-codes img {
-        width: 100px;
-    }
+/* Company Names Above Job Titles */
+.job-section p {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+}
+.job-section button {
+    margin-top: 0;
+    font-size: 1.2em;
+    width: auto; /* Adjust button size */
+    text-align: left;
+    background: none; /* Remove box */
+    color: #008CBA; 
+    border: none;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow */
+}
+.job-section button:hover {
+    color: #005f73; /* Subtle hover effect */
 }
 
-/* Splash screen fade-out effect */
-@keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
+/* Detail Sections */
+.details {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.details.visible {
+    display: block;
+}
+
+/* Section Dividers */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin: 20px 0;
+    opacity: 0.5;
+}
+
+/* Subtle Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Consistent Typography */
+body, h1, h2, p, button, .btn, a {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Improved Readability */
+h1, h2, p, button, .btn, a {
+    color: #ffffff;
+    text-shadow: 3px 3px 10px #000000; /* Stronger shadow */
+}
+
+/* Contact Info at Bottom */
+#contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+#contact-info a {
+    color: #00bfff;
+    text-decoration: none;
+}
+#contact-info a:hover {
+    text-decoration: underline;
 }
