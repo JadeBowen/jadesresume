@@ -1,39 +1,42 @@
-// Scroll Animation
-const animateOnScroll = () => {
-  const sections = document.querySelectorAll('.scroll-animate');
-  const triggerBottom = window.innerHeight * 0.85;
-
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if (sectionTop < triggerBottom) {
-      section.classList.add('scroll-visible');
-    } else {
-      section.classList.remove('scroll-visible');
-    }
-  });
-};
-
-let debounce;
-window.addEventListener('scroll', function() {
-  clearTimeout(debounce);
-  debounce = setTimeout(animateOnScroll, 20);
+// Splash Screen Fade Out and Play Audio
+window.addEventListener('load', function() {
+    const splash = document.querySelector('.splash-screen');
+    setTimeout(() => {
+        splash.classList.add('fade-out');
+        setTimeout(() => splash.remove(), 500); // Remove the splash screen after the fade out
+    }, 2000);
 });
 
-// Expand/Collapse Job Details
+// Toggle Resume Details for Collapsible Job Descriptions
 function toggleDetails(id) {
-  const section = document.getElementById(id);
-  section.classList.toggle('visible');
+    const section = document.getElementById(id);
+    section.classList.toggle('visible');
 }
+
+// Scroll Animations for Section Visibility
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('.scroll-animate');
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+            section.classList.add('scroll-visible');
+        } else {
+            section.classList.remove('scroll-visible');
+        }
+    });
+});
 
 // Smooth Scroll for Navigation
 document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    document.getElementById(targetId).scrollIntoView({
-      behavior: 'smooth'
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-  });
 });
 
 // Enhanced 3D Animations (Three.js)
