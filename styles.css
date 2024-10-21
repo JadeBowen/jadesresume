@@ -19,14 +19,16 @@ body {
 #about {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 .headshot {
-    width: 150px;
+    width: 100px;  /* Smaller headshot */
     border-radius: 50%;
 }
 
-/* Resume Section */
+/* Job Details - Collapsible */
 .details {
     display: none;
 }
