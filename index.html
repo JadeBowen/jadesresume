@@ -1,143 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jade Bowen | Resume</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jade Bowen - Telecommunications & Construction Leader</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="splash-screen">
+        <img src="logo.png" alt="Jade Bowen Logo"> 
+    </div>
 
-  <div class="splash-screen">
-    <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo"> 
-  </div>
+    <header>
+        <h1>Jade Bowen</h1>
+        <p>Telecommunications & Construction Leader</p>
+    </header>
 
-  <header class="navbar">
-    <nav>
-      <ul>
-        <li><a href="#about" aria-label="About Me Section">About Me</a></li>
-        <li><a href="#resume" aria-label="Resume Section">Resume</a></li>
-        <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
-        <li><a href="#certifications" aria-label="Certifications Section">Certifications</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </section>
 
-  <main>
-    <section id="about" class="scroll-animate">
-      <div class="about-content">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot" class="headshot"> 
-        <div class="bio">
-          <h2>About Me</h2>
-          <p>
-            Experienced and results-driven telecommunications and construction professional with 21+ years of expertise in managing large-scale projects, 
-            ensuring safety compliance, and delivering high-quality results. Proven ability to lead and motivate teams, optimize resources, and exceed client expectations. 
-            Passionate about leveraging technical skills and industry knowledge to contribute to innovative and impactful projects.
-          </p>
-          <div class="contact-details">
-            <h3>Contact Details</h3>
-            <p>
-              Jade Bowen<br>
-              Boise, ID 83709<br>
-              <a href="tel:2083710647">208-371-0647</a><br>
-              <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a><br>
-            </p>
-            <div class="qr-codes">
-              <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-              <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
-              <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code"> 
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+                <li>Skill 3</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Job Title 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="job">
+                <h3>Job Title 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+        </section>
 
-    <section id="resume" class="scroll-animate">
-      <h2>Resume</h2>
-      <div class="resume-content">
-        <button onclick="toggleDetails('job1')" aria-expanded="false" aria-controls="job1">Senior Field Technician (Contract)</button>
-        <div id="job1" class="details" aria-hidden="true">
-          <h4>Senior Field Technician (Contract)</h4>
-          <p>Westland Towers – Boise, ID | July 2022 – June 2023</p>
-          <ul>
-            <li>Directed the installation, commissioning, and calibration of wireless communication systems, ensuring adherence to industry standards and client specifications.</li>
-          </ul>
-          <h4>Key Achievements:</h4>
-          <ul>
-            <li>Spearheaded successful cellular site upgrades, improving network performance and reducing downtime by 15%.</li>
-          </ul>
-        </div>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+            <p>Phone: (555) 555-5555</p>
+        </section>
 
-        <button onclick="toggleDetails('job2')" aria-expanded="false" aria-controls="job2">Telecommunications Construction Coordinator / Network Engineer (Contract)</button>
-        <div id="job2" class="details" aria-hidden="true">
-          <h4>Telecommunications Construction Coordinator / Network Engineer (Contract)</h4>
-          <p>First Point Group – Ericsson – Boise, ID | October 2021 – July 2022</p>
-          <ul>
-            <li>Coordinated all aspects of cell tower construction and network projects, including site acquisition, permitting, and logistics management.</li>
-          </ul>
-          <h4>Key Achievements:</h4>
-          <ul>
-            <li>Significantly reduced project delays and cost overruns by improving coordination, resource allocation, and communication among stakeholders.</li>
-          </ul>
-        </div>
+        <button id="download-resume">Download Resume</button>
+    </main>
 
-        <button onclick="toggleDetails('job3')" aria-expanded="false" aria-controls="job3">Outside Plant (OSP) Construction Manager (Contract)</button>
-        <div id="job3" class="details" aria-hidden="true">
-          <h4>Outside Plant (OSP) Construction Manager (Contract)</h4>
-          <p>KGP Co – Boise, ID | February 2021 – October 2021</p>
-          <ul>
-            <li>Managed high-profile Fiber-to-the-Home (FTTH) and Fiber-to-the-Curb (FTTC) projects, overseeing teams of technicians and subcontractors.</li>
-          </ul>
-          <h4>Key Achievements:</h4>
-          <ul>
-            <li>Successfully completed a major fiber installation project ahead of schedule and under budget, resulting in a 10% cost savings.</li>
-          </ul>
-        </div>
-
-        </div> 
-    </section>
-
-    <section id="skills" class="scroll-animate">
-      <h2>Skills</h2>
-      <ul>
-        <li>Telecommunications</li>
-        <li>Construction Management</li>
-        <li>Safety Standards</li>
-        <li>Fiber Optics</li>
-      </ul>
-    </section>
-
-    <section id="certifications" class="scroll-animate">
-      <h2>Certifications</h2>
-      <ul>
-        <li>OSHA 10 & 30 Certified</li>
-        <li>First Aid and CPR Certified</li>
-        <li>Bloodborne Pathogens Certified</li>
-        <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-        <li>ODM Fiber Testing & Cleaning Certified</li>
-        <li>Commscope & Andrew’s Certification</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="qr-codes">
-        <h3>Connect with me:</h3>
-        <div class="qr-row">
-          <div class="qr-item">
-            <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
-            <a href="https://github.com/JadeBowen">GitHub Profile</a>
-          </div>
-          <div class="qr-item">
-            <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-            <a href="https://linkedin.com/in/jadebowen">LinkedIn Profile</a>
-          </div>
-          <div class="qr-item">
-            <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code"> 
-            <a href="https://jadebowen.github.io/jadesresume/">Resume</a> 
-          </div>
-        </div>
-      </div>
-      <div class="social-share">
+    <script src="script.js"></script>
+</body>
+</html>
