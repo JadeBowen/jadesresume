@@ -1,3 +1,13 @@
+// Splash screen disappearance
+window.addEventListener('load', () => {
+  const splashScreen = document.querySelector('.splash-screen');
+  splashScreen.style.opacity = 0; 
+  setTimeout(() => {
+    splashScreen.style.display = 'none'; 
+  }, 1000); 
+});
+
+
 // Scroll Animation
 const debounce = (func, delay) => {
   let timeout;
@@ -53,4 +63,19 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 // Lazy Loading Images
-// ... (same as before) 
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+  
+  if ("IntersectionObserver" in window) {
+    const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazyload");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach
