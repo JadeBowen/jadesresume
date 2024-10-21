@@ -1,85 +1,156 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #ffffff;
+    color: #ffffff; /* Bright text color */
     margin: 0;
     padding: 0;
     background: rgba(0, 0, 0, 0.95) url('https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241019_181724_Chrome.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* Splash screen */
-.splash-screen {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
+/* Text Readability */
+h1, h2, p {
+    color: #ffffff;
+    text-shadow: 3px 3px 12px #000000; /* Stronger shadow for better readability */
+    font-weight: bold;
+}
+/* Button Text as Button */
+button, .btn {
+    background: none;
+    color: #008CBA;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow */
+}
+button:hover, .btn:hover {
+    color: #005f73;
+    transform: scale(1.05); /* Subtle hover effect */
 }
 
-.splash-screen img.logo {
-    width: 60%; /* Adjust the size for responsiveness */
-    height: auto;
-}
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-
-/* Navbar */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.navbar ul li {
-    padding: 10px;
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* About Me Section */
-#about {
-    padding: 100px 20px 20px;
-    text-align: center;
-}
-
+/* Left and Right Sections in About Me */
 .about-details {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: space-between;
+}
+.about-details .left {
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    top: -50px; /* Move text up */
+}
+.about-details .right {
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    top: 10px; /* Adjust if needed to align properly */
+}
+/* Button Text as Button */
+button, .btn {
+    background: none;
+    color: #008CBA;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow */
+}
+button:hover, .btn:hover {
+    color: #005f73;
+    transform: scale(1.05); /* Subtle hover effect */
 }
 
-.headshot {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-}
-
-/* QR Code Styling */
-#qr-codes {
+/* Left and Right Sections in About Me */
+.about-details {
     display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+    justify-content: space-between;
+}
+.about-details .left {
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    top: -50px; /* Move text up */
+}
+.about-details .right {
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    top: 10px; /* Adjust if needed to align properly */
+}
+/* Company Names Above Job Titles */
+.job-section p {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+}
+.job-section button {
+    margin-top: 0;
+    font-size: 1.2em;
+    width: auto; /* Adjust button size */
+    text-align: left;
+    background: none; /* Remove box */
+    color: #008CBA; 
+    border: none;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow */
+}
+.job-section button:hover {
+    color: #005f73; /* Subtle hover effect */
+}
+/* Detail Sections */
+.details {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.details.visible {
+    display: block;
 }
 
-#qr-codes img {
-    width: 150px;
-    height:
+/* Section Dividers */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin: 20px 0;
+    opacity: 0.5;
+}
+/* Subtle Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Consistent Typography */
+body, h1, h2, p, button, .btn, a {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Improved Readability */
+h1, h2, p, button, .btn, a {
+    color: #ffffff;
+    text-shadow: 3px 3px 10px #000000; /* Stronger shadow */
+}
+/* Contact Info at Bottom */
+#contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+#contact-info a {
+    color: #00bfff;
+    text-decoration: none;
+}
+#contact-info a:hover {
+    text-decoration: underline;
+}
