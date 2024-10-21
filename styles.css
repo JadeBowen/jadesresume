@@ -17,12 +17,20 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: opacity 2s ease-out;
+    transition: opacity 1s ease-out; /* Faster fade-out */
 }
 
 .splash-screen.fade-out {
     opacity: 0;
     visibility: hidden;
+}
+
+/* Adjusted Splash Screen Logo Size */
+.splash-screen .logo {
+    max-width: 150px;  /* Scale down the logo */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Navigation */
@@ -31,6 +39,28 @@ body {
     top: 0;
     background-color: black;
     padding: 10px;
+    z-index: 100; /* Above other content */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #333;
+    border-radius: 4px;
 }
 
 /* About Section */
@@ -42,8 +72,10 @@ body {
 }
 
 .headshot {
-    width: 100px;
+    width: 100px;  /* Smaller headshot */
     border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
 }
 
 /* Job Details - Collapsible */
@@ -53,6 +85,23 @@ body {
 
 .details.visible {
     display: block;
+}
+
+/* Buttons */
+button, .btn {
+    padding: 12px 25px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #005f73;
+    transform: scale(1.05);
 }
 
 /* Skills Progress Bar */
