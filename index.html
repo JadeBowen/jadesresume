@@ -14,7 +14,7 @@
 <body>
     <!-- Splash Screen -->
     <div class="splash-screen">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo">
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo">
     </div>
 
     <!-- Sticky Navbar -->
@@ -33,19 +33,9 @@
     <!-- About Me Section -->
     <section id="about">
         <h1>About Me</h1>
-        <div class="about-content">
-            <div class="left">
-                <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot" class="headshot">
-            </div>
-            <div class="right">
-                <p>From an early age, I was captivated by telecommunications... [Full Career Story Text]</p>
-                <p>Jade Bowen<br>Boise, ID 83709<br><a href="tel:2083710647">208-371-0647</a><br><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-                <div class="qr-codes">
-                    <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
-                    <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-                    <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code">
-                </div>
-            </div>
+        <div class="about-details">
+            <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot">
+            <p>From an early age, I was captivated by telecommunications...</p>
         </div>
     </section>
 
@@ -53,13 +43,12 @@
     <section id="resume">
         <h2>Full Resume</h2>
         <p>Below is the downloadable version of my full resume...</p>
-        <!-- Example of toggle job details -->
         <div class="job-section">
             <p>Boise's Best Auto Sales</p>
             <button onclick="toggleDetails('job1')">Project and Construction Manager</button>
             <div id="job1" class="details">
                 <h4>Project and Construction Manager</h4>
-                <p>Details about this role...</p>
+                <p>Boise's Best Auto Sales – Boise, ID</p>
             </div>
         </div>
     </section>
@@ -82,10 +71,11 @@
             <li>OSHA 10 & 30 Certified</li>
             <li>First Aid and CPR Certified</li>
             <li>ComTrain Certified Instructor</li>
+            <li>ODM Fiber Testing & Cleaning Certified</li>
         </ul>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Form Section -->
     <section id="contact">
         <h2>Contact Me</h2>
         <form id="contactForm">
@@ -95,8 +85,25 @@
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
+
+    <!-- QR Codes Section -->
+    <section id="qr-codes">
+        <h3>Connect with me:</h3>
+        <div class="qr-row">
+            <div class="qr-item">
+                <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code">
+                <a href="https://github.com/JadeBowen">GitHub Profile</a>
+            </div>
+            <div class="qr-item">
+                <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
+                <a href="https://linkedin.com/in/jadebowen">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
