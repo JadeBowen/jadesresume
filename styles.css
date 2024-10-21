@@ -8,92 +8,220 @@ body {
     background-size: cover;
 }
 
-/* Splash Screen */
-.splash-screen {
+/* Text Readability */
+h1, h2, p {
+    color: #ffffff;
+    text-shadow: 3px 3px 12px #000000; /* Stronger shadow for readability */
+    font-weight: bold;
+}
+
+/* Button Text as Button */
+button, .btn {
+    background: none;
+    color: #008CBA;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 5px #000000; /* Text shadow */
+}
+button:hover, .btn:hover {
+    color: #005f73;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Navigation Bar Styling */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    z-index: 1001;
-    animation: fadeOut 2s ease-out 3s forwards; /* Fades out after 3 seconds */
-}
-.splash-screen img {
-    max-width: 250px; /* Resize logo */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-@keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-/* Navigation Bar */
-.navbar {
-    position: sticky;
+    width: 100%;
     top: 0;
-    background-color: #000;
-    padding: 10px;
     z-index: 1000;
 }
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
 }
+
 .navbar ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
+    padding: 10px 15px;
     transition: background-color 0.3s ease;
-}
-.navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
 
-/* About Me Section */
-.headshot {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin: 0 auto 20px;
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighter hover effect */
 }
+
+/* Splash Screen */
+.splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    animation: fadeOut 2s forwards;
+}
+
+.splash-screen .logo {
+    max-width: 300px;
+    height: auto;
+}
+
+/* About Me Section Styling */
 .about-details {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-}
-.about-details .left, .about-details .right {
-    width: 45%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay for text readability */
+    align-items: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for better contrast */
     border-radius: 10px;
+    margin-top: 100px; /* Offset from the navbar */
+}
+
+/* Left column with image */
+.about-details .left {
+    width: 40%;
+    text-align: center;
+}
+
+.about-details .left img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.about-details .right {
+    width: 50%;
+    padding: 20px;
 }
 
 /* QR Code Section */
 #qr-codes {
     display: flex;
-    justify-content: center;
-    margin: 20px;
+    justify-content: space-around;
+    margin: 20px 0;
 }
-.qr-item {
-    margin: 0 20px;
-}
-.qr-item img {
+
+#qr-codes img {
     width: 150px;
     height: auto;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    #qr-codes img {
+        width: 100px;
+    }
+}
+
+/* Company Names Above Job Titles */
+.job-section p {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.job-section button {
+    margin-top: 0;
+    font-size: 1.2em;
+    text-align: left;
+    background: none; /* Remove button box */
+    color: #008CBA; 
+    border: none;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.job-section button:hover {
+    color: #005f73; /* Hover effect */
+}
+
+/* Detail Sections */
+.details {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.details.visible {
     display: block;
-    margin: 0 auto;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Consistent Typography */
+body, h1, h2, p, button, .btn, a {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Contact Info at Bottom */
+#contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+#contact-info a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+#contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .about-details {
+        flex-direction: column;
+    }
+
+    .about-details .left,
+    .about-details .right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about-details .left img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* Splash screen fade-out effect */
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
