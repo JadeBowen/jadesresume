@@ -1,69 +1,173 @@
-// Splash Screen Fade Out and Play Audio
-window.addEventListener('load', function() {
-    const splash = document.querySelector('.splash-screen');
-    const audio = document.getElementById('whoosh-sound');
-
-    // Play the whoosh sound if available
-    if (audio) {
-        audio.play();
-    }
-
-    // Ensure splash screen fades out after 2 seconds
-    setTimeout(() => {
-        splash.classList.add('fade-out');
-    }, 2000);  // Fade out after 2 seconds
-});
-
-// Toggle Resume Details for Collapsible Job Descriptions
-function toggleDetails(id) {
-    const section = document.getElementById(id);
-    section.classList.toggle('visible');
+/* Global Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.95) url('https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241019_181724_Chrome.jpg?raw=true') no-repeat center center fixed;
+    background-size: cover;
 }
 
-// Scroll Animations for Section Visibility
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('.scroll-animate');
-    sections.forEach(section => {
-        const triggerBottom = window.innerHeight * 0.85;
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-            section.classList.add('scroll-visible');
-        } else {
-            section.classList.remove('scroll-visible');
-        }
-    });
-});
-
-// Smooth Scroll for Navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Enhanced 3D Animations (Three.js) - Optional if required
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 400, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, 400);
-document.getElementById('webgl-canvas').appendChild(renderer.domElement);
-
-const geometry = new THREE.SphereGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0xff6347 });
-const sphere = new THREE.Mesh(geometry, material);
-scene.add(sphere);
-
-camera.position.z = 5;
-
-function animate() {
-    requestAnimationFrame(animate);
-    sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.01;
-    renderer.render(scene, camera);
+/* Splash Screen Styles */
+.splash-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
 }
 
-animate();
+.splash-screen img.logo {
+    width: 60%; /* Adjust the size for responsiveness */
+    height: auto;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li {
+    padding: 10px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* About Me Section Styles */
+#about {
+    padding: 100px 20px 20px;
+    text-align: center;
+}
+
+.about-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.headshot {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* Job Section Styles */
+.job-section {
+    margin: 20px 0;
+}
+
+.job-section h4 {
+    margin-top: 10px;
+}
+
+/* Details Section Styles */
+.details {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.details.visible {
+    display: block;
+}
+
+/* Skills and Certifications Sections Styles */
+h2 {
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Contact Section Styles */
+#contact {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f73;
+}
+
+/* Social Media Share Styles */
+#social-share {
+    margin: 20px 0;
+}
+
+/* QR Code Section Styles */
+#qr-codes {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.qr-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.qr-item {
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
