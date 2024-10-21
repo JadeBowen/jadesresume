@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #ffffff; /* Bright text color */
+    color: #ffffff;
     margin: 0;
     padding: 0;
     background: rgba(0, 0, 0, 0.95) url('https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241019_181724_Chrome.jpg?raw=true') no-repeat center center fixed;
@@ -11,7 +11,7 @@ body {
 /* Text Readability */
 h1, h2, p {
     color: #ffffff;
-    text-shadow: 3px 3px 12px #000000; /* Stronger shadow for better readability */
+    text-shadow: 3px 3px 12px #000000;
     font-weight: bold;
 }
 
@@ -23,63 +23,75 @@ button, .btn {
     font-size: 1.2em;
     cursor: pointer;
     transition: color 0.3s ease;
-    text-shadow: 2px 2px 5px #000000; /* Text shadow */
 }
 button:hover, .btn:hover {
     color: #005f73;
-    transform: scale(1.05); /* Subtle hover effect */
 }
 
-/* Left and Right Sections in About Me */
-.about-details {
+/* Navbar */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.about-details .left {
-    width: 45%;
-    padding: 10px;
-    position: relative;
-    top: -50px; /* Move text up */
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
 }
-.about-details .right {
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Splash Screen */
+.splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.splash-screen img {
+    max-width: 300px;
+}
+
+/* About Me Section */
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+.about-content .left {
     width: 45%;
-    padding: 10px;
-    position: relative;
-    top: 10px; /* Adjust if needed to align properly */
+}
+.about-content .right {
+    width: 45%;
+}
+.headshot {
+    border-radius: 50%;
+    width: 150px;
 }
 
 /* QR Code Section */
-#qr-codes {
+.qr-codes {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
 }
-#qr-codes img {
-    width: 150px; /* Match footer size */
-    margin: 10px;
-}
-
-/* Company Names Above Job Titles */
-.job-section p {
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 0;
-}
-.job-section button {
-    margin-top: 0;
-    font-size: 1.2em;
-    width: auto; /* Adjust button size */
-    text-align: left;
-    background: none; /* Remove box */
-    color: #008CBA; 
-    border: none;
-    text-shadow: 2px 2px 5px #000000; /* Text shadow */
-}
-.job-section button:hover {
-    color: #005f73; /* Subtle hover effect */
+.qr-codes img {
+    width: 100px;
+    height: 100px;
 }
 
-/* Detail Sections */
+/* Job Details Toggle */
 .details {
     display: none;
     background-color: rgba(0, 0, 0, 0.8);
@@ -91,50 +103,31 @@ button:hover, .btn:hover {
     display: block;
 }
 
-/* Section Dividers */
-.section-divider {
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    margin: 20px 0;
-    opacity: 0.5;
+/* Skills Section */
+#skills ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Subtle Animations */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* Contact Form */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
 }
-.scroll-visible {
-    opacity: 1;
-    transform: translateY(0);
+#contactForm input, #contactForm textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
 }
-
-/* Consistent Typography */
-body, h1, h2, p, button, .btn, a {
-    font-family: 'Roboto', Arial, sans-serif;
+#contactForm button {
+    padding: 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
-
-/* Improved Readability */
-h1, h2, p, button, .btn, a {
-    color: #ffffff;
-    text-shadow: 3px 3px 10px #000000; /* Stronger shadow */
-}
-
-/* Contact Info at Bottom */
-#contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-}
-#contact-info a {
-    color: #00bfff;
-    text-decoration: none;
-}
-#contact-info a:hover {
-    text-decoration: underline;
+#contactForm button:hover {
+    background-color: #005f73;
 }
