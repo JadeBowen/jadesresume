@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,50 +12,58 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
+
 <body>
-    <!-- Splash Screen -->
-    <div class="splash-screen">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo">
+    <!-- Splash Screen Animation -->
+    <div class="splash-screen" role="banner">
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241015_131250_Chrome.jpg?raw=true" alt="Jade Bowen Logo" class="logo">
     </div>
 
     <!-- Sticky Navbar -->
-    <header class="navbar">
+    <header class="navbar" role="navigation" aria-label="Main Navigation">
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" aria-label="About Me Section">About Me</a></li>
+                <li><a href="#resume" aria-label="Resume Section">Resume</a></li>
+                <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
+                <li><a href="#certifications" aria-label="Certifications Section">Certifications</a></li>
+                <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- About Me Section -->
-    <section id="about">
+    <section id="about" class="scroll-animate">
         <h1>About Me</h1>
+        <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot" class="headshot">
         <div class="about-details">
-            <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot">
-            <p>From an early age, I was captivated by telecommunications...</p>
+            <div class="left">
+                <p>From an early age, I was captivated by telecommunications... [Full Career Story Text]</p>
+            </div>
+            <div class="right">
+                <p>Jade Bowen<br>Boise, ID 83709<br><a href="tel:2083710647">208-371-0647</a><br><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a><br><img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" style="width: 1in; height: 1in;"><br><a href="https://linkedin.com/in/jadebowen">LinkedIn</a><br><a href="https://github.com/JadeBowen">GitHub</a></p>
+            </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume">
+    <!-- Full Resume Section -->
+    <section id="resume" class="scroll-animate">
         <h2>Full Resume</h2>
         <p>Below is the downloadable version of my full resume...</p>
         <div class="job-section">
-            <p>Boise's Best Auto Sales</p>
+            <!-- Resume content -->
             <button onclick="toggleDetails('job1')">Project and Construction Manager</button>
             <div id="job1" class="details">
                 <h4>Project and Construction Manager</h4>
-                <p>Boise's Best Auto Sales – Boise, ID</p>
+                <ul>
+                    <li>Managed large projects...</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="scroll-animate">
         <h2>Skills</h2>
         <ul>
             <li>Telecommunications</li>
@@ -65,18 +74,19 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications">
+    <section id="certifications" class="scroll-animate">
         <h2>Certifications</h2>
         <ul>
             <li>OSHA 10 & 30 Certified</li>
             <li>First Aid and CPR Certified</li>
-            <li>ComTrain Certified Instructor</li>
+            <li>Bloodborne Pathogens Certified</li>
+            <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
             <li>ODM Fiber Testing & Cleaning Certified</li>
         </ul>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-animate">
         <h2>Contact Me</h2>
         <form id="contactForm">
             <label for="name">Name:</label>
@@ -85,11 +95,18 @@
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
-    <!-- QR Codes Section -->
+    <!-- Social Media Sharing -->
+    <section id="social-share">
+        <h3>Share My Resume</h3>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on LinkedIn</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://jadebowen.github.io/jaderesume/" class="btn" target="_blank">Share on Facebook</a>
+    </section>
+
+    <!-- QR Codes -->
     <section id="qr-codes">
         <h3>Connect with me:</h3>
         <div class="qr-row">
@@ -101,9 +118,14 @@
                 <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
                 <a href="https://linkedin.com/in/jadebowen">LinkedIn Profile</a>
             </div>
+            <div class="qr-item">
+                <img src="https://www.qr-code-generator.com/phpqrcode/getCode.php?cht=qr&chl=https%3A%2F%2Fjadebowen.github.io%2Fjadesresume%2F&chs=180x180&choe=UTF-8&chld=L|2" alt="Resume QR Code">
+                <a href="https://jadebowen.github.io/jadesresume/">Resume</a>
+            </div>
         </div>
     </section>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
