@@ -18,6 +18,4 @@ function toggleDetails(id) {
   section.classList.toggle('visible');
 }
 
-// Splash Screen Fade Out and Play Audio
-window.addEventListener('load', function() {
-  const splash = document.querySelector('.splash
+// Splash Screen Fade Out and
