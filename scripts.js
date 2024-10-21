@@ -1,5 +1,15 @@
 // Scroll Animation
-const animateOnScroll = () => {
+const debounce = (func, delay) => {
+  let timeout;
+  return () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func();
+    }, delay);
+  };
+};
+
+const handleScroll = debounce(() => {
   const sections = document.querySelectorAll('.scroll-animate');
   const triggerBottom = window.innerHeight * 0.85;
 
@@ -11,18 +21,15 @@ const animateOnScroll = () => {
       section.classList.remove('scroll-visible');
     }
   });
-};
+}, 20);
 
-let debounce;
-window.addEventListener('scroll', function() {
-  clearTimeout(debounce);
-  debounce = setTimeout(animateOnScroll, 20);
-});
+window.addEventListener('scroll', handleScroll);
 // Expand/Collapse Job Details
 function toggleDetails(id) {
   const section = document.getElementById(id);
   section.classList.toggle('visible');
 }
+
 // Smooth Scroll for Navigation
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -33,26 +40,50 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
   });
 });
+// Lazy Loading Images
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+  
+  if ("IntersectionObserver" in window) {
+    const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazyload");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
 
-// Enhanced 3D Animations (Three.js)
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 400, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, 400);
-document.getElementById('webgl-canvas').appendChild(renderer.domElement);
-
-const geometry = new THREE.SphereGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0xff6347 });
-const sphere = new THREE.Mesh(geometry, material);
-scene.add(sphere);
-
-camera.position.z = 5;
-
-function animate() {
-  requestAnimationFrame(animate);
-  sphere.rotation.x += 0.01;
-  sphere.rotation.y += 0.01;
-  renderer.render(scene, camera);
-}
-
-animate();
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    const lazyLoadFallback = () => {
+      lazyImages.forEach((img) => {
+        img.src = img.dataset.src;
+      });
+    };
+    window.addEventListener("scroll", lazyLoadFallback);
+    window.addEventListener("resize", lazyLoadFallback);
+  }
+});
+// Form Submission Handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(this);
+  
+  fetch('your-server-endpoint', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert('Your message has been sent!');
+  })
+  .catch(error => {
+    alert('There was an error sending your message. Please try again.');
+  });
+});
