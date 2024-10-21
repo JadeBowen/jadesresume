@@ -1,106 +1,60 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
     background: url('https://github.com/JadeBowen/jaderesume/blob/main/Screenshot_20241019_181724_Chrome.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
+    color: white;
+    margin: 0;
 }
 
-/* Text Styling */
-h1, h2, p {
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    color: #fff;
-}
-
-/* Sticky Navbar */
+/* Navigation */
 .navbar {
     position: sticky;
     top: 0;
-    background-color: #000;
-    z-index: 1000;
+    background-color: black;
+    padding: 10px;
 }
-.navbar ul {
+
+/* About Section */
+#about {
     display: flex;
-    justify-content: space-around;
-    list-style: none;
-    padding: 10px 0;
-}
-.navbar ul li a, button {
-    color: #fff;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
-}
-.navbar ul li a:hover, button:hover {
-    background-color: #333;
-    border-radius: 5px;
+    justify-content: space-between;
 }
 
-/* Hero Section */
-#hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-#hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-}
-.btn {
-    background-color: #008CBA;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* About Me Section */
 .headshot {
     width: 150px;
-    height: auto;
     border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin: 0 auto 20px;
 }
 
-.about-details .right a {
-    color: #00bfff;
-    text-decoration: none;
-}
-.about-details .right a:hover {
-    text-decoration: underline;
-}
-
-/* Scroll Animation */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.scroll-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Job Details */
+/* Resume Section */
 .details {
     display: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 10px;
-    transition: all 0.3s ease-in-out;
 }
 
 .details.visible {
     display: block;
+}
+
+/* Skills Progress Bar */
+.skill-bars {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.progress {
+    height: 20px;
+    background-color: #008CBA;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: white;
 }
