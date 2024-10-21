@@ -1,4 +1,4 @@
-// Splash Screen Fade Out and Play Audio
+// Splash Screen Fade Out
 window.addEventListener('load', function() {
     const splash = document.querySelector('.splash-screen');
     const audio = document.getElementById('whoosh-sound');
