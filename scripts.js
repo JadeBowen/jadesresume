@@ -1,10 +1,14 @@
 // Splash Screen
-window.onload = function() {
+window.addEventListener('load', function() {
   const splashScreen = document.getElementById('splash-screen');
+  // Ensure the splash screen fades out and hides after 2 seconds
   setTimeout(() => {
-    splashScreen.style.display = 'none';
-  }, 2000); // Display the splash screen for 2 seconds
-};
+    splashScreen.style.opacity = '0';  // Fade out
+    setTimeout(() => {
+      splashScreen.style.display = 'none';  // Hide after fade
+    }, 500);  // 500ms for fade out
+  }, 2000);  // Keep splash screen for 2 seconds
+});
 
 // Smooth Scrolling for Fixed Navigation
 document.querySelectorAll('#fixed-nav a').forEach(anchor => {
@@ -22,13 +26,13 @@ document.querySelectorAll('#fixed-nav a').forEach(anchor => {
 function expandJobDetails(button) {
   const details = button.nextElementSibling;
   if (details.style.display === 'none' || details.style.display === '') {
-    details.style.display = 'block';
-    button.textContent = 'Read Less';
-    button.classList.add('expanded');
+    details.style.display = 'block';  // Show details
+    button.textContent = 'Read Less';  // Change button text
+    button.classList.add('expanded');  // Optional: Add class for extra styling if needed
   } else {
-    details.style.display = 'none';
-    button.textContent = 'Read More';
-    button.classList.remove('expanded');
+    details.style.display = 'none';  // Hide details
+    button.textContent = 'Read More';  // Change button text back
+    button.classList.remove('expanded');  // Remove class
   }
 }
 
@@ -44,6 +48,6 @@ function shareResume() {
 
 // Download Resume PDF
 document.getElementById('download-button').addEventListener('click', function() {
-  // Make sure to replace 'path_to_your_resume.pdf' with the actual path to your resume PDF file
+  // Replace 'path_to_your_resume.pdf' with the actual path to your resume PDF file
   window.open('path_to_your_resume.pdf', '_blank');
 });
