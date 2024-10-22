@@ -131,12 +131,6 @@ ul li {
     text-decoration: underline;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #000;
-    color: #fff;
-}
-
 /* Animation for Splash Screen */
 @keyframes fadeIn {
     from { opacity: 0; }
