@@ -30,7 +30,9 @@ body, html {
 
 /* Main Content */
 .main-content {
-    display: none; /* Hidden until splash screen fades out */
+    display: block; /* Ensures it's in the document flow */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease; /* Smooth fade-in effect */
     padding: 20px;
 }
 
