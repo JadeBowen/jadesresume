@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jade's Resume</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- FontAwesome for icons -->
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -15,11 +16,16 @@
       <li><a href="#about-me">About Me</a></li>
       <li><a href="#resume">Experience</a></li>
       <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact-card">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- About Me Section -->
+  <!-- About Me Section with Logo Banner -->
   <section id="about-me">
+    <div class="logo-banner">
+      <!-- Add your logo here -->
+      <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade Bowen Logo" class="banner-logo">
+    </div>
     <div class="about-container">
       <img class="headshot" src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot">
       <div class="intro">
@@ -68,7 +74,6 @@
           <li>Managed multi-million dollar budgets, optimizing resource allocation to reduce cost overruns.</li>
           <li>Led field teams in installing and commissioning wireless communication systems, improving field operations by refining crew schedules and resource allocation.</li>
           <li>Coordinated with Ericsson project managers and other stakeholders to ensure smooth deployment of telecommunications infrastructure.</li>
-          <li>Oversaw site inspections to ensure compliance with safety and industry standards, reducing operational downtime.</li>
         </ul>
       </div>
     </div>
@@ -87,9 +92,7 @@
           <li>Trained junior technicians on safety standards and protocols to ensure project safety and compliance.</li>
         </ul>
       </div>
-    </div>
-
-    <!-- Experience 4 -->
+    </div><!-- Experience 4 -->
     <div class="job-entry">
       <h3>KGP Co</h3>
       <h4>Outside Plant (OSP) Construction Manager (Contract)</h4>
@@ -105,7 +108,9 @@
           <li>Conducted site inspections to ensure compliance with client expectations, safety protocols, and quality standards.</li>
         </ul>
       </div>
-    </div><!-- Experience 5 -->
+    </div>
+
+    <!-- Experience 5 -->
     <div class="job-entry">
       <h3>MasTec Network Solutions</h3>
       <h4>Construction Manager</h4>
@@ -198,48 +203,46 @@
       </div>
     </div>
 
-    <!-- Experience 11 -->
-    <div class="job-entry">
-      <h3>Wasatch Electric</h3>
-      <h4>Tower Technician</h4>
-      <p>1999 – 2002</p>
-      <p class="description">Installed wireless communication systems, including antenna and line installations...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Installed wireless communication systems, including antenna and line installations.</li>
-          <li>Worked closely with engineering teams to ensure proper installation and commissioning of tower systems.</li>
-        </ul>
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>OSHA 10 & 30 Certified</li>
+        <li>First Aid and CPR Certified</li>
+        <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
+        <li>ODM Fiber Testing & Cleaning Certified</li>
+        <li>Commscope & Andrew's Certification</li>
+      </ul>
+    </section>
+
+    <!-- Contact Card Section -->
+    <section id="contact-card">
+      <div class="contact-card">
+        <h2>Contact Information</h2>
+        <div class="card-content">
+          <p><strong>Jade Bowen</strong></p>
+          <p>Boise, ID</p>
+          <p><i class="fas fa-phone"></i> 208-371-0647</p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+          <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+          <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+
+          <!-- Download Resume Button -->
+          <button id="download-button">Download Resume (PDF)</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certifications Section -->
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>OSHA 10 & 30 Certified</li>
-      <li>First Aid and CPR Certified</li>
-      <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-      <li>ODM Fiber Testing & Cleaning Certified</li>
-      <li>Commscope & Andrew's Certification</li>
-    </ul>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-contact">
-      <p>Jade Bowen</p>
-      <p>Boise, ID | 208-371-0647 | <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-      <p><a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-      <p><a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
-      <img class="qr-code" src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-    </div>
-    <div class="footer-buttons">
-      <button onclick="shareResume()">Share My Resume</button>
-      <button id="download-button">Download Resume (PDF)</button>
-    </div>
-  </footer>
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-buttons">
+        <!-- LinkedIn Share Button -->
+        <button id="linkedin-share" onclick="shareOnLinkedIn()">Share on LinkedIn</button>
+        
+        <!-- Facebook Share Button -->
+        <button id="facebook-share" onclick="shareOnFacebook()">Share on Facebook</button>
+      </div>
+    </footer>
 
 </body>
 </html>
