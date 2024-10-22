@@ -8,10 +8,11 @@ window.addEventListener('load', function() {
         splash.style.transition = 'opacity 1.5s ease';
     }, 3000);
 
+    // Show main content after splash screen fades out
     setTimeout(() => {
         splash.classList.add('hidden');
         mainContent.style.display = 'block';
-    }, 4500);
+    }, 4500); 
 });
 
 // Dark Mode Toggle
