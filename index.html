@@ -1,241 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jade Bowen | Resume</title>
-  <meta name="description"
-    content="Professional Resume of Jade Bowen - Telecommunications and Construction Expert with 21+ years of experience.">
-  <meta name="keywords" content="Jade Bowen, Telecommunications, Construction, Resume">
-  <meta name="author" content="Jade Bowen">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="Jade Bowen | Resume" />
-  <meta property="og:description"
-    content="Telecommunications and construction expert with 21+ years of experience." />
-  <meta property="og:image" content="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" />
-  <meta property="og:url" content="https://jadebowen.github.io/jadesresume/" /> 
-
+  <title>Jade's Resume</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
-<header>
-  <div class="container">
-    <div id="top-contact">
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>Phone: <a href="tel:(555) 555-5555">(555) 555-5555</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-      <a href="https://linkedin.com/in/jadebowen" target="_blank">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
-      </a>
-      <p>GitHub: <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p> 
-      <a href="https://github.com/JadeBowen" target="_blank">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code" class="qr-code">
-      </a>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade's Logo">
+  </div>
+
+  <!-- Fixed Navigation -->
+  <nav id="fixed-nav">
+    <ul>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#resume">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Me Section -->
+  <section id="about-me">
+    <div class="about-container">
+      <img class="headshot" src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot">
+      <div class="intro">
+        <h1>Jade Bowen</h1>
+        <p>From an early age, I was captivated by telecommunications and the transformative impact of technology on our lives. Over the past two decades, I have honed my skills in various roles within the construction and telecommunications industries, tackling complex challenges and delivering high-quality results. My journey has been defined by a commitment to excellence, a passion for innovation, and a dedication to making a positive impact through my work. Whether managing large-scale projects, leading teams, or implementing cutting-edge solutions, I thrive on pushing the boundaries and driving meaningful change.</p>
+      </div>
+      <div class="contact-info">
+        <p>Boise, ID</p>
+        <p>208-371-0647</p>
+        <p><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+        <p><a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <h2>Professional Experience</h2>
+
+    <!-- Experience 1 -->
+    <div class="job-entry">
+      <h3>Boise's Best Auto Sales</h3>
+      <h4>Finance and Marketing Manager</h4>
+      <p>June 2023 – Present</p>
+      <p class="description">Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
+      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
+      <div class="expanded-details">
+        <ul>
+          <li>Manage financial strategies, including budgeting, forecasting, and financial reporting, to drive profitability.</li>
+        </ul>
+      </div>
     </div>
 
-    <img src="https://github.com/JadeBowen/jaderesume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen"
-      id="profile-image">
-    <h1>Jade Bowen</h1>
-    <p>Telecommunications & Construction Leader</p>
-  </div>
-</header>
-<main>
-  <section id="summary" class="container">
-    <h2>Professional Summary</h2>
-    <p>Telecommunications and construction professional with over 21 years of experience in hands-on fieldwork and
-      management roles. Extensive expertise in cell tower construction, fiber optic installation, and wireless
-      communication systems. Proven leadership in large-scale projects, delivering on time and within budget while
-      ensuring safety, quality, and client satisfaction. Adept at troubleshooting complex systems, improving
-      operational efficiencies, and leading teams through critical project phases.</p>
+    <!-- Experience 2 -->
+    <div class="job-entry">
+      <h3>First Point Group – Ericsson</h3>
+      <h4>Telecommunications Construction Coordinator / Network Engineer (Contract)</h4>
+      <p>Oct 2021 – July 2022</p>
+      <p class="description">Coordinated cell tower construction and network projects, including planning, budgeting, and execution...</p>
+      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
+      <div class="expanded-details">
+        <ul>
+          <li>Managed multi-million dollar budgets, optimizing resource allocation to reduce cost overruns.</li>
+          <li>Led field teams in installing and commissioning wireless communication systems, improving field operations by refining crew schedules and resource allocation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Experience 3 -->
+    <div class="job-entry">
+      <h3>Westland Towers</h3>
+      <h4>Senior Field Technician (Contract)</h4>
+      <p>July 2022 – June 2023</p>
+      <p class="description">Led installation and maintenance of wireless communication systems, including cellular antennas and microwave technologies...</p>
+      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
+      <div class="expanded-details">
+        <ul>
+          <li>Performed preventive and corrective maintenance to maximize network reliability and uptime.</li>
+          <li>Spearheaded cellular site upgrades to improve network performance and reduce downtime.</li>
+          <li>Trained junior technicians on safety standards and protocols.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Additional experiences should follow this pattern... -->
+
   </section>
 
-  <section id="skills" class="container">
-    <h2>Core Skills</h2>
-    <ul>
-      <li>Telecom Tower Construction and Maintenance</li>
-      <li>LTE and 5G Network Upgrades</li>
-      <li>Fiber Optic and Coaxial Cabling</li>
-      <li>Wireless Communication Systems (GSM, CDMA, 4G, VoLTE)</li>
-      <li>Project Management and Leadership</li>
-      <li>Safety Compliance (OSHA, ComTrain)</li>
-      <li>Troubleshooting and Maintenance</li>
-      <li>Team Collaboration and Cross-functional Leadership</li>
-    </ul>
-  </section>
-  <section id="certifications" class="container">
+  <!-- Certifications Section -->
+  <section id="certifications">
     <h2>Certifications</h2>
     <ul>
       <li>OSHA 10 & 30 Certified</li>
+      <li>First Aid and CPR Certified</li>
       <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-      <li>First Aid & CPR Certified</li>
-      <li>Bloodborne Pathogens Certified</li>
+      <li>ODM Fiber Testing & Cleaning Certified</li>
+      <li>Commscope & Andrew's Certification</li>
     </ul>
   </section>
-  <section id="experience" class="container">
-    <h2>Professional Experience</h2>
-    <div class="job-section">
-      <h3>Boise’s Best Auto Sales</h3>
-      <p><strong>Finance and Marketing Manager</strong> | June 2023 – Present</p>
-      <button class="read-more" onclick="toggleDetails('job1')">Read More</button>
-      <div class="job-details" id="job1">
-        <ul>
-          <li>Spearheaded financial strategy, overseeing budgeting, forecasting, and financial reporting to increase profitability.</li>
-          <li>Developed and executed advanced marketing strategies, including digital advertising and social media campaigns, enhancing visibility and customer retention.</li>
-          <li>Collaborated with cross-functional teams to improve customer service delivery and operational processes.</li>
-          <li><strong>Key Achievement:</strong> Increased gross profit margin by launching strategic marketing initiatives and optimizing financial processes.</li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="job-section">
-      <h3>Westland Towers</h3>
-      <p><strong>Senior Field Technician (Contract)</strong> | July 2022 – June 2023</p>
-      <button class="read-more" onclick="toggleDetails('job2')">Read More</button>
-      <div class="job-details" id="job2">
-        <ul>
-          <li>Directed the installation, commissioning, and calibration of wireless communication systems, including cellular antennas and microwave technologies.</li>
-          <li>Performed preventive and corrective maintenance to maximize system uptime and minimize network downtime.</li>
-          <li>Collaborated with project managers and engineers to ensure projects remained on schedule and met scope requirements.</li>
-          <li><strong>Key Achievement:</strong> Led LTE site upgrades, improving network performance for multiple clients.</li>
-        </ul>
-      </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-contact">
+      <p>Jade Bowen</p>
+      <p>Boise, ID | 208-371-0647 | <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+      <p><a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+      <p><a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+      <img class="qr-code" src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
     </div>
+    <div class="footer-buttons">
+      <button onclick="shareResume()">Share My Resume</button>
+      <button id="download-button">Download Resume (PDF)</button>
+    </div>
+  </footer>
 
-    <div class="job-section">
-      <h3>KGP Telecommunications (Contract)</h3>
-      <p><strong>Construction Manager</strong> | February 2021 – October 2021</p>
-      <button class="read-more" onclick="toggleDetails('job3')">Read More</button>
-      <div class="job-details" id="job3">
-        <ul>
-          <li>Managed multiple fiber optic installation projects for FTTH and FTTC, overseeing field crews and subcontractors across various locations.</li>
-          <li>Ensured all installations adhered to industry standards for fiber splicing, testing, and safety protocols, while optimizing resource allocation and budgeting.</li>
-          <li><strong>Key Achievement:</strong> Led a high-profile fiber installation project, completing ahead of schedule and under budget, exceeding client expectations.</li>
-        </ul>
-      </div>
-    </div>
-</main> 
-<main>
-  <div class="job-section">
-    <h3>First Point Group - Ericsson (Contract)</h3>
-    <p><strong>Telecommunications Construction Coordinator / Network Engineer</strong> | October 2021 - July 2022</p>
-    <button class="read-more" onclick="toggleDetails('job4')">Read More</button>
-    <div class="job-details" id="job4">
-      <ul>
-        <li>Coordinated all aspects of cell tower construction and network projects for Ericsson, ensuring efficient execution of site builds and upgrades.</li>
-        <li>Managed multi-million dollar project budgets, tracking expenditures, optimizing resource allocation, and ensuring adherence to financial constraints.</li>
-        <li><strong>Key Achievement:</strong> Improved project timelines by optimizing field operations and resource allocation, reducing delays and cost overruns.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="job-section">
-    <h3>MasTec Network Solutions</h3>
-    <p><strong>Construction Manager</strong> | January 2018 - April 2020</p>
-    <button class="read-more" onclick="toggleDetails('job5')">Read More</button>
-    <div class="job-details" id="job5">
-      <ul>
-        <li>Directed large-scale telecom infrastructure projects across multiple states, managing new builds, site modifications, and 5G network upgrades.</li>
-        <li>Led up to 15 crews, ensuring strict compliance with safety standards and timely project completion within budget.</li>
-        <li><strong>Key Achievement:</strong> Successfully delivered numerous 5G upgrades, enhancing network capacity and performance in key regions.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="job-section">
-    <h3>Broken Arrow Communications</h3>
-    <p><strong>Regional Manager – Cell Tower Infrastructure</strong> | July 2015 – May 2017</p>
-    <button class="read-more" onclick="toggleDetails('job6')">Read More</button>
-    <div class="job-details" id="job6">
-      <ul>
-        <li>Oversaw the construction, maintenance, and upgrade of multiple cell tower sites, managing operations across a multi-state region.</li>
-        <li><strong>Key Achievement:</strong> Reduced project completion times by 20% through strategic resource allocation and process optimization.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="job-section">
-    <h3>Benchmark Electric</h3>
-    <p><strong>Construction Manager / Foreman</strong> | March 2012 – July 2015</p>
-    <button class="read-more" onclick="toggleDetails('job7')">Read More</button>
-    <div class="job-details" id="job7">
-      <ul>
-        <li>Supervised construction teams responsible for telecom tower builds, including civil excavation, tower erection, antenna system installations, and cabling.</li>
-        <li><strong>Key Achievement:</strong> Implemented comprehensive safety procedures that resulted in zero accidents across multiple projects.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="job-section">
-    <h3>Cold Souls LLC</h3>
-    <p><strong>Owner/Operator</strong> | December 2007 – March 2013</p>
-    <button class="read-more" onclick="toggleDetails('job8')">Read More</button>
-    <div class="job-details" id="job8">
-      <ul>
-        <li>Managed all aspects of a custom clothing business, including product design, marketing, manufacturing, and distribution.</li>
-        <li><strong>Key Achievement:</strong> Optimized production and distribution processes, reducing delivery times and boosting customer satisfaction.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="job-section">
-    <h3>Unit Drilling</h3>
-    <p><strong>Floor Hand / Chain Hand</strong> | March 2005 – November 2007</p>
-    <button class="read-more" onclick="toggleDetails('job9')">Read More</button>
-    <div class="job-details" id="job9">
-      <ul>
-        <li>Operated hydraulic equipment and assisted with drilling rig operations, setup, and maintenance in high-risk environments.</li>
-        <li><strong>Key Achievement:</strong> Reduced on-site accidents by actively promoting safety programs and adherence to established safety standards.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="job-section">
-    <h3>SBA Communications</h3>
-    <p><strong>Tower Technician</strong> | March 2012 – July 2015</p>
-    <button class="read-more" onclick="toggleDetails('job10')">Read More</button>
-    <div class="job-details" id="job10">
-      <ul>
-        <li>Installed and maintained cell towers, including antennas, coaxial cabling, and lighting systems for wireless communication networks.</li>
-        <li><strong>Key Achievement:</strong> Contributed to successful LTE upgrades, improving network coverage and overall performance.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="job-section">
-    <h3>Wasatch Electric</h3>
-    <p><strong>Tower Technician</strong> | 1999 – 2002</p>
-    <button class="read-more" onclick="toggleDetails('job11')">Read More</button>
-    <div class="job-details" id="job11">
-      <ul>
-        <li>Installed wireless communication systems on cell towers, including antenna and line installations for multiple carriers.</li>
-        <li><strong>Key Achievement:</strong> Led multiple tower installations, enhancing network capabilities for various clients in the region.</li>
-      </ul>
-    </div>
-  </div>
-
-  <h2>Tools and Technologies</h2>
-  <ul>
-    <li>Optical Time Domain Reflectometer (OTDR)</li>
-    <li>Sweep Testing Tools</li>
-    <li>Microsoft Office Suite</li>
-    <li>Google Docs</li>
-    <li>CRM Software</li>
-  </ul>
-
-</main>
-<footer>
-  <div class="container">
-    <div id="footer-contact">
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>Phone: <a href="tel:(555) 555-5555">(555) 555-5555</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-      <a href="https://linkedin.com/in/jadebowen" target="_blank">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
-      </a>
-      <p>GitHub: <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p> 
-      <a href="https://github.com/JadeBowen" target="_blank">
-        <img src="https://github.com/JadeBowen/jaderesume/blob/main/download%20(1).png?raw=true" alt="GitHub QR Code" class="qr-code">
-      </a>
-    </div>
-  </div>
-</footer>
-
-  <script src="script.js"></script>
 </body>
-
 </html>
