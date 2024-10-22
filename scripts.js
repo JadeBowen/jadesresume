@@ -2,17 +2,17 @@ window.addEventListener('load', function() {
     const splash = document.querySelector('.splash-screen');
     const mainContent = document.querySelector('.main-content');
 
-    // Splash screen fade out after 3 seconds
+    // Fade out the splash screen after 3 seconds
     setTimeout(() => {
-        splash.style.opacity = '0';
         splash.style.transition = 'opacity 1.5s ease';
+        splash.style.opacity = '0';
     }, 3000);
 
-    // Ensure the splash screen is fully hidden after fading out
-    splash.addEventListener('transitionend', () => {
-        splash.style.display = 'none'; // Hide the splash screen
-        mainContent.style.display = 'block'; // Show main content
-    });
+    // Ensure splash screen is completely hidden after fading
+    setTimeout(() => {
+        splash.style.display = 'none';  // Fully hide the splash screen
+        mainContent.style.display = 'block';  // Display the main content
+    }, 4500);  // Adjust timing to ensure smooth transition
 });
 
 // Dark Mode Toggle
