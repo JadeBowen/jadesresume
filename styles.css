@@ -120,11 +120,16 @@ section {
 }
 
 .job-details {
-  display: none;
+  display: none; 
   margin-top: 10px;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
-  max-height: 0;
+  max-height: 0; 
+}
+
+.show-details {
+  display: block;
+  max-height: 500px; /* Adjust as needed */
 }
 
 .read-more {
@@ -146,4 +151,22 @@ section {
     height: auto;
     display: block; 
     margin: 10px auto; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; 
+    }
+
+    #skills ul {
+        justify-content: flex-start; /* Align skills list to the left on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #profile-image {
+        width: 120px; 
+        height: 120px; 
+    }
 }
