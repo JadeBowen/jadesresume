@@ -1,27 +1,29 @@
+// script.js
+
 // Splash Screen Fade-out (with slight delay)
 setTimeout(function() {
-    document.getElementById('splash-screen').style.opacity = 0;
-    setTimeout(function() {
-        document.getElementById('splash-screen').style.display = 'none';
-    }, 500); 
-}, 3000); 
+  document.getElementById('splash-screen').style.opacity = 0;
+  setTimeout(function() {
+    document.getElementById('splash-screen').style.display = 'none';
+  }, 500);
+}, 3000);
 
 // Function to toggle job details using classList
 function toggleDetails(jobId) {
   var details = document.getElementById(jobId);
-  details.classList.toggle('show-details'); 
+  details.classList.toggle('show-details');
 }
 
-// Add event listeners to "Read More" buttons
+// Add event listeners to "Read More" buttons (using data-jobid)
 const readMoreButtons = document.querySelectorAll('.read-more');
 readMoreButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const jobId = button.getAttribute('onclick').match(/'([^']+)'/)[1]; 
+    const jobId = button.dataset.jobid; 
     toggleDetails(jobId);
   });
 });
 
 // Integrate LinkedIn button functionality (opens in new tab)
 document.getElementById('linkedin-connect').addEventListener('click', function() {
-    window.open('https://linkedin.com/in/jadebowen', '_blank');
-}); 
+  window.open('https://linkedin.com/in/jadebowen', '_blank');
+});
