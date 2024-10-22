@@ -7,7 +7,7 @@
 body, html {
     height: 100%;
     font-family: 'Orbitron', sans-serif;
-    background: url('ethernet-connectivity-photo.jpg') no-repeat center center fixed;
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/ethernet%20conectivity%20photo.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
 }
@@ -23,7 +23,8 @@ body, html {
 }
 
 .splash-screen img.logo {
-    width: 300px;
+    width: 400px;
+    height: auto;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -48,8 +49,8 @@ body, html {
 }
 
 .headshot {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 2px solid #00FFAA;
     margin-bottom: 20px;
@@ -66,33 +67,30 @@ p.bio {
     margin-bottom: 20px;
 }
 
-/* Portfolio Section */
-.portfolio {
-    margin-top: 50px;
-    text-align: center;
+/* Resume Section */
+.resume {
+    margin-top: 40px;
 }
 
-.portfolio-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.portfolio-item h3 {
+.resume h2 {
+    font-size: 2em;
+    color: #00FFAA;
     margin-bottom: 10px;
 }
 
-.portfolio-item a {
-    color: #00FFAA;
-    text-decoration: none;
+.job h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
 }
 
-.portfolio-item a:hover {
-    text-decoration: underline;
+ul {
+    margin-left: 20px;
 }
 
-/* Contact Info */
+ul li {
+    margin-bottom: 10px;
+}
+
 .contact-info a {
     color: #00FFAA;
     text-decoration: none;
