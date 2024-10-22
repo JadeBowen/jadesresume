@@ -16,22 +16,28 @@ function expandJobDetails(button) {
   if (details.style.display === 'none' || details.style.display === '') {
     details.style.display = 'block';  // Show details
     button.textContent = 'Read Less';  // Change button text
-    button.classList.add('expanded');  // Optional: Add class for extra styling if needed
   } else {
     details.style.display = 'none';  // Hide details
     button.textContent = 'Read More';  // Change button text back
-    button.classList.remove('expanded');  // Remove class
   }
 }
 
-// Share Resume Functionality
-function shareResume() {
-  const shareURL = window.location.href;
-  const linkedinShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${shareURL}`;
-  const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${shareURL}`;
+// Share Resume on LinkedIn
+function shareOnLinkedIn() {
+  const shareURL = window.location.href;  // Get current page URL
+  const linkedinShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+  
+  // Open the LinkedIn share window
+  window.open(linkedinShareURL, '_blank', 'width=600,height=400');
+}
 
-  // Open LinkedIn or Facebook sharing window (LinkedIn is used here for demonstration)
-  window.open(linkedinShareURL, '_blank');
+// Share Resume on Facebook
+function shareOnFacebook() {
+  const shareURL = window.location.href;  // Get current page URL
+  const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
+  
+  // Open the Facebook share window
+  window.open(facebookShareURL, '_blank', 'width=600,height=400');
 }
 
 // Download Resume PDF
