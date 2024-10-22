@@ -1,16 +1,32 @@
-window.addEventListener('load', function() {
-    const splash = document.querySelector('.splash-screen');
-    const mainContent = document.querySelector('.main-content');
+// Splash Screen Fade-out (with slight delay)
+setTimeout(function() {
+    document.getElementById('splash-screen').style.opacity = 0;
+    setTimeout(function() {
+        document.getElementById('splash-screen').style.display = 'none';
+    }, 500); // Adjust timing as needed
+}, 3000); // Increased delay to 3 seconds
 
-    // Splash screen fade out after 3 seconds
-    setTimeout(() => {
-        splash.style.opacity = '0'; // Fade out the splash screen
-        splash.style.transition = 'opacity 1.5s ease'; // Ensure smooth transition
-    }, 3000);
-
-    // Once the transition ends, hide the splash screen and show the main content
-    splash.addEventListener('transitionend', () => {
-        splash.style.display = 'none';  // Fully hide the splash screen
-        mainContent.style.opacity = '1';  // Make main content visible with fade-in effect
-    });
+// Function to simulate resume download (for now)
+document.getElementById('download-resume').addEventListener('click', function() {
+    alert("Resume download functionality will be added soon!");
 });
+
+// Temporary functions for Contact Me and LinkedIn buttons
+document.getElementById('contact-me').addEventListener('click', function() {
+    alert("Contact functionality will be added soon!");
+});
+
+document.getElementById('linkedin-connect').addEventListener('click', function() {
+    // For now, just open the LinkedIn profile in a new tab
+    window.open('https://linkedin.com/in/jadebowen', '_blank');
+});
+
+// Function to toggle job details
+function toggleDetails(jobId) {
+  var details = document.getElementById(jobId);
+  if (details.style.display === "none" || details.style.display === "") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
+}
