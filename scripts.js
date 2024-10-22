@@ -1,15 +1,3 @@
-// Splash Screen
-window.addEventListener('load', function() {
-  const splashScreen = document.getElementById('splash-screen');
-  // Ensure the splash screen fades out and hides after 2 seconds
-  setTimeout(() => {
-    splashScreen.style.opacity = '0';  // Fade out
-    setTimeout(() => {
-      splashScreen.style.display = 'none';  // Hide after fade
-    }, 500);  // 500ms for fade out
-  }, 2000);  // Keep splash screen for 2 seconds
-});
-
 // Smooth Scrolling for Fixed Navigation
 document.querySelectorAll('#fixed-nav a').forEach(anchor => {
   anchor.addEventListener('click', function(event) {
