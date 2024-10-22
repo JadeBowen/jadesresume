@@ -1,11 +1,32 @@
-window.addEventListener('load', function() {
-    const mainContent = document.querySelector('.main-content');
-    mainContent.style.display = 'block'; // Show main content immediately on page load
+// Splash Screen Fade-out
+setTimeout(function() {
+    document.getElementById('splash-screen').style.opacity = 0;
+    setTimeout(function() {
+        document.getElementById('splash-screen').style.display = 'none';
+    }, 500);
+}, 3000); 
+
+// Function to simulate resume download (for now)
+document.getElementById('download-resume').addEventListener('click', function() {
+    alert("Resume download functionality will be added soon!");
 });
 
-// Dark Mode Toggle
-const toggleButton = document.getElementById('toggleTheme');
-toggleButton.addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-    toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+// Temporary functions for Contact Me and LinkedIn buttons
+document.getElementById('contact-me').addEventListener('click', function() {
+    alert("Contact functionality will be added soon!");
 });
+
+document.getElementById('linkedin-connect').addEventListener('click', function() {
+    // For now, just open the LinkedIn profile in a new tab
+    window.open('https://linkedin.com/in/jadebowen', '_blank');
+});
+
+// Function to toggle job details
+function toggleDetails(jobId) {
+  var details = document.getElementById(jobId);
+  if (details.style.display === "none" || details.style.display === "") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
+}
