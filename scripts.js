@@ -1,32 +1,23 @@
-// Splash Screen Fade-out
-setTimeout(function() {
-    document.getElementById('splash-screen').style.opacity = 0;
-    setTimeout(function() {
-        document.getElementById('splash-screen').style.display = 'none';
-    }, 500);
-}, 3000); 
+window.addEventListener('load', function() {
+    const splash = document.querySelector('.splash-screen');
+    const mainContent = document.querySelector('.main-content');
 
-// Function to simulate resume download (for now)
-document.getElementById('download-resume').addEventListener('click', function() {
-    alert("Resume download functionality will be added soon!");
+    // Splash screen fade out after 3 seconds
+    setTimeout(() => {
+        splash.style.opacity = '0';
+        splash.style.transition = 'opacity 1.5s ease';
+    }, 3000);
+
+    // Ensure splash screen is completely hidden after fading
+    setTimeout(() => {
+        splash.style.display = 'none';  // Fully hide the splash screen
+        mainContent.style.display = 'block';  // Display the main content
+    }, 4500);  // Adjust timing to ensure smooth transition
 });
 
-// Temporary functions for Contact Me and LinkedIn buttons
-document.getElementById('contact-me').addEventListener('click', function() {
-    alert("Contact functionality will be added soon!");
+// Dark Mode Toggle
+const toggleButton = document.getElementById('toggleTheme');
+toggleButton.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 });
-
-document.getElementById('linkedin-connect').addEventListener('click', function() {
-    // For now, just open the LinkedIn profile in a new tab
-    window.open('https://linkedin.com/in/jadebowen', '_blank');
-});
-
-// Function to toggle job details
-function toggleDetails(jobId) {
-  var details = document.getElementById(jobId);
-  if (details.style.display === "none" || details.style.display === "") {
-    details.style.display = "block";
-  } else {
-    details.style.display = "none";
-  }
-}
