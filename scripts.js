@@ -3,30 +3,25 @@ setTimeout(function() {
     document.getElementById('splash-screen').style.opacity = 0;
     setTimeout(function() {
         document.getElementById('splash-screen').style.display = 'none';
-    }, 500); // Adjust timing as needed
-}, 3000); // Increased delay to 3 seconds
+    }, 500); 
+}, 3000); 
 
-// Function to simulate resume download (for now)
-document.getElementById('download-resume').addEventListener('click', function() {
-    alert("Resume download functionality will be added soon!");
-});
-
-// Temporary functions for Contact Me and LinkedIn buttons
-document.getElementById('contact-me').addEventListener('click', function() {
-    alert("Contact functionality will be added soon!");
-});
-
-document.getElementById('linkedin-connect').addEventListener('click', function() {
-    // For now, just open the LinkedIn profile in a new tab
-    window.open('https://linkedin.com/in/jadebowen', '_blank');
-});
-
-// Function to toggle job details
+// Function to toggle job details using classList
 function toggleDetails(jobId) {
   var details = document.getElementById(jobId);
-  if (details.style.display === "none" || details.style.display === "") {
-    details.style.display = "block";
-  } else {
-    details.style.display = "none";
-  }
+  details.classList.toggle('show-details'); 
 }
+
+// Add event listeners to "Read More" buttons
+const readMoreButtons = document.querySelectorAll('.read-more');
+readMoreButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const jobId = button.getAttribute('onclick').match(/'([^']+)'/)[1]; 
+    toggleDetails(jobId);
+  });
+});
+
+// Integrate LinkedIn button functionality (opens in new tab)
+document.getElementById('linkedin-connect').addEventListener('click', function() {
+    window.open('https://linkedin.com/in/jadebowen', '_blank');
+}); 
