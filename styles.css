@@ -1,45 +1,25 @@
-/* styles.css */
-
-/* General Styling */
-body {
-  font-family: 'Roboto', sans-serif, 'Helvetica Neue', Helvetica, Arial; /* Font stack */
+/* General Settings */
+* {
   margin: 0;
-  background-color: #222;
-  color: #eee;
-  line-height: 1.6;
-  transition: background-color 0.5s ease;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0d0d0d;
+  color: #e0e0e0;
+  overflow-x: hidden;
 }
 
-header {
-  background-color: #333;
-  padding: 30px 20px;
-  text-align: center;
+a {
+  color: #1db954;
+  text-decoration: none;
 }
 
-#profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 3px solid #00adb5;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-  color: #00adb5;
-  margin-bottom: 5px;
-}
-
-h2 {
-  color: #00adb5;
-  margin-top: 40px;
+a:hover {
+  color: #1db954;
+  text-shadow: 0px 0px 8px #1db954;
 }
 
 /* Splash Screen */
@@ -49,131 +29,149 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff; /* Fallback background color */
-  background-image: url("https://source.unsplash.com/1600x900/?technology,abstract"); /* Example image - REPLACE THIS */
-  background-size: cover;
+  background-color: #0d0d0d;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
-  opacity: 1; /* Initially show the splash screen */
-  transition: opacity 0.5s ease-in-out;
-  display: none; /* Initially hide the splash screen */
+  z-index: 9999;
 }
 
-/* Call-to-Action Buttons */
-.cta-button {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #00adb5;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1em;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+#splash-screen img {
+  width: 200px;
 }
 
-.cta-button:hover {
-  background-color: #007a80;
+/* Fixed Navigation */
+#fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  text-align: center;
+  padding: 10px 0;
 }
 
-/* Section Styling */
-section {
-  margin-bottom: 30px;
-  background-color: #393e46;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Skills List */
-#skills ul {
+#fixed-nav ul {
   list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-#skills li {
-  margin: 5px 10px;
-  padding: 8px 15px;
-  background-color: #4f545c;
-  border-radius: 5px;
-  color: #ffffff;
+#fixed-nav li {
+  display: inline;
+  margin-right: 20px;
 }
 
-/* Contact Section */
-#contact a {
-  color: #00adb5;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-#contact a:hover {
-  color: #007a80;
-}
-
-/* Job Sections */
-.job-section {
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.job-details {
-  display: none;
-  margin-top: 10px;
-  transition: max-height 0.5s ease-out;
-  overflow: hidden;
-  max-height: 0;
-}
-
-.show-details {
-  display: block;
-  max-height: 500px; /* Adjust as needed */
-}
-
-.read-more {
-  background-color: #00adb5;
+#fixed-nav a {
   color: white;
-  padding: 8px 15px;
+  font-weight: bold;
+}
+
+#fixed-nav a:hover {
+  text-shadow: 0px 0px 8px #1db954;
+}
+
+/* About Me Section */
+#about-me {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background-attachment: fixed;
+  background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true');
+  background-size: cover;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+}
+
+.headshot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.intro, .contact-info {
+  margin-left: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+/* Resume Section */
+#resume {
+  padding: 40px 20px;
+}
+
+.job-entry {
+  margin-bottom: 20px;
+}
+
+.job-entry h3, h4, p {
+  margin-bottom: 5px;
+}
+
+.expanded-details {
+  display: none;
+}
+
+/* Sexy Buttons with Animations */
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #1db954;
   border: none;
-  border-radius: 5px;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s;
 }
 
-.read-more:hover {
-  background-color: #007a80;
+button:hover {
+  background-color: #14833b;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px #1db954;
 }
 
-.qr-code {
-  max-width: 100px;
-  height: auto;
-  display: block;
-  margin: 10px auto;
+button:active {
+  transform: scale(0.98);
+  background-color: #107d33;
 }
 
-/* Media Queries for Responsiveness */
+/* Footer Section */
+footer {
+  background-color: #181818;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-contact {
+  margin-bottom: 20px;
+}
+
+.footer-buttons button {
+  margin-right: 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .container {
-    max-width: 90%;
+  #about-me {
+    flex-direction: column;
+    text-align: center;
   }
 
-  #skills ul {
-    justify-content: flex-start; /* Align skills list to the left on smaller screens */
+  .headshot {
+    margin: 0 auto;
   }
-}
 
-@media (max-width: 480px) {
-  #profile-image {
-    width: 120px;
-    height: 120px;
+  .contact-info {
+    margin-left: 0;
+  }
+
+  #fixed-nav li {
+    display: block;
+    margin: 5px 0;
   }
 }
