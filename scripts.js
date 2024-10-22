@@ -4,13 +4,13 @@ window.addEventListener('load', function() {
 
     // Splash screen fade out after 3 seconds
     setTimeout(() => {
-        splash.style.opacity = '0';
-        splash.style.transition = 'opacity 1.5s ease';
+        splash.style.opacity = '0'; // Fade out the splash screen
+        splash.style.transition = 'opacity 1.5s ease'; // Ensure smooth transition
     }, 3000);
 
     // Once the transition ends, hide the splash screen and show the main content
     splash.addEventListener('transitionend', () => {
         splash.style.display = 'none';  // Fully hide the splash screen
-        mainContent.classList.remove('hidden');  // Display the main content
+        mainContent.style.opacity = '1';  // Make main content visible with fade-in effect
     });
 });
