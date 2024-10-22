@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     const mainContent = document.querySelector('.main-content');
-    mainContent.style.display = 'block'; // Directly show the main content on page load
+    mainContent.style.display = 'block'; // Show main content immediately on page load
 });
 
 // Dark Mode Toggle
