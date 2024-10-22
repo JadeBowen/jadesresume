@@ -8,11 +8,11 @@ window.addEventListener('load', function() {
         splash.style.transition = 'opacity 1.5s ease';
     }, 3000);
 
-    // Ensure splash screen is completely hidden after fading
-    setTimeout(() => {
+    // Once the transition ends, hide the splash screen and show the main content
+    splash.addEventListener('transitionend', () => {
         splash.style.display = 'none';  // Fully hide the splash screen
-        mainContent.style.display = 'block';  // Display the main content
-    }, 4500);  // Adjust timing to ensure smooth transition
+        mainContent.classList.remove('hidden');  // Display the main content
+    });
 });
 
 // Dark Mode Toggle
