@@ -24,7 +24,12 @@ function expandJobDetails(button) {
 
 // vCard Download Function
 function downloadVCard() {
-  window.open('https://sandbox:/mnt/data/Jade_Bowen_Contact.vcf', '_blank'); // Link to the vCard
+  window.open('https://github.com/JadeBowen/JadeResume2.0/raw/main/Jade_Bowen.vcf', '_blank'); // Link to the vCard
+}
+
+// Resume Download Function
+function downloadResume() {
+  window.open('https://github.com/JadeBowen/JadeResume2.0/raw/main/Jade%20Bowen%20-%202024.pdf', '_blank'); // Link to the resume PDF
 }
 
 // Share on LinkedIn
