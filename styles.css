@@ -54,7 +54,7 @@ a:hover {
 
 /* About Me Section */
 #about-me {
-  padding: 40px 20px;
+  padding: 60px 20px; /* Increased padding for more space */
   background-color: #0d0d0d;
   text-align: center;
 }
@@ -62,13 +62,19 @@ a:hover {
 .logo-banner {
   width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* More space below logo */
 }
 
 .banner-logo {
-  width: 300px;
+  width: 250px; /* Reduced size */
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .banner-logo {
+    width: 150px; /* Even smaller on mobile */
+  }
 }
 
 .about-container {
@@ -96,15 +102,16 @@ a:hover {
 
 .contact-info p {
   margin-bottom: 10px;
+  font-size: 1rem; /* Smaller font size for contact info */
 }
 
 /* Resume Section */
 #resume {
-  padding: 40px 20px;
+  padding: 50px 20px; /* Increased padding for spacing */
 }
 
 .job-entry {
-  margin-bottom: 40px;
+  margin-bottom: 50px; /* More space between job entries */
 }
 
 .job-entry h3 {
@@ -122,7 +129,7 @@ a:hover {
 
 /* Contact Card Section */
 #contact-card {
-  padding: 40px 20px;
+  padding: 60px 20px;
   background-color: #181818;
   text-align: center;
 }
@@ -144,7 +151,7 @@ a:hover {
 
 .contact-card p {
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Reduced font size */
 }
 
 .contact-card a {
@@ -157,7 +164,7 @@ a:hover {
 }
 
 .contact-card i {
-  margin-right: 10px;
+  margin-right: 8px; /* Added margin for better spacing of icons */
   font-size: 1.2rem;
 }
 
@@ -239,7 +246,7 @@ footer {
   }
 
   .banner-logo {
-    width: 250px; /* Slightly smaller for mobile */
+    width: 150px; /* Slightly smaller for mobile */
   }
 
   .contact-card {
