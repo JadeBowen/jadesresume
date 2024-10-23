@@ -35,13 +35,21 @@ function downloadResume() {
 // Share on LinkedIn
 function shareOnLinkedIn() {
   const shareURL = window.location.href;  // Get current page URL
-  const linkedinShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-  window.open(linkedinShareURL, '_blank', 'width=600,height=400');
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    window.open(`linkedin://shareArticle?mini=true&url=${encodeURIComponent(shareURL)}`, '_blank');
+  } else {
+    const linkedinShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+    window.open(linkedinShareURL, '_blank', 'width=600,height=400');
+  }
 }
 
 // Share on Facebook
 function shareOnFacebook() {
-  const shareURL = window.location.href;  // Get current page URL
-  const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
-  window.open(facebookShareURL, '_blank', 'width=600,height=400');
+  const shareURL = window.location.href;
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    window.open(`fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`, '_blank');
+  } else {
+    const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
+    window.open(facebookShareURL, '_blank', 'width=600,height=400');
+  }
 }
