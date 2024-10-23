@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jade's Resume</title>
+  
+  <!-- Link to your CSS file -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- FontAwesome for icons -->
-  <script defer src="script.js"></script>
+  
+  <!-- For FontAwesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -23,226 +26,76 @@
   <!-- About Me Section with Logo Banner -->
   <section id="about-me">
     <div class="logo-banner">
-      <!-- Add your logo here -->
-      <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade Bowen Logo" class="banner-logo">
+      <img src="old%20logo.JPG" alt="Jade Bowen Logo" class="banner-logo">
     </div>
     <div class="about-container">
-      <img class="headshot" src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot">
+      <img class="headshot" src="head%20shot%20suit.jpg" alt="Jade Bowen Headshot">
       <div class="intro">
         <h1>Jade Bowen</h1>
-        <p>From an early age, I was captivated by telecommunications and the transformative impact of technology on our lives. Over the past two decades, I have honed my skills in various roles within the construction and telecommunications industries, tackling complex challenges and delivering high-quality results. My journey has been defined by a commitment to excellence, a passion for innovation, and a dedication to making a positive impact through my work. Whether managing large-scale projects, leading teams, or implementing cutting-edge solutions, I thrive on pushing the boundaries and driving meaningful change.</p>
+        <p>From an early age, I was captivated by telecommunications and the transformative impact of technology on our lives...</p>
       </div>
       <div class="contact-info">
-        <p>Boise, ID</p>
-        <p>208-371-0647</p>
-        <p><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-        <p><a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-        <p><a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
+        <p><i class="fas fa-phone"></i> 208-371-0647</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Resume Section -->
+  <!-- Resume Section with Read More buttons -->
   <section id="resume">
     <h2>Professional Experience</h2>
 
-    <!-- Experience 1 -->
+    <!-- Example Job Entry -->
     <div class="job-entry">
       <h3>Boise's Best Auto Sales</h3>
       <h4>Finance and Marketing Manager</h4>
       <p>June 2023 – Present</p>
       <p class="description">Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
       <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
+      <div class="expanded-details" style="display: none;">
         <ul>
           <li>Manage financial strategies, including budgeting, forecasting, and financial reporting, to drive profitability.</li>
           <li>Led marketing initiatives to increase brand awareness and customer engagement through digital and offline channels.</li>
-          <li>Developed and maintained strong customer relationships, ensuring excellent customer service and satisfaction.</li>
         </ul>
       </div>
     </div>
+    <!-- Add additional job entries in the same format -->
 
-    <!-- Experience 2 -->
-    <div class="job-entry">
-      <h3>First Point Group – Ericsson</h3>
-      <h4>Telecommunications Construction Coordinator / Network Engineer (Contract)</h4>
-      <p>Oct 2021 – July 2022</p>
-      <p class="description">Coordinated cell tower construction and network projects, including planning, budgeting, and execution...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Managed multi-million dollar budgets, optimizing resource allocation to reduce cost overruns.</li>
-          <li>Led field teams in installing and commissioning wireless communication systems, improving field operations by refining crew schedules and resource allocation.</li>
-          <li>Coordinated with Ericsson project managers and other stakeholders to ensure smooth deployment of telecommunications infrastructure.</li>
-        </ul>
+  </section>
+
+  <!-- Contact Card Section -->
+  <section id="contact-card">
+    <div class="contact-card">
+      <h2>Contact Information</h2>
+      <div class="card-content">
+        <p><strong>Jade Bowen</strong></p>
+        <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
+        <p><i class="fas fa-phone"></i> 208-371-0647</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+
+        <!-- vCard Download Button -->
+        <button id="vcard-button" onclick="downloadVCard()">Download Contact Info (vCard)</button>
       </div>
     </div>
+  </section>
 
-    <!-- Experience 3 -->
-    <div class="job-entry">
-      <h3>Westland Towers</h3>
-      <h4>Senior Field Technician (Contract)</h4>
-      <p>July 2022 – June 2023</p>
-      <p class="description">Led installation and maintenance of wireless communication systems, including cellular antennas and microwave technologies...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Performed preventive and corrective maintenance to maximize network reliability and uptime.</li>
-          <li>Spearheaded cellular site upgrades to improve network performance and reduce downtime.</li>
-          <li>Trained junior technicians on safety standards and protocols to ensure project safety and compliance.</li>
-        </ul>
-      </div>
-    </div><!-- Experience 4 -->
-    <div class="job-entry">
-      <h3>KGP Co</h3>
-      <h4>Outside Plant (OSP) Construction Manager (Contract)</h4>
-      <p>Feb 2021 – Oct 2021</p>
-      <p class="description">Directed the installation of 500+ miles of fiber optic infrastructure for FTTH and FTTC projects...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Directed the installation of 500+ miles of fiber optic infrastructure for FTTH and FTTC projects, overseeing 5 supervisors and 20+ field crews.</li>
-          <li>Managed all aspects of OSP construction, including scheduling, material procurement, and quality control.</li>
-          <li>Led daily coordination of contractors and subcontractors, ensuring adherence to safety and industry standards.</li>
-          <li>Handled permitting and Right-of-Way access, coordinating with local authorities to ensure regulatory compliance.</li>
-          <li>Conducted site inspections to ensure compliance with client expectations, safety protocols, and quality standards.</li>
-        </ul>
-      </div>
+  <!-- Footer Section with Share Buttons -->
+  <footer>
+    <div class="footer-buttons">
+      <!-- LinkedIn Share Button -->
+      <button id="linkedin-share" onclick="shareOnLinkedIn()">Share on LinkedIn</button>
+      
+      <!-- Facebook Share Button -->
+      <button id="facebook-share" onclick="shareOnFacebook()">Share on Facebook</button>
     </div>
+  </footer>
 
-    <!-- Experience 5 -->
-    <div class="job-entry">
-      <h3>MasTec Network Solutions</h3>
-      <h4>Construction Manager</h4>
-      <p>Jan 2018 – April 2020</p>
-      <p class="description">Managed large-scale LTE and 5G deployment projects, overseeing up to 15 crews...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Managed large-scale LTE and 5G deployment projects, overseeing up to 15 crews.</li>
-          <li>Collaborated with stakeholders to ensure compliance with safety and quality standards.</li>
-          <li>Successfully deployed 5G network upgrades, improving coverage and system performance while reducing rework and improving quality control.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Experience 6 -->
-    <div class="job-entry">
-      <h3>Broken Arrow Communications</h3>
-      <h4>Regional Manager</h4>
-      <p>July 2015 – May 2017</p>
-      <p class="description">Managed 8 crews across multiple cell tower construction sites, overseeing new builds, equipment upgrades, and technology implementations...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Managed 8 crews across multiple cell tower construction sites, overseeing new builds, equipment upgrades, and technology implementations.</li>
-          <li>Directed projects through scheduling improvements, budget management, and team leadership to improve completion times.</li>
-          <li>Implemented safety training programs that resulted in zero work-related incidents.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Experience 7 -->
-    <div class="job-entry">
-      <h3>Benchmark Electric</h3>
-      <h4>Construction Manager / Foreman</h4>
-      <p>March 2012 – July 2015</p>
-      <p class="description">Led teams in installing antennas, coaxial cabling, and wireless communication systems...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Led teams in installing antennas, coaxial cabling, and wireless communication systems.</li>
-          <li>Planned and supervised all construction phases, including tower erection, antenna installation, and fiber integration.</li>
-          <li>Successfully completed LTE and 5G network upgrades, ensuring integration with existing infrastructure.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Experience 8 -->
-    <div class="job-entry">
-      <h3>SBA Communications</h3>
-      <h4>Tower Technician</h4>
-      <p>March 2012 – July 2015</p>
-      <p class="description">Installed and maintained cell towers, including antennas, coaxial cabling, and lighting systems...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Installed and maintained cell towers, including antennas, coaxial cabling, and lighting systems.</li>
-          <li>Performed routine and emergency maintenance to ensure operational stability.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Experience 9 -->
-    <div class="job-entry">
-      <h3>Cold Souls LLC</h3>
-      <h4>Owner/Operator</h4>
-      <p>December 2007 – March 2013</p>
-      <p class="description">Managed all aspects of business operations, including finance, product design, and customer relationship management...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Managed all aspects of business operations, including finance, product design, and customer relationship management.</li>
-          <li>Designed marketing campaigns and built a loyal customer base through quality services and customer engagement.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Experience 10 -->
-    <div class="job-entry">
-      <h3>Unit Drilling</h3>
-      <h4>Floor Hand/Chain Hand</h4>
-      <p>March 2005 – November 2007</p>
-      <p class="description">Operated hydraulic equipment and assisted with rig setup and maintenance in high-risk environments...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details">
-        <ul>
-          <li>Operated hydraulic equipment and assisted with rig setup and maintenance in high-risk environments.</li>
-          <li>Performed daily inspections and preventive maintenance on machinery to ensure operational safety.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Certifications Section -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>OSHA 10 & 30 Certified</li>
-        <li>First Aid and CPR Certified</li>
-        <li>ComTrain Certified Instructor (Tower Rescue and Rope Access)</li>
-        <li>ODM Fiber Testing & Cleaning Certified</li>
-        <li>Commscope & Andrew's Certification</li>
-      </ul>
-    </section>
-
-    <!-- Contact Card Section -->
-    <section id="contact-card">
-      <div class="contact-card">
-        <h2>Contact Information</h2>
-        <div class="card-content">
-          <p><strong>Jade Bowen</strong></p>
-          <p>Boise, ID</p>
-          <p><i class="fas fa-phone"></i> 208-371-0647</p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-          <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-          <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
-
-          <!-- Download Resume Button -->
-          <button id="download-button">Download Resume (PDF)</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-      <div class="footer-buttons">
-        <!-- LinkedIn Share Button -->
-        <button id="linkedin-share" onclick="shareOnLinkedIn()">Share on LinkedIn</button>
-        
-        <!-- Facebook Share Button -->
-        <button id="facebook-share" onclick="shareOnFacebook()">Share on Facebook</button>
-      </div>
-    </footer>
-
+  <!-- Link to your JavaScript file -->
+  <script defer src="scripts.js"></script>
 </body>
 </html>
