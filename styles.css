@@ -1,10 +1,28 @@
 /* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true');
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-attachment: fixed; /* Parallax scrolling effect */
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
     margin: 0;
     padding: 0;
+    filter: brightness(1.2) contrast(1.1); /* Enhance brightness and contrast */
+    position: relative;
+}
+
+/* Adding a subtle overlay for readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    z-index: -1;
 }
 
 /* Fixed Navigation */
@@ -12,7 +30,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Keep it slightly transparent */
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 10px 0;
     z-index: 1000;
 }
@@ -44,17 +62,6 @@ body {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
     padding-bottom: 50px;
-}
-
-.logo-banner {
-    margin-bottom: 20px;
-}
-
-.banner-logo {
-    width: 100%; /* Full-width background image */
-    height: auto;
-    max-height: 400px; /* Limiting the height for proper scaling */
-    object-fit: cover;
 }
 
 .about-container {
@@ -102,8 +109,11 @@ body {
 
 /* Resume Section */
 #resume {
-    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay for readability */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background to improve readability */
     padding: 50px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px; /* Keep sections centered and maintain a readable width */
 }
 
 #resume h2 {
@@ -160,8 +170,11 @@ body {
 
 /* Contact Card Section */
 #contact-card {
-    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
     padding: 50px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
 }
 
 .contact-card {
@@ -169,8 +182,6 @@ body {
     padding: 20px;
     background-color: #333;
     border-radius: 10px;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
 .contact-card h2 {
@@ -193,7 +204,7 @@ body {
     text-decoration: underline;
 }
 
-#download-resume, #download-vcard {
+#download-resume {
     background-color: #00ADEF; /* Electric Blue button */
     color: #000;
     padding: 10px 20px;
@@ -205,34 +216,8 @@ body {
     width: 100%;
 }
 
-#download-resume:hover, #download-vcard:hover {
+#download-resume:hover {
     background-color: #FF9100; /* Neon Orange hover effect */
-}
-
-/* Footer Section */
-footer {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 30px 0;
-    text-align: center;
-}
-
-.footer-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.footer-buttons button {
-    background-color: #6200EA; /* Deep Purple for secondary buttons */
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.footer-buttons button:hover {
-    background-color: #18FFFF; /* Cyan hover effect */
 }
 
 /* Mobile-Specific Styling */
