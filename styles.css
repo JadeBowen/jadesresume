@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true') no-repeat center center fixed;
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
     color: white;
     overflow-x: hidden;
@@ -35,7 +35,7 @@ nav a:hover {
 
 /* Profile Image Styling */
 .profile-image {
-    width: 120px; /* Adjusted for a better fit */
+    width: 120px; 
     height: 120px;
     border-radius: 50%;
     border: 4px solid #00E5FF;
@@ -46,7 +46,7 @@ nav a:hover {
 
 /* Text Box Styling */
 .text-box {
-    background-color: rgba(0, 0, 0, 0.6); /* Increased transparency */
+    background-color: rgba(0, 0, 0, 0.6); 
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 2em;
@@ -96,6 +96,42 @@ button:hover {
     padding: 2em 0;
 }
 
+/* Resume Download Button */
+.resume-download-btn {
+    background-color: #00E5FF;
+    color: white;
+    font-size: 18px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 1em 0;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download-btn:hover {
+    background-color: #0086FF;
+}
+
+/* Adjusting Spacing */
+.section {
+    padding: 4em 10%;
+}/* QR Code Styling */
+.qr-code {
+    display: block;
+    margin: 20px auto;
+    width: 150px; /* Adjust size as necessary */
+    height: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Contact Information Styling with QR Codes */
+.contact-info {
+    text-align: center;
+    padding: 2em 0;
+}
+
 .contact-info a {
     display: block;
     margin: 0.5em 0;
@@ -106,6 +142,10 @@ button:hover {
 
 .contact-info a:hover {
     color: #0086FF;
+}
+
+.contact-info .qr-code {
+    margin-top: 20px;
 }
 
 .contact-info button {
@@ -122,18 +162,6 @@ button:hover {
     background-color: #0086FF;
 }
 
-/* Adjusting Spacing */
-.section {
-    padding: 4em 10%;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1em 0;
-    color: white;
-}
-
 /* Mobile View Adjustments */
 @media only screen and (max-width: 600px) {
     .text-box {
@@ -142,8 +170,8 @@ footer {
     }
 
     .profile-image {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     button {
@@ -153,5 +181,10 @@ footer {
 
     .contact-info a {
         font-size: 16px;
+    }
+
+    .qr-code {
+        width: 120px; /* Slightly smaller for mobile */
+        height: 120px;
     }
 }
