@@ -1,104 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jade's Resume</title>
-  
-  <!-- Link to your CSS file -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- For FontAwesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jade Bowen - Resume</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Link for FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
-  <!-- Fixed Navigation -->
-  <nav id="fixed-nav">
-    <ul>
-      <li><a href="#about-me">About Me</a></li>
-      <li><a href="#resume">Experience</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact-card">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- About Me Section with Logo Banner -->
-  <section id="about-me">
-    <div class="logo-banner">
-      <img src="old%20logo.JPG" alt="Jade Bowen Logo" class="banner-logo">
-    </div>
-    <div class="about-container">
-      <img class="headshot" src="head%20shot%20suit.jpg" alt="Jade Bowen Headshot">
-      <div class="intro">
-        <h1>Jade Bowen</h1>
-        <p>From an early age, I was captivated by telecommunications and the transformative impact of technology on our lives...</p>
-      </div>
-      <div class="contact-info">
-        <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
-        <p><i class="fas fa-phone"></i> 208-371-0647</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-        <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resume Section with Read More buttons -->
-  <section id="resume">
-    <h2>Professional Experience</h2>
-
-    <!-- Example Job Entry -->
-    <div class="job-entry">
-      <h3>Boise's Best Auto Sales</h3>
-      <h4>Finance and Marketing Manager</h4>
-      <p>June 2023 – Present</p>
-      <p class="description">Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
-      <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
-      <div class="expanded-details" style="display: none;">
+    <!-- Fixed Navigation -->
+    <nav id="fixed-nav">
         <ul>
-          <li>Manage financial strategies, including budgeting, forecasting, and financial reporting, to drive profitability.</li>
-          <li>Led marketing initiatives to increase brand awareness and customer engagement through digital and offline channels.</li>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#resume">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact-card">Contact</a></li>
         </ul>
-      </div>
-    </div>
-    <!-- Add additional job entries in the same format -->
+    </nav>
 
-  </section>
+    <!-- About Me Section with Logo -->
+    <section id="about-me">
+        <div class="logo-banner">
+            <img src="old%20logo.JPG" alt="Jade Bowen Logo" class="banner-logo">
+        </div>
+        <div class="about-container">
+            <img class="headshot" src="head%20shot%20suit.jpg" alt="Jade Bowen Headshot">
+            <div class="intro">
+                <h1>Jade Bowen</h1>
+                <p>From an early age, I was captivated by telecommunications and the transformative impact of technology on our lives...</p>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
+                <p><i class="fas fa-phone"></i> 208-371-0647</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Card Section -->
-  <section id="contact-card">
-    <div class="contact-card">
-      <h2>Contact Information</h2>
-      <div class="card-content">
-        <p><strong>Jade Bowen</strong></p>
-        <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
-        <p><i class="fas fa-phone"></i> 208-371-0647</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
-        <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
+    <!-- Resume Section with Read More buttons -->
+    <section id="resume">
+        <h2>Professional Experience</h2>
 
-        <!-- vCard Download Button -->
-        <button id="vcard-button" onclick="downloadVCard()">Download Contact Info (vCard)</button>
+        <!-- Example Job Entry -->
+        <div class="job-entry">
+            <h3>Boise's Best Auto Sales</h3>
+            <h4>Finance and Marketing Manager</h4>
+            <p>June 2023 – Present</p>
+            <p class="description">Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
+            <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
+            <div class="expanded-details" style="display: none;">
+                <ul>
+                    <li>Manage financial strategies, including budgeting, forecasting, and financial reporting, to drive profitability.</li>
+                    <li>Led marketing initiatives to increase brand awareness and customer engagement through digital and offline channels.</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Add more job entries as needed -->
+    </section>
 
-        <!-- Resume Download Button -->
-        <button id="download-resume" onclick="downloadResume()">Download Resume (PDF)</button>
-      </div>
-    </div>
-  </section>
+    <!-- Contact Card Section -->
+    <section id="contact-card">
+        <div class="contact-card">
+            <h2>Contact Information</h2>
+            <div class="card-content">
+                <p><strong>Jade Bowen</strong></p>
+                <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
+                <p><i class="fas fa-phone"></i> 208-371-0647</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
 
-  <!-- Footer Section with Share Buttons -->
-  <footer>
-    <div class="footer-buttons">
-      <!-- LinkedIn Share Button -->
-      <button id="linkedin-share" onclick="shareOnLinkedIn()">Share on LinkedIn</button>
-      
-      <!-- Facebook Share Button -->
-      <button id="facebook-share" onclick="shareOnFacebook()">Share on Facebook</button>
-    </div>
-  </footer>
+                <!-- vCard Download Button -->
+                <button id="vcard-button" onclick="downloadVCard()">Download Contact Info (vCard)</button>
 
-  <!-- Link to your JavaScript file -->
-  <script defer src="scripts.js"></script>
+                <!-- Resume Download Button -->
+                <button id="download-resume" onclick="downloadResume()">Download Resume (PDF)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section with Share Buttons -->
+    <footer>
+        <div class="footer-buttons">
+            <!-- LinkedIn Share Button -->
+            <button id="linkedin-share" onclick="shareOnLinkedIn()">Share on LinkedIn</button>
+            
+            <!-- Facebook Share Button -->
+            <button id="facebook-share" onclick="shareOnFacebook()">Share on Facebook</button>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script defer src="scripts.js"></script>
 </body>
 </html>
