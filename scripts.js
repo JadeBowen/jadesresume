@@ -22,11 +22,6 @@ function expandJobDetails(button) {
   }
 }
 
-// vCard Download Function (ZIP Version)
-function downloadVCard() {
-  window.open('https://github.com/JadeBowen/jadesresume/raw/main/Jade_Bowen%20v%20card.zip', '_blank'); // Correct link to the ZIP version of vCard
-}
-
 // Resume Download Function
 function downloadResume() {
   window.open('https://github.com/JadeBowen/jadesresume/raw/main/Jade%20Bowen%20-%202024.pdf', '_blank'); // Correct link to the GitHub-hosted resume PDF
@@ -35,21 +30,25 @@ function downloadResume() {
 // Share on LinkedIn
 function shareOnLinkedIn() {
   const shareURL = window.location.href;  // Get current page URL
+  const linkedinMobileAppURL = `linkedin://shareArticle?mini=true&url=${encodeURIComponent(shareURL)}`;
+  const linkedinBrowserURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+
   if (/Mobi|Android/i.test(navigator.userAgent)) {
-    window.open(`linkedin://shareArticle?mini=true&url=${encodeURIComponent(shareURL)}`, '_blank');
+    window.location.href = linkedinMobileAppURL;  // Attempt to open in LinkedIn app
   } else {
-    const linkedinShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-    window.open(linkedinShareURL, '_blank', 'width=600,height=400');
+    window.open(linkedinBrowserURL, '_blank', 'width=600,height=400'); // Open in browser
   }
 }
 
 // Share on Facebook
 function shareOnFacebook() {
   const shareURL = window.location.href;
+  const facebookMobileAppURL = `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
+  const facebookBrowserURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
+
   if (/Mobi|Android/i.test(navigator.userAgent)) {
-    window.open(`fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`, '_blank');
+    window.location.href = facebookMobileAppURL;  // Attempt to open in Facebook app
   } else {
-    const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
-    window.open(facebookShareURL, '_blank', 'width=600,height=400');
+    window.open(facebookBrowserURL, '_blank', 'width=600,height=400'); // Open in browser
   }
 }
