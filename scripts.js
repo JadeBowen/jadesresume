@@ -6,25 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const details = this.nextElementSibling;
             if (details.style.display === 'none' || details.style.display === '') {
-                details.style.display = 'block';
-                this.textContent = 'Read Less';
+                details.style.display = 'block'; // Show the details
+                this.textContent = 'Read Less'; // Change the button text
             } else {
-                details.style.display = 'none';
-                this.textContent = 'Read More';
+                details.style.display = 'none'; // Hide the details
+                this.textContent = 'Read More'; // Reset the button text
             }
         });
-    });
-
-    // Handle LinkedIn and Facebook share buttons
-    const linkedinButton = document.querySelector('.footer-buttons button:nth-child(1)');
-    const facebookButton = document.querySelector('.footer-buttons button:nth-child(2)');
-
-    linkedinButton.addEventListener('click', function() {
-        window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/JadeBowen/jadesresume', '_blank');
-    });
-
-    facebookButton.addEventListener('click', function() {
-        window.open('https://www.facebook.com/sharer/sharer.php?u=https://github.com/JadeBowen/jadesresume', '_blank');
     });
 
     // Handle download of Resume (PDF)
@@ -32,13 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
     resumeButton.addEventListener('click', function() {
         window.open('https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true', '_blank');
     });
-
-    // Handle download of vCard (Removed as per new requirements)
-    const vcardButton = document.getElementById('download-vcard');
-    if (vcardButton) {
-        vcardButton.addEventListener('click', function() {
-            window.open('https://github.com/JadeBowen/jadesresume/blob/main/Jade_Bowen.vcf', '_blank');
-        });
-    }
-    
 });
