@@ -22,30 +22,21 @@ function expandJobDetails(button) {
   }
 }
 
-// Share Resume on LinkedIn
+// vCard Download Function
+function downloadVCard() {
+  window.open('https://sandbox:/mnt/data/Jade_Bowen_Contact.vcf', '_blank'); // Link to the vCard
+}
+
+// Share on LinkedIn
 function shareOnLinkedIn() {
   const shareURL = window.location.href;  // Get current page URL
   const linkedinShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-  
-  // Open the LinkedIn share window
   window.open(linkedinShareURL, '_blank', 'width=600,height=400');
 }
 
-// Share Resume on Facebook
+// Share on Facebook
 function shareOnFacebook() {
   const shareURL = window.location.href;  // Get current page URL
   const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`;
-  
-  // Open the Facebook share window
   window.open(facebookShareURL, '_blank', 'width=600,height=400');
 }
-
-// vCard Download Function
-function downloadVCard() {
-  window.open('path_to_vcard/Jade_Bowen_Contact.vcf', '_blank');
-}
-
-// Download Resume PDF
-document.getElementById('download-button').addEventListener('click', function() {
-  window.open('path_to_your_resume.pdf', '_blank');
-});
