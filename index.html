@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jade Bowen - Resume</title>
-
-    <!-- Link to external CSS -->
+    <title>Jade Bowen's Resume</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Link for FontAwesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-
-    <!-- Fixed Navigation -->
     <nav id="fixed-nav">
         <ul>
             <li><a href="#about-me">About Me</a></li>
             <li><a href="#resume">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact-card">Certifications</a></li>
             <li><a href="#contact-card">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- About Me Section with New Image (Replacing the logo) -->
     <section id="about-me">
         <div class="logo-banner">
-            <img src="https://github.com/JadeBowen/jadesresume/blob/main/data%20to%20pc.jpg?raw=true" alt="Jade Bowen Image" class="banner-logo">
+            <img src="https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true" alt="Glowing Tower" class="banner-logo">
         </div>
         <div class="about-container">
             <img class="headshot" src="head%20shot%20suit.jpg" alt="Jade Bowen Headshot">
@@ -44,17 +38,13 @@
         </div>
     </section>
 
-    <!-- Resume Section with Read More buttons -->
     <section id="resume">
         <h2>Professional Experience</h2>
-
-        <!-- Example Job Entry -->
         <div class="job-entry">
             <h3>Boise's Best Auto Sales</h3>
-            <h4>Finance and Marketing Manager</h4>
-            <p>June 2023 – Present</p>
+            <h4>Finance and Marketing Manager | June 2023 – Present</h4>
             <p class="description">Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
-            <button class="read-more" onclick="expandJobDetails(this)">Read More</button>
+            <button class="read-more">Read More</button>
             <div class="expanded-details" style="display: none;">
                 <ul>
                     <li>Manage financial strategies, including budgeting, forecasting, and financial reporting, to drive profitability.</li>
@@ -62,38 +52,63 @@
                 </ul>
             </div>
         </div>
+        
+        <div class="job-entry">
+            <h3>First Point Group – Ericsson</h3>
+            <h4>Telecommunications Construction Coordinator / Network Engineer (Contract) | October 2021 – July 2022</h4>
+            <p class="description">Coordinated cell tower construction and network projects, including planning, budgeting, and execution.</p>
+            <button class="read-more">Read More</button>
+            <div class="expanded-details" style="display: none;">
+                <ul>
+                    <li>Coordinated cell tower construction and network projects, including planning, budgeting, and execution.</li>
+                    <li>Managed multi-million dollar budgets, optimizing resource allocation to reduce cost overruns.</li>
+                    <li>Led field teams in installing and commissioning wireless communication systems, improving field operations by refining crew schedules and resource allocation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-entry">
+            <h3>Westland Towers</h3>
+            <h4>Senior Field Technician (Contract) | July 2022 – June 2023</h4>
+            <p class="description">Led installation and maintenance of wireless communication systems, including cellular antennas and microwave technologies.</p>
+            <button class="read-more">Read More</button>
+            <div class="expanded-details" style="display: none;">
+                <ul>
+                    <li>Led installation and maintenance of wireless communication systems, including cellular antennas and microwave technologies.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Certifications</h2>
+        <ul>
+            <li>OSHA 10 & 30 Certified</li>
+            <li>First Aid and CPR Certified</li>
+            <li>Comtrain Certified Instructor (Tower Rescue and Rope Access)</li>
+            <li>ODI Fiber Testing & Cleaning Certified</li>
+        </ul>
     </section>
 
-    <!-- Contact Card Section (vCard removed) -->
     <section id="contact-card">
         <div class="contact-card">
             <h2>Contact Information</h2>
             <div class="card-content">
-                <p><strong>Jade Bowen</strong></p>
+                <p>Jade Bowen</p>
                 <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
                 <p><i class="fas fa-phone"></i> 208-371-0647</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
                 <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">linkedin.com/in/jadebowen</a></p>
                 <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">github.com/JadeBowen</a></p>
-
-                <!-- Resume Download Button (vCard Removed) -->
-                <button id="download-resume" onclick="downloadResume()">Download Resume (PDF)</button>
             </div>
+            <button id="download-resume" onclick="window.open('https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true', '_blank')">Download Resume (PDF)</button>
+            <button id="download-vcard" onclick="window.open('https://github.com/JadeBowen/jadesresume/blob/main/Jade_Bowen.vcf', '_blank')">Download Contact Info (vCard)</button>
         </div>
     </section>
 
-    <!-- Footer Section with Share Buttons -->
     <footer>
         <div class="footer-buttons">
-            <!-- LinkedIn Share Button -->
-            <button id="linkedin-share" onclick="shareOnLinkedIn()">Share on LinkedIn</button>
-            
-            <!-- Facebook Share Button -->
-            <button id="facebook-share" onclick="shareOnFacebook()">Share on Facebook</button>
+            <button onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/JadeBowen/jadesresume', '_blank')">Share on LinkedIn</button>
+            <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://github.com/JadeBowen/jadesresume', '_blank')">Share on Facebook</button>
         </div>
     </footer>
-
-    <!-- Link to your JavaScript file -->
-    <script defer src="scripts.js"></script>
 </body>
 </html>
