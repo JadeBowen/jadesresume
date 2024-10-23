@@ -1,5 +1,3 @@
-/* Updated CSS for Jade's Resume */
-
 /* General Page Setup */
 body {
     font-family: 'Roboto', sans-serif;
@@ -37,8 +35,8 @@ nav a:hover {
 
 /* Profile Image Styling */
 .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 120px; /* Adjusted for a better fit */
+    height: 120px;
     border-radius: 50%;
     border: 4px solid #00E5FF;
     display: block;
