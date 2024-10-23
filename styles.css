@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true') no-repeat center center fixed;
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip%20bg.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
     color: white;
     overflow-x: hidden;
@@ -19,18 +19,9 @@ header {
 
 nav {
     display: flex;
-    justify-content: center; /* Adjusted for horizontal alignment */
+    justify-content: space-around;
     padding: 1em;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px; /* Added margin for horizontal spacing */
+    margin-top: 2em; /* Adds space below the sticky menu */
 }
 
 nav a {
@@ -45,7 +36,7 @@ nav a:hover {
 
 /* Profile Image Styling */
 .profile-image {
-    width: 120px; /* Adjusted for a better fit */
+    width: 120px;
     height: 120px;
     border-radius: 50%;
     border: 4px solid #00E5FF;
@@ -56,7 +47,7 @@ nav a:hover {
 
 /* Text Box Styling */
 .text-box {
-    background-color: rgba(0, 0, 0, 0.6); /* Increased transparency */
+    background-color: rgba(0, 0, 0, 0.6); 
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 2em;
@@ -130,71 +121,104 @@ button:hover {
 
 .contact-info button:hover {
     background-color: #0086FF;
-}/* QR Codes Section */
+}
+
+/* QR Code Styling */
 .qr-codes {
     display: flex;
-    justify-content: center;
-    margin-bottom: 2em;
-}
-
-.qr-codes img {
-    width: 150px; /* Adjust the size of the QR codes */
-    height: 150px;
-    margin: 0 20px; /* Space between the QR codes */
-}
-
-.qr-codes p {
-    text-align: center;
-    margin-top: 10px;
-    color: white;
-}
-
-/* Footer Styling */
-footer {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer .footer-contact-info {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-}
-
-footer .footer-contact-info a {
-    margin: 0 15px; /* Adjust spacing between contact items in footer */
-    font-size: 18px;
-    color: #00E5FF;
-}
-
-footer .footer-contact-info a:hover {
-    color: #0086FF;
-}
-
-/* Icons for Contact Info */
-.contact-info-icons {
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2em 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-contact p {
+    margin: 0.5em 0;
+}/* Footer Contact Info */
+footer .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+footer .footer-contact a {
+    color: #00E5FF;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-contact a:hover {
+    color: #0086FF;
+}
+
+/* Icon Styling for Contact Info */
+.contact-info-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
 .contact-info-icons a {
-    margin: 0 10px; /* Space between icons */
+    display: flex;
+    align-items: center;
+    color: #00E5FF;
+    font-size: 18px;
+    text-decoration: none;
 }
 
-.contact-info-icons img {
-    width: 24px; /* Adjust the size of the icons */
-    height: 24px;
+.contact-info-icons a:hover {
+    color: #0086FF;
 }
 
-/* Adjusting Spacing */
-.section {
-    padding: 4em 10%;
+.contact-info-icons i {
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+/* Adjusting Spacing for QR Codes and Descriptions */
+.qr-codes .qr-code {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.qr-codes img {
+    max-width: 140px;
+    height: auto;
+}
+
+.qr-codes p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00E5FF;
+    text-shadow: 1px 1px 3px #000;
 }
 
 /* Mobile View Adjustments */
 @media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .text-box {
         margin: 1em;
         padding: 15px;
@@ -216,9 +240,11 @@ footer .footer-contact-info a:hover {
 
     .qr-codes {
         flex-direction: column;
+        gap: 10px;
     }
 
-    .qr-codes img {
-        margin: 10px 0;
+    footer .footer-contact {
+        flex-direction: column;
+        gap: 1em;
     }
 }
