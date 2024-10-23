@@ -1,106 +1,159 @@
-/* Background image full-page styling */
+/* Updated CSS for Jade's Resume */
+
+/* General Page Setup */
 body {
-    background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true');
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: #111; /* Fallback for older browsers */
+    color: white;
+    overflow-x: hidden;
 }
 
-/* Overlay to make background more visible */
-body::before {
-    content: '';
+header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance contrast */
-    z-index: -1; /* Send it behind all content */
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
 }
 
-/* Profile image styling */
-.profile-photo {
-    width: 150px; /* Adjust to smaller thumbnail size */
-    height: 150px;
-    border-radius: 50%;
-    margin: 20px auto;
-    display: block;
-    border: 3px solid #00E5FF; /* Neon cyan border for a futuristic vibe */
-}
-
-/* Transparent text boxes */
-.text-box {
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent box */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4); /* Light shadow for depth */
-}
-
-/* Text contrast improvements */
-.text-section {
-    color: #FFFFFF; /* White text for contrast */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for better legibility */
-}
-
-/* Button styling */
-button, .read-more {
-    background-color: #00E5FF; /* Neon cyan */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover, .read-more:hover {
-    background-color: #0086FF; /* Deep blue on hover */
-}
-
-/* Sticky navigation menu styling */
 nav {
-    position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
-    z-index: 1000;
-    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
 }
 
 nav a {
     color: white;
-    margin: 0 20px;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #00E5FF; /* Neon cyan text on hover */
+    color: #00E5FF;
 }
 
-/* Contact section */
-.contact-section {
-    background-color: rgba(0, 0, 0, 0.4); /* More transparent background for the contact box */
+/* Profile Image Styling */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #00E5FF;
+    display: block;
+    margin: 2em auto;
+    box-shadow: 0 0 10px #00E5FF;
+}
+
+/* Text Box Styling */
+.text-box {
+    background-color: rgba(0, 0, 0, 0.6); /* Increased transparency */
     padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.contact-section h2, .contact-section p, .contact-section a {
+/* Text and Shadows */
+h1, h2, h3, h4 {
+    text-align: center;
+    color: #00E5FF;
+    text-shadow: 2px 2px 4px #000;
+}
+
+p, a, li {
     color: white;
+    text-shadow: 1px 1px 3px #000;
 }
 
-.contact-section a:hover {
-    color: #00E5FF; /* Neon cyan hover effect for links */
+a {
+    color: #00E5FF;
+}
+
+a:hover {
+    color: #0086FF;
+}
+
+/* Button Styling */
+button {
+    background-color: #00E5FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0086FF;
+}
+
+/* Contact Information Styling */
+.contact-info {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.contact-info a {
+    display: block;
+    margin: 0.5em 0;
+    font-size: 18px;
+    color: #00E5FF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #0086FF;
+}
+
+.contact-info button {
+    background-color: #00E5FF;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.contact-info button:hover {
+    background-color: #0086FF;
+}
+
+/* Adjusting Spacing */
+.section {
+    padding: 4em 10%;
 }
 
 /* Footer */
 footer {
-    background-color: #111;
-    color: white;
-    padding: 20px;
     text-align: center;
+    padding: 1em 0;
+    color: white;
+}
+
+/* Mobile View Adjustments */
+@media only screen and (max-width: 600px) {
+    .text-box {
+        margin: 1em;
+        padding: 15px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .contact-info a {
+        font-size: 16px;
+    }
 }
