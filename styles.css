@@ -88,8 +88,8 @@ a:hover {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-right: 20px;
-  margin-bottom: 20px; /* More space below the headshot */
+  margin: 0 auto 20px auto; /* Centering the headshot */
+  display: block;
 }
 
 .intro {
@@ -130,8 +130,8 @@ a:hover {
 
 /* Styling for the Read More and Read Less buttons */
 .read-more {
-  margin-top: 10px;
-  padding: 8px 12px;
+  margin-top: 15px; /* More space above the button */
+  padding: 10px 16px; /* More padding for better usability */
   background-color: #1db954;
   color: white;
   border: none;
