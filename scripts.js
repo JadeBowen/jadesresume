@@ -40,8 +40,12 @@ function shareOnFacebook() {
   window.open(facebookShareURL, '_blank', 'width=600,height=400');
 }
 
+// vCard Download Function
+function downloadVCard() {
+  window.open('path_to_vcard/Jade_Bowen_Contact.vcf', '_blank');
+}
+
 // Download Resume PDF
 document.getElementById('download-button').addEventListener('click', function() {
-  // Replace 'path_to_your_resume.pdf' with the actual path to your resume PDF file
   window.open('path_to_your_resume.pdf', '_blank');
 });
