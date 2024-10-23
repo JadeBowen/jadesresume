@@ -62,7 +62,7 @@ a:hover {
 .logo-banner {
   width: 100%;
   text-align: center;
-  margin-bottom: 30px; /* More space below logo */
+  margin-bottom: 40px; /* More space below logo */
 }
 
 .banner-logo {
@@ -89,6 +89,7 @@ a:hover {
   height: 120px;
   border-radius: 50%;
   margin-right: 20px;
+  margin-bottom: 20px; /* More space below the headshot */
 }
 
 .intro {
@@ -125,6 +126,21 @@ a:hover {
 
 .expanded-details {
   display: none;
+}
+
+/* Styling for the Read More and Read Less buttons */
+.read-more {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.read-more:hover {
+  background-color: #14833b;
 }
 
 /* Contact Card Section */
@@ -204,7 +220,7 @@ a:hover {
   box-shadow: 0px 0px 15px #1db954;
 }
 
-/* Footer Section */
+/* Footer Section with Button Spacing */
 footer {
   background-color: #181818;
   color: white;
@@ -212,8 +228,13 @@ footer {
   text-align: center;
 }
 
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Added space between LinkedIn and Facebook buttons */
+}
+
 .footer-buttons button {
-  margin-right: 10px;
   padding: 10px 20px;
   background-color: #1db954;
   border: none;
