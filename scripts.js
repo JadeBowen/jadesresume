@@ -22,9 +22,9 @@ function expandJobDetails(button) {
   }
 }
 
-// vCard Download Function
+// vCard Download Function (ZIP Version)
 function downloadVCard() {
-  window.open('https://github.com/JadeBowen/jadesresume/raw/main/Jade_Bowen.vcf', '_blank'); // Correct link to the GitHub-hosted vCard
+  window.open('https://github.com/JadeBowen/jadesresume/raw/main/Jade_Bowen%20v%20card.zip', '_blank'); // Correct link to the ZIP version of vCard
 }
 
 // Resume Download Function
