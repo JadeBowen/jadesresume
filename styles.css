@@ -1,250 +1,177 @@
-/* General Page Setup */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip%20bg.jpg?raw=true') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    overflow-x: hidden;
-}
-
-header {
+/* Sticky Menu */
+.header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+    background: rgba(0, 0, 0, 0.7); /* Transparent background to prevent overlap with content */
+    z-index: 1000;
+    padding: 10px 0;
 }
 
-nav {
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* QR Codes Alignment */
+.contact-section .qr-codes {
     display: flex;
     justify-content: space-around;
-    padding: 1em;
-    margin-top: 2em; /* Adds space below the sticky menu */
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #00E5FF;
-}
-
-/* Profile Image Styling */
-.profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #00E5FF;
-    display: block;
-    margin: 2em auto;
-    box-shadow: 0 0 10px #00E5FF;
-}
-
-/* Text Box Styling */
-.text-box {
-    background-color: rgba(0, 0, 0, 0.6); 
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 2em;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Text and Shadows */
-h1, h2, h3, h4 {
-    text-align: center;
-    color: #00E5FF;
-    text-shadow: 2px 2px 4px #000;
-}
-
-p, a, li {
-    color: white;
-    text-shadow: 1px 1px 3px #000;
-}
-
-a {
-    color: #00E5FF;
-}
-
-a:hover {
-    color: #0086FF;
-}
-
-/* Button Styling */
-button {
-    background-color: #00E5FF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0086FF;
-}
-
-/* Contact Information Styling */
-.contact-info {
-    text-align: center;
-    padding: 2em 0;
-}
-
-.contact-info a {
-    display: block;
-    margin: 0.5em 0;
-    font-size: 18px;
-    color: #00E5FF;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    color: #0086FF;
-}
-
-.contact-info button {
-    background-color: #00E5FF;
-    color: white;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1em;
-}
-
-.contact-info button:hover {
-    background-color: #0086FF;
-}
-
-/* QR Code Styling */
-.qr-codes {
-    display: flex;
-    justify-content: space-around;
+    align-items: center;
     margin-top: 20px;
 }
 
-.qr-code {
-    text-align: center;
-}
-
-.qr-code img {
-    width: 120px;
-    height: 120px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2em 0;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.footer-contact p {
-    margin: 0.5em 0;
-}/* Footer Contact Info */
-footer .footer-contact {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-}
-
-footer .footer-contact a {
-    color: #00E5FF;
-    text-decoration: none;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-}
-
-footer .footer-contact a:hover {
-    color: #0086FF;
-}
-
-/* Icon Styling for Contact Info */
-.contact-info-icons {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-}
-
-.contact-info-icons a {
-    display: flex;
-    align-items: center;
-    color: #00E5FF;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.contact-info-icons a:hover {
-    color: #0086FF;
-}
-
-.contact-info-icons i {
-    margin-right: 8px;
-    font-size: 24px;
-}
-
-/* Adjusting Spacing for QR Codes and Descriptions */
-.qr-codes .qr-code {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-}
-
 .qr-codes img {
-    max-width: 140px;
+    max-width: 150px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .qr-codes p {
+    text-align: center;
     margin-top: 10px;
     font-size: 14px;
-    color: #00E5FF;
-    text-shadow: 1px 1px 3px #000;
+    color: #00b0f0;
 }
 
-/* Mobile View Adjustments */
-@media only screen and (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Footer Alignment */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
 
-    .text-box {
-        margin: 1em;
-        padding: 15px;
-    }
+.footer p {
+    margin: 0 15px;
+}
 
-    .profile-image {
-        width: 120px;
-        height: 120px;
-    }
+/* General Spacing */
+section {
+    margin-top: 80px; /* To create breathing room for the sticky menu */
+}
 
-    button {
-        width: 100%;
-        padding: 12px;
-    }
+.profile-section {
+    margin-top: 120px; /* Additional space to ensure the profile picture is not obstructed */
+}
 
-    .contact-info a {
-        font-size: 16px;
-    }
+.text-box {
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent box for text */
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+/* Contact Info Icons */
+.contact-card .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .qr-codes {
-        flex-direction: column;
-        gap: 10px;
-    }
+.contact-card .contact-info p {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #00b0f0;
+}
 
-    footer .footer-contact {
-        flex-direction: column;
-        gap: 1em;
-    }
+.contact-card .contact-info p span {
+    margin-right: 10px;
+}
+
+.contact-card .contact-info p a {
+    color: #00b0f0;
+    text-decoration: none;
+}
+
+.contact-card .contact-info p a:hover {
+    text-decoration: underline;
+}
+
+/* Icons for each contact info */
+.contact-card .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-card .icon-phone {
+    background: url('icons/phone-icon.png') no-repeat;
+    background-size: contain;
+}
+
+.contact-card .icon-email {
+    background: url('icons/email-icon.png') no-repeat;
+    background-size: contain;
+}
+
+.contact-card .icon-linkedin {
+    background: url('icons/linkedin-icon.png') no-repeat;
+    background-size: contain;
+}
+
+.contact-card .icon-github {
+    background: url('icons/github-icon.png') no-repeat;
+    background-size: contain;
+}
+
+.contact-card .icon-location {
+    background: url('icons/location-icon.png') no-repeat;
+    background-size: contain;
+}
+
+/* Footer Icons */
+.footer .footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.footer .footer-info p {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer .footer-info p span {
+    margin-right: 10px;
+}
+
+.footer .footer-info p a {
+    color: #00b0f0;
+    text-decoration: none;
+}
+
+.footer .footer-info p a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-info .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
