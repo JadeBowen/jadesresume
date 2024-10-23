@@ -32,24 +32,24 @@ a:hover {
   z-index: 999;
   text-align: center;
   padding: 10px 0;
+  display: flex;
+  justify-content: center; /* Center the nav items */
 }
 
 #fixed-nav ul {
   list-style: none;
+  display: flex;
+  justify-content: center; /* Ensure items are centered */
+  gap: 20px; /* Add space between items */
 }
 
 #fixed-nav li {
   display: inline;
-  margin-right: 20px;
 }
 
 #fixed-nav a {
   color: white;
   font-weight: bold;
-}
-
-#fixed-nav a:hover {
-  text-shadow: 0px 0px 8px #1db954;
 }
 
 /* About Me Section */
@@ -202,8 +202,8 @@ a:hover {
   box-shadow: 0px 0px 15px #1db954;
 }
 
-/* Download Button Styling */
-#download-button {
+/* Resume Download Button Styling */
+#download-resume {
   padding: 10px 20px;
   margin-top: 20px;
   background-color: #1db954;
@@ -214,7 +214,7 @@ a:hover {
   transition: background 0.3s ease, transform 0.2s;
 }
 
-#download-button:hover {
+#download-resume:hover {
   background-color: #14833b;
   transform: scale(1.05);
   box-shadow: 0px 0px 15px #1db954;
@@ -274,7 +274,7 @@ footer {
     max-width: 90%;
   }
 
-  #vcard-button, #download-button {
+  #vcard-button, #download-resume {
     width: 90%;
     margin: 10px auto;
   }
