@@ -1,278 +1,233 @@
-/* General Settings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Body Styling */
 body {
-  font-family: 'Roboto', sans-serif;
-  background: #0d0d0d;
-  color: #e0e0e0;
-  overflow-x: hidden;
-}
-
-a {
-  color: #1db954;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #1db954;
-  text-shadow: 0px 0px 8px #1db954;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 /* Fixed Navigation */
 #fixed-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  text-align: center;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center; /* Center the nav items */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 0;
+    z-index: 1000;
 }
 
 #fixed-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center; /* Ensure items are centered */
-  gap: 20px; /* Add space between items */
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
 }
 
-#fixed-nav li {
-  display: inline;
+#fixed-nav ul li {
+    margin: 0 15px;
 }
 
-#fixed-nav a {
-  color: white;
-  font-weight: bold;
+#fixed-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#fixed-nav ul li a:hover {
+    color: #0f0;
 }
 
 /* About Me Section */
 #about-me {
-  padding: 60px 20px; /* Increased padding for more space */
-  background-color: #0d0d0d;
-  text-align: center;
+    padding-top: 60px;
+    text-align: center;
+    background-color: #111;
+    padding-bottom: 50px;
 }
 
 .logo-banner {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 40px; /* More space below logo */
+    margin-bottom: 20px;
 }
 
 .banner-logo {
-  width: 250px; /* Reduced size */
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .banner-logo {
-    width: 150px; /* Smaller on mobile */
-  }
+    max-width: 200px;
+    height: auto;
 }
 
 .about-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .headshot {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: 0 auto 20px auto; /* Centering the headshot */
-  display: block;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
 }
 
-.intro {
-  flex-grow: 1;
+.intro h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.intro p {
+    font-size: 18px;
+    max-width: 600px;
+    color: #aaa;
 }
 
 .contact-info {
-  flex-grow: 1;
-  text-align: right;
+    margin-top: 15px;
 }
 
 .contact-info p {
-  margin-bottom: 10px;
-  font-size: 1rem; /* Smaller font size for contact info */
+    font-size: 16px;
+    color: #aaa;
+}
+
+.contact-info p a {
+    color: #0f0;
+    text-decoration: none;
+}
+
+.contact-info p a:hover {
+    text-decoration: underline;
 }
 
 /* Resume Section */
 #resume {
-  padding: 50px 20px; /* Increased padding for spacing */
+    background-color: #222;
+    padding: 50px 20px;
+}
+
+#resume h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 40px;
 }
 
 .job-entry {
-  margin-bottom: 50px; /* More space between job entries */
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
-.job-entry h3 {
-  font-size: 1.5rem;
+.job-entry h3, .job-entry h4 {
+    color: #fff;
+    margin: 0;
 }
 
-.job-entry h4, .job-entry p {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+.job-entry p {
+    color: #ccc;
+    margin-bottom: 10px;
 }
 
-.expanded-details {
-  display: none;
+.job-entry .description {
+    font-size: 16px;
 }
 
-/* Styling for the Read More and Read Less buttons */
 .read-more {
-  margin-top: 15px; /* More space above the button */
-  padding: 10px 16px; /* More padding for better usability */
-  background-color: #1db954;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .read-more:hover {
-  background-color: #14833b;
+    background-color: #080;
+}
+
+.expanded-details {
+    margin-top: 15px;
+    color: #ddd;
+}
+
+.expanded-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
 /* Contact Card Section */
 #contact-card {
-  padding: 60px 20px;
-  background-color: #181818;
-  text-align: center;
+    background-color: #222;
+    padding: 50px 20px;
 }
 
 .contact-card {
-  background-color: #0d0d0d;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
-  color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .contact-card h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
-.contact-card p {
-  margin-bottom: 15px;
-  font-size: 1rem; /* Reduced font size */
+.card-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #ccc;
 }
 
-.contact-card a {
-  color: #1db954;
-  text-decoration: none;
+.card-content a {
+    color: #0f0;
+    text-decoration: none;
 }
 
-.contact-card a:hover {
-  text-shadow: 0px 0px 8px #1db954;
+.card-content a:hover {
+    text-decoration: underline;
 }
 
-.contact-card i {
-  margin-right: 8px; /* Added margin for better spacing of icons */
-  font-size: 1.2rem;
-}
-
-/* vCard and Resume Button Styling */
 #vcard-button, #download-resume {
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #1db954;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background 0.3s ease, transform 0.2s;
-  width: 100%;  /* Ensure both buttons are the same width */
-  max-width: 400px; /* Set a max width for both buttons */
-  margin: 0 auto; /* Center the button */
+    background-color: #0f0;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: block;
+    width: 100%;
 }
 
 #vcard-button:hover, #download-resume:hover {
-  background-color: #14833b;
-  transform: scale(1.05);
-  box-shadow: 0px 0px 15px #1db954;  /* Same hover effect */
+    background-color: #080;
 }
 
-/* Footer Section with Button Spacing */
+/* Footer Section */
 footer {
-  background-color: #181818;
-  color: white;
-  padding: 20px;
-  text-align: center;
+    background-color: #111;
+    padding: 30px 0;
+    text-align: center;
 }
 
 .footer-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Added space between LinkedIn and Facebook buttons */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .footer-buttons button {
-  padding: 10px 20px;
-  background-color: #1db954;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+    background-color: #0f0;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .footer-buttons button:hover {
-  background-color: #14833b;
-  transform: scale(1.05);
-  box-shadow: 0px 0px 15px #1db954;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .headshot {
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-  }
-
-  .contact-info {
-    text-align: center;
-  }
-
-  .banner-logo {
-    width: 150px; /* Slightly smaller for mobile */
-  }
-
-  .contact-card {
-    max-width: 90%;
-  }
-
-  #vcard-button, #download-resume {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .contact-card h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-card p {
-    font-size: 1rem;
-  }
-
-  .contact-card i {
-    font-size: 1rem;
-  }
+    background-color: #080;
 }
