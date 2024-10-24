@@ -22,31 +22,28 @@ document.addEventListener("DOMContentLoaded", function() {
             navbar.classList.remove("sticky");
         }
     };
-
-    // Read More/Read Less Functionality
-    const readMoreButtons = document.querySelectorAll(".read-more-btn");
-    readMoreButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const moreContent = this.nextElementSibling;
-            if (moreContent && moreContent.classList.contains("more-content")) {
-                moreContent.style.display = "block";
-                this.style.display = "none";  // Hide the "Read More" button
-            }
-        });
+});// Read More/Read Less Functionality
+const readMoreButtons = document.querySelectorAll(".read-more-btn");
+readMoreButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        const moreContent = this.nextElementSibling;
+        if (moreContent && moreContent.classList.contains("more-content")) {
+            moreContent.style.display = "block";
+            this.style.display = "none";  // Hide the "Read More" button
+        }
     });
+});
 
-    const readLessButtons = document.querySelectorAll(".read-less-btn");
-    readLessButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const moreContent = this.parentElement;
-            if (moreContent && moreContent.classList.contains("more-content")) {
-                moreContent.style.display = "none";
-                const readMoreButton = moreContent.previousElementSibling;
-                if (readMoreButton && readMoreButton.classList.contains("read-more-btn")) {
-                    readMoreButton.style.display = "inline-block";  // Show the "Read More" button again
-                }
+const readLessButtons = document.querySelectorAll(".read-less-btn");
+readLessButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        const moreContent = this.parentElement;
+        if (moreContent && moreContent.classList.contains("more-content")) {
+            moreContent.style.display = "none";
+            const readMoreButton = moreContent.previousElementSibling;
+            if (readMoreButton && readMoreButton.classList.contains("read-more-btn")) {
+                readMoreButton.style.display = "inline-block";  // Show the "Read More" button again
             }
-        });
+        }
     });
-
 });
