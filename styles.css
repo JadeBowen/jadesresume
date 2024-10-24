@@ -53,9 +53,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Transparency added */
     z-index: 1000;
-    padding: 15px 0; /* Increased padding for better spacing */
+    padding: 15px 0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -86,8 +86,8 @@ body {
 /* Profile Section */
 .profile-section {
     text-align: center;
-    padding: 100px 0; /* Increased padding for better spacing */
-    margin-top: 50px; /* Space under the navbar */
+    padding: 100px 0;
+    margin-top: 50px;
 }
 
 .profile-image {
@@ -99,24 +99,24 @@ body {
 
 /* Increased spacing for sections */
 .section-title {
-    margin-bottom: 40px; /* More space under section titles */
+    margin-bottom: 40px;
 }
 
 .text-box p {
-    margin-bottom: 20px; /* Add space between paragraphs */
+    margin-bottom: 20px;
 }
 
 /* Contact Info and QR Code Alignment */
 .contact-card, .qr-code-container {
     text-align: center;
-    margin-top: 30px; /* Increased space above contact and QR code sections */
+    margin-top: 30px;
 }
 
 /* Footer Fix and Link Colors */
 footer {
     background-color: #333;
     color: white;
-    padding: 3px 0; /* Further reduced padding to compress the footer */
+    padding: 3px 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -125,25 +125,23 @@ footer {
 footer .footer-container {
     display: flex;
     justify-content: space-around;
-    gap: 5px; /* Further reduced gap */
+    gap: 5px;
 }
 
 footer p {
-    margin-bottom: 3px; /* Further reduced margin between footer elements */
+    margin-bottom: 3px;
     text-align: center;
 }
 
 /* All Links with Matching Colors */
 a, footer a {
-    color: #00FFFF; /* Matching the rest of the site */
+    color: #00FFFF;
     text-decoration: none;
 }
 
 a:hover, footer a:hover {
     color: #1E90FF;
-}
-
-/* QR Code Adjustments */
+}/* QR Code Adjustments */
 .qr-code-container img {
     max-width: 150px;
     height: auto;
@@ -164,8 +162,9 @@ button, .button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    display: inline-block; /* Keep buttons inline and not full width */
+    display: inline-block;
     margin-top: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 button:hover, .button:hover {
@@ -180,7 +179,7 @@ button:hover, .button:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%; /* Full width for the download button only */
+    width: 100%; /* Full width for the download button */
     margin-top: 20px;
 }
 
@@ -188,6 +187,7 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
+/* Read More Button Fix */
 .more-content {
     display: none;
 }
@@ -200,7 +200,6 @@ button.read-less-btn {
     display: none;
 }
 
-/* Read More Button Fix */
 .more-content.show {
     display: block;
 }
