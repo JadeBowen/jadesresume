@@ -60,11 +60,11 @@ body {
 
 .text-box {
     background-color: #333;
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     margin: 20px auto;
     border-radius: 10px;
     color: white;
-    max-width: 600px;
+    max-width: 600px; /* Ensure text box width does not exceed */
 }
 
 h1, h2, h3, .section-title {
@@ -115,34 +115,55 @@ button:hover {
 
 h4 {
     color: #FFA500;
-}/* Certifications Section */
-.certifications-section, .proficiencies-section {
-    padding: 50px 0;
+}
+
+/* Certifications, Proficiencies, and Contact Info Box Adjustments */
+.certifications-section, .proficiencies-section, .contact-section {
+    padding: 30px 0; /* Reduced padding */
     background-color: #333;
     color: white;
     text-align: center;
+    border-radius: 10px; /* Consistent border radius */
+    max-width: 90%; /* Adjust box width to prevent overflow */
+    margin: 0 auto; /* Center align */
 }
 
-.certifications-section ul, .proficiencies-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.certifications-section li, .proficiencies-section li {
-    margin-bottom: 10px;
-}
-
-/* Contact Information Section */
-.contact-section {
-    padding: 50px 0;
+/* Footer Section */
+footer {
     background-color: #333;
     color: white;
+    padding: 20px 0;
     text-align: center;
-    border-radius: 10px;
-    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 90%; /* Keep footer within bounds */
     margin: 0 auto;
 }
 
+footer p {
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer a:hover {
+    color: #1E90FF;
+}
+
+/* Contact Information Section */
 .contact-section a {
     color: #00FFFF;
     text-decoration: none;
@@ -174,39 +195,6 @@ h4 {
     font-weight: bold;
 }
 
-/* Footer Section */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-footer .footer-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-footer p {
-    margin-bottom: 5px;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-footer a {
-    color: #00FFFF;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-footer a:hover {
-    color: #1E90FF;
-}
-
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
     .navbar {
@@ -225,9 +213,9 @@ footer a:hover {
         margin-bottom: 10px;
     }
 
-    .contact-section, .certifications-section, .text-box {
-        max-width: 90%;
-        padding: 20px;
+    .contact-section, .certifications-section, .proficiencies-section, .text-box {
+        max-width: 95%; /* Adjust for smaller screen sizes */
+        padding: 15px; /* Further reduced padding */
     }
 
     .qr-code-container {
@@ -240,13 +228,9 @@ footer a:hover {
 }
 
 @media screen and (max-width: 480px) {
-    .menu-list a {
-        font-size: 16px;
-    }
-
-    .contact-section, .certifications-section, .text-box {
+    .text-box, .certifications-section, .proficiencies-section, .contact-section {
         max-width: 100%;
-        padding: 10px;
+        padding: 10px; /* Smaller padding on mobile */
     }
 
     .profile-image {
