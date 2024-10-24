@@ -9,6 +9,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #1E1E1E;
     color: white;
+    text-align: center; /* Ensure proper text centering */
 }
 
 /* Splash Screen */
@@ -48,7 +49,7 @@ body {
     }
 }
 
-/* Sticky Navbar */
+/* Sticky Navbar - Keeping it unchanged as per user request */
 .navbar {
     position: fixed;
     top: 0;
@@ -86,8 +87,8 @@ body {
 /* Profile Section */
 .profile-section {
     text-align: center;
-    padding: 70px 0; /* Adding extra padding to avoid being covered by navbar */
-    margin-top: 50px; /* Ensure space under the navbar */
+    padding: 70px 0; /* Ensuring space under the navbar */
+    margin-top: 50px; /* Space under the navbar */
 }
 
 .profile-image {
@@ -97,17 +98,60 @@ body {
     object-fit: cover;
 }
 
-/* Contact Info and QR Code */
+/* Contact Info and QR Code Alignment */
 .contact-card, .qr-code-container {
     text-align: center; /* Centering both contact info and QR code */
     margin-top: 20px;
 }
 
-/* Footer Adjustments */
+/* Button Fixes and Colors */
+button, .button, .resume-download-btn {
+    background-color: #00FFFF;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Ensuring full-width for buttons */
+    display: block;
+    margin-top: 15px;
+}
+
+button:hover, .button:hover, .resume-download-btn:hover {
+    background-color: #1E90FF;
+}
+
+.more-content {
+    display: none;
+}
+
+button.read-more-btn {
+    display: inline-block;
+}
+
+button.read-less-btn {
+    display: none;
+}
+
+/* Read More Button Fix */
+.more-content.show {
+    display: block;
+}
+
+.more-content.show + .read-less-btn {
+    display: inline-block;
+}
+
+.read-more-btn.hide {
+    display: none;
+}
+
+/* Footer Fix */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px 0; /* Reduced padding to minimize height */
+    padding: 5px 0; /* Reduced padding to minimize height */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -116,7 +160,7 @@ footer {
 footer .footer-container {
     display: flex;
     justify-content: space-around;
-    gap: 20px; /* Reduced gap */
+    gap: 10px; /* Reduced gap */
 }
 
 footer p {
@@ -166,23 +210,6 @@ footer a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: row; /* Ensure horizontal menu items */
-    }
-
-    .menu-list {
-        flex-wrap: wrap; /* Ensure items fit within smaller screen */
-        justify-content: center;
-    }
-
-    .profile-section {
-        margin-top: 70px; /* Extra space for mobile */
-    }
-
-    .qr-code-container {
-        margin-bottom: 30px; /* Add space below QR code */
-    }
-
     footer .footer-container {
         flex-direction: column;
         text-align: center;
