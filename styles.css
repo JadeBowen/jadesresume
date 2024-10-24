@@ -181,6 +181,20 @@ h4 {
 
 .resume-download-btn {
     margin-top: 20px; /* Add space above the download button */
+    padding: 15px; /* Full-fledged button styling */
+    background-color: #00FFFF;
+    color: #fff;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.resume-download-btn:hover {
+    background-color: #1E90FF;
+    box-shadow: 0 0 8px #1E90FF;
 }
 
 /* Footer Section with Corrected Grammar and Icons */
