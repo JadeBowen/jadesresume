@@ -7,7 +7,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #1E1E1E;
+    background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/data%20room%20fixed.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
     color: white;
 }
 
@@ -58,6 +60,7 @@ body {
     padding: 15px 0;
     display: flex;
     justify-content: space-evenly;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 .menu-list {
@@ -87,7 +90,7 @@ body {
 .profile-section {
     text-align: center;
     padding: 100px 0;
-    margin-top: 50px;
+    margin-top: 50px; /* Space under the navbar */
 }
 
 .profile-image {
@@ -97,16 +100,21 @@ body {
     object-fit: cover;
 }
 
-/* Increased spacing for sections */
+/* Section Titles */
 .section-title {
     margin-bottom: 40px;
+    font-size: 28px;
 }
 
+/* Text Box */
 .text-box p {
     margin-bottom: 20px;
 }
 
-/* Contact Info and QR Code Alignment */
+/* Text Shadows for Better Readability */
+h1, h2, h3, p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}/* Contact Info and QR Code Alignment */
 .contact-card, .qr-code-container {
     text-align: center;
     margin-top: 30px;
@@ -141,7 +149,9 @@ a, footer a {
 
 a:hover, footer a:hover {
     color: #1E90FF;
-}/* QR Code Adjustments */
+}
+
+/* QR Code Adjustments */
 .qr-code-container img {
     max-width: 150px;
     height: auto;
@@ -181,6 +191,7 @@ button:hover, .button:hover {
     font-size: 16px;
     width: 100%; /* Full width for the download button */
     margin-top: 20px;
+    margin-bottom: 20px; /* Spacing to avoid overlap with footer */
 }
 
 .resume-download-btn:hover {
