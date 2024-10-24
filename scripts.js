@@ -1,12 +1,32 @@
-// JavaScript for Read More and Read Less functionality
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
-    // Find all read-more buttons and handle their click events
+    // Splash Screen Animation and Transition
+    const splashScreen = document.getElementById('splash-screen');
+    setTimeout(() => {
+        splashScreen.classList.add('fade-out');
+    }, 3000); // Splash screen will stay for 3 seconds before fading out
+
+    // Remove splash screen from the DOM after fade-out
+    splashScreen.addEventListener('animationend', () => {
+        splashScreen.style.display = 'none';
+    });
+
+    // Sticky Navbar (ensure it remains sticky)
+    const navbar = document.querySelector('.navbar');
+    const sticky = navbar.offsetTop;
+
+    window.onscroll = function() {
+        if (window.pageYOffset > sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    };
+
+    // Read More/Read Less Functionality
     const readMoreButtons = document.querySelectorAll(".read-more-btn");
-
     readMoreButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            // Show the additional content
+        button.addEventListener("click", function() {
             const moreContent = this.nextElementSibling;
             if (moreContent && moreContent.classList.contains("more-content")) {
                 moreContent.style.display = "block";
@@ -15,12 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Find all read-less buttons and handle their click events
     const readLessButtons = document.querySelectorAll(".read-less-btn");
-
     readLessButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            // Hide the additional content
+        button.addEventListener("click", function() {
             const moreContent = this.parentElement;
             if (moreContent && moreContent.classList.contains("more-content")) {
                 moreContent.style.display = "none";
@@ -32,28 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Smooth scroll for the sticky menu
-    const menuLinks = document.querySelectorAll(".menu-list a");
-
-    menuLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80, // Adjusting for the height of the sticky menu
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-
-    // Splash screen logic
-    const splash = document.querySelector(".splash-screen");
-    if (splash) {
-        setTimeout(() => {
-            splash.style.opacity = 0;
-            setTimeout(() => splash.remove(), 1000); // Fully remove the splash after fade-out
-        }, 3000); // Change this duration if you want to adjust how long the splash stays visible
-    }
 });
