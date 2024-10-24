@@ -125,7 +125,9 @@ button, .button {
 button:hover, .button:hover {
     background-color: #1E90FF;
     box-shadow: 0 0 8px #1E90FF;
-}/* Read More/Read Less Buttons */
+}
+
+/* Read More/Read Less Buttons */
 .read-more-btn, .read-less-btn {
     background-color: #00FFFF;
     color: #fff;
@@ -156,9 +158,7 @@ h4 {
     text-align: center;
     max-width: 90%;
     margin: 0 auto;
-}
-
-/* QR Code Adjustments for Mobile */
+}/* QR Code Adjustments for Mobile */
 .qr-code-container {
     display: flex;
     justify-content: center;
@@ -211,9 +211,9 @@ footer {
 
 footer .footer-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 90%; /* Keep footer within bounds */
+    justify-content: space-between; /* Spread items horizontally */
+    flex-wrap: nowrap; /* Prevent stacking on mobile */
+    max-width: 100%; /* Ensure it fits well on mobile screens */
     margin: 0 auto;
 }
 
@@ -279,6 +279,17 @@ footer .icon {
     .qr-code-container img {
         margin-bottom: 15px;
     }
+
+    /* Adjust footer for mobile */
+    footer .footer-container {
+        justify-content: center;
+        flex-wrap: wrap; /* Allow items to wrap */
+    }
+
+    footer p {
+        width: 50%; /* Adjust width to fit more horizontally on smaller screens */
+        text-align: center; /* Center text */
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -306,7 +317,7 @@ footer .icon {
         flex: 1 1 45%;
         text-align: center;
     }
-    
+
     .qr-code-container img {
         width: 80px;  /* Further reduced size for smaller screens */
         height: 80px;
