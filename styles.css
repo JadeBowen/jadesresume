@@ -20,18 +20,19 @@ body {
     padding: 15px 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly; /* Ensure items are evenly spaced */
 }
 
 .menu-list {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 100%; /* Ensure menu spans full width */
 }
 
 .menu-list li {
-    margin: 0 15px;
+    flex: 1; /* Ensure each menu item takes equal space */
+    text-align: center;
 }
 
 .menu-list a {
@@ -39,6 +40,7 @@ body {
     color: #00FFFF;
     font-size: 18px;
     font-weight: bold;
+    padding: 10px 20px; /* Add padding for better tap target size */
 }
 
 .menu-list a:hover {
@@ -58,7 +60,6 @@ body {
     object-fit: cover;
 }
 
-/* Removed all boxes from text content */
 .text-box {
     margin: 20px auto;
     color: white;
@@ -76,17 +77,20 @@ p {
 }
 
 /* Button Styles */
-button {
+button, .button {
     background-color: #00FFFF;
     color: #fff;
-    padding: 10px 20px;
+    padding: 15px; /* Increased padding for larger button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 100%; /* Full width of page */
+    display: block; /* Ensure block display */
+    margin-top: 15px;
 }
 
-button:hover {
+button:hover, .button:hover {
     background-color: #1E90FF;
     box-shadow: 0 0 8px #1E90FF;
 }
@@ -124,6 +128,35 @@ h4 {
     margin: 0 auto;
 }
 
+/* Added margins for QR code separation */
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.qr-code {
+    margin-right: 40px; /* Added space between QR codes */
+}
+
+.qr-code-container img {
+    margin: 0 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.qr-code-container p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.resume-download-btn {
+    margin-top: 20px; /* Add space above the download button */
+}
+
 /* Footer Section */
 footer {
     background-color: #333;
@@ -159,58 +192,21 @@ footer a:hover {
     color: #1E90FF;
 }
 
-/* Contact Information Section */
-.contact-section a {
-    color: #00FFFF;
-    text-decoration: none;
-}
-
-.contact-section a:hover {
-    color: #1E90FF;
-}
-
-/* QR Codes */
-.qr-code-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.qr-code-container img {
-    margin: 0 20px;
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-}
-
-.qr-code-container p {
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-around;
         padding: 10px;
     }
 
     .menu-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
         width: 100%;
-    }
-
-    .menu-list li {
-        margin-bottom: 10px;
     }
 
     .contact-section, .certifications-section, .proficiencies-section, .text-box {
         max-width: 95%; /* Adjust for smaller screen sizes */
-        padding: 15px; /* Further reduced padding */
+        padding: 15px;
     }
 
     .qr-code-container {
@@ -232,7 +228,7 @@ footer a:hover {
         height: 150px;
     }
 
-    button {
+    button, .button {
         font-size: 14px;
         padding: 8px 15px;
     }
@@ -256,7 +252,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black; /* Full blackout background */
+    background-color: #0b0c0d; /* Match the logo's black color */
     z-index: 9999;
     display: flex;
     justify-content: center;
