@@ -7,9 +7,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1E1E1E; /* Dark modern background */
-    color: #E0E0E0; /* Light gray for body text for better contrast */
+    background-color: #1E1E1E;
+    color: #fff;
 }
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 /* Header - Sticky Menu */
 .navbar {
@@ -26,25 +29,26 @@ body {
 .menu-list {
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    width: 60%;
+    justify-content: space-between;
+    width: 70%;
+    flex-wrap: wrap;
 }
 
 .menu-list li {
-    margin: 0 15px;
+    margin: 10px 0;
 }
 
 .menu-list a {
     text-decoration: none;
-    color: #00FFFF; /* Electric blue for futuristic look */
+    color: #00FFFF;
+    font-family: 'Orbitron', sans-serif;
     font-size: 18px;
-    font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .menu-list a:hover {
-    color: #8A2BE2; /* Bright purple on hover */
-    transition: color 0.3s ease;
+    color: #8A2BE2;
+    text-shadow: 0 0 8px #00FFFF;
 }
 
 /* Profile Section */
@@ -58,62 +62,51 @@ body {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    border: 4px solid #00FFFF;
 }
 
 .text-box {
     background-color: #333;
-    padding: 20px;
+    padding: 25px;
     margin: 20px auto;
-    border-radius: 10px;
-    color: white;
+    border-radius: 15px;
+    color: #fff;
     max-width: 600px;
-    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 h1, h2, h3 {
-    color: #00FFFF; /* Primary accent color for headings */
-    margin-bottom: 15px;
+    color: #00FFFF;
     font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
 }
 
 p {
-    line-height: 1.6;
-    color: #E0E0E0; /* Light gray for readability */
-}/* Button Styles */
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Button Styles */
 button {
-    background-color: #00FFFF; /* Electric blue for futuristic buttons */
+    background-color: #00FFFF;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    font-family: 'Orbitron', sans-serif; /* Tech-inspired font */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
 }
 
 button:hover {
-    background-color: #8A2BE2; /* Bright purple on hover */
-    transform: scale(1.05); /* Slight scale-up for interactivity */
+    background-color: #8A2BE2;
+    text-shadow: 0 0 8px #00FFFF;
 }
 
-/* Philosophy & Experience Section */
-.philosophy-section, .experience-section {
+/* Philosophy Section */
+.philosophy-section {
     padding: 50px 0;
-    background-color: #1E1E1E; /* Consistent dark background */
-}
-
-.experience-card, .philosophy-container {
-    margin-bottom: 20px;
-    background-color: #333; /* Dark box for content */
-    border-radius: 10px;
-    padding: 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.experience-card:hover, .philosophy-container:hover {
-    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2); /* Glowing box shadow */
-    transform: translateY(-5px); /* Slight lift for hover */
 }
 
 /* Read More/Read Less Buttons */
@@ -126,30 +119,95 @@ button:hover {
     border-radius: 5px;
     margin-top: 10px;
     font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
 }
 
 .read-more-btn:hover, .read-less-btn:hover {
-    background-color: #8A2BE2; /* Hover effect for consistency */
+    background-color: #8A2BE2;
+    text-shadow: 0 0 8px #00FFFF;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 50px 0;
+}
+
+.experience-card {
+    margin-bottom: 30px;
+    transition: transform 0.2s;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+h4 {
+    color: #FFA500;
+}/* Certifications Section */
+.certifications-section {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.certifications-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.certifications-section li {
+    margin-bottom: 10px;
 }
 
 /* Contact Information Section */
-.contact-section, .certifications-section {
+.contact-section {
     padding: 50px 0;
-    background-color: #1E1E1E; /* Dark theme consistency */
+    background-color: #333;
     color: white;
     text-align: center;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-section a {
     color: #00FFFF;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
 }
 
 .contact-section a:hover {
     color: #8A2BE2;
 }
 
+.contact-section .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact-section .icon-location::before {
+    content: url('https://image.url/map-icon.png');
+}
+
+.contact-section .icon-phone::before {
+    content: url('https://image.url/phone-icon.png');
+}
+
+.contact-section .icon-email::before {
+    content: url('https://image.url/email-icon.png');
+}
+
+.contact-section .icon-linkedin::before {
+    content: url('https://image.url/linkedin-icon.png');
+}
+
+.contact-section .icon-github::before {
+    content: url('https://image.url/github-icon.png');
+}
+
+/* QR Codes */
 .qr-code-container {
     display: flex;
     justify-content: center;
@@ -163,13 +221,33 @@ button:hover {
     height: 120px;
     object-fit: contain;
     border-radius: 10px;
+    border: 2px solid #00FFFF;
 }
 
 .qr-code-container p {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
-    color: #00FFFF;
+}
+
+/* Resume Download Button */
+.resume-download-btn {
+    display: inline-block;
+    background-color: #00FF7F;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.resume-download-btn:hover {
+    background-color: #8A2BE2;
+    text-shadow: 0 0 8px #00FFFF;
 }
 
 /* Footer Section */
@@ -182,66 +260,84 @@ footer {
 
 footer p {
     margin-bottom: 5px;
-    color: #E0E0E0;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 footer a {
     color: #00FFFF;
     text-decoration: none;
-    margin: 0 15px;
 }
 
 footer a:hover {
     color: #8A2BE2;
 }
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-    .menu-list {
-        flex-direction: column;
-        width: 100%;
+/* Splash Screen */
+@keyframes drawSignature {
+    0% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
     }
-
-    .menu-list li {
-        margin-bottom: 10px;
-    }
-
-    .contact-section, .certifications-section, .text-box {
-        max-width: 90%;
-        padding: 20px;
-    }
-
-    .qr-code-container {
-        flex-direction: column;
-    }
-
-    .qr-code-container img {
-        margin-bottom: 15px;
+    100% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .menu-list a {
-        font-size: 16px;
-    }
+.splash-logo {
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/signature.JPG?raw=true') no-repeat center;
+    background-size: contain;
+    animation: drawSignature 3s ease-in-out forwards;
+}
 
-    .contact-section, .certifications-section, .text-box {
-        max-width: 100%;
-        padding: 10px;
-    }
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
+.splash-screen-hidden {
+    display: none;
+}
 
-    button {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
+/* Proficiencies Section */
+.proficiencies-section {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.proficiencies-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.proficiencies-section li {
+    width: 45%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;
 }
