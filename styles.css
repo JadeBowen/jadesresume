@@ -26,13 +26,13 @@ body {
 }
 
 #splash-screen img {
-    max-width: 90%; /* Adjusted for PC to avoid being too large */
+    max-width: 90%; /* Slightly reduced size for PC */
     height: auto;
 }
 
 @media screen and (max-width: 768px) {
     #splash-screen img {
-        max-width: 70%; /* For mobile devices */
+        max-width: 70%; /* Mobile-specific scaling */
         height: auto;
     }
 }
@@ -83,20 +83,11 @@ body {
     color: #8A2BE2;
 }
 
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically on mobile */
-    }
-    .menu-list li {
-        margin-bottom: 10px; /* Space out items on mobile */
-    }
-}
-
 /* Profile Section */
 .profile-section {
     text-align: center;
     padding: 50px 0;
-    margin-top: 100px; /* Ensure space is maintained under the sticky navbar */
+    margin-top: 100px; /* Ensuring space under the navbar */
 }
 
 .profile-image {
@@ -118,7 +109,7 @@ h1, h2, h3, .section-title {
     text-align: center;
 }/* Fix Job Title Color */
 h4 {
-    color: #00FFFF; /* Update the job title to match the color scheme */
+    color: #00FFFF; /* Ensuring job title matches the site color scheme */
 }
 
 /* Smooth Transition for Read More/Read Less */
@@ -132,7 +123,7 @@ h4 {
 .more-content.show {
     display: block;
     opacity: 1;
-    max-height: 1000px; /* Large enough to reveal the full content */
+    max-height: 1000px;
 }
 
 button, .button {
@@ -151,7 +142,7 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
-/* Footer Section */
+/* Footer Section (PC) */
 footer {
     background-color: #333;
     color: white;
@@ -163,7 +154,7 @@ footer {
 
 footer .footer-container {
     display: flex;
-    justify-content: space-around; /* Spread horizontally on PC */
+    justify-content: space-around; /* Horizontal layout on PC */
     flex-wrap: nowrap;
     gap: 30px;
 }
@@ -173,7 +164,7 @@ footer p {
     text-align: center;
 }
 
-/* Update Footer Link Colors */
+/* Footer Links Colors */
 footer a {
     color: #00FFFF;
     text-decoration: none;
@@ -183,46 +174,50 @@ footer a:hover {
     color: #1E90FF;
 }
 
-/* Media Queries for Responsive Design */
+/* QR Code Adjustments */
+.qr-code-container img {
+    max-width: 150px; /* Resized QR code for mobile */
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px;
-    }
-
-    .menu-list {
-        width: 100%;
-    }
-
-    .contact-section, .certifications-section, .proficiencies-section, .text-box {
-        max-width: 95%;
-        padding: 15px;
-    }
-
-    .qr-code-container {
         flex-direction: column;
     }
 
-    .qr-code-container img {
-        margin-bottom: 15px;
+    .menu-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-section {
+        margin-top: 60px;
     }
 
     footer .footer-container {
-        flex-direction: column; /* Stack vertically on mobile */
+        flex-direction: column;
+        align-items: center;
     }
 
     footer p {
         width: 100%;
-        text-align: center;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .text-box, .certifications-section, .proficiencies-section, .contact-section {
+        max-width: 95%;
+        padding: 10px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .text-box, .certifications-section, .proficiencies-section, .contact-section {
-        max-width: 100%;
-    }
-
     .profile-image {
         width: 150px;
         height: 150px;
@@ -231,15 +226,5 @@ footer a:hover {
     button, .button {
         font-size: 14px;
         padding: 8px 15px;
-    }
-
-    .footer p {
-        display: inline-block;
-        margin: 5px 10px;
-    }
-
-    .menu-list li {
-        margin: 0 10px;
-        text-align: center;
     }
 }
