@@ -8,11 +8,53 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1E1E1E;
-    color: #fff;
+    color: white;
 }
 
-/* Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
+/* Splash Screen */
+.splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1E1E1E;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+
+#signature {
+    max-width: 80%;
+    animation: signatureAnimation 5s ease forwards;
+}
+
+/* Animation Keyframes */
+@keyframes signatureAnimation {
+    0% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+/* Hide splash screen */
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 /* Header - Sticky Menu */
 .navbar {
@@ -20,7 +62,7 @@ body {
     top: 0;
     background-color: #333;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -30,31 +72,30 @@ body {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    width: 70%;
     flex-wrap: wrap;
+    width: 60%;
 }
 
 .menu-list li {
-    margin: 10px 0;
+    margin: 0 15px;
 }
 
 .menu-list a {
     text-decoration: none;
     color: #00FFFF;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .menu-list a:hover {
     color: #8A2BE2;
-    text-shadow: 0 0 8px #00FFFF;
 }
 
 /* Profile Section */
 .profile-section {
     text-align: center;
-    padding: 50px 0;
+    padding: 60px 0;
 }
 
 .profile-image {
@@ -62,69 +103,51 @@ body {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border: 4px solid #00FFFF;
 }
 
 .text-box {
     background-color: #333;
     padding: 25px;
-    margin: 20px auto;
-    border-radius: 15px;
-    color: #fff;
+    margin: 25px auto;
+    border-radius: 10px;
+    color: white;
     max-width: 600px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 h1, h2, h3 {
     color: #00FFFF;
-    font-family: 'Orbitron', sans-serif;
     margin-bottom: 15px;
 }
 
 p {
-    line-height: 1.8;
-    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
 }
 
 /* Button Styles */
 button {
     background-color: #00FFFF;
     color: #fff;
-    padding: 12px 25px;
+    padding: 12px 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     transition: all 0.3s ease;
-    font-family: 'Orbitron', sans-serif;
 }
 
 button:hover {
     background-color: #8A2BE2;
-    text-shadow: 0 0 8px #00FFFF;
+    box-shadow: 0 0 15px #00FFFF;
+}
+
+/* Read More/Read Less Buttons */
+.read-more-btn, .read-less-btn {
+    margin-top: 10px;
 }
 
 /* Philosophy Section */
 .philosophy-section {
     padding: 50px 0;
-}
-
-/* Read More/Read Less Buttons */
-.read-more-btn, .read-less-btn {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-family: 'Orbitron', sans-serif;
-    transition: all 0.3s ease;
-}
-
-.read-more-btn:hover, .read-less-btn:hover {
-    background-color: #8A2BE2;
-    text-shadow: 0 0 8px #00FFFF;
 }
 
 /* Experience Section */
@@ -133,24 +156,19 @@ button:hover {
 }
 
 .experience-card {
-    margin-bottom: 30px;
-    transition: transform 0.2s;
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    margin-bottom: 20px;
 }
 
 h4 {
     color: #FFA500;
-}/* Certifications Section */
+}
+
+/* Certifications Section */
 .certifications-section {
     padding: 50px 0;
     background-color: #333;
     color: white;
     text-align: center;
-    border-radius: 10px;
 }
 
 .certifications-section ul {
@@ -159,6 +177,22 @@ h4 {
 }
 
 .certifications-section li {
+    margin-bottom: 10px;
+}
+
+/* Proficiencies Section */
+.proficiencies-section {
+    padding: 50px 0;
+    background-color: #1E1E1E;
+    text-align: center;
+}
+
+.proficiencies-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.proficiencies-section li {
     margin-bottom: 10px;
 }
 
@@ -182,72 +216,45 @@ h4 {
     color: #8A2BE2;
 }
 
-.contact-section .icon {
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-.contact-section .icon-location::before {
-    content: url('https://image.url/map-icon.png');
-}
-
-.contact-section .icon-phone::before {
-    content: url('https://image.url/phone-icon.png');
-}
-
-.contact-section .icon-email::before {
-    content: url('https://image.url/email-icon.png');
-}
-
-.contact-section .icon-linkedin::before {
-    content: url('https://image.url/linkedin-icon.png');
-}
-
-.contact-section .icon-github::before {
-    content: url('https://image.url/github-icon.png');
-}
-
 /* QR Codes */
-.qr-code-container {
+.qr-codes {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 20px;
 }
 
-.qr-code-container img {
+.qr-code {
     margin: 0 20px;
+    text-align: center;
+}
+
+.qr-code img {
     width: 120px;
     height: 120px;
     object-fit: contain;
     border-radius: 10px;
-    border: 2px solid #00FFFF;
 }
 
-.qr-code-container p {
-    text-align: center;
+.qr-code p {
     margin-top: 10px;
     font-weight: bold;
 }
 
 /* Resume Download Button */
 .resume-download-btn {
-    display: inline-block;
-    background-color: #00FF7F;
+    background-color: #00FFFF;
     color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-family: 'Orbitron', sans-serif;
+    padding: 12px 24px;
+    border-radius: 5px;
     text-decoration: none;
+    display: inline-block;
     transition: all 0.3s ease;
     margin-top: 20px;
 }
 
 .resume-download-btn:hover {
     background-color: #8A2BE2;
-    text-shadow: 0 0 8px #00FFFF;
+    box-shadow: 0 0 15px #00FFFF;
 }
 
 /* Footer Section */
@@ -259,9 +266,9 @@ footer {
 }
 
 footer p {
-    margin-bottom: 5px;
     display: inline-block;
-    margin-right: 20px;
+    margin: 0 15px;
+    font-size: 14px;
 }
 
 footer a {
@@ -273,71 +280,47 @@ footer a:hover {
     color: #8A2BE2;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* Splash Screen */
-@keyframes drawSignature {
-    0% {
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px;
     }
-    100% {
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 0;
+
+    .menu-list {
+        flex-direction: column;
+    }
+
+    .contact-section, .certifications-section, .text-box, .proficiencies-section {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .qr-codes {
+        flex-direction: column;
+    }
+
+    .qr-code img {
+        margin-bottom: 15px;
     }
 }
 
-.splash-logo {
-    width: 300px;
-    height: 150px;
-    margin: 0 auto;
-    background: url('https://github.com/JadeBowen/jadesresume/blob/main/signature.JPG?raw=true') no-repeat center;
-    background-size: contain;
-    animation: drawSignature 3s ease-in-out forwards;
-}
+@media screen and (max-width: 480px) {
+    .menu-list a {
+        font-size: 16px;
+    }
 
-.splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1E1E1E;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
+    .contact-section, .certifications-section, .text-box {
+        max-width: 100%;
+        padding: 10px;
+    }
 
-.splash-screen-hidden {
-    display: none;
-}
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
 
-/* Proficiencies Section */
-.proficiencies-section {
-    padding: 50px 0;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.proficiencies-section ul {
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.proficiencies-section li {
-    width: 45%;
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-family: 'Orbitron', sans-serif;
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
