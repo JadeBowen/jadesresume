@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Remove splash screen from the DOM after fade-out
     splashScreen.addEventListener('animationend', () => {
-        splashScreen.style.display = 'none';
+        splashScreen.remove();  // Instead of just hiding it, we remove it completely
     });
 
     // Sticky Navbar (ensure it remains sticky)
