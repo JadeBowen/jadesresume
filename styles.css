@@ -52,6 +52,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 20px; /* Added spacing below navbar to prevent content overlap */
 }
 
 .menu-list {
@@ -157,7 +158,7 @@ h4 {
     margin: 0 auto;
 }
 
-/* QR Code Container */
+/* QR Code Adjustments for Mobile */
 .qr-code-container {
     display: flex;
     justify-content: center;
@@ -165,14 +166,10 @@ h4 {
     margin-top: 20px;
 }
 
-.qr-code {
-    margin-right: 40px; /* Added space between QR codes */
-}
-
 .qr-code-container img {
-    margin: 0 20px;
-    width: 100px;
-    height: 100px;
+    margin: 0 10px;
+    width: 90px; /* Reduced size for mobile */
+    height: 90px;
     object-fit: contain;
 }
 
@@ -195,6 +192,7 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 20px; /* Added extra space at the bottom for cleaner look */
 }
 
 footer .footer-container {
@@ -293,5 +291,10 @@ footer .icon {
         margin: 0 10px;
         flex: 1 1 45%;
         text-align: center;
+    }
+    
+    .qr-code-container img {
+        width: 80px;  /* Further reduced size for smaller screens */
+        height: 80px;
     }
 }
