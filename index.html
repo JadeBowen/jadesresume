@@ -9,14 +9,15 @@
 </head>
 
 <body>
+
     <!-- Splash Screen -->
-    <div id="splash-screen">
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/signature.JPG?raw=true" alt="Signature Logo" id="signature-logo">
+    <div id="splash-screen" class="splash-screen">
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/signature.JPG?raw=true" alt="Signature" id="signature">
     </div>
 
     <!-- Header Section -->
     <header class="header">
-        <nav class="navbar sticky">
+        <nav class="navbar">
             <ul class="menu-list">
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -43,13 +44,14 @@
         <h2>Philosophy</h2>
         <div class="philosophy-container text-box">
             <h3>Mission Statement</h3>
-            <p>As a results-driven professional with over 20 years of experience in construction and telecommunications, my mission is to foster a culture of integrity, respect, and collaboration while driving innovation and operational excellence...</p>
+            <p>As a results-driven professional with over 20 years of experience in construction and telecommunications, my mission is to foster a culture of integrity, respect, and collaboration while driving innovation...</p>
             <button class="read-more-btn">Read More</button>
             <div class="more-content" style="display:none;">
                 <p>With a deep commitment to honesty and hard work, I strive to lead teams and initiatives that not only meet organizational goals but also inspire trust and create lasting impact...</p>
                 <button class="read-less-btn">Read Less</button>
             </div>
         </div>
+
         <div class="philosophy-container text-box">
             <h3>Impact Statement</h3>
             <p>Through strategic leadership and a relentless focus on operational efficiency, my goal is to help companies build stronger brands, enhance their reputation, and achieve significant growth...</p>
@@ -64,8 +66,10 @@
     <!-- Professional Experience Section -->
     <section id="experience" class="experience-section">
         <h2>Professional Experience</h2>
+
+        <!-- Experience Card 1 -->
         <div class="experience-card text-box">
-            <h3 style="color: #00FF7F;">Boise's Best Auto Sales</h3>
+            <h3>Boise's Best Auto Sales</h3>
             <h4>Finance and Marketing Manager | June 2023 – Present</h4>
             <p>Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
             <button class="read-more-btn">Read More</button>
@@ -94,11 +98,10 @@
     <section id="proficiencies" class="proficiencies-section">
         <h2>Proficiencies</h2>
         <ul class="text-box">
-            <li>Wireless Communication Technology: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
-            <li>Safety Management Standards: OSHA compliance, safety inspections, regulatory adherence</li>
-            <li>Project Management Tools: Microsoft Office Suite, Google Workspace</li>
-            <li>Client & Relationship Management: CRM tools, stakeholder engagement, client satisfaction tracking</li>
-            <li>Fiber Optic Technology: Installation, testing, and maintenance of fiber optic systems</li>
+            <li>Telecommunications: Wireless, 5G, Fiber Optics</li>
+            <li>Construction Management</li>
+            <li>Software: Microsoft Office, Google Workspace, CRM</li>
+            <li>Safety: OSHA Compliance, Safety Inspections</li>
         </ul>
     </section>
 
@@ -117,11 +120,11 @@
         <!-- QR Codes -->
         <div class="qr-codes">
             <div class="qr-code">
-                <img src="https://github.com/JadeBowen/jadesresume/blob/main/contact_qrcode.png?raw=true" alt="Contact Info QR Code">
+                <img src="https://github.com/JadeBowen/jadesresume/raw/main/contactqr.png" alt="Contact Info QR Code">
                 <p>Contact Info QR Code</p>
             </div>
             <div class="qr-code">
-                <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
+                <img src="https://github.com/JadeBowen/jadesresume/raw/main/linkedinqr.png" alt="LinkedIn QR Code">
                 <p>LinkedIn QR Code</p>
             </div>
         </div>
@@ -143,59 +146,4 @@
     <!-- JavaScript File -->
     <script src="scripts.js"></script>
 </body>
-</html><!-- Additional Experience Cards -->
-    <div class="experience-card text-box">
-        <h3 style="color: #00FF7F;">Westland Towers</h3>
-        <h4>Senior Field Technician | July 2022 – June 2023</h4>
-        <p>Directed the installation, commissioning, and calibration of wireless communication systems, including cellular antenna and microwave technologies...</p>
-        <button class="read-more-btn">Read More</button>
-        <div class="more-content" style="display:none;">
-            <ul>
-                <li>Led the assembly, installation, and optimization of cell tower infrastructure, ensuring strict adherence to project specifications and industry standards.</li>
-                <li>Collaborated with project managers and clients to troubleshoot and resolve technical challenges.</li>
-            </ul>
-            <button class="read-less-btn">Read Less</button>
-        </div>
-    </div>
-
-    <div class="experience-card text-box">
-        <h3 style="color: #00FF7F;">First Point Group - Ericsson</h3>
-        <h4>Telecommunications Construction Coordinator | October 2021 – July 2022</h4>
-        <p>Coordinated all aspects of cell tower construction and network projects, ensuring efficient execution of site builds...</p>
-        <button class="read-more-btn">Read More</button>
-        <div class="more-content" style="display:none;">
-            <ul>
-                <li>Managed multi-million-dollar project budgets, tracking expenditures, optimizing resource allocation, and ensuring adherence to financial constraints.</li>
-                <li>Conducted site surveys and collaborated with engineering teams to refine project specifications.</li>
-            </ul>
-            <button class="read-less-btn">Read Less</button>
-        </div>
-    </div>
-
-    <div class="experience-card text-box">
-        <h3 style="color: #00FF7F;">KGP Co</h3>
-        <h4>Outside Plant (OSP) Construction Manager | February 2021 – October 2021</h4>
-        <p>Managed high-profile Fiber-to-the-Home (FTTH) and Fiber-to-the-Curb (FTTC) projects, overseeing the installation of over 500 miles of fiber optic infrastructure...</p>
-        <button class="read-more-btn">Read More</button>
-        <div class="more-content" style="display:none;">
-            <ul>
-                <li>Supervised a team of five supervisors and 20+ field crews, coordinating daily activities, site preparation, fiber installation, and quality control.</li>
-                <li>Led materials procurement and management, ensuring timely delivery of construction materials.</li>
-            </ul>
-            <button class="read-less-btn">Read Less</button>
-        </div>
-    </div>
-
-    <!-- Additional sections for other roles can be added similarly -->
-</section>
-
-<!-- Footer Section -->
-<footer class="footer-section">
-    <div class="footer-container">
-        <p><span class="icon-location"></span> Boise, ID</p>
-        <p><span class="icon-phone"></span> 208-371-0647</p>
-        <p><span class="icon-email"></span> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-        <p><span class="icon-linkedin"></span> <a href="https://linkedin.com/in/jadebowen">linkedin.com/in/jadebowen</a></p>
-        <p><span class="icon-github"></span> <a href="https://github.com/JadeBowen">github.com/JadeBowen</a></p>
-    </div>
-</footer>
+</html>
