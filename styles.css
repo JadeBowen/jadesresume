@@ -26,13 +26,13 @@ body {
 }
 
 #splash-screen img {
-    max-width: 90%; /* Slightly reduced size for PC */
+    max-width: 90%;
     height: auto;
 }
 
 @media screen and (max-width: 768px) {
     #splash-screen img {
-        max-width: 70%; /* Mobile-specific scaling */
+        max-width: 70%;
         height: auto;
     }
 }
@@ -55,7 +55,7 @@ body {
     width: 100%;
     background-color: #333;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px 0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -76,7 +76,7 @@ body {
     color: #00FFFF;
     font-size: 18px;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px 10px;
 }
 
 .menu-list a:hover {
@@ -86,8 +86,8 @@ body {
 /* Profile Section */
 .profile-section {
     text-align: center;
-    padding: 50px 0;
-    margin-top: 100px; /* Ensuring space under the navbar */
+    padding: 70px 0; /* Adding extra padding to avoid being covered by navbar */
+    margin-top: 50px; /* Ensure space under the navbar */
 }
 
 .profile-image {
@@ -97,56 +97,17 @@ body {
     object-fit: cover;
 }
 
-.text-box {
-    margin: 20px auto;
-    color: white;
-    max-width: 600px;
+/* Contact Info and QR Code */
+.contact-card, .qr-code-container {
+    text-align: center; /* Centering both contact info and QR code */
+    margin-top: 20px;
 }
 
-h1, h2, h3, .section-title {
-    color: #00FFFF;
-    margin-bottom: 15px;
-    text-align: center;
-}/* Fix Job Title Color */
-h4 {
-    color: #00FFFF; /* Ensuring job title matches the site color scheme */
-}
-
-/* Smooth Transition for Read More/Read Less */
-.more-content {
-    display: none;
-    opacity: 0;
-    max-height: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-
-.more-content.show {
-    display: block;
-    opacity: 1;
-    max-height: 1000px;
-}
-
-button, .button {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 15px;
-    display: block;
-}
-
-button:hover, .button:hover {
-    background-color: #1E90FF;
-}
-
-/* Footer Section (PC) */
+/* Footer Adjustments */
 footer {
     background-color: #333;
     color: white;
-    padding: 5px 0;
+    padding: 10px 0; /* Reduced padding to minimize height */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -154,13 +115,12 @@ footer {
 
 footer .footer-container {
     display: flex;
-    justify-content: space-around; /* Horizontal layout on PC */
-    flex-wrap: nowrap;
-    gap: 30px;
+    justify-content: space-around;
+    gap: 20px; /* Reduced gap */
 }
 
 footer p {
-    margin-bottom: 2px;
+    margin-bottom: 5px; /* Reduced margin between footer elements */
     text-align: center;
 }
 
@@ -176,44 +136,60 @@ footer a:hover {
 
 /* QR Code Adjustments */
 .qr-code-container img {
-    max-width: 150px; /* Resized QR code for mobile */
+    max-width: 150px; /* Proper QR code size for mobile */
     height: auto;
     object-fit: contain;
     margin: 0 auto;
 }
 
+.qr-code-container {
+    margin-bottom: 20px; /* Add space between QR code and resume button */
+}
+
+/* Resume Button */
+.resume-download-btn {
+    width: 100%; /* Full width of the screen */
+    background-color: #00FFFF;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 20px; /* Add space between QR code and button */
+}
+
+.resume-download-btn:hover {
+    background-color: #1E90FF;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row; /* Ensure horizontal menu items */
     }
 
     .menu-list {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap; /* Ensure items fit within smaller screen */
+        justify-content: center;
     }
 
     .profile-section {
-        margin-top: 60px;
+        margin-top: 70px; /* Extra space for mobile */
+    }
+
+    .qr-code-container {
+        margin-bottom: 30px; /* Add space below QR code */
     }
 
     footer .footer-container {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
     footer p {
         width: 100%;
-    }
-
-    body {
-        width: 100%;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
-    .text-box, .certifications-section, .proficiencies-section, .contact-section {
-        max-width: 95%;
-        padding: 10px;
     }
 }
 
@@ -223,8 +199,17 @@ footer a:hover {
         height: 150px;
     }
 
-    button, .button {
+    .resume-download-btn {
         font-size: 14px;
-        padding: 8px 15px;
+        padding: 10px;
+    }
+
+    .qr-code-container img {
+        max-width: 120px;
+    }
+
+    .footer p {
+        font-size: 14px;
+        margin: 5px 0;
     }
 }
