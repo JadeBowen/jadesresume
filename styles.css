@@ -6,8 +6,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1E1E1E; /* Dark modern background */
+    color: #E0E0E0; /* Light gray for body text for better contrast */
 }
 
 /* Header - Sticky Menu */
@@ -35,13 +36,15 @@ body {
 
 .menu-list a {
     text-decoration: none;
-    color: #fff;
+    color: #00FFFF; /* Electric blue for futuristic look */
     font-size: 18px;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
     font-weight: bold;
 }
 
 .menu-list a:hover {
-    color: #1E90FF;
+    color: #8A2BE2; /* Bright purple on hover */
+    transition: color 0.3s ease;
 }
 
 /* Profile Section */
@@ -64,97 +67,89 @@ body {
     border-radius: 10px;
     color: white;
     max-width: 600px;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3 {
-    color: #00BFFF;
+    color: #00FFFF; /* Primary accent color for headings */
     margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 p {
     line-height: 1.6;
-}
-
-/* Button Styles */
+    color: #E0E0E0; /* Light gray for readability */
+}/* Button Styles */
 button {
-    background-color: #00BFFF;
+    background-color: #00FFFF; /* Electric blue for futuristic buttons */
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-family: 'Orbitron', sans-serif; /* Tech-inspired font */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #1E90FF;
+    background-color: #8A2BE2; /* Bright purple on hover */
+    transform: scale(1.05); /* Slight scale-up for interactivity */
 }
 
-/* Philosophy Section */
-.philosophy-section {
+/* Philosophy & Experience Section */
+.philosophy-section, .experience-section {
     padding: 50px 0;
+    background-color: #1E1E1E; /* Consistent dark background */
+}
+
+.experience-card, .philosophy-container {
+    margin-bottom: 20px;
+    background-color: #333; /* Dark box for content */
+    border-radius: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.experience-card:hover, .philosophy-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2); /* Glowing box shadow */
+    transform: translateY(-5px); /* Slight lift for hover */
 }
 
 /* Read More/Read Less Buttons */
 .read-more-btn, .read-less-btn {
-    background-color: #00BFFF;
+    background-color: #00FFFF;
     color: #fff;
     padding: 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    font-family: 'Orbitron', sans-serif;
 }
 
-/* Experience Section */
-.experience-section {
-    padding: 50px 0;
-}
-
-.experience-card {
-    margin-bottom: 20px;
-}
-
-h4 {
-    color: #FFA500;
-}/* Certifications Section */
-.certifications-section {
-    padding: 50px 0;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-
-.certifications-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.certifications-section li {
-    margin-bottom: 10px;
+.read-more-btn:hover, .read-less-btn:hover {
+    background-color: #8A2BE2; /* Hover effect for consistency */
 }
 
 /* Contact Information Section */
-.contact-section {
+.contact-section, .certifications-section {
     padding: 50px 0;
-    background-color: #333;
+    background-color: #1E1E1E; /* Dark theme consistency */
     color: white;
     text-align: center;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .contact-section a {
-    color: #00BFFF;
+    color: #00FFFF;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .contact-section a:hover {
-    color: #1E90FF;
+    color: #8A2BE2;
 }
 
-/* QR Codes */
 .qr-code-container {
     display: flex;
     justify-content: center;
@@ -174,6 +169,7 @@ h4 {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
+    color: #00FFFF;
 }
 
 /* Footer Section */
@@ -186,16 +182,17 @@ footer {
 
 footer p {
     margin-bottom: 5px;
+    color: #E0E0E0;
 }
 
 footer a {
-    color: #00BFFF;
+    color: #00FFFF;
     text-decoration: none;
     margin: 0 15px;
 }
 
 footer a:hover {
-    color: #1E90FF;
+    color: #8A2BE2;
 }
 
 /* Media Queries for Responsive Design */
