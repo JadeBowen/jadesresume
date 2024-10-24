@@ -8,7 +8,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1E1E1E;
-    color: #fff;
+    color: white;
 }
 
 /* Header - Sticky Menu */
@@ -70,6 +70,7 @@ body {
 h1, h2, h3 {
     color: #00FFFF;
     margin-bottom: 15px;
+    text-align: left;
 }
 
 p {
@@ -91,29 +92,6 @@ button:hover {
     background-color: #8A2BE2;
 }
 
-/* Resume Download Button */
-.resume-download-btn {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 18px;
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    box-shadow: 0 0 8px #00FFFF;
-}
-
-.resume-download-btn:hover {
-    background-color: #8A2BE2;
-    box-shadow: 0 0 12px #8A2BE2;
-}
-
-/* Philosophy Section */
-.philosophy-section {
-    padding: 50px 0;
-}
-
 /* Read More/Read Less Buttons */
 .read-more-btn, .read-less-btn {
     background-color: #00FFFF;
@@ -125,19 +103,220 @@ button:hover {
     margin-top: 10px;
 }
 
+/* Experience Section */
+.experience-section {
+    padding: 50px 0;
+}
+
+.experience-card {
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: #FFA500;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.certifications-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.certifications-section li {
+    margin-bottom: 10px;
+}
+
+/* Proficiencies Section */
+.proficiencies-section {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Contact Information Section */
+.contact-section {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    color: #8A2BE2;
+}
+
 /* QR Codes */
 .qr-codes {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
-.qr-codes img {
-    width: 150px;
-    height: 150px;
+.qr-code img {
+    margin: 0 20px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     border-radius: 10px;
-    border: 2px solid #00FFFF;
-    box-shadow: 0 0 8px #00FFFF;
+}
+
+.qr-code p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer p {
+    margin: 0 15px;
+}
+
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer a:hover {
+    color: #8A2BE2;
+}
+
+footer .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .icon-container p {
+    margin-right: 10px;
+}
+
+/* Sticky Navbar on Mobile (Two Columns) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu-list {
+        flex-wrap: wrap;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu-list li {
+        margin-bottom: 10px;
+        flex-basis: 45%; /* Two-column layout */
+        text-align: center;
+    }
+
+    .contact-section, .certifications-section, .text-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .qr-code-container {
+        flex-direction: column;
+    }
+
+    .qr-code img {
+        margin-bottom: 15px;
+    }
+}
+
+/* Mobile Adjustments for Smaller Screens */
+@media screen and (max-width: 480px) {
+    .menu-list a {
+        font-size: 16px;
+    }
+
+    .contact-section, .certifications-section, .text-box {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+    }
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1E1E1E;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#splash-screen img {
+    max-width: 80%;
+    height: auto;
+}
+
+#splash-screen.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
