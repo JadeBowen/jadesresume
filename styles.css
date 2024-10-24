@@ -26,14 +26,13 @@ body {
 }
 
 #splash-screen img {
-    width: 100%;
+    max-width: 90%; /* Adjusted for PC to avoid being too large */
     height: auto;
-    object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
     #splash-screen img {
-        width: 100%;
+        max-width: 70%; /* For mobile devices */
         height: auto;
     }
 }
@@ -51,7 +50,7 @@ body {
 
 /* Sticky Navbar */
 .navbar {
-    position: fixed; /* Ensure it's fixed at all times */
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: #333;
@@ -84,6 +83,15 @@ body {
     color: #8A2BE2;
 }
 
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+    .menu-list li {
+        margin-bottom: 10px; /* Space out items on mobile */
+    }
+}
+
 /* Profile Section */
 .profile-section {
     text-align: center;
@@ -108,6 +116,9 @@ h1, h2, h3, .section-title {
     color: #00FFFF;
     margin-bottom: 15px;
     text-align: center;
+}/* Fix Job Title Color */
+h4 {
+    color: #00FFFF; /* Update the job title to match the color scheme */
 }
 
 /* Smooth Transition for Read More/Read Less */
@@ -138,83 +149,6 @@ button, .button {
 
 button:hover, .button:hover {
     background-color: #1E90FF;
-}/* Experience Section */
-.experience-section {
-    padding: 50px 0;
-}
-
-.experience-card {
-    margin-bottom: 20px;
-}
-
-h4 {
-    color: #FFA500;
-}
-
-/* Certifications, Proficiencies, and Contact Info Adjustments */
-.certifications-section, .proficiencies-section, .contact-section {
-    padding: 30px 0;
-    color: white;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-/* Contact Info Section - Add More Spacing */
-.contact-card {
-    margin: 30px 0;
-}
-
-.contact-card p {
-    margin: 10px 0;
-}
-
-.contact-card a {
-    color: #00FFFF;
-    text-decoration: none;
-}
-
-.contact-card a:hover {
-    color: #1E90FF;
-}
-
-/* QR Code Adjustments for Mobile */
-.qr-code-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.qr-code-container img {
-    margin: 0 10px;
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-}
-
-.qr-code-container p {
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.resume-download-btn {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #00FFFF;
-    color: #fff;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.resume-download-btn:hover {
-    background-color: #1E90FF;
-    box-shadow: 0 0 8px #1E90FF;
 }
 
 /* Footer Section */
@@ -227,9 +161,26 @@ footer {
     flex-wrap: wrap;
 }
 
+footer .footer-container {
+    display: flex;
+    justify-content: space-around; /* Spread horizontally on PC */
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+
 footer p {
     margin-bottom: 2px;
     text-align: center;
+}
+
+/* Update Footer Link Colors */
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #1E90FF;
 }
 
 /* Media Queries for Responsive Design */
@@ -258,9 +209,7 @@ footer p {
     }
 
     footer .footer-container {
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on mobile */
     }
 
     footer p {
