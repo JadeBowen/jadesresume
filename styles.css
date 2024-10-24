@@ -128,7 +128,7 @@ h4 {
     margin: 0 auto;
 }
 
-/* Added margins for QR code separation */
+/* Removed Contact QR Code entirely */
 .qr-code-container {
     display: flex;
     justify-content: center;
@@ -157,7 +157,7 @@ h4 {
     margin-top: 20px; /* Add space above the download button */
 }
 
-/* Footer Section */
+/* Footer Section with Corrected Grammar and Icons */
 footer {
     background-color: #333;
     color: white;
@@ -190,6 +190,28 @@ footer a {
 
 footer a:hover {
     color: #1E90FF;
+}
+
+/* Icons next to Contact Info */
+footer .icon {
+    margin-right: 8px;
+}
+
+/* Contact Icons */
+.icon-phone:before {
+    content: '\f095'; /* Font Awesome phone icon */
+}
+
+.icon-map-marker:before {
+    content: '\f3c5'; /* Font Awesome map marker */
+}
+
+.icon-linkedin:before {
+    content: '\f08c'; /* Font Awesome LinkedIn icon */
+}
+
+.icon-github:before {
+    content: '\f09b'; /* Font Awesome GitHub icon */
 }
 
 /* Media Queries for Responsive Design */
