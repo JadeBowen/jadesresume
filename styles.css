@@ -8,9 +8,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true');
-    background-size: 110%; /* Zoom out by 10% */
+    background-size: 110%;
     background-position: center;
-    background-attachment: fixed; /* Ensure it stays fixed during scroll */
+    background-attachment: fixed;
     color: white;
 }
 
@@ -50,17 +50,17 @@ body {
     100% { opacity: 0; visibility: hidden; }
 }
 
-/* Sticky Navbar */
+/* Sticky Navbar for PC */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.8); /* Transparency added */
+    background-color: rgba(51, 51, 51, 0.8);
     z-index: 1000;
     padding: 15px 0;
     display: flex;
     justify-content: space-evenly;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .menu-list {
@@ -86,16 +86,55 @@ body {
     color: #8A2BE2;
 }
 
-/* Adjust menu font size and padding for mobile */
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+    background-color: #00FFFF;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu for Mobile */
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #00FFFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover {
+    color: #1E90FF;
+}
+
+/* Responsive Design: Hide PC menu, show mobile menu */
 @media screen and (max-width: 768px) {
-    .menu-list a {
-        font-size: 16px; /* Reduced font size for mobile */
-        padding: 8px; /* Adjust padding to ensure text fits */
+    .navbar {
+        display: none;
     }
 
-    .menu-list {
-        padding: 0 10px; /* Add extra padding around the menu */
-        justify-content: space-between; /* Spread items evenly */
+    .hamburger-menu {
+        display: block;
     }
 }/* Profile Section */
 .profile-section {
@@ -115,61 +154,64 @@ body {
 .section-title {
     margin-bottom: 40px;
     font-size: 28px;
+    color: #00FFFF;
 }
 
-/* Text Box */
-.text-box p {
-    margin-bottom: 20px;
+/* Skills, Proficiencies, Achievements, Certifications Sections */
+.skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+    text-align: center;
+    padding: 30px 0;
 }
 
-/* Text Shadows for Better Readability */
-h1, h2, h3, p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+.skills-section ul, .proficiencies-section ul, .achievements-section ul, .certifications-section ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
 }
 
-/* Footer Fix and Link Colors */
-footer {
-    background-color: #333;
+.skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
+    margin-bottom: 10px;
     color: white;
-    padding: 3px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-footer .footer-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 5px;
-}
-
-footer p {
-    margin-bottom: 3px;
+/* Contact Section */
+.contact-section {
+    padding: 40px 0;
     text-align: center;
 }
 
-/* Adjust link colors for better contrast */
-a, footer a {
-    color: #00FFFF; /* Light blue for contrast */
+.contact-section a {
+    color: #00FFFF;
     text-decoration: none;
 }
 
-a:hover, footer a:hover {
-    color: #1E90FF; /* Slightly darker on hover */
+.contact-section a:hover {
+    color: #1E90FF;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container p {
+    margin-bottom: 5px;
 }
 
 /* Button Fixes and Colors */
 button, .button {
     background-color: #00FFFF;
     color: #fff;
-    padding: 12px; /* Adjust padding for better spacing */
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     display: inline-block;
-    margin-top: 20px; /* Increase margin for clarity */
-    margin-bottom: 20px; /* Bottom margin to separate from other content */
+    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -177,32 +219,31 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
-/* Center and add space around the QR Code */
-.qr-code-container {
-    text-align: center;
-    margin-top: 20px; /* Added spacing above */
-    margin-bottom: 20px; /* Added spacing below */
+/* Expandable Content (Read More/Less) */
+.more-content {
+    display: none;
 }
 
-.qr-code {
-    max-width: 150px;
-    height: auto;
-}
-
-/* Adjust download button for better positioning */
-.resume-download-btn {
+.read-more-btn, .read-less-btn {
     background-color: #00FFFF;
-    color: #fff;
-    padding: 15px;
+    color: white;
     border: none;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+}
+
+.read-more-btn:hover, .read-less-btn:hover {
+    background-color: #1E90FF;
+}
+
+.more-content.show {
     display: block;
-    text-align: center;
+}
+
+.read-more-btn.hide {
+    display: none;
 }
 
 /* Scroll to Top Button */
@@ -235,39 +276,23 @@ button:hover, .button:hover {
     cursor: pointer;
 }
 
-/* Parallax effect */
-.parallax-background {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Responsive Design */
+/* Responsive Adjustments for Mobile */
 @media screen and (max-width: 768px) {
-    footer .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer p {
-        width: 100%;
+    .profile-image {
+        width: 150px;
+        height: 150px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .profile-image {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .resume-download-btn {
         font-size: 14px;
         padding: 10px;
-    }
-
-    .qr-code-container img {
-        max-width: 120px;
     }
 
     .footer p {
