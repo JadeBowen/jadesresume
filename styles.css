@@ -8,10 +8,18 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true');
-    background-size: 110%;
+    background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     color: white;
+    margin: 0;
+}
+
+/* Container Setup for Fluid Grid */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
 }
 
 /* Splash Screen */
@@ -40,7 +48,6 @@ body {
     }
 }
 
-/* Smooth Fade-Out */
 #splash-screen.fade-out {
     animation: fadeOut 1s forwards;
 }
@@ -50,7 +57,7 @@ body {
     100% { opacity: 0; visibility: hidden; }
 }
 
-/* Sticky Navbar for PC */
+/* Navbar for PC */
 .navbar {
     position: fixed;
     top: 0;
@@ -59,15 +66,14 @@ body {
     z-index: 1000;
     padding: 15px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .menu-list {
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    gap: 1.5em;
 }
 
 .menu-list li {
@@ -77,7 +83,7 @@ body {
 .menu-list a {
     text-decoration: none;
     color: #00FFFF;
-    font-size: 18px;
+    font-size: 1em;
     font-weight: bold;
     padding: 10px;
 }
@@ -86,7 +92,7 @@ body {
     color: #8A2BE2;
 }
 
-/* Hamburger Menu for Mobile */
+/* Mobile Hamburger Menu */
 .hamburger-menu {
     display: none;
     position: fixed;
@@ -136,11 +142,12 @@ body {
     .hamburger-menu {
         display: block;
     }
-}/* Profile Section */
+}
+
+/* Profile Section */
 .profile-section {
     text-align: center;
-    padding: 100px 0;
-    margin-top: 50px; /* Space under the navbar */
+    padding: 80px 0;
 }
 
 .profile-image {
@@ -150,23 +157,41 @@ body {
     object-fit: cover;
 }
 
+@media screen and (max-width: 480px) {
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 /* Section Titles */
 .section-title {
-    margin-bottom: 40px;
-    font-size: 28px;
+    margin-bottom: 20px;
+    font-size: 2em;
     color: #00FFFF;
 }
 
-/* Skills, Proficiencies, Achievements, Certifications Sections */
+/* Text Box General Styling */
+.text-box {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 90%;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    line-height: 1.6;
+}/* Skills, Proficiencies, Achievements, Certifications Sections */
 .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
     text-align: center;
     padding: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .skills-section ul, .proficiencies-section ul, .achievements-section ul, .certifications-section ul {
     list-style-type: none;
     padding: 0;
-    font-size: 18px;
+    font-size: 1.1em;
 }
 
 .skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
@@ -193,7 +218,7 @@ body {
 .footer-section {
     background-color: #333;
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -276,6 +301,29 @@ button:hover, .button:hover {
     cursor: pointer;
 }
 
+/* Responsive Grid Adjustments for Larger Screens */
+@media screen and (min-width: 768px) {
+    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .text-box {
+        max-width: 80%;
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .text-box {
+        max-width: 70%;
+        font-size: 1.3em;
+    }
+}
+
 /* Responsive Adjustments for Mobile */
 @media screen and (max-width: 768px) {
     .profile-image {
@@ -285,11 +333,6 @@ button:hover, .button:hover {
 }
 
 @media screen and (max-width: 480px) {
-    .profile-image {
-        width: 120px;
-        height: 120px;
-    }
-
     .resume-download-btn {
         font-size: 14px;
         padding: 10px;
