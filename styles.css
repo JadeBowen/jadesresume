@@ -1,257 +1,167 @@
-/* General Reset */
-* {
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/data%20room%20fixed.jpg?raw=true');
+    background-image: url('world-on-chip.jpg'); /* New Background Image */
     background-size: cover;
     background-position: center;
-    color: white;
+    background-attachment: fixed;
+    color: #333; /* Text color for readability */
+    line-height: 1.6; /* Comfortable line spacing */
 }
 
-/* Splash Screen */
-#splash-screen {
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Large heading for title */
+    color: #004080; /* Dark Blue from branding */
+}
+
+/* Resume PDF Button */
+.resume-pdf-btn {
+    display: block;
+    width: 100%; /* Full-width button */
+    background-color: #6699CC; /* Light Blue from branding */
+    color: #fff; /* White text for contrast */
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: 20px 0; /* Spacing around the button */
+}
+
+.resume-pdf-btn:hover {
+    background-color: #557A99; /* Slightly darker blue on hover */
+}
+
+/* Job Sections */
+.job-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight opacity for readability on background */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Job Titles */
+.job-section h2 {
+    font-size: 1.8em;
+    color: #004080; /* Dark Blue from branding */
+    margin-bottom: 10px;
+}
+
+/* Job Descriptions */
+.job-section p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Lists within job descriptions */
+.job-section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.job-section ul li {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #333;
+}/* Expand/Collapse Buttons */
+.toggle-btn {
+    background-color: #004080; /* Dark Blue from branding */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.toggle-btn:hover {
+    background-color: #557A99; /* Hover effect for buttons */
+}
+
+/* Expandable Sections (Initially hidden) */
+.expandable-section {
+    display: none; /* Hidden by default */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Smooth transition for expanding/collapsing */
+}
+
+.expandable-section.show {
+    display: block;
+    max-height: 500px; /* Arbitrary max height; can adjust based on content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Mobile-specific adjustments */
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em; /* Smaller title for mobile */
+    }
+
+    .resume-pdf-btn {
+        font-size: 1.1em; /* Slightly smaller button text for mobile */
+    }
+
+    .job-section h2 {
+        font-size: 1.5em; /* Smaller job titles for mobile */
+    }
+
+    .job-section p {
+        font-size: 1em; /* Adjust body text size for readability on mobile */
+    }
+
+    .toggle-btn {
+        font-size: 0.9em; /* Smaller button text for mobile */
+    }
+}
+
+/* Accessibility */
+:focus {
+    outline: 3px solid #6699CC; /* High-visibility focus indicator for keyboard navigation */
+}
+
+.resume-pdf-btn:focus,
+.toggle-btn:focus {
+    outline-offset: 3px;
+    outline: 3px solid #557A99; /* Custom focus outline for buttons */
+}
+
+/* Background Image Text Contrast */
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#splash-screen img {
-    max-width: 90%;
-    height: auto;
-}
-
-@media screen and (max-width: 768px) {
-    #splash-screen img {
-        max-width: 70%;
-        height: auto;
-    }
-}
-
-#splash-screen.fade-out {
-    animation: fadeOut 1s forwards;
-}
-
-@keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-/* Sticky Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.8); /* Transparency added */
-    z-index: 1000;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-evenly;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-.menu-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.menu-list li {
-    text-align: center;
-}
-
-.menu-list a {
-    text-decoration: none;
-    color: #00FFFF;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.menu-list a:hover {
-    color: #8A2BE2;
-}
-
-/* Profile Section */
-.profile-section {
-    text-align: center;
-    padding: 100px 0;
-    margin-top: 50px; /* Space under the navbar */
-}
-
-.profile-image {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Section Titles */
-.section-title {
-    margin-bottom: 40px;
-    font-size: 28px;
-}
-
-/* Text Box */
-.text-box p {
-    margin-bottom: 20px;
-}
-
-/* Text Shadows for Better Readability */
-h1, h2, h3, p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
-}/* Contact Info and QR Code Alignment */
-.contact-card, .qr-code-container {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* Footer Fix and Link Colors */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 3px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-footer .footer-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 5px;
-}
-
-footer p {
-    margin-bottom: 3px;
-    text-align: center;
-}
-
-/* All Links with Matching Colors */
-a, footer a {
-    color: #00FFFF;
-    text-decoration: none;
-}
-
-a:hover, footer a:hover {
-    color: #1E90FF;
-}
-
-/* QR Code Adjustments */
-.qr-code-container img {
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-}
-
-.qr-code-container {
-    margin-bottom: 30px; /* Add more space between QR code and resume button */
-}
-
-/* Button Fixes and Colors */
-button, .button {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 15px;
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-button:hover, .button:hover {
-    background-color: #1E90FF;
-}
-
-.resume-download-btn {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%; /* Full width for the download button */
-    margin-top: 20px;
-    margin-bottom: 20px; /* Spacing to avoid overlap with footer */
-}
-
-.resume-download-btn:hover {
-    background-color: #1E90FF;
-}
-
-/* Read More Button Fix */
-.more-content {
-    display: none;
-}
-
-button.read-more-btn {
-    display: inline-block;
-}
-
-button.read-less-btn {
-    display: none;
-}
-
-.more-content.show {
-    display: block;
-}
-
-.more-content.show + .read-less-btn {
-    display: inline-block;
-}
-
-.read-more-btn.hide {
-    display: none;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    footer .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer p {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .resume-download-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .qr-code-container img {
-        max-width: 120px;
-    }
-
-    .footer p {
-        font-size: 14px;
-        margin: 5px 0;
-    }
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for improved text contrast */
+    z-index: -1;
 }
