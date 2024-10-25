@@ -3,142 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jade Bowen - Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <title>My Professional Resume</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
 </head>
-
 <body>
-    <!-- Splash Screen Section -->
-    <div id="splash-screen">
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/logo%202.0.jpg?raw=true" alt="Jade Bowen Logo">
-    </div>
 
-    <!-- Header Section -->
-    <header class="header">
-        <nav class="navbar">
-            <ul class="menu-list">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#proficiencies">Proficiencies</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Container for entire page content -->
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header>
+            <h1>My Professional Resume</h1>
+        </header>
 
-    <!-- Profile Section -->
-    <section id="about" class="profile-section">
-        <div class="profile-container">
-            <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Profile" class="profile-image">
-            <div class="about-info text-box">
-                <h1>About Me</h1>
-                <p>My passion for telecommunications started when I was 12, visiting my first cell phone site with my father...</p>
-                <p>With over 21 years of experience in construction and telecommunications, I’ve carried that lesson with me while overseeing large-scale projects and leading diverse teams.</p>
-            </div>
+        <!-- Full-width Resume PDF Button -->
+        <div class="resume-section">
+            <a href="resume.pdf" class="resume-pdf-btn" download>Download Resume PDF</a>
         </div>
-    </section>
 
-    <!-- Philosophy Section -->
-    <section id="philosophy" class="philosophy-section">
-        <h2 class="section-title">Philosophy</h2>
-        <div class="philosophy-container text-box">
-            <h3>Mission Statement</h3>
-            <p>As a results-driven professional with over 20 years of experience in construction and telecommunications...</p>
-            <button class="read-more-btn">Read More</button>
-            <div class="more-content" style="display:none;">
-                <p>With a deep commitment to honesty and hard work, I strive to lead teams and initiatives that not only meet but exceed organizational goals.</p>
-                <button class="read-less-btn">Read Less</button>
-            </div>
-        </div><div class="philosophy-container text-box">
-            <h3>Impact Statement</h3>
-            <p>Through strategic leadership and a relentless focus on operational efficiency...</p>
-            <button class="read-more-btn">Read More</button>
-            <div class="more-content" style="display:none;">
-                <p>By fostering an environment where respect and teamwork are paramount, I work to empower teams, improve processes, and deliver results.</p>
-                <button class="read-less-btn">Read Less</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Experience Section -->
-    <section id="experience" class="experience-section">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="experience-card text-box">
-            <h3>Boise's Best Auto Sales</h3>
-            <h4>Finance and Marketing Manager | June 2023 – Present</h4>
-            <p>Manage financial strategies, including budgeting, forecasting, and financial reporting...</p>
-            <button class="read-more-btn">Read More</button>
-            <div class="more-content" style="display:none;">
+        <!-- First Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job1">Show More</button>
+            <div id="job1" class="expandable-section">
+                <h2>Telecommunications Project Manager</h2>
+                <p>Managed large-scale telecommunications projects including cell tower installations, network upgrades, and fiber optic deployments. Led cross-functional teams and ensured project timelines, budgets, and client satisfaction were achieved.</p>
                 <ul>
-                    <li>Lead marketing initiatives to increase brand awareness and customer engagement.</li>
-                    <li>Oversee financial operations to ensure profitability and strategic growth.</li>
+                    <li>Oversaw multimillion-dollar projects across various regions.</li>
+                    <li>Collaborated with vendors, suppliers, and stakeholders to meet regulatory compliance.</li>
+                    <li>Handled financial oversight and managed project budgets.</li>
                 </ul>
-                <button class="read-less-btn">Read Less</button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications-section">
-        <h2 class="section-title">Certifications</h2>
-        <ul class="text-box">
-            <li>OSHA 10 & 30 Certified</li>
-            <li>First Aid and CPR Certified</li>
-            <li>Comtrain Certified Instructor (Tower Rescue and Rope Access)</li>
-            <li>ODI Fiber Testing & Cleaning Certified</li>
-        </ul>
-    </section>
-
-    <!-- Proficiencies Section -->
-    <section id="proficiencies" class="proficiencies-section">
-        <h2 class="section-title">Proficiencies</h2>
-        <ul class="text-box">
-            <li>Telecommunications: Wireless, 5G, Fiber Optics</li>
-            <li>Construction Management</li>
-            <li>Software: Microsoft Office, Google Workspace, CRM</li>
-            <li>Safety: OSHA Compliance, Safety Inspections</li>
-        </ul>
-    </section>
-
-    <!-- Contact Information Section -->
-    <section id="contact" class="contact-section">
-        <h2 class="section-title">Contact Information</h2>
-        <div class="contact-card text-box">
-            <p><strong>Jade Bowen</strong></p>
-            <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
-            <p><i class="fas fa-phone"></i> 208-371-0647</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen">linkedin.com/in/jadebowen</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen">github.com/JadeBowen</a></p>
-        </div>
-
-        <!-- QR Code Container with Added Spacing -->
-        <div class="qr-code-container">
-            <div class="qr-code">
-                <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
-                <p>LinkedIn QR Code</p>
+        <!-- Second Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job2">Show More</button>
+            <div id="job2" class="expandable-section">
+                <h2>Construction Manager</h2>
+                <p>Supervised large construction projects with a focus on ensuring safety standards, quality control, and timely completion of projects.</p>
+                <ul>
+                    <li>Led construction teams on commercial and residential projects.</li>
+                    <li>Coordinated with contractors, suppliers, and site managers.</li>
+                    <li>Maintained project timelines and ensured adherence to safety regulations.</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Full-width Resume Button -->
-        <a class="resume-download-btn" href="https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf" target="_blank">Download Resume (PDF)</a>
-    </section>
+        <!-- Third Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job3">Show More</button>
+            <div id="job3" class="expandable-section">
+                <h2>Telecommunications Field Technician/Engineer</h2>
+                <p>Handled technical installation and troubleshooting of telecommunications infrastructure, including wireless systems and fiber optics.</p>
+                <ul>
+                    <li>Installed, maintained, and repaired telecommunications equipment.</li>
+                    <li>Performed field inspections and diagnostics on cell towers.</li>
+                    <li>Collaborated with engineers to resolve technical issues.</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Footer Section -->
-    <footer class="footer-section">
-        <div class="footer-container">
-            <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
-            <p><i class="fas fa-phone"></i> 208-371-0647</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen">linkedin.com/in/jadebowen</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen">github.com/JadeBowen</a></p>
-        </div>
-    </footer>
+        <!-- Fourth Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job4">Show More</button>
+            <div id="job4" class="expandable-section">
+                <h2>Safety and Compliance Manager</h2>
+                <p>Oversaw safety regulations and compliance efforts for construction and telecommunications projects. Ensured teams adhered to OSHA standards.</p>
+                <ul>
+                    <li>Developed safety protocols and conducted training sessions.</li>
+                    <li>Led inspections to ensure compliance with federal and state safety regulations.</li>
+                    <li>Implemented emergency response and risk mitigation strategies.</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- JavaScript File -->
-    <script src="scripts.js"></script>
+        <!-- Fifth Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job5">Show More</button>
+            <div id="job5" class="expandable-section">
+                <h2>Operations Manager</h2>
+                <p>Directed day-to-day operations of a telecommunications and construction company, ensuring smooth workflow and efficient resource allocation.</p>
+                <ul>
+                    <li>Streamlined operations to improve overall efficiency and productivity.</li>
+                    <li>Managed cross-functional teams across multiple departments.</li>
+                    <li>Oversaw budgeting, forecasting, and reporting processes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sixth Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job6">Show More</button>
+            <div id="job6" class="expandable-section">
+                <h2>Finance and Marketing Manager</h2>
+                <p>Led financial planning and marketing strategies for a telecommunications company, ensuring strong financial performance and brand visibility.</p>
+                <ul>
+                    <li>Managed marketing campaigns that increased brand awareness and customer acquisition.</li>
+                    <li>Developed financial forecasts and managed cost control efforts.</li>
+                    <li>Ensured accurate financial reporting and compliance with industry standards.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seventh Job Section (Expandable) -->
+        <section class="job-section">
+            <button class="toggle-btn" data-target="job7">Show More</button>
+            <div id="job7" class="expandable-section">
+                <h2>Comprehensive Telecommunications Resume</h2>
+                <p>This section provides a comprehensive look at 21+ years of experience across various telecommunications roles, from field technician to project and operations management.</p>
+                <ul>
+                    <li>Handled complex installations, repairs, and technical projects in wireless communications.</li>
+                    <li>Led multimillion-dollar projects from start to finish, with a strong focus on safety and compliance.</li>
+                    <li>Supervised cross-functional teams in both field and office settings, ensuring that deadlines and project goals were met.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 My Professional Resume</p>
+        </footer>
+
+    </div> <!-- End of Container -->
+
+    <script src="scripts.js"></script> <!-- External JavaScript file -->
 </body>
 </html>
