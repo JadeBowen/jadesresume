@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true');
-    background-size: cover;
+    background-size: 170%;
     background-position: center;
     color: white;
     margin: 0;
@@ -39,13 +39,6 @@ body {
 #splash-screen img {
     max-width: 90%;
     height: auto;
-}
-
-@media screen and (max-width: 768px) {
-    #splash-screen img {
-        max-width: 70%;
-        height: auto;
-    }
 }
 
 #splash-screen.fade-out {
@@ -142,12 +135,14 @@ body {
     .hamburger-menu {
         display: block;
     }
-}
-
-/* Profile Section */
+}/* Profile Section */
 .profile-section {
     text-align: center;
     padding: 80px 0;
+    max-width: 90%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay for readability */
+    border-radius: 10px;
 }
 
 .profile-image {
@@ -155,31 +150,27 @@ body {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
-@media screen and (max-width: 480px) {
-    .profile-image {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-/* Section Titles */
 .section-title {
     margin-bottom: 20px;
     font-size: 2em;
     color: #00FFFF;
 }
 
-/* Text Box General Styling */
+/* Text Box Styling */
 .text-box {
-    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
     padding: 20px;
+    margin: 20px auto;
     max-width: 90%;
-    font-size: 1.1em;
+    border-radius: 8px;
     color: #e0e0e0;
     line-height: 1.6;
-}/* Skills, Proficiencies, Achievements, Certifications Sections */
+}
+
+/* Grid Layout for Skills, Proficiencies, etc. */
 .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
     text-align: center;
     padding: 30px 0;
@@ -195,8 +186,8 @@ body {
 }
 
 .skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
-    margin-bottom: 10px;
     color: white;
+    margin-bottom: 10px;
 }
 
 /* Contact Section */
@@ -222,11 +213,7 @@ body {
     text-align: center;
 }
 
-.footer-container p {
-    margin-bottom: 5px;
-}
-
-/* Button Fixes and Colors */
+/* Button Styles */
 button, .button {
     background-color: #00FFFF;
     color: #fff;
@@ -235,8 +222,6 @@ button, .button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    display: inline-block;
-    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -244,7 +229,7 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
-/* Expandable Content (Read More/Less) */
+/* Expandable Content */
 .more-content {
     display: none;
 }
@@ -263,45 +248,7 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
-.more-content.show {
-    display: block;
-}
-
-.read-more-btn.hide {
-    display: none;
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    display: none; /* Hidden initially */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #00FFFF;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* Dark/Light Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1001;
-    background-color: #00FFFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Responsive Grid Adjustments for Larger Screens */
+/* Responsive Adjustments for Larger Screens */
 @media screen and (min-width: 768px) {
     .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
         grid-template-columns: 1fr 1fr;
@@ -321,25 +268,5 @@ button:hover, .button:hover {
     .text-box {
         max-width: 70%;
         font-size: 1.3em;
-    }
-}
-
-/* Responsive Adjustments for Mobile */
-@media screen and (max-width: 768px) {
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .resume-download-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .footer p {
-        font-size: 14px;
-        margin: 5px 0;
     }
 }
