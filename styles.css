@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/data%20room%20fixed.jpg?raw=true');
+    background-image: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true');
     background-size: cover;
     background-position: center;
     color: white;
@@ -48,45 +48,7 @@ body {
         opacity: 0;
         visibility: hidden;
     }
-}
-
-/* Sticky Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.8); /* Transparency added */
-    z-index: 1000;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-evenly;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-.menu-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.menu-list li {
-    text-align: center;
-}
-
-.menu-list a {
-    text-decoration: none;
-    color: #00FFFF;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.menu-list a:hover {
-    color: #8A2BE2;
-}
-
-/* Profile Section */
+}/* Profile Section */
 .profile-section {
     text-align: center;
     padding: 100px 0;
@@ -104,63 +66,6 @@ body {
 .section-title {
     margin-bottom: 40px;
     font-size: 28px;
-}
-
-/* Text Box */
-.text-box p {
-    margin-bottom: 20px;
-}
-
-/* Text Shadows for Better Readability */
-h1, h2, h3, p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
-}/* Contact Info and QR Code Alignment */
-.contact-card, .qr-code-container {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* Footer Fix and Link Colors */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 3px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-footer .footer-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 5px;
-}
-
-footer p {
-    margin-bottom: 3px;
-    text-align: center;
-}
-
-/* All Links with Matching Colors */
-a, footer a {
-    color: #00FFFF;
-    text-decoration: none;
-}
-
-a:hover, footer a:hover {
-    color: #1E90FF;
-}
-
-/* QR Code Adjustments */
-.qr-code-container img {
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-}
-
-.qr-code-container {
-    margin-bottom: 30px; /* Add more space between QR code and resume button */
 }
 
 /* Button Fixes and Colors */
@@ -189,69 +94,28 @@ button:hover, .button:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%; /* Full width for the download button */
+    width: 100%;
     margin-top: 20px;
-    margin-bottom: 20px; /* Spacing to avoid overlap with footer */
+    margin-bottom: 20px;
 }
 
-.resume-download-btn:hover {
-    background-color: #1E90FF;
+/* Footer Fix and Link Colors */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Read More Button Fix */
-.more-content {
-    display: none;
+footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
 }
 
-button.read-more-btn {
-    display: inline-block;
-}
-
-button.read-less-btn {
-    display: none;
-}
-
-.more-content.show {
-    display: block;
-}
-
-.more-content.show + .read-less-btn {
-    display: inline-block;
-}
-
-.read-more-btn.hide {
-    display: none;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    footer .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer p {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .resume-download-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .qr-code-container img {
-        max-width: 120px;
-    }
-
-    .footer p {
-        font-size: 14px;
-        margin: 5px 0;
-    }
+footer p {
+    margin-bottom: 3px;
+    text-align: center;
 }
