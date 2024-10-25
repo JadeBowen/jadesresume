@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const splashScreen = document.getElementById('splash-screen');
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
-    }, 2000); // Adjusted for quicker load on mobile devices
+    }, 1500); // Shortened splash screen for better performance
 
     splashScreen.addEventListener('animationend', () => {
         splashScreen.remove(); 
@@ -14,56 +14,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.navbar');
     navbar.classList.add("sticky"); // Ensure it's always sticky
 
-    // Read More/Read Less Functionality with Smooth Transitions
+    // Read More/Read Less Functionality
     const readMoreButtons = document.querySelectorAll(".read-more-btn");
     readMoreButtons.forEach(button => {
         button.addEventListener("click", function() {
             const moreContent = this.nextElementSibling;
             if (moreContent && moreContent.classList.contains("more-content")) {
-                moreContent.classList.add("show");
-                this.classList.add("hide");
-            }
-        });
-    });
-
-    const readLessButtons = document.querySelectorAll(".read-less-btn");
-    readLessButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const moreContent = this.parentElement;
-            if (moreContent && moreContent.classList.contains("more-content")) {
-                moreContent.classList.remove("show");
-                const readMoreButton = moreContent.previousElementSibling;
-                if (readMoreButton && readMoreButton.classList.contains("read-more-btn")) {
-                    readMoreButton.classList.remove("hide");
+                moreContent.classList.toggle("show");
+                if (moreContent.classList.contains("show")) {
+                    this.textContent = "Read Less";
+                } else {
+                    this.textContent = "Read More";
                 }
             }
         });
     });
+});// Lazy load images for performance optimization
+const images = document.querySelectorAll('img');
+const config = {
+    rootMargin: '0px 0px',
+    threshold: 0.1
+};
 
-    // Lazy load images for performance optimization
-    const images = document.querySelectorAll('img');
-    const config = {
-        rootMargin: '0px 0px',
-        threshold: 0.1
-    };
-
-    let observer = new IntersectionObserver((entries, self) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                loadImage(entry.target);
-                self.unobserve(entry.target);
-            }
-        });
-    }, config);
-
-    images.forEach(image => {
-        observer.observe(image);
+let observer = new IntersectionObserver((entries, self) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            loadImage(entry.target);
+            self.unobserve(entry.target);
+        }
     });
+}, config);
 
-    function loadImage(image) {
-        const src = image.getAttribute('data-src');
-        if (!src) { return; }
-        image.src = src;
-    }
-
+images.forEach(image => {
+    observer.observe(image);
 });
+
+function loadImage(image) {
+    const src = image.getAttribute('data-src');
+    if (!src) { return; }
+    image.src = src;
+}
