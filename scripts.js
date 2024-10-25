@@ -62,7 +62,28 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.toggle('dark-theme');
     });
 
-    // Lazy Loading for Images
+    // Expand/Collapse Read More for Job Details
+    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+    const readLessButtons = document.querySelectorAll(".read-less-btn");
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const moreContent = this.nextElementSibling;
+            moreContent.classList.add("show");
+            this.classList.add("hide");
+        });
+    });
+
+    readLessButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const moreContent = this.parentElement;
+            moreContent.classList.remove("show");
+            const readMoreButton = moreContent.previousElementSibling;
+            readMoreButton.classList.remove("hide");
+        });
+    });
+
+    // Lazy Load Images for Performance
     const images = document.querySelectorAll('img[data-src]');
     const config = {
         rootMargin: '0px 0px',
