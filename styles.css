@@ -48,7 +48,45 @@ body {
         opacity: 0;
         visibility: hidden;
     }
-}/* Profile Section */
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.8); /* Transparency added */
+    z-index: 1000;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.menu-list li {
+    text-align: center;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #00FFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.menu-list a:hover {
+    color: #8A2BE2;
+}
+
+/* Profile Section */
 .profile-section {
     text-align: center;
     padding: 100px 0;
@@ -68,35 +106,14 @@ body {
     font-size: 28px;
 }
 
-/* Button Fixes and Colors */
-button, .button {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 15px;
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-button:hover, .button:hover {
-    background-color: #1E90FF;
-}
-
-.resume-download-btn {
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 20px;
+/* Text Box */
+.text-box p {
     margin-bottom: 20px;
+}
+
+/* Text Shadows for Better Readability */
+h1, h2, h3, p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
 }
 
 /* Footer Fix and Link Colors */
@@ -118,4 +135,94 @@ footer .footer-container {
 footer p {
     margin-bottom: 3px;
     text-align: center;
+}
+
+/* Adjust link colors for better contrast */
+a, footer a {
+    color: #00FFFF; /* Light blue for contrast */
+    text-decoration: none;
+}
+
+a:hover, footer a:hover {
+    color: #1E90FF; /* Slightly darker on hover */
+}
+
+/* Button Fixes and Colors */
+button, .button {
+    background-color: #00FFFF;
+    color: #fff;
+    padding: 12px; /* Adjust padding for better spacing */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px; /* Increase margin for clarity */
+    margin-bottom: 20px; /* Bottom margin to separate from other content */
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #1E90FF;
+}
+
+/* Center and add space around the QR Code */
+.qr-code-container {
+    text-align: center;
+    margin-top: 20px; /* Added spacing above */
+    margin-bottom: 20px; /* Added spacing below */
+}
+
+.qr-code {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Adjust download button for better positioning */
+.resume-download-btn {
+    background-color: #00FFFF;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .resume-download-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .qr-code-container img {
+        max-width: 120px;
+    }
+
+    .footer p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
 }
