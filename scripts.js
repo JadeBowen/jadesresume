@@ -52,34 +52,20 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Theme Toggle (Dark Mode)
-    const themeToggleBtn = document.createElement('button');
-    themeToggleBtn.classList.add('theme-toggle');
-    themeToggleBtn.innerHTML = 'Toggle Theme';
-    document.body.appendChild(themeToggleBtn);
-
-    themeToggleBtn.addEventListener('click', function() {
-        document.body.classList.toggle('dark-theme');
-    });
-
     // Expand/Collapse Read More for Job Details
-    const readMoreButtons = document.querySelectorAll(".read-more-btn");
-    const readLessButtons = document.querySelectorAll(".read-less-btn");
-
-    readMoreButtons.forEach(button => {
+    document.querySelectorAll(".read-more-btn").forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.nextElementSibling;
-            moreContent.classList.add("show");
-            this.classList.add("hide");
+            moreContent.style.display = "block";
+            this.style.display = "none";
         });
     });
 
-    readLessButtons.forEach(button => {
+    document.querySelectorAll(".read-less-btn").forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.parentElement;
-            moreContent.classList.remove("show");
-            const readMoreButton = moreContent.previousElementSibling;
-            readMoreButton.classList.remove("hide");
+            moreContent.style.display = "none";
+            moreContent.previousElementSibling.style.display = "inline-block";
         });
     });
 
