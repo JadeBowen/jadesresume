@@ -40,15 +40,14 @@ body {
     }
 }
 
+/* Smooth Fade-Out */
 #splash-screen.fade-out {
     animation: fadeOut 1s forwards;
 }
 
 @keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
 }
 
 /* Sticky Navbar */
@@ -98,9 +97,7 @@ body {
         padding: 0 10px; /* Add extra padding around the menu */
         justify-content: space-between; /* Spread items evenly */
     }
-}
-
-/* Profile Section */
+}/* Profile Section */
 .profile-section {
     text-align: center;
     padding: 100px 0;
@@ -118,7 +115,9 @@ body {
 .section-title {
     margin-bottom: 40px;
     font-size: 28px;
-}/* Text Box */
+}
+
+/* Text Box */
 .text-box p {
     margin-bottom: 20px;
 }
