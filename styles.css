@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('world-on-chip.jpg'); /* New Background Image */
+    background-image: url('world-on-chip.jpg'); /* Correct path for background image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -84,7 +84,9 @@ footer {
     padding: 10px 0;
     font-size: 0.9em;
     color: #333;
-}/* Expand/Collapse Buttons */
+}
+
+/* Expand/Collapse Buttons */
 .toggle-btn {
     background-color: #004080; /* Dark Blue from branding */
     color: #fff;
