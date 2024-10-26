@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Scroll to Top Button
-    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.classList.add('scroll-to-top');
+    scrollToTopBtn.innerHTML = '↑';
+    document.body.appendChild(scrollToTopBtn);
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 200) {
@@ -50,19 +53,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Expand/Collapse Read More for Job Details
-    document.querySelectorAll(".read-more-btn").forEach(button => {
+    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+    const readLessButtons = document.querySelectorAll(".read-less-btn");
+
+    readMoreButtons.forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.nextElementSibling;
-            moreContent.style.display = "block";
-            this.style.display = "none";
+            moreContent.classList.add("show");
+            this.classList.add("hide");
         });
     });
 
-    document.querySelectorAll(".read-less-btn").forEach(button => {
+    readLessButtons.forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.parentElement;
-            moreContent.style.display = "none";
-            moreContent.previousElementSibling.style.display = "inline-block";
+            moreContent.classList.remove("show");
+            const readMoreButton = moreContent.previousElementSibling;
+            readMoreButton.classList.remove("hide");
         });
     });
 
