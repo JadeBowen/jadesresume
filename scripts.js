@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const splashScreen = document.getElementById('splash-screen');
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
-    }, 1500); // Shortened delay before fade-out begins
+    }, 1500); // Short delay before fade-out begins
 
     // Remove splash screen from DOM after transition
     splashScreen.addEventListener('transitionend', () => {
@@ -49,7 +49,7 @@ document.querySelectorAll('.experience-entry, .philosophy-section, .proficiencie
     }
 });
 
-// Back to Top Button (Optional for Navigation Ease)
+// Back to Top Button
 const backToTopButton = document.createElement('button');
 backToTopButton.innerText = 'Top';
 backToTopButton.className = 'back-to-top';
