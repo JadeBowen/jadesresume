@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20internet~2.JPG?raw=true') no-repeat center center fixed;
-    background-size: cover;
+    background-size: 200%; /* Zoomed out background */
     color: #ffffff;
 }
 
@@ -13,13 +13,13 @@ body {
     padding: 20px 15px;
 }
 
-/* Splash Screen */
+/* Splash Screen (Reduced Size) */
 #splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 50vh; /* Reduced height */
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -110,7 +110,9 @@ header {
     .hamburger-menu {
         display: block;
     }
-}/* Section General Styling */
+}
+
+/* Section Styling */
 section {
     padding: 40px 0;
 }
@@ -125,47 +127,50 @@ h3 {
     color: #1E90FF;
 }
 
-.summary-section, .experience-section, .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+/* Card-Style Layout for Job Entries */
+.job-entry {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 8px;
     padding: 20px;
-    margin: 20px 0;
-}
-
-/* Professional Summary Styling */
-.summary-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: justify;
-}
-
-/* Job Entries with Expandable Content */
-.job-entry {
     margin-bottom: 20px;
-    background-color: rgba(51, 51, 51, 0.9);
-    padding: 15px;
-    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.read-more-btn, .read-less-btn {
+.job-entry h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-details {
+    display: none;
+    padding-top: 10px;
+}
+
+.toggle-details {
     background-color: #00FFFF;
     color: #fff;
-    padding: 8px 12px;
     border: none;
     border-radius: 5px;
+    padding: 8px 12px;
     cursor: pointer;
     font-size: 14px;
     margin-top: 10px;
-    display: inline-block;
 }
 
-.read-more-btn:hover, .read-less-btn:hover {
+.toggle-details:hover {
     background-color: #1E90FF;
 }
 
-.more-content {
+/* Collapsible Sections */
+.collapsible h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #00FFFF;
+}
+
+.collapsible-content {
     display: none;
 }
 
@@ -173,18 +178,18 @@ h3 {
 .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
     text-align: center;
     padding: 30px 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
-.text-box ul {
+.skills-section ul, .proficiencies-section ul, .achievements-section ul, .certifications-section ul {
     list-style-type: none;
     padding: 0;
     font-size: 1.1em;
 }
 
-.text-box li {
+.skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
     margin-bottom: 10px;
     color: white;
     background-color: rgba(51, 51, 51, 0.8);
@@ -192,23 +197,7 @@ h3 {
     border-radius: 8px;
 }
 
-/* Responsive Grid Adjustments */
-@media screen and (min-width: 768px) {
-    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .text-box {
-        max-width: 80%;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}/* Contact Section */
+/* Contact Section */
 .contact-section {
     padding: 40px 0;
     text-align: center;
@@ -260,13 +249,24 @@ h3 {
     color: #ffffff;
 }
 
-.footer-section a {
-    color: #00FFFF;
-    text-decoration: none;
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .text-box {
+        max-width: 80%;
+        margin: 0 auto;
+    }
 }
 
-.footer-section a:hover {
-    color: #1E90FF;
+@media screen and (min-width: 1024px) {
+    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 /* Smooth Transition for Expandable Content */
@@ -300,10 +300,4 @@ section {
 
 .scroll-to-top:hover {
     background-color: #1E90FF;
-}
-
-@media screen and (max-width: 768px) {
-    .scroll-to-top {
-        font-size: 18px;
-    }
 }
