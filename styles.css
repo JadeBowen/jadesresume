@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20internet~2.JPG?raw=true') no-repeat center center fixed;
-    background-size: 200%; /* Zoomed out background */
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/network-enot-poloskun.jpg?raw=true') no-repeat center center fixed;
+    background-size: cover;
     color: #ffffff;
 }
 
@@ -13,13 +13,13 @@ body {
     padding: 20px 15px;
 }
 
-/* Splash Screen (Further Reduced Size) */
+/* Compact Splash Screen */
 #splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 30vh; /* Reduced height */
+    height: 20vh; /* Reduced height */
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -72,49 +72,50 @@ header {
     color: #1E90FF;
 }
 
-/* Hamburger Menu for Mobile */
-.hamburger-menu {
-    display: none;
-    color: #00FFFF;
+/* Button Styling and Readability */
+button, .button {
+    background-color: #00CCCC;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.dropdown-menu {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
+button:hover, .button:hover {
+    background-color: #1E90FF;
+}
+
+.toggle-details {
+    margin-top: 10px;
+}
+
+.button.full-width {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    text-align: center;
-    z-index: 999;
+    font-size: 16px;
+    padding: 12px;
 }
 
-.dropdown-menu a {
-    display: block;
-    padding: 15px;
-    color: #00FFFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.dropdown-menu a:hover {
-    color: #1E90FF;
-}
-
+/* Responsive Adjustments for Background on Mobile */
 @media (max-width: 768px) {
-    .menu-list {
-        display: none;
-    }
-
-    .hamburger-menu {
-        display: block;
+    body {
+        background-size: contain; /* Smaller background scaling for readability */
     }
 }
 
-/* Section Styling */
+/* Profile Image and Section Spacing */
+.about-section .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
 section {
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 h1, h2 {
@@ -123,165 +124,30 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-h3 {
-    color: #1E90FF;
-}
-
-/* Card-Style Layout for Job Entries */
-.job-entry {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.job-entry h3 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.job-details {
-    display: none;
-    padding-top: 10px;
-}
-
-.toggle-details {
-    background-color: #00FFFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.toggle-details:hover {
-    background-color: #1E90FF;
-}
-
-/* Collapsible Sections */
-.collapsible h2 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #00FFFF;
-}
-
-.collapsible-content {
-    display: none;
-}
-
-/* Skills, Proficiencies, Achievements, and Certifications Sections */
-.skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-    text-align: center;
-    padding: 30px 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
+/* Section Headings and "Show More" Button Spacing */
+.collapsible-content, .collapsible h2 {
+    padding: 10px;
     margin: 20px 0;
 }
 
-.skills-section ul, .proficiencies-section ul, .achievements-section ul, .certifications-section ul {
-    list-style-type: none;
-    padding: 0;
-    font-size: 1.1em;
-}
-
-.skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
-    margin-bottom: 10px;
-    color: white;
-    background-color: rgba(51, 51, 51, 0.8);
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 40px 0;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-}
-
-.contact-section a {
-    color: #00FFFF;
-    text-decoration: none;
-}
-
-.contact-section a:hover {
-    color: #1E90FF;
-}
-
-/* QR Code Styling */
-.contact-section .qr-code img {
-    max-width: 150px;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
-/* Download Resume Button (Full Width) */
-.button.full-width {
-    width: 100%;
-    background-color: #00FFFF;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-}
-
-.button.full-width:hover {
-    background-color: #1E90FF;
-}
-
-/* Footer Styling */
+/* Footer Compactness */
 .footer-section {
     background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     font-size: 0.9em;
     color: #ffffff;
 }
 
-/* Responsive Adjustments */
-@media screen and (min-width: 768px) {
-    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .text-box {
-        max-width: 80%;
-        margin: 0 auto;
-    }
+/* Contact Info Icons */
+.contact-section p, .footer-section p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media screen and (min-width: 1024px) {
-    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-/* Smooth Transition for Expandable Content */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.contact-section p a, .footer-section p a {
+    margin-left: 5px;
 }
 
 /* Scroll to Top Button */
@@ -289,8 +155,8 @@ section {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #00FFFF;
-    color: #fff;
+    background-color: #00CCCC;
+    color: #ffffff;
     padding: 10px;
     border-radius: 50%;
     font-size: 24px;
