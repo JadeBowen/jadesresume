@@ -8,19 +8,32 @@ document.addEventListener("DOMContentLoaded", function() {
         splashScreen.remove();
     });
 
+    // Hamburger Menu Toggle for Mobile
     const hamburger = document.querySelector('.hamburger-menu');
     const dropdownMenu = document.querySelector('.menu-list');
     
     hamburger.addEventListener('click', function() {
-        dropdownMenu.classList.toggle('menu-open');
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 
+    // Close menu on link click
     document.querySelectorAll('.menu-list a').forEach(anchor => {
         anchor.addEventListener('click', function() {
             dropdownMenu.style.display = 'none';
         });
     });
 
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Collapsible Sections
     document.querySelectorAll('.toggle-details').forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.nextElementSibling;
@@ -29,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Scroll-to-Top Button
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.classList.add('scroll-to-top');
     scrollToTopBtn.innerHTML = '↑';
