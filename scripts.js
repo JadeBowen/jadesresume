@@ -13,10 +13,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Hamburger Menu Toggle for Mobile
     const hamburger = document.querySelector('.hamburger-menu');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownMenu = document.querySelector('.menu-list');
     
     hamburger.addEventListener('click', function() {
-        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Close menu on link click for smooth navigation
+    document.querySelectorAll('.menu-list a').forEach(anchor => {
+        anchor.addEventListener('click', function() {
+            dropdownMenu.style.display = 'none';
+        });
     });
 
     // Smooth Scrolling for Navigation Links
