@@ -7,7 +7,6 @@ body {
     color: #ffffff;
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -20,7 +19,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 20vh;
+    height: 10vh; /* Smaller height */
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -38,7 +37,7 @@ body {
 header {
     position: sticky;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     z-index: 999;
 }
@@ -52,7 +51,6 @@ header {
     padding: 0 15px;
 }
 
-/* Hide menu-list on mobile */
 .menu-list {
     list-style-type: none;
     display: flex;
@@ -74,25 +72,31 @@ header {
     color: #1E90FF;
 }
 
-/* Hamburger Menu for Mobile */
+/* Enhanced and Sticky Menu Button for Mobile */
 .hamburger-menu {
     display: none;
     color: #00FFFF;
+    font-size: 1.2em;
     cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-    /* Only show hamburger on mobile */
     .menu-list {
         display: none;
     }
     
     .hamburger-menu {
         display: block;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 }
 
-/* Button Styling and Readability */
+/* Button Styling */
 button, .button {
     background-color: #00CCCC;
     color: #ffffff;
@@ -114,23 +118,39 @@ button:hover, .button:hover {
     padding: 12px;
 }
 
-/* QR Code Resizing */
-.contact-section .qr-code img {
-    max-width: 100px;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
-/* Footer Compactness */
-.footer-section {
-    background-color: rgba(0, 0, 0, 0.7);
-    text-align: center;
+/* Collapsible Section Styling */
+.collapsible-content {
+    display: none;
+    margin-top: 10px;
     padding: 10px;
-    font-size: 0.9em;
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
 }
 
-.footer-section p a {
-    margin-left: 5px;
+/* Profile Image */
+.about-section .profile-image {
+    width: 100px; /* Smaller for mobile */
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00CCCC;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #1E90FF;
 }
