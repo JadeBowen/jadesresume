@@ -33,15 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Collapsible Sections
-    document.querySelectorAll('.toggle-details').forEach(button => {
-        button.addEventListener('click', function() {
-            const moreContent = this.nextElementSibling;
-            moreContent.style.display = moreContent.style.display === 'block' ? 'none' : 'block';
-            this.textContent = moreContent.style.display === 'block' ? 'Show Less' : 'Show More';
-        });
-    });
-
     // Scroll-to-Top Button
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.classList.add('scroll-to-top');
