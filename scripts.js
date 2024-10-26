@@ -8,43 +8,27 @@ document.addEventListener("DOMContentLoaded", function() {
         splashScreen.remove();
     });
 
-    // Hamburger Menu Toggle for Mobile
     const hamburger = document.querySelector('.hamburger-menu');
     const dropdownMenu = document.querySelector('.menu-list');
     
     hamburger.addEventListener('click', function() {
-        dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+        dropdownMenu.classList.toggle('menu-open');
     });
 
-    // Close menu on link click for smooth navigation
     document.querySelectorAll('.menu-list a').forEach(anchor => {
         anchor.addEventListener('click', function() {
             dropdownMenu.style.display = 'none';
         });
     });
 
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Collapsible Sections and Job Entries
     document.querySelectorAll('.toggle-details').forEach(button => {
         button.addEventListener('click', function() {
-            const details = this.nextElementSibling;
-            const isVisible = details.style.display === 'block';
-
-            details.style.display = isVisible ? 'none' : 'block';
-            this.textContent = isVisible ? 'Show Details' : 'Hide Details';
+            const moreContent = this.nextElementSibling;
+            moreContent.style.display = moreContent.style.display === 'block' ? 'none' : 'block';
+            this.textContent = moreContent.style.display === 'block' ? 'Show Less' : 'Show More';
         });
     });
 
-    // Scroll to Top Button
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.classList.add('scroll-to-top');
     scrollToTopBtn.innerHTML = '↑';
