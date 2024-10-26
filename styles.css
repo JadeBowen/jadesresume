@@ -14,8 +14,11 @@
 }
 
 .skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
-    color: white;
     margin-bottom: 10px;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 10px;
+    border-radius: 8px;
 }
 
 /* Contact Section */
@@ -33,26 +36,15 @@
     color: #1E90FF;
 }
 
-.qr-code {
-    max-width: 150px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-}
-
 /* Footer Section */
 .footer-section {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #333;
     color: white;
-    padding: 30px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
-.footer-container p {
-    margin-bottom: 15px;
-}
-
-/* Button Styles */
+/* Button Fixes and Colors */
 button, .button {
     background-color: #00FFFF;
     color: #fff;
@@ -61,6 +53,8 @@ button, .button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -68,10 +62,9 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
-/* Expandable Content */
+/* Expandable Content (Read More/Less) */
 .more-content {
     display: none;
-    transition: all 0.3s ease-in-out;
 }
 
 .read-more-btn, .read-less-btn {
@@ -82,11 +75,18 @@ button:hover, .button:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
 }
 
 .read-more-btn:hover, .read-less-btn:hover {
     background-color: #1E90FF;
+}
+
+.more-content.show {
+    display: block;
+}
+
+.read-more-btn.hide {
+    display: none;
 }
 
 /* Scroll to Top Button */
@@ -103,6 +103,20 @@ button:hover, .button:hover {
     font-size: 20px;
     cursor: pointer;
     z-index: 1000;
+}
+
+/* Dark/Light Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    background-color: #00FFFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 /* Responsive Grid Adjustments for Larger Screens */
@@ -142,7 +156,7 @@ button:hover, .button:hover {
         padding: 10px;
     }
 
-    .footer-container p {
+    .footer p {
         font-size: 14px;
         margin: 5px 0;
     }
@@ -183,7 +197,10 @@ button:hover, .button:hover {
     });
 
     // Scroll to Top Button
-    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.classList.add('scroll-to-top');
+    scrollToTopBtn.innerHTML = '↑';
+    document.body.appendChild(scrollToTopBtn);
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 200) {
@@ -198,19 +215,23 @@ button:hover, .button:hover {
     });
 
     // Expand/Collapse Read More for Job Details
-    document.querySelectorAll(".read-more-btn").forEach(button => {
+    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+    const readLessButtons = document.querySelectorAll(".read-less-btn");
+
+    readMoreButtons.forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.nextElementSibling;
-            moreContent.style.display = "block";
-            this.style.display = "none";
+            moreContent.classList.add("show");
+            this.classList.add("hide");
         });
     });
 
-    document.querySelectorAll(".read-less-btn").forEach(button => {
+    readLessButtons.forEach(button => {
         button.addEventListener('click', function() {
             const moreContent = this.parentElement;
-            moreContent.style.display = "none";
-            moreContent.previousElementSibling.style.display = "inline-block";
+            moreContent.classList.remove("show");
+            const readMoreButton = moreContent.previousElementSibling;
+            readMoreButton.classList.remove("hide");
         });
     });
 
