@@ -19,44 +19,23 @@ body::before {
     z-index: -1;
 }
 
-/* Splash Screen Styling */
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 8vh; /* Reduced height for a more compact display */
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 1s ease, visibility 1s ease;
-}
-
-#splash-screen.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Navigation Styling */
 header {
     position: sticky;
     top: 0;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     text-align: center;
+    z-index: 10;
 }
 
 .navbar a {
     color: #00FFFF;
-    margin: 0 15px;
+    margin: 0 10px;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
 }
 
-/* Section Styling */
 section {
     background-color: rgba(0, 0, 0, 0.5); /* Transparent background for sections */
     padding: 20px;
@@ -64,8 +43,7 @@ section {
     margin: 20px;
 }
 
-/* About Section */
-.about-section {
+.about-section, .contact-section {
     text-align: center;
 }
 
@@ -77,24 +55,17 @@ section {
     margin: 10px auto;
 }
 
-/* Skills, Achievements, Experience, Philosophy, and Proficiencies Sections */
-.skills-grid, .achievements-grid, .experience-grid {
+.skills-grid, .experience-entry, .proficiencies-section ul, .certifications-section ul {
     display: grid;
-    gap: 15px;
+    gap: 10px;
 }
 
-.skill-card, .achievement-card, .experience-entry {
+.skill-card, .achievement-card, .experience-entry, .toggle-button, .proficiencies-section li, .certifications-section li {
     padding: 15px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.philosophy-section, .proficiencies-section, .certifications-section {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Contact Section */
 .qr-code {
     max-width: 100px;
     display: block;
@@ -117,23 +88,45 @@ section {
     background-color: #1E90FF;
 }
 
-/* Read More Styling */
-.read-more {
-    color: #00FFFF;
+/* Splash Screen Styling */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh; /* Reduced height */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease, visibility 1s ease; /* Smooth fade-out transition */
+}
+
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Toggle Content Styling */
+.more-content {
+    display: none;
+}
+
+.toggle-button {
+    color: #00CCCC;
+    background: none;
+    border: none;
     cursor: pointer;
     font-weight: bold;
 }
 
-/* Responsive Adjustments */
+/* Media Query for Responsive Design */
 @media (max-width: 768px) {
-    .skills-grid, .achievements-grid, .experience-grid {
+    .skills-grid, .experience-grid, .proficiencies-section ul, .certifications-section ul {
         grid-template-columns: 1fr;
     }
     .navbar a {
         font-size: 14px;
-    }
-    .profile-image {
-        width: 120px;
-        height: 120px;
     }
 }
