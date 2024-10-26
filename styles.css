@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     background: url('https://github.com/JadeBowen/jadesresume/blob/main/network-enot-poloskun.jpg?raw=true') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
@@ -14,12 +14,13 @@ body {
     padding: 20px 15px;
 }
 
+/* Splash Screen */
 #splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 10vh;
+    height: 10vh; /* Compact height */
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -28,19 +29,61 @@ body {
     transition: opacity 0.5s ease;
 }
 
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Header and Navigation */
 header {
     position: sticky;
     top: 0;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     z-index: 9999;
+    width: 100%;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-list li {
+    margin: 0 10px;
+}
+
+.menu-list a {
+    color: #00FFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-list a:hover {
+    color: #1E90FF;
+}
+
+/* Hamburger Menu for Mobile */
 .hamburger-menu {
     display: none;
     color: #00FFFF;
+    font-size: 1.2em;
     cursor: pointer;
     padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    width: 100%;
     text-align: center;
 }
 
@@ -52,35 +95,61 @@ header {
         left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
         padding: 10px 0;
     }
+
+    .menu-list a {
+        display: block;
+        padding: 15px;
+        color: #00FFFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .menu-list a:hover {
+        color: #1E90FF;
+    }
+
     .hamburger-menu {
         display: block;
-        width: 100%;
     }
 }
 
-.profile-image {
+/* Collapsible Button Styling */
+button, .button, .toggle-details {
+    background-color: #00CCCC;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #1E90FF;
+}
+
+.button.full-width {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+}
+
+/* Collapsible Section Styling */
+.more-content {
+    display: none;
+}
+
+/* Profile Image */
+.about-section .profile-image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
-}
-
-/* Collapsible content style */
-.more-content {
-    display: none;
-}
-
-.toggle-details {
-    background-color: #00CCCC;
-    color: #ffffff;
-    border: none;
-    padding: 8px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
 }
 
 /* Scroll to Top Button */
@@ -89,8 +158,15 @@ header {
     bottom: 20px;
     right: 20px;
     background-color: #00CCCC;
+    color: #ffffff;
     padding: 10px;
     border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
     display: none;
     z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #1E90FF;
 }
