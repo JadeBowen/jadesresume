@@ -1,4 +1,4 @@
-/* General Layout */
+/* General Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,7 +7,6 @@ body {
     color: #ffffff;
 }
 
-/* Container for Sections */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -34,14 +33,13 @@ body {
     visibility: hidden;
 }
 
-/* Header and Navigation */
+/* Navigation */
 header {
     position: sticky;
     top: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 0;
+    padding: 10px;
     z-index: 999;
-    width: 100%;
 }
 
 .navbar {
@@ -55,9 +53,9 @@ header {
 
 .menu-list {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 .menu-list li {
@@ -123,21 +121,52 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* About Me Section */
-.about-section img.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px auto;
+h3 {
+    color: #1E90FF;
 }
 
-.about-section p {
+.summary-section, .experience-section, .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Professional Summary Styling */
+.summary-section p {
     font-size: 1.1em;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
     text-align: justify;
+}
+
+/* Job Entries with Expandable Content */
+.job-entry {
+    margin-bottom: 20px;
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.read-more-btn, .read-less-btn {
+    background-color: #00FFFF;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.read-more-btn:hover, .read-less-btn:hover {
+    background-color: #1E90FF;
+}
+
+.more-content {
+    display: none;
 }
 
 /* Skills, Proficiencies, Achievements, and Certifications Sections */
@@ -163,16 +192,28 @@ h1, h2 {
     border-radius: 8px;
 }
 
-/* Icon Styling for Tools in Proficiencies Section */
-.proficiencies-section li:before {
-    content: '🔧 ';
-    margin-right: 8px;
+/* Responsive Grid Adjustments */
+@media screen and (min-width: 768px) {
+    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .text-box {
+        max-width: 80%;
+        margin: 0 auto;
+    }
 }
 
-/* Contact Section */
+@media screen and (min-width: 1024px) {
+    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}/* Contact Section */
 .contact-section {
     padding: 40px 0;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
 }
 
 .contact-section a {
@@ -184,31 +225,14 @@ h1, h2 {
     color: #1E90FF;
 }
 
-/* Icons for Contact Items */
+/* QR Code Styling */
 .contact-section .qr-code img {
-    max-width: 200px;
+    max-width: 150px;
     width: 100%;
     height: auto;
     margin-top: 20px;
 }
 
-.contact-section a[href^="mailto:"]:before {
-    content: '📧 ';
-}
-
-.contact-section a[href^="tel:"]:before {
-    content: '📞 ';
-}
-
-.contact-section a[href*="linkedin.com"]:before {
-    content: '🔗 ';
-}
-
-.contact-section a[href*="github.com"]:before {
-    content: '💻 ';
-}
-
-/* Button Styling */
 .button {
     background-color: #00FFFF;
     color: #fff;
@@ -220,13 +244,32 @@ h1, h2 {
     display: inline-block;
     margin-top: 20px;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .button:hover {
     background-color: #1E90FF;
 }
 
-/* Subtle Animations */
+/* Footer Styling */
+.footer-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+.footer-section a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #1E90FF;
+}
+
+/* Smooth Transition for Expandable Content */
 section {
     opacity: 0;
     transform: translateY(20px);
@@ -240,19 +283,27 @@ section {
     }
 }
 
-/* Responsive Grid Adjustments */
-@media screen and (min-width: 768px) {
-    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .text-box {
-        max-width: 80%;
-    }
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00FFFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
 }
 
-@media screen and (min-width: 1024px) {
-    .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
-        grid-template-columns: 1fr 1fr 1fr;
+.scroll-to-top:hover {
+    background-color: #1E90FF;
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-to-top {
+        font-size: 18px;
     }
 }
