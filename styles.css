@@ -13,13 +13,13 @@ body {
     padding: 20px 15px;
 }
 
-/* Splash Screen (Reduced Size) */
+/* Splash Screen (Further Reduced Size) */
 #splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 50vh; /* Reduced height */
+    height: 30vh; /* Reduced height */
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -222,7 +222,9 @@ h3 {
     margin-top: 20px;
 }
 
-.button {
+/* Download Resume Button (Full Width) */
+.button.full-width {
+    width: 100%;
     background-color: #00FFFF;
     color: #fff;
     padding: 12px;
@@ -230,13 +232,12 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    display: inline-block;
     margin-top: 20px;
     transition: background-color 0.3s ease;
     text-decoration: none;
 }
 
-.button:hover {
+.button.full-width:hover {
     background-color: #1E90FF;
 }
 
