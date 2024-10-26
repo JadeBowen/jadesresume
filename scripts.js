@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const splashScreen = document.getElementById('splash-screen');
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
-    }, 1000); // 1-second delay before fade-out begins
+    }, 1500); // Shortened delay before fade-out begins
 
     // Remove splash screen from DOM after transition
     splashScreen.addEventListener('transitionend', () => {
@@ -21,12 +21,51 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-// Toggle function for expandable sections
-function toggleSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section.style.display === 'block') {
-        section.style.display = 'none';
-    } else {
-        section.style.display = 'block';
+// Expandable Sections Functionality
+const expandableSections = document.querySelectorAll('.read-more');
+expandableSections.forEach((button) => {
+    button.addEventListener('click', function() {
+        const section = this.previousElementSibling;
+        const isExpanded = section.classList.toggle('expanded');
+
+        if (isExpanded) {
+            this.textContent = "Read Less";
+        } else {
+            this.textContent = "Read More";
+        }
+    });
+});
+
+// Toggle Expandable Sections Content
+document.querySelectorAll('.experience-entry, .philosophy-section, .proficiencies-section').forEach(section => {
+    const content = section.querySelector('.expanded-content');
+    const toggleButton = section.querySelector('.read-more');
+
+    if (content && toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            content.classList.toggle('show');
+            toggleButton.textContent = content.classList.contains('show') ? "Read Less" : "Read More";
+        });
     }
-}
+});
+
+// Back to Top Button (Optional for Navigation Ease)
+const backToTopButton = document.createElement('button');
+backToTopButton.innerText = 'Top';
+backToTopButton.className = 'back-to-top';
+document.body.appendChild(backToTopButton);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
