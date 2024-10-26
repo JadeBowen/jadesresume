@@ -1,4 +1,146 @@
-/* Skills, Proficiencies, Achievements, Certifications Sections */
+/* General Layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://github.com/JadeBowen/jadesresume/blob/main/world%20internet~2.JPG?raw=true') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Container for Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Header and Navigation */
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    z-index: 999;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-list li {
+    margin: 0 10px;
+}
+
+.menu-list a {
+    color: #00FFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-list a:hover {
+    color: #1E90FF;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    color: #00FFFF;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 15px;
+    color: #00FFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown-menu a:hover {
+    color: #1E90FF;
+}
+
+@media (max-width: 768px) {
+    .menu-list {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}/* Section General Styling */
+section {
+    padding: 40px 0;
+}
+
+h1, h2 {
+    color: #00FFFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* About Me Section */
+.about-section img.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Skills, Proficiencies, Achievements, and Certifications Sections */
 .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
     text-align: center;
     padding: 30px 0;
@@ -7,18 +149,24 @@
     gap: 20px;
 }
 
-.skills-section ul, .proficiencies-section ul, .achievements-section ul, .certifications-section ul {
+.text-box ul {
     list-style-type: none;
     padding: 0;
     font-size: 1.1em;
 }
 
-.skills-section li, .proficiencies-section li, .achievements-section li, .certifications-section li {
+.text-box li {
     margin-bottom: 10px;
     color: white;
     background-color: rgba(51, 51, 51, 0.8);
     padding: 10px;
     border-radius: 8px;
+}
+
+/* Icon Styling for Tools in Proficiencies Section */
+.proficiencies-section li:before {
+    content: '🔧 ';
+    margin-right: 8px;
 }
 
 /* Contact Section */
@@ -36,16 +184,32 @@
     color: #1E90FF;
 }
 
-/* Footer Section */
-.footer-section {
-    background-color: #333;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
+/* Icons for Contact Items */
+.contact-section .qr-code img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
 
-/* Button Fixes and Colors */
-button, .button {
+.contact-section a[href^="mailto:"]:before {
+    content: '📧 ';
+}
+
+.contact-section a[href^="tel:"]:before {
+    content: '📞 ';
+}
+
+.contact-section a[href*="linkedin.com"]:before {
+    content: '🔗 ';
+}
+
+.contact-section a[href*="github.com"]:before {
+    content: '💻 ';
+}
+
+/* Button Styling */
+.button {
     background-color: #00FFFF;
     color: #fff;
     padding: 12px;
@@ -58,68 +222,25 @@ button, .button {
     transition: background-color 0.3s ease;
 }
 
-button:hover, .button:hover {
+.button:hover {
     background-color: #1E90FF;
 }
 
-/* Expandable Content (Read More/Less) */
-.more-content {
-    display: none;
+/* Subtle Animations */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
 }
 
-.read-more-btn, .read-less-btn {
-    background-color: #00FFFF;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.read-more-btn:hover, .read-less-btn:hover {
-    background-color: #1E90FF;
-}
-
-.more-content.show {
-    display: block;
-}
-
-.read-more-btn.hide {
-    display: none;
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    display: none; /* Hidden initially */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #00FFFF;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* Dark/Light Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1001;
-    background-color: #00FFFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Responsive Grid Adjustments for Larger Screens */
+/* Responsive Grid Adjustments */
 @media screen and (min-width: 768px) {
     .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
         grid-template-columns: 1fr 1fr;
@@ -127,7 +248,6 @@ button:hover, .button:hover {
 
     .text-box {
         max-width: 80%;
-        font-size: 1.2em;
     }
 }
 
@@ -135,124 +255,4 @@ button:hover, .button:hover {
     .skills-section, .proficiencies-section, .achievements-section, .certifications-section {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    
-    .text-box {
-        max-width: 70%;
-        font-size: 1.3em;
-    }
 }
-
-/* Responsive Adjustments for Mobile */
-@media screen and (max-width: 768px) {
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .resume-download-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .footer p {
-        font-size: 14px;
-        margin: 5px 0;
-    }
-}document.addEventListener("DOMContentLoaded", function() {
-    // Splash Screen Setup
-    const splashScreen = document.getElementById('splash-screen');
-    
-    // Show splash screen only on the first visit
-    if (!localStorage.getItem('visited')) {
-        setTimeout(() => {
-            splashScreen.classList.add('fade-out');
-            localStorage.setItem('visited', 'true'); // Mark as visited
-        }, 2000); // Display splash screen for 2 seconds before fading out
-
-        splashScreen.addEventListener('animationend', () => {
-            splashScreen.remove();
-        });
-    } else {
-        splashScreen.remove(); // Remove splash screen on subsequent visits
-    }
-
-    // Hamburger Menu Toggle for Mobile
-    const hamburger = document.querySelector('.hamburger-menu');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    
-    hamburger.addEventListener('click', function() {
-        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Scroll to Top Button
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.classList.add('scroll-to-top');
-    scrollToTopBtn.innerHTML = '↑';
-    document.body.appendChild(scrollToTopBtn);
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
-            scrollToTopBtn.style.display = 'block';
-        } else {
-            scrollToTopBtn.style.display = 'none';
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Expand/Collapse Read More for Job Details
-    const readMoreButtons = document.querySelectorAll(".read-more-btn");
-    const readLessButtons = document.querySelectorAll(".read-less-btn");
-
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const moreContent = this.nextElementSibling;
-            moreContent.classList.add("show");
-            this.classList.add("hide");
-        });
-    });
-
-    readLessButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const moreContent = this.parentElement;
-            moreContent.classList.remove("show");
-            const readMoreButton = moreContent.previousElementSibling;
-            readMoreButton.classList.remove("hide");
-        });
-    });
-
-    // Lazy Load Images for Performance
-    const images = document.querySelectorAll('img[data-src]');
-    const config = {
-        rootMargin: '0px 0px',
-        threshold: 0.1
-    };
-
-    let observer = new IntersectionObserver((entries, self) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.getAttribute('data-src');
-                self.unobserve(img);
-            }
-        });
-    }, config);
-
-    images.forEach(image => {
-        observer.observe(image);
-    });
-});
