@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
-
 <body>
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/logo%202.0.jpg?raw=true" alt="Logo">
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/logo%202.0.jpg?raw=true" alt="Jade Bowen Logo">
     </div>
 
-    <!-- Header Section with Sticky Navbar for PC -->
+    <!-- Header Section with Sticky Navbar -->
     <header class="header">
         <nav class="navbar">
             <ul class="menu-list">
@@ -28,40 +27,39 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button class="hamburger-menu">☰ Menu</button>
+        <div class="dropdown-menu">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#proficiencies">Proficiencies</a></li>
+                <li><a href="#achievements">Key Achievements</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
-
-    <!-- Hamburger Menu for Mobile -->
-    <button class="hamburger-menu">☰ Menu</button>
-    <div class="dropdown-menu">
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#proficiencies">Proficiencies</a></li>
-            <li><a href="#achievements">Key Achievements</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
 
     <!-- About Me Section -->
     <section id="about" class="profile-section">
         <h1>About Me</h1>
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen" class="profile-image">
-        <p>My journey into telecommunications began at the age of 12, when I visited my first cell phone site with my father, who is still an engineer for a well-known carrier today...</p>
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Headshot" class="profile-image">
+        <p>My journey into telecommunications began at the age of 12, when I visited my first cell phone site with my father, who is still an engineer for a well-known carrier today. Watching communication flow through the air like magic sparked something in me, and I’ll never forget the excitement of uploading that AOL disc and experiencing the internet for the first time. My father, who I’ve always looked up to as my hero, not only introduced me to this fascinating world but also taught me the importance of patience and precision—skills that have shaped my career. His words, “Take the time to get it right, because what we build connects people,” have guided me ever since.</p>
+        <p>With over 21 years of experience in construction and telecommunications, I’ve carried that lesson with me while overseeing large-scale projects and leading diverse teams. As a single father of four, I’ve mastered multitasking and time management, which have been invaluable in both my personal and professional life. My true passion lies in building systems that impact people and improve their lives—just like my hero showed me, creating connections that bring the world closer together.</p>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Professional Experience Section -->
     <section id="experience" class="experience-section">
         <h2 class="section-title">Professional Experience</h2>
-
-        <!-- Job Example -->
+        
+        <!-- Job 1 -->
         <div class="experience-card text-box">
             <h3>Boise's Best Auto Sales</h3>
             <h4>Finance and Marketing Manager | June 2023 – Present</h4>
             <p>Manage financial strategies, including budgeting and financial reporting...</p>
             <button class="read-more-btn">Read More</button>
-            <div class="more-content">
+            <div class="more-content" style="display: none;">
                 <ul>
                     <li>Lead marketing initiatives to increase brand awareness...</li>
                     <li>Oversee financial operations for profitability and growth...</li>
@@ -69,69 +67,220 @@
                 <button class="read-less-btn">Read Less</button>
             </div>
         </div>
-    </section><!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <h2 class="section-title">Skills</h2>
-        <ul class="text-box">
-            <li>Leadership and Team Building</li>
-            <li>Project Management</li>
-            <li>Financial Analysis and Reporting</li>
-        </ul>
+
+        <!-- Placeholder Jobs 2-4 -->
+        <div class="experience-card text-box">
+            <h3>Phantom Construction Inc.</h3>
+            <h4>Construction Manager | January 2020 – May 2023</h4>
+            <p>Supervised construction projects from start to finish...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Oversaw safety protocols and on-site operations...</li>
+                    <li>Managed project timelines, budgeting, and client relationships...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+        
+        <!-- Continue with additional placeholders in the next part --><!-- Placeholder Job 3 -->
+        <div class="experience-card text-box">
+            <h3>Phantom Telecom Solutions</h3>
+            <h4>Telecom Project Lead | July 2016 – December 2019</h4>
+            <p>Directed large-scale telecom installations and fiber optic systems...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Designed and implemented telecom network strategies...</li>
+                    <li>Led a cross-functional team for high-profile client projects...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+
+        <!-- Placeholder Job 4 -->
+        <div class="experience-card text-box">
+            <h3>First Point Group</h3>
+            <h4>Telecommunications Construction Coordinator | October 2021 – July 2022</h4>
+            <p>Coordinated all aspects of cell tower construction and network projects...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Managed project budgets and tracked expenditures...</li>
+                    <li>Conducted site surveys and collaborated with engineering teams...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+
+        <!-- Placeholder Job 5 -->
+        <div class="experience-card text-box">
+            <h3>KGP Co</h3>
+            <h4>OSP Construction Manager | February 2021 – October 2021</h4>
+            <p>Managed Fiber-to-the-Home projects, overseeing installation of fiber infrastructure...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Supervised a team for site preparation, fiber installation, and quality control...</li>
+                    <li>Led materials procurement and managed permits with local authorities...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+
+        <!-- Placeholder Job 6 -->
+        <div class="experience-card text-box">
+            <h3>MasTec Network Solutions</h3>
+            <h4>Construction Manager | January 2018 – April 2020</h4>
+            <p>Directed large-scale construction projects across multiple states...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Planned construction phases, budget tracking, and resource allocation...</li>
+                    <li>Coordinated with subcontractors for equipment upgrades and maintenance...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+
+        <!-- Placeholder Job 7 -->
+        <div class="experience-card text-box">
+            <h3>Broken Arrow Communications</h3>
+            <h4>Regional Manager – Cell Tower Infrastructure | July 2015 – May 2017</h4>
+            <p>Managed 8 crews across multiple cell tower construction sites...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Oversaw budgets, scheduling, and subcontractor compliance...</li>
+                    <li>Implemented training and safety protocols, improving site safety...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+
+        <!-- Placeholder Job 8 -->
+        <div class="experience-card text-box">
+            <h3>Benchmark Electric</h3>
+            <h4>Construction Manager / Foreman | March 2012 – July 2015</h4>
+            <p>Supervised construction teams for wireless communication systems...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Oversaw antenna systems and coaxial cabling installations...</li>
+                    <li>Maintained project timelines and safety standards...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
+
+        <!-- Placeholder Job 9 -->
+        <div class="experience-card text-box">
+            <h3>Cold Souls LLC</h3>
+            <h4>Owner/Operator | December 2007 – March 2013</h4>
+            <p>Managed all aspects of business operations for a custom clothing line...</p>
+            <button class="read-more-btn">Read More</button>
+            <div class="more-content" style="display: none;">
+                <ul>
+                    <li>Designed products, handled marketing, and optimized distribution...</li>
+                    <li>Achieved profitability through strategic budgeting and financial oversight...</li>
+                </ul>
+                <button class="read-less-btn">Read Less</button>
+            </div>
+        </div>
     </section>
 
-    <!-- Proficiencies Section -->
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">Skills</h2>
+        <div class="text-box">
+            <ul>
+                <li>Leadership & Team Management: Leading cross-functional teams...</li>
+                <li>Project Management: Overseeing large-scale telecom projects...</li>
+                <li>Problem-Solving: Efficient solutions for technical challenges...</li>
+                <li>Client & Vendor Relations: Building strong relationships...</li>
+                <li>Time Management: Mastering prioritization and multitasking...</li>
+                <li>Communication: Strong verbal and written skills...</li>
+            </ul>
+        </div>
+    </section><!-- Proficiencies Section -->
     <section id="proficiencies" class="proficiencies-section">
         <h2 class="section-title">Proficiencies</h2>
-        <ul class="text-box">
-            <li>Telecommunications: Wireless, Fiber Optics</li>
-            <li>Construction Management</li>
-            <li>Software: Microsoft Office, Google Workspace</li>
-        </ul>
+        <div class="text-box">
+            <ul>
+                <li>Telecommunications & Wireless Infrastructure: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
+                <li>Fiber Optic Infrastructure: OSP, FTTH, FTTC installation, splicing, and testing</li>
+                <li>Cell Tower Construction: Cellular and microwave antenna installation, commissioning, and calibration</li>
+                <li>RF Equipment & Antenna Sweeps: Signal performance optimization and troubleshooting</li>
+                <li>Coaxial Cabling: Installation, testing, and maintenance of wireless communication systems</li>
+                <li>Construction Management: Project planning, scheduling, budgeting, and vendor management</li>
+                <li>Operational Efficiency: Process optimization, quality assurance, and resource allocation</li>
+                <li>Software & Tools: Microsoft Office Suite, Google Workspace, CRM Software</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Key Achievements Section -->
     <section id="achievements" class="achievements-section">
         <h2 class="section-title">Key Achievements</h2>
-        <ul class="text-box">
-            <li>Increased revenue by 30% within the first year at Boise's Best Auto Sales</li>
-            <li>Led a team that completed a $10 million project under budget and ahead of schedule</li>
-            <li>Achieved a 95% client satisfaction rating in the telecommunications sector</li>
-        </ul>
+        <div class="text-box">
+            <ul>
+                <li>Led Multimillion-Dollar Projects: Successfully managed numerous large-scale telecommunications projects.</li>
+                <li>Enhanced Network Performance: Spearheaded cellular site upgrades, including LTE and 5G deployments.</li>
+                <li>Operational Efficiency Improvements: Streamlined workflows, reducing project delays and cost overruns.</li>
+                <li>Safety Leadership: Implemented safety protocols resulting in zero work-related incidents.</li>
+                <li>Vendor & Subcontractor Management: Ensured high-quality work and cost savings by managing vendor relations.</li>
+                <li>Financial Success: Improved profitability through strategic financial oversight and cost control.</li>
+                <li>Mentorship & Team Development: Fostered a culture of collaboration, safety, and excellence among teams.</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="certifications-section">
         <h2 class="section-title">Certifications</h2>
-        <ul class="text-box">
-            <li>OSHA 10 & 30 Certified</li>
-            <li>First Aid and CPR Certified</li>
-            <li>Comtrain Certified Instructor (Tower Rescue and Rope Access)</li>
-        </ul>
+        <div class="text-box">
+            <ul>
+                <li>OSHA 10 & 30 Certified</li>
+                <li>First Aid & CPR Certified</li>
+                <li>Bloodborne Pathogens Certified</li>
+                <li>Tower Rescue & Rope Access (ComTrain Certified Instructor)</li>
+                <li>ODM Fiber Testing & Cleaning Certified</li>
+                <li>Commscope & Andrew’s Certification</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Information Section -->
     <section id="contact" class="contact-section">
         <h2 class="section-title">Contact Information</h2>
         <div class="contact-card text-box">
             <p><strong>Jade Bowen</strong></p>
-            <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
+            <p>Boise, ID</p>
+            <p><i class="fas fa-phone"></i> 208-371-0647</p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen">linkedin.com/in/jadebowen</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen">github.com/JadeBowen</a></p>
-            <p><i class="fas fa-file-pdf"></i> <a href="https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true">Download Resume</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen" target="_blank">LinkedIn</a></p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen" target="_blank">GitHub</a></p>
+
+            <!-- LinkedIn QR Code -->
+            <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
+            
+            <!-- Download Resume Button -->
+            <a href="https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true" class="button" download>Download Resume</a>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="footer-section">
         <div class="footer-container">
-            <p><i class="fas fa-map-marker-alt"></i> Boise, ID</p>
-            <p><i class="fas fa-phone"></i> 208-371-0647</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jadebowen">linkedin.com/in/jadebowen</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/JadeBowen">github.com/JadeBowen</a></p>
+            <p>Boise, ID</p>
+            <p>208-371-0647</p>
+            <p><a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+            <p><a href="https://linkedin.com/in/jadebowen" target="_blank">LinkedIn</a></p>
+            <p><a href="https://github.com/JadeBowen" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top">↑</button>
 </body>
 </html>
