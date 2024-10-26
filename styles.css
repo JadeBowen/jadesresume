@@ -7,6 +7,7 @@ body {
     color: #ffffff;
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -19,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 20vh; /* Reduced height */
+    height: 20vh;
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -33,7 +34,7 @@ body {
     visibility: hidden;
 }
 
-/* Navigation */
+/* Header and Navigation */
 header {
     position: sticky;
     top: 0;
@@ -51,6 +52,7 @@ header {
     padding: 0 15px;
 }
 
+/* Hide menu-list on mobile */
 .menu-list {
     list-style-type: none;
     display: flex;
@@ -72,6 +74,24 @@ header {
     color: #1E90FF;
 }
 
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    color: #00FFFF;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Only show hamburger on mobile */
+    .menu-list {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: block;
+    }
+}
+
 /* Button Styling and Readability */
 button, .button {
     background-color: #00CCCC;
@@ -88,46 +108,18 @@ button:hover, .button:hover {
     background-color: #1E90FF;
 }
 
-.toggle-details {
-    margin-top: 10px;
-}
-
 .button.full-width {
     width: 100%;
     font-size: 16px;
     padding: 12px;
 }
 
-/* Responsive Adjustments for Background on Mobile */
-@media (max-width: 768px) {
-    body {
-        background-size: contain; /* Smaller background scaling for readability */
-    }
-}
-
-/* Profile Image and Section Spacing */
-.about-section .profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px;
-}
-
-section {
-    padding: 30px 0;
-}
-
-h1, h2 {
-    color: #00FFFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Section Headings and "Show More" Button Spacing */
-.collapsible-content, .collapsible h2 {
-    padding: 10px;
-    margin: 20px 0;
+/* QR Code Resizing */
+.contact-section .qr-code img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
 
 /* Footer Compactness */
@@ -139,32 +131,6 @@ h1, h2 {
     color: #ffffff;
 }
 
-/* Contact Info Icons */
-.contact-section p, .footer-section p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-section p a, .footer-section p a {
+.footer-section p a {
     margin-left: 5px;
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #00CCCC;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-}
-
-.scroll-to-top:hover {
-    background-color: #1E90FF;
 }
