@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const splashScreen = document.getElementById('splash-screen');
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
-    }, 2000);
+    }, 2000); // 2-second delay before fade-out begins
+
+    // Remove splash screen from DOM after transition
     splashScreen.addEventListener('transitionend', () => {
         splashScreen.remove();
     });
