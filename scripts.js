@@ -19,23 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Expand/Collapse Read More for Job Details
-    const readMoreButtons = document.querySelectorAll(".read-more-btn");
-    const readLessButtons = document.querySelectorAll(".read-less-btn");
-
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const moreContent = this.nextElementSibling;
-            moreContent.style.display = 'block';
-            this.style.display = 'none';
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 
-    readLessButtons.forEach(button => {
+    // Collapsible Sections and Job Entries
+    document.querySelectorAll('.toggle-details').forEach(button => {
         button.addEventListener('click', function() {
-            const moreContent = this.parentElement;
-            moreContent.style.display = 'none';
-            moreContent.previousElementSibling.style.display = 'inline-block';
+            const details = this.nextElementSibling;
+            const isVisible = details.style.display === 'block';
+
+            details.style.display = isVisible ? 'none' : 'block';
+            this.textContent = isVisible ? 'Show Details' : 'Hide Details';
         });
     });
 
@@ -51,5 +52,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Lazy Load Images for Performance
+    const images = document.querySelectorAll('img[data-src]');
+    const config = {
+        rootMargin: '0px 0px',
+        threshold: 0.1
+    };
+
+    let observer = new IntersectionObserver((entries, self) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src');
+                self.unobserve(img);
+            }
+        });
+    }, config);
+
+    images.forEach(image => {
+        observer.observe(image);
     });
 });
