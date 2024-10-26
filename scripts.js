@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Splash Screen Setup
     const splashScreen = document.getElementById('splash-screen');
-
-    // Show splash screen with a 2-second fade-out
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
     }, 2000);
-
     splashScreen.addEventListener('transitionend', () => {
         splashScreen.remove();
     });
@@ -36,18 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Collapsible Sections and Job Entries
-    document.querySelectorAll('.toggle-details').forEach(button => {
-        button.addEventListener('click', function() {
-            const details = this.nextElementSibling;
-            const isVisible = details.style.display === 'block';
-
-            details.style.display = isVisible ? 'none' : 'block';
-            this.textContent = isVisible ? 'Show Details' : 'Hide Details';
-        });
-    });
-
-    // Scroll to Top Button
+    // Scroll-to-Top Button
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.classList.add('scroll-to-top');
     scrollToTopBtn.innerHTML = '↑';
@@ -59,26 +45,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Lazy Load Images for Performance
-    const images = document.querySelectorAll('img[data-src]');
-    const config = {
-        rootMargin: '0px 0px',
-        threshold: 0.1
-    };
-
-    let observer = new IntersectionObserver((entries, self) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.getAttribute('data-src');
-                self.unobserve(img);
-            }
-        });
-    }, config);
-
-    images.forEach(image => {
-        observer.observe(image);
     });
 });
