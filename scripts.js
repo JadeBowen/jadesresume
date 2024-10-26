@@ -33,7 +33,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Scroll-to-Top Button
+    // Collapsible Sections and Job Entries
+    document.querySelectorAll('.toggle-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const details = this.nextElementSibling;
+            const isVisible = details.style.display === 'block';
+
+            details.style.display = isVisible ? 'none' : 'block';
+            this.textContent = isVisible ? 'Show Details' : 'Hide Details';
+        });
+    });
+
+    // Scroll to Top Button
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.classList.add('scroll-to-top');
     scrollToTopBtn.innerHTML = '↑';
