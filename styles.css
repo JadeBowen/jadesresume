@@ -15,7 +15,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.6); /* Increased opacity for readability */
     z-index: -1;
 }
 
@@ -37,13 +37,18 @@ body::before {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 10vh;
+    height: 100vh;
     background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     transition: opacity 0.5s ease;
+}
+
+#splash-screen img {
+    max-width: 50%; /* Limit image size to half of the viewport width */
+    max-height: 50%; /* Limit image size to half of the viewport height */
 }
 
 #splash-screen.fade-out {
@@ -144,12 +149,19 @@ button, .button, .toggle-details {
     width: 100%;
     font-size: 16px;
     padding: 12px;
+    margin-top: 20px; /* Add space above button */
 }
 
 /* QR Code Sizing */
 .qr-code img {
-    max-width: 150px;
+    max-width: 100px; /* Reduced size for mobile */
     height: auto;
+    margin: 0 auto; /* Center align */
+}
+
+/* About and Contact Sections Centering */
+.about-section, .contact-section {
+    text-align: center;
 }
 
 /* Scroll to Top Button */
