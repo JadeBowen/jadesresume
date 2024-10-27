@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         splashScreen.classList.add('fade-out');
     }, 2000); // 2-second delay before fade-out begins
 
+    // Remove splash screen from DOM after transition
     splashScreen.addEventListener('transitionend', () => {
         splashScreen.remove();
     });
@@ -20,9 +21,8 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-// Back-to-Top Button
+// Back-to-Top Button Functionality
 const backToTopButton = document.getElementById('back-to-top');
-
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
         backToTopButton.classList.add('show');
@@ -30,17 +30,20 @@ window.addEventListener('scroll', () => {
         backToTopButton.classList.remove('show');
     }
 });
-
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Toggle Show More/Show Less for About Me, Philosophy, and Job Entries
-const toggleButtons = document.querySelectorAll('.toggle-btn');
-toggleButtons.forEach(button => {
+// Expand/Collapse "Show More" Buttons
+document.querySelectorAll('.toggle-btn').forEach(button => {
     button.addEventListener('click', () => {
-        const content = button.previousElementSibling;
-        content.classList.toggle('hidden');
-        button.textContent = content.classList.contains('hidden') ? 'Show More' : 'Show Less';
+        const target = document.getElementById(button.dataset.target);
+        if (target.classList.contains('hidden')) {
+            target.classList.remove('hidden');
+            button.textContent = "Show Less";
+        } else {
+            target.classList.add('hidden');
+            button.textContent = "Show More";
+        }
     });
 });
