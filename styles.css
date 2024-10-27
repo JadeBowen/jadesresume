@@ -1,33 +1,32 @@
-/* Root Variables for Color Palette */
-:root {
-    --primary-color: #008080; /* Deep Teal */
-    --secondary-color: #f8f8ff; /* Off-White */
-    --accent-color: #ff7f50; /* Coral */
-    --text-color: #ffffff;
-    --background-overlay: rgba(0, 0, 0, 0.6);
-    --background-gradient-start: #008080;
-    --background-gradient-end: #006666; /* Lighter Teal */
-    --section-bg: rgba(0, 0, 0, 0.5);
-}
-
 /* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    color: var(--text-color);
-    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+    color: #f8f8ff;
+    background: linear-gradient(to bottom, #008080, #006666); /* Subtle gradient for background */
 }
 
-/* Overlay for readability */
-body::before {
-    content: "";
-    position: fixed;
+/* Header and Navigation */
+header {
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background-overlay);
-    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: #ff7f50;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #f8f8ff; /* Active or hovered link color */
+    border-bottom: 2px solid #ff7f50; /* Indicator for active link */
 }
 
 /* Splash Screen */
@@ -37,69 +36,32 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     transition: opacity 1s ease, visibility 1s ease;
 }
-#splash-screen img {
-    max-width: 50%;
-    max-height: 50%;
-}
+
 #splash-screen.fade-out {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Navigation Bar */
-header {
-    position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    text-align: center;
-    z-index: 999;
-}
-.navbar a {
-    color: var(--accent-color);
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-}
-.navbar a.active {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-.navbar a:hover {
-    color: var(--secondary-color);
-}
-
-/* Main Title */
-.main-title h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: var(--primary-color);
-}
-.main-title .contact-details {
-    text-align: center;
-    font-size: 1.2em;
-    color: var(--secondary-color);
-}
-
-/* Section Styling */
+/* Main Sections */
 section {
-    background-color: var(--section-bg);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
     margin: 20px;
-    color: var(--secondary-color);
 }
-.about-section, .philosophy-section {
+
+/* Profile Image and About Section */
+.about-section {
     text-align: center;
 }
+
 .profile-image {
     width: 150px;
     height: 150px;
@@ -108,78 +70,54 @@ section {
     margin: 10px auto;
 }
 
-/* Icon Styling for Section Headings */
-h2 i {
-    margin-right: 8px;
-    color: var(--accent-color);
-    vertical-align: middle;
-}
-
-/* Flex/Grid Layouts */
+/* Skills, Achievements, Experience */
 .skills-grid, .achievements-grid, .experience-grid {
     display: grid;
     gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+
 .skill-card, .achievement-card, .experience-entry {
     padding: 15px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Expandable Content */
-details {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-}
-details summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-details[open] summary::after {
-    content: " ▼";
-    font-size: 0.8em;
-    color: var(--accent-color);
-}
-details:not([open]) summary::after {
-    content: " ▶";
-    font-size: 0.8em;
-    color: var(--accent-color);
+/* Contact Section */
+.contact-section ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Button Styling */
+.contact-section li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.contact-section li a {
+    color: #ff7f50;
+    text-decoration: none;
+}
+
+.contact-section li a:hover {
+    color: #f8f8ff;
+}
+
+/* Download Resume Button */
 .download-button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
     font-size: 16px;
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
+    color: #f8f8ff;
+    background-color: #008080;
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
 }
+
 .download-button:hover {
     background-color: #006666;
-}
-
-/* QR Code */
-.qr-code {
-    max-width: 100px;
-    display: block;
-    margin: 15px auto;
-}
-
-/* Contact Information */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
 }
 
 /* Back to Top Button */
@@ -187,33 +125,61 @@ details:not([open]) summary::after {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    padding: 10px;
+    background-color: #ff7f50;
+    color: #f8f8ff;
+    border: none;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
     cursor: pointer;
     display: none;
-    z-index: 999;
-    font-size: 1.5em;
-    text-align: center;
-}
-#back-to-top:hover {
-    background-color: #ff6347;
 }
 
-/* Responsive Design */
-@media (min-width: 1200px) {
-    section {
-        padding: 30px;
-        max-width: 900px;
-        margin: 30px auto;
-    }
-    .skills-grid, .achievements-grid, .experience-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
+#back-to-top.show {
+    display: block;
 }
+
+/* Typography Adjustments */
+h1 {
+    font-size: 2em;
+    color: #f8f8ff;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #f8f8ff;
+    margin-bottom: 10px;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+    .navbar a {
+        font-size: 16px;
+    }
     .skills-grid, .achievements-grid, .experience-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    .skills-grid, .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.75em;
+    }
+    .skills-grid, .achievements-grid, .experience-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
