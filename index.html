@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jade Bowen's Resume Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="description" content="Professional portfolio of Jade Bowen with experience in project management, construction management, telecommunications, and finance.">
 </head>
 <body>
 
@@ -15,80 +13,82 @@
         <img src="https://github.com/JadeBowen/jadesresume/blob/main/logo%202.0.jpg?raw=true" alt="Logo">
     </div>
 
+    <!-- Main Title and Contact Info -->
+    <section class="main-title">
+        <h1>Jade Bowen</h1>
+        <p class="contact-details">
+            📞 208-371-0647<br>
+            ✉️ <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a>
+        </p>
+    </section>
+
     <!-- Sticky Navigation -->
     <header>
         <nav class="navbar">
             <a href="#about">About Me</a>
             <a href="#summary">Summary</a>
-            <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
-            <a href="#philosophy">Philosophy</a>
-            <a href="#proficiencies">Proficiencies</a>
+            <a href="#experience">Experience</a>
             <a href="#certifications">Certifications</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#philosophy">Philosophy</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Title with Name -->
-    <section class="main-title">
-        <h1>Jade Bowen</h1>
-    </section>
-
     <!-- About Me Section -->
     <section id="about" class="about-section">
         <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Profile Image" class="profile-image">
-        <h2><i class="fas fa-user"></i> About Me</h2>
+        <h2>About Me</h2>
         <p>My journey into telecommunications began at the age of 12... <em>“Take the time to get it right, because what we build connects people.”</em> With over 21 years of experience, I focus on creating impactful connections.</p>
+        <button class="read-more-btn">Read More</button>
+        <div class="read-more-content" style="display:none;">
+            <!-- Full-length About Me, Mission, and Impact Statements will go here -->
+        </div>
     </section>
 
     <!-- Professional Summary Section -->
     <section id="summary" class="summary-section">
-        <h2><i class="fas fa-briefcase"></i> Professional Summary</h2>
+        <h2>Professional Summary</h2>
         <p>Results-driven construction and telecommunications professional with over 21 years...</p>
     </section>
 
-    <!-- Experience Section with Expandable Content -->
-    <section id="experience" class="experience-section">
-        <h2><i class="fas fa-business-time"></i> Professional Experience</h2>
-        <details>
-            <summary>Finance and Marketing Manager</summary>
-            <ul>
-                <li>Location: Boise's Best Auto Sales, Boise, ID (June 2023 – Present)</li>
-                <li>Spearheaded financial strategy and managed budgeting...</li>
-            </ul>
-        </details>
-        <!-- Additional experience entries would go here -->
-    </section>
-
-    <!-- Skills Section with Expandable Content -->
+    <!-- Skills Section -->
     <section id="skills" class="skills-section">
-        <h2><i class="fas fa-tools"></i> Skills</h2>
-        <details>
-            <summary>Leadership & Team Management</summary>
-            <p>Leading cross-functional teams, mentoring, and fostering team development to meet project goals.</p>
-        </details>
-        <!-- Additional skill entries go here -->
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">Leadership & Team Management</div>
+            <div class="skill-card">Project Management</div>
+            <!-- Add other skills here -->
+        </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section id="philosophy" class="philosophy-section">
-        <h2><i class="fas fa-lightbulb"></i> Philosophy</h2>
-        <p>My mission and impact statements... <em>Your guiding principles here.</em></p>
+    <!-- Key Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <h2>Key Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">Led Multimillion-Dollar Projects</div>
+            <div class="achievement-card">Enhanced Network Performance</div>
+            <!-- Add other achievements here -->
+        </div>
     </section>
 
-    <!-- Proficiencies Section -->
-    <section id="proficiencies" class="proficiencies-section">
-        <h2><i class="fas fa-signal"></i> Proficiencies</h2>
-        <details>
-            <summary>Wireless Communication Systems</summary>
-            <p>Expertise in GSM, CDMA, 3G, 4G LTE, 5G, VoLTE technologies.</p>
-        </details>
-        <!-- Additional proficiency entries go here -->
+    <!-- Professional Experience Section -->
+    <section id="experience" class="experience-section">
+        <h2>Professional Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-entry">
+                <h3>Finance and Marketing Manager</h3>
+                <p>Boise's Best Auto Sales – Boise, ID (June 2023 – Present)</p>
+                <p>Spearheaded financial strategy... <span class="read-more">Read More</span></p>
+            </div>
+            <!-- Add other experience entries here -->
+        </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="certifications-section">
-        <h2><i class="fas fa-certificate"></i> Certifications</h2>
+        <h2>Certifications</h2>
         <ul>
             <li>OSHA 10 & 30 Certified</li>
             <li>First Aid & CPR Certified</li>
@@ -96,16 +96,22 @@
         </ul>
     </section>
 
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy-section">
+        <h2>Philosophy</h2>
+        <p>Mission and Impact Statements...</p>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <h2><i class="fas fa-envelope"></i> Contact Information</h2>
-        <p>Email: Jade.Bowen.career@gmail.com</p>
-        <p>Phone: 208-371-0647</p>
-        <p>Location: Boise, ID</p>
-        <a href="https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true" class="download-button" download>Download Full Resume</a>
-        <a href="https://www.linkedin.com/in/jadebowen">LinkedIn</a>
-        <a href="https://github.com/JadeBowen">GitHub</a>
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
+        <h2>Contact Information</h2>
+        <ul class="contact-list">
+            <li>📞 208-371-0647</li>
+            <li>✉️ <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></li>
+            <li>📍 Boise, Idaho</li>
+            <li><img src="linkedin-icon.png" alt="LinkedIn Icon"> <a href="https://www.linkedin.com/in/jadebowen" target="_blank">LinkedIn Profile</a></li>
+            <li><img src="github-icon.png" alt="GitHub Icon"> <a href="https://github.com/JadeBowen" target="_blank">GitHub Profile</a></li>
+        </ul>
     </section>
 
     <script src="scripts.js"></script>
