@@ -44,7 +44,7 @@ window.addEventListener("scroll", () => {
 // Back to Top Button Functionality
 const backToTopButton = document.createElement('button');
 backToTopButton.id = 'back-to-top';
-backToTopButton.textContent = '↑';
+backToTopButton.innerHTML = '↑'; // Icon for back to top
 backToTopButton.setAttribute("aria-label", "Back to Top");
 document.body.appendChild(backToTopButton);
 
