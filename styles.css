@@ -1,134 +1,143 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
 /* Navbar Styling */
 .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 10px; 
-    background-color: #123456; 
-    position: sticky; /* Makes the navbar sticky */
-    top: 0;
-    z-index: 1000;
-    padding: 8px; 
-    flex-wrap: wrap; 
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #123456;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 8px;
+  flex-wrap: wrap;
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px; 
-    display: block;
-    white-space: nowrap; 
-    font-size: 14px; 
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+  white-space: nowrap;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@media (max-width: 768px) { 
-    .navbar {
-        flex-direction: row; /* Horizontal rows */
-        flex-wrap: wrap;
-        align-items: center;
-    }
+.navbar a:hover {
+  background-color: #345678;
+  color: #f0f0f0;
+}
 
-    .navbar a {
-        flex-basis: 50%; /* Two items per row */
-    }
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .navbar a {
+    flex-basis: 50%;
+  }
 }
 
 /* Section Styling */
 section {
-    padding: 20px;
-    margin: 10px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Profile Photo */
 .profile-photo {
-    max-width: 150px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px;
+  max-width: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
 }
 
 /* QR Code */
 .qr-code {
-    width: 100px;
-    display: block;
-    margin: 10px auto;
+  width: 100px;
+  display: block;
+  margin: 10px auto;
 }
 
 /* Button Styling */
-.toggle-btn, .download-btn {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    background-color: #123456; 
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.toggle-btn,
+.download-btn {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #123456;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.toggle-btn:hover, .download-btn:hover {
-    background-color: #345678; 
+.toggle-btn:hover,
+.download-btn:hover {
+  background-color: #345678;
 }
 
 /* Footer Styling */
 footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #123456;
-    color: #ffffff; 
-    font-size: 14px;
+  text-align: center;
+  padding: 15px;
+  background-color: #123456;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 footer * {
-    color: #ffffff; 
+  color: #ffffff;
 }
 
 footer a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Back to Top Button */
 #back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    border: none;
-    background-color: #123456; 
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  background-color: #123456;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
 }
 
 #back-to-top:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Hidden Content */
 .hidden {
-    display: none;
+  display: none;
 }
