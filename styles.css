@@ -26,13 +26,14 @@ header {
     position: sticky;
     top: 0;
     background-color: #213B5F;
-    padding: 10px;
+    padding: 10px 0;
     z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
 }
 
 .navbar a {
@@ -120,8 +121,8 @@ footer {
     text-align: center;
     padding: 15px;
     font-size: 14px;
-    margin-top: 20px;
-    padding-bottom: 30px; /* Added padding to avoid overlap */
+    position: relative;
+    width: 100%;
 }
 
 /* Show More/Less Toggle */
@@ -147,13 +148,13 @@ footer {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 50px; /* Slightly raised position */
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     background-color: #213B5F;
     color: #F2F4F7;
     border: none;
     border-radius: 50%;
-    padding: 12px 15px;
+    padding: 12px 18px;
     font-size: 20px;
     cursor: pointer;
     display: none;
@@ -168,6 +169,7 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
+        align-items: center;
     }
 
     .navbar a {
@@ -177,9 +179,5 @@ footer {
 
     .download-btn {
         max-width: 100%;
-    }
-
-    footer {
-        font-size: 12px;
     }
 }
