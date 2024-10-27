@@ -97,12 +97,12 @@ footer {
     text-align: center;
     padding: 15px;
     background-color: #123456; /* Footer background color */
-    color: white;
+    color: #ffffff; /* Set to white for better contrast */
     font-size: 14px;
 }
 
 footer a {
-    color: white;
+    color: #ffffff; /* Ensure footer links, email, and phone number are also white */
     text-decoration: underline;
 }
 
