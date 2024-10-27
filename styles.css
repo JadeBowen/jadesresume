@@ -38,13 +38,13 @@ body {
   color: #f0f0f0;
 }
 
-/* Hide Navbar and Show Menu Toggle Button on Mobile */
+/* Mobile Menu Toggle Button */
 .menu-toggle {
   display: none;
 }
 
 @media (max-width: 768px) {
-  /* Show the toggle button, hide the navbar initially */
+  /* Show the toggle button and make it sticky at the top */
   .menu-toggle {
     display: block;
     position: sticky;
@@ -56,15 +56,18 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1001; /* Ensures it appears above other elements */
     border-radius: 5px;
+    width: 100%;
+    text-align: left;
   }
 
+  /* Mobile Navbar Styling */
   .navbar {
-    display: none; /* Navbar hidden by default on mobile */
+    display: none; /* Hidden by default on mobile */
     flex-direction: column;
     position: fixed;
-    top: 50px;
+    top: 50px; /* Just below the sticky "Menu" button */
     left: 0;
     width: 100%;
     background-color: #123456;
@@ -72,7 +75,7 @@ body {
     gap: 10px;
   }
 
-  /* Show navbar when toggle class is active */
+  /* Show the navbar when the "show" class is active */
   .navbar.show {
     display: flex;
   }
