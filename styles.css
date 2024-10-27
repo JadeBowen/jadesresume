@@ -26,14 +26,13 @@ header {
     position: sticky;
     top: 0;
     background-color: #213B5F;
-    padding: 10px 0;
+    padding: 10px;
     z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
 }
 
 .navbar a {
@@ -121,8 +120,6 @@ footer {
     text-align: center;
     padding: 15px;
     font-size: 14px;
-    position: relative;
-    width: 100%;
 }
 
 /* Show More/Less Toggle */
@@ -148,13 +145,13 @@ footer {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     background-color: #213B5F;
     color: #F2F4F7;
     border: none;
     border-radius: 50%;
-    padding: 12px 18px;
+    padding: 10px 15px;
     font-size: 20px;
     cursor: pointer;
     display: none;
@@ -169,7 +166,6 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: center;
     }
 
     .navbar a {
