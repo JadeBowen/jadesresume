@@ -17,12 +17,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: nowrap; /* Ensures items stay in a single row */
     background-color: #123456; /* Adjust to match branding */
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 10px;
-    flex-wrap: nowrap; /* Ensure menu items stay in a row */
 }
 
 .navbar a {
@@ -32,21 +32,19 @@ body {
     display: block;
 }
 
-/* Ensure menu stays horizontal on mobile */
-@media (max-width: 768px) {
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Optional media query to control overflow on small screens */
+@media (max-width: 768px) { 
     .navbar {
-        flex-direction: row;
-        flex-wrap: nowrap;
         overflow-x: auto; /* Allows horizontal scrolling if needed */
     }
     
     .navbar a {
-        flex: 0 0 auto; /* Prevents wrapping on smaller screens */
+        flex: 0 0 auto; /* Prevents items from wrapping */
     }
-}
-
-.navbar a:hover {
-    text-decoration: underline;
 }
 
 /* Section Styling */
