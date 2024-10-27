@@ -1,51 +1,49 @@
-// Splash Screen Removal
-document.addEventListener("DOMContentLoaded", function() {
-    const splashScreen = document.getElementById('splash-screen');
-    setTimeout(() => {
-        splashScreen.classList.add('fade-out');
-    }, 2000); // 2-second delay before fade-out begins
+// Toggle "Show More" and "Show Less" functionality for expandable sections
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all toggle buttons and add event listeners
+    document.querySelectorAll(".toggle-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            const targetContent = button.previousElementSibling; // Target the content above the button
 
-    // Remove splash screen from DOM after transition
-    splashScreen.addEventListener('transitionend', () => {
-        splashScreen.remove();
-    });
-});
-
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('.navbar a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+            // Toggle the hidden content display
+            if (targetContent.classList.contains("hidden-content")) {
+                targetContent.classList.remove("hidden-content");
+                button.classList.add("expanded"); // Add expanded class for styling
+                button.textContent = "Show Less";
+            } else {
+                targetContent.classList.add("hidden-content");
+                button.classList.remove("expanded");
+                button.textContent = "Show More";
+            }
         });
     });
 });
 
-// Show More/Show Less Toggle
-document.querySelectorAll('.toggle-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const target = document.querySelector(this.getAttribute('data-target'));
-        if (target.classList.contains('hidden')) {
-            target.classList.remove('hidden');
-            this.textContent = "Show Less";
-        } else {
-            target.classList.add('hidden');
-            this.textContent = "Show More";
-        }
-    });
-});
+// Back-to-Top Button Visibility Toggle
+const backToTopButton = document.querySelector(".back-to-top");
 
-// Back-to-Top Button Functionality
-const backToTopBtn = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', function() {
+window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
+        backToTopButton.style.display = "block";
     } else {
-        backToTopBtn.classList.remove('show');
+        backToTopButton.style.display = "none";
     }
 });
 
-backToTopBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// Back-to-Top Scroll Functionality
+backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+// Smooth Scroll for Navigation Links
+document.querySelectorAll(".navbar a").forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 });
