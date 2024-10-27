@@ -40,7 +40,9 @@
     <!-- Professional Summary Section -->
     <section id="summary" class="summary-section">
         <h2>Professional Summary</h2>
-        <p>Results-driven construction and telecommunications professional with over 21 years of experience in both hands-on fieldwork and management roles...</p>
+        <p>Results-driven construction and telecommunications professional with over 21 years of experience...</p>
+        <button class="toggle-btn" data-target="summary-more">Show More</button>
+        <p id="summary-more" class="hidden">Full professional summary content...</p>
     </section>
 
     <!-- Experience Section -->
@@ -65,7 +67,6 @@
                 <button class="toggle-btn" data-target="job-details-2">Show More</button>
             </div>
         </div>
-        <!-- More job placeholders can be added similarly -->
     </section>
 
     <!-- Philosophy Section -->
@@ -73,12 +74,22 @@
         <h2>Philosophy</h2>
         <p>Guided by principles of connection, integrity, and excellence... <span id="philosophy-more" class="hidden">Full philosophy statement goes here.</span></p>
         <button class="toggle-btn" data-target="philosophy-more">Show More</button>
+        <div class="sub-sections">
+            <h3>Mission Statement</h3>
+            <p>Connecting people and technology... <span id="mission-more" class="hidden">Full mission statement.</span></p>
+            <button class="toggle-btn" data-target="mission-more">Show More</button>
+            <h3>Impact Statement</h3>
+            <p>Creating positive changes in communication... <span id="impact-more" class="hidden">Full impact statement.</span></p>
+            <button class="toggle-btn" data-target="impact-more">Show More</button>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <h2>Skills</h2>
         <p>Leadership, Team Management, Project Management, Problem-Solving, Client Relations, Time Management, Communication, etc.</p>
+        <button class="toggle-btn" data-target="skills-more">Show More</button>
+        <p id="skills-more" class="hidden">Full skills content...</p>
     </section>
 
     <!-- Certifications Section -->
@@ -89,6 +100,8 @@
             <li>First Aid & CPR Certified</li>
             <!-- Add more certifications as necessary -->
         </ul>
+        <button class="toggle-btn" data-target="certifications-more">Show More</button>
+        <p id="certifications-more" class="hidden">Additional certifications...</p>
     </section>
 
     <!-- Contact Section -->
@@ -102,7 +115,13 @@
             <li>GitHub: <a href="https://github.com/JadeBowen" target="_blank" rel="noopener">https://github.com/JadeBowen</a></li>
         </ul>
         <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
+        <p style="text-align: center;">LinkedIn</p>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jade Bowen | Email: Jade.Bowen.career@gmail.com | Phone: 208-371-0647</p>
+    </footer>
 
     <!-- Back-to-Top Button -->
     <button id="back-to-top">↑</button>
