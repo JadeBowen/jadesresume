@@ -2,8 +2,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    color: #f8f8ff; /* Off-white */
-    background: linear-gradient(180deg, #008080, #006666); /* Subtle gradient */
+    color: #f8f8ff;
+    background: linear-gradient(180deg, #008080, #006666); /* Subtle gradient background */
+    background-size: cover;
+    line-height: 1.6;
 }
 
 /* Dark Overlay for Readability */
@@ -14,10 +16,31 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
     z-index: -1;
 }
 
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease, visibility 1s ease; /* Smooth fade-out transition */
+}
+
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Navigation Bar */
 header {
     position: sticky;
     top: 0;
@@ -27,10 +50,12 @@ header {
 }
 
 .navbar a {
-    color: #ff7f50; /* Coral for navigation links */
+    color: #ff7f50; /* Coral accent */
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
+    transition: opacity 0.3s ease; /* Hover effect */
 }
 
 .navbar a:hover {
@@ -39,167 +64,169 @@ header {
 
 /* Section Styling */
 section {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background for sections */
     padding: 20px;
     border-radius: 8px;
     margin: 20px;
-    max-width: 800px;
-    margin: 20px auto;
 }
 
-/* About Section */
-.about-section h1 {
+h1, h2, h3 {
+    color: #00bfff; /* Brighter blue for headings */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+h2 {
     font-size: 2em;
-    color: #ff7f50;
-    margin-bottom: 0;
+    margin: 20px 0 10px;
 }
 
-.about-section p {
-    font-size: 1em;
-    margin: 5px 0;
-}
-
-.toggle-btn {
-    display: block;
-    color: #00bfff;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 0.9em;
-    margin-top: 10px;
-}
-
-/* Experience and Job Placeholder Styling */
-.experience-section h2, .philosophy-section h2 {
+h3 {
     font-size: 1.5em;
-    color: #ff7f50;
 }
 
-.experience-entry, .skills-section, .certifications-section, .philosophy-section, .contact-section {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 10px;
-}
-
-.experience-details p {
-    margin: 5px 0;
-}
-
-/* Philosophy and Skills Styling */
-.hidden {
-    display: none;
-}
-
-/* Certifications Section */
-.certifications-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.certifications-section li {
-    margin-bottom: 5px;
-}
-
-/* Contact Information */
-.contact-section ul {
-    list-style: none;
-    padding: 0;
-    font-size: 1em;
-}
-
-.contact-section a {
-    color: #ff7f50;
-    text-decoration: none;
-}
-
-.contact-section a:hover {
-    text-decoration: underline;
+.about-section, .contact-section {
+    text-align: center;
 }
 
 .qr-code {
-    width: 100px;
+    max-width: 100px;
     display: block;
     margin: 15px auto;
 }
 
-.download-button {
-    display: inline-block;
-    margin-top: 10px;
+/* List Styling */
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-section ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.contact-section ul li a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-section ul li a:hover {
+    color: #ff7f50; /* Coral for hover */
+}
+
+/* Button Styling */
+button, .toggle-btn, .download-button {
+    background-color: #008080;
+    color: #f8f8ff;
     padding: 10px 15px;
     font-size: 16px;
-    color: #f8f8ff;
-    background-color: #008080;
-    text-align: center;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.download-button:hover {
-    background-color: #006666;
+button:hover, .toggle-btn:hover, .download-button:hover {
+    background-color: #006666; /* Slightly darker teal for hover */
 }
 
-/* Splash Screen */
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 1s ease, visibility 1s ease;
+.download-button {
+    display: inline-block;
+    width: auto;
+    text-align: center;
 }
 
-#splash-screen.fade-out {
-    opacity: 0;
-    visibility: hidden;
+.hidden {
+    display: none;
+}
+
+/* Experience, Skills, Certifications with "Show More" Functionality */
+.experience-details, .skills-section, .certifications-section, .summary-section, .philosophy-section {
+    position: relative;
+}
+
+.experience-details p, .skills-section p, .certifications-section ul, .summary-section p, .philosophy-section .sub-sections {
+    margin: 10px 0;
+}
+
+.experience-entry {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+.experience-entry h3, .experience-details p {
+    margin: 5px 0;
+}
+
+.toggle-btn {
+    display: inline-block;
+    background-color: #00bfff;
+    color: #f8f8ff;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #ff7f50;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f8f8ff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
 }
 
 /* Back-to-Top Button */
 #back-to-top {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ff7f50;
+    background-color: #008080;
     color: #f8f8ff;
-    border: none;
     padding: 10px;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
-    display: none; /* Hidden initially */
+    transition: opacity 0.3s ease;
 }
 
 #back-to-top.show {
     display: inline-block;
+    opacity: 0.8;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar a {
-        font-size: 16px;
-    }
+#back-to-top:hover {
+    opacity: 1;
+}
 
-    .experience-section, .skills-section, .certifications-section, .philosophy-section, .contact-section {
-        padding: 10px;
-    }
-
-    .experience-details p, .contact-section ul li {
-        font-size: 0.9em;
+/* Media Queries */
+@media (min-width: 768px) {
+    .skills-section, .experience-section, .certifications-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
-/* Media Query for Larger Screens */
 @media (min-width: 1200px) {
-    .navbar a {
-        font-size: 18px;
-    }
-
-    .section-title {
-        font-size: 1.8em;
+    section {
+        max-width: 80%;
+        margin: 20px auto;
     }
 }
