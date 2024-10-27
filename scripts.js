@@ -1,6 +1,15 @@
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Toggle function for mobile menu
+    function toggleMenu() {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("show");
+    }
+
+    // Assign the toggle function to the menu button
+    document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
+
     // Show More/Show Less Toggle Functionality
     const toggleButtons = document.querySelectorAll(".toggle-btn");
     toggleButtons.forEach(button => {
