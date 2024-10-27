@@ -65,7 +65,7 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Expandable Content Management with <details> Elements
+// Expandable Content with Visual Indicators
 const detailsElements = document.querySelectorAll("details");
 detailsElements.forEach(details => {
     details.addEventListener("toggle", () => {
