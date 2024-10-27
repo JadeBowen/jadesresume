@@ -22,8 +22,7 @@ body {
   top: 0;
   z-index: 1000;
   padding: 8px 10px;
-  flex-wrap: nowrap; /* Keeps items in a single row */
-  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  flex-wrap: wrap; /* Allow wrapping into rows */
 }
 
 .navbar a {
@@ -33,7 +32,9 @@ body {
   font-size: 14px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap; /* Prevents wrapping of individual links */
+  width: calc(100% / 4); /* Four items per row on larger screens */
+  text-align: center;
+  white-space: nowrap;
 }
 
 .navbar a:hover {
@@ -41,15 +42,10 @@ body {
   color: #f0f0f0;
 }
 
-/* Responsive Adjustment */
+/* Responsive Adjustment for Smaller Screens */
 @media (max-width: 768px) {
-  .navbar {
-    gap: 10px;
-    padding: 10px 5px;
-  }
-
   .navbar a {
-    flex: 0 0 auto; /* Keeps items inline without wrapping */
+    width: 50%; /* Two items per row on small screens */
   }
 }
 
