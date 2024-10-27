@@ -1,36 +1,29 @@
-// Toggle "Show More" and "Show Less" functionality for expandable sections
-document.addEventListener("DOMContentLoaded", function () {
-    // Select all toggle buttons and add event listeners
-    document.querySelectorAll(".toggle-btn").forEach(button => {
-        button.addEventListener("click", function () {
-            const targetContent = button.previousElementSibling; // Target the content above the button
+// Toggle "Show More / Show Less" Functionality for All Expandable Sections
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButtons = document.querySelectorAll(".toggle-btn");
 
-            // Toggle the hidden content display
-            if (targetContent.classList.contains("hidden-content")) {
-                targetContent.classList.remove("hidden-content");
-                button.classList.add("expanded"); // Add expanded class for styling
-                button.textContent = "Show Less";
-            } else {
-                targetContent.classList.add("hidden-content");
-                button.classList.remove("expanded");
-                button.textContent = "Show More";
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const content = this.nextElementSibling; // Select the hidden content
+            if (content.classList.contains("hidden-content")) {
+                content.classList.toggle("hidden"); // Toggle visibility
+                this.textContent = content.classList.contains("hidden") ? "Show More" : "Show Less";
             }
         });
     });
 });
 
-// Back-to-Top Button Visibility Toggle
-const backToTopButton = document.querySelector(".back-to-top");
+// Back-to-Top Button Functionality
+const backToTopButton = document.getElementById("back-to-top");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-        backToTopButton.style.display = "block";
+        backToTopButton.classList.add("show");
     } else {
-        backToTopButton.style.display = "none";
+        backToTopButton.classList.remove("show");
     }
 });
 
-// Back-to-Top Scroll Functionality
 backToTopButton.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
@@ -38,9 +31,9 @@ backToTopButton.addEventListener("click", () => {
     });
 });
 
-// Smooth Scroll for Navigation Links
+// Smooth Scrolling for Navbar Links
 document.querySelectorAll(".navbar a").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute("href")).scrollIntoView({
             behavior: "smooth"
