@@ -44,10 +44,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Show the toggle button and make it sticky at the top */
+  /* Show the toggle button and make it fixed at the top */
   .menu-toggle {
     display: block;
-    position: sticky;
+    position: fixed; /* Fixed position for better stickiness */
     top: 0;
     left: 0;
     background-color: #123456;
@@ -67,7 +67,7 @@ body {
     display: none; /* Hidden by default on mobile */
     flex-direction: column;
     position: fixed;
-    top: 50px; /* Just below the sticky "Menu" button */
+    top: 50px; /* Just below the fixed "Menu" button */
     left: 0;
     width: 100%;
     background-color: #123456;
