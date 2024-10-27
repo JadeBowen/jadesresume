@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Back to Top Button Functionality
+    // Back to Top Button
     const backToTopButton = document.getElementById("back-to-top");
     window.addEventListener("scroll", function() {
         if (window.scrollY > 300) {
@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Smooth Scroll to Top
     backToTopButton.addEventListener("click", function() {
         window.scrollTo({
             top: 0,
