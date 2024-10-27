@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jade Bowen's Portfolio</title>
+    <title>Jade Bowen's Resume Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Professional portfolio of Jade Bowen with experience in project management, construction management, telecommunications, and finance.">
 </head>
 <body>
-
-    <!-- Navigation -->
+    <!-- Sticky Navigation Bar -->
     <header>
         <nav class="navbar">
             <a href="#about">About Me</a>
@@ -23,76 +21,84 @@
         </nav>
     </header>
 
-    <!-- Profile and About Section -->
-    <section id="about" class="about-section">
-        <img src="profile.jpg" alt="Profile Image" class="profile-image">
+    <!-- About Me Section -->
+    <section id="about">
+        <img src="profile-photo.jpg" alt="Profile Photo" class="profile-photo">
         <h1>Jade Bowen</h1>
-        <p>My journey into telecommunications began at the age of 12... <em>“Take the time to get it right, because what we build connects people.”</em> With over 21 years of experience, I focus on creating impactful connections.</p>
+        <p>My journey into telecommunications began at an early age and continues with a focus on impactful connections...</p>
     </section>
 
-    <!-- Professional Summary -->
-    <section id="summary" class="summary-section">
+    <!-- Professional Summary Section -->
+    <section id="summary">
         <h2>Professional Summary</h2>
-        <p>Results-driven construction and telecommunications professional with over 21 years...</p>
+        <p>Results-oriented professional with experience in project management, construction, and telecommunications...</p>
+        <button class="toggle-btn" data-target="summary-content">Show More</button>
+        <div id="summary-content" class="hidden">Full summary content goes here...</div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience-section">
+    <section id="experience">
         <h2>Experience</h2>
         <div class="experience-entry">
             <h3>Finance and Marketing Manager</h3>
-            <p>Boise's Best Auto Sales – Boise, ID (June 2023 – Present)</p>
-            <p>Spearheaded financial strategy... <span class="hidden">Read More</span></p>
+            <p>Boise's Best Auto Sales – Boise, ID</p>
+            <p>June 2023 – Present</p>
+            <p>Spearheading financial strategies and overseeing marketing...</p>
+            <button class="toggle-btn" data-target="exp1-content">Show More</button>
+            <div id="exp1-content" class="hidden">Full experience details go here...</div>
         </div>
     </section>
 
     <!-- Philosophy Section -->
-    <section id="philosophy" class="philosophy-section">
+    <section id="philosophy">
         <h2>Philosophy</h2>
-        <p>Guiding principles in life and work...</p>
+        <p>Guided by integrity and a dedication to excellence...</p>
+        <button class="toggle-btn" data-target="philosophy-content">Show More</button>
+        <div id="philosophy-content" class="hidden">Mission and impact statements...</div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills-section">
+    <section id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>Leadership & Team Management</li>
-            <li>Project Management</li>
-        </ul>
+        <p>Leadership, Project Management, and more...</p>
+        <button class="toggle-btn" data-target="skills-content">Show More</button>
+        <div id="skills-content" class="hidden">Detailed skills list goes here...</div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="certifications-section">
+    <section id="certifications">
         <h2>Certifications</h2>
-        <ul>
-            <li>OSHA 10 & 30 Certified</li>
-            <li>First Aid & CPR Certified</li>
-        </ul>
+        <p>OSHA Certified, Project Management, etc...</p>
+        <button class="toggle-btn" data-target="certifications-content">Show More</button>
+        <div id="certifications-content" class="hidden">Full list of certifications...</div>
     </section>
 
-    <!-- Contact Information -->
-    <section id="contact" class="contact-section">
+    <!-- Contact Section -->
+    <section id="contact">
         <h2>Contact Information</h2>
         <p>Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-        <p>Phone: <a href="tel:208-371-0647">208-371-0647</a></p>
+        <p>Phone: <a href="tel:+12083710647">208-371-0647</a></p>
         <p>Location: Boise, Idaho</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/jadebowen">https://www.linkedin.com/in/jadebowen</a></p>
-        <p>GitHub: <a href="https://github.com/JadeBowen">https://github.com/JadeBowen</a></p>
-        <img src="linkedin-qr.png" alt="LinkedIn QR Code" class="qr-code">
+        <p>GitHub: <a href="https://github.com/JadeBowen" target="_blank" rel="noopener">https://github.com/JadeBowen</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/jadebowen" target="_blank" rel="noopener">https://www.linkedin.com/in/jadebowen</a></p>
+        <img src="linkedin-qr-code.jpg" alt="LinkedIn QR Code" class="qr-code">
     </section>
 
-    <!-- Downloads Section -->
-    <section id="downloads" class="downloads-section">
+    <!-- Download Resumes Section -->
+    <section id="downloads">
         <h2>Download Resumes</h2>
-        <a href="Telecom_Resume.pdf" class="download-button" download>Download Telecom Resume</a>
-        <a href="Full_Resume.pdf" class="download-button" download>Download Full Resume</a>
-        <a href="Project_Construction_Resume.pdf" class="download-button" download>Download Project & Construction Management Resume</a>
+        <button class="download-btn">Download Telecom Resume</button>
+        <button class="download-btn">Download Full Resume</button>
+        <button class="download-btn">Download Project & Construction Management Resume</button>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Jade Bowen | Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a> | Phone: 208-371-0647</p>
+        © 2024 Jade Bowen | Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a> | Phone: <a href="tel:+12083710647">208-371-0647</a>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">↑</button>
 
     <script src="scripts.js"></script>
 </body>
