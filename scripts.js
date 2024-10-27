@@ -1,6 +1,14 @@
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Splash Screen Animation
+    const splashScreen = document.getElementById("splash-screen");
+    const fadeText = document.querySelector(".fade-in");
+    setTimeout(() => {
+        splashScreen.style.opacity = 0;
+        splashScreen.style.visibility = "hidden";
+    }, 4000); // Delay splash screen fade-out by 4 seconds
+
     // Show More/Show Less Toggle Functionality
     const toggleButtons = document.querySelectorAll(".toggle-btn");
     toggleButtons.forEach(button => {
@@ -9,9 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (targetContent.classList.contains("hidden")) {
                 targetContent.classList.remove("hidden");
                 this.textContent = "Show Less";
+                this.setAttribute("aria-expanded", "true");
             } else {
                 targetContent.classList.add("hidden");
                 this.textContent = "Show More";
+                this.setAttribute("aria-expanded", "false");
             }
         });
     });
