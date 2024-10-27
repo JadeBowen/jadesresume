@@ -1,168 +1,136 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
-    color: #f8f8ff;
-    background: linear-gradient(180deg, #008080, #006666); /* Subtle gradient */
+    color: #808B96; /* Light gray for body text */
+    background-color: #F2F4F7; /* Very light gray background */
 }
 
-/* Header and Navigation */
+/* Header & Navbar */
 header {
     position: sticky;
     top: 0;
-    background-color: #004d4d;
+    background-color: #213B5F; /* Deep blue */
     padding: 10px;
     text-align: center;
-    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .navbar a {
-    color: #ff7f50;
-    margin: 0 15px;
+    color: #F2F4F7; /* Very light gray */
+    margin: 0 20px;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
 }
 
 .navbar a:hover {
-    opacity: 0.8;
+    color: #808B96; /* Light gray on hover */
 }
 
-/* Main Profile Section */
-.main-profile {
-    text-align: center;
+/* Section Styles */
+section {
+    background-color: #FFFFFF; /* White background for content sections */
     padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
+/* About Me Section */
 .profile-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    margin: 10px auto;
 }
 
-/* Sections Styling */
-section {
-    background-color: rgba(0, 77, 77, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px;
+/* Contact Section */
+.contact-info a {
+    color: #213B5F; /* Deep blue for contact links */
+    text-decoration: none;
 }
 
-h1, h2 {
-    color: #ff7f50;
+.contact-info a:hover {
+    color: #808B96; /* Light gray on hover */
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-top: 20px;
-}
-
-/* Content Lists and Layout */
-ul, ol {
-    padding-left: 20px;
-    margin: 10px 0;
-    list-style-type: none;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-/* Button Styling */
-.toggle-btn, .download-button {
+/* Download Button */
+.download-button {
     display: inline-block;
-    background-color: #008080;
-    color: #f8f8ff;
-    border: none;
+    margin-top: 10px;
     padding: 10px 15px;
     font-size: 16px;
-    cursor: pointer;
+    color: #F2F4F7; /* Very light gray text */
+    background-color: #213B5F; /* Deep blue */
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
 }
 
-.toggle-btn:hover, .download-button:hover {
-    background-color: #006666;
+.download-button:hover {
+    background-color: #1A2E4A; /* Slightly darker blue on hover */
 }
 
-.hidden-content {
+/* "Show More" Button Styling */
+.toggle-btn {
+    background-color: #213B5F; /* Deep blue */
+    color: #F2F4F7;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #1A2E4A; /* Darker blue on hover */
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #213B5F; /* Deep blue */
+    color: #F2F4F7; /* Very light gray */
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
     display: none;
-    margin-top: 10px;
 }
 
-/* Contact Information */
-.contact-section ul {
-    padding: 0;
-    margin: 10px 0;
-    list-style-type: none;
-    text-align: center;
-}
-
-.contact-section li {
-    margin: 5px 0;
-}
-
-.contact-section a {
-    color: #00bfff;
-    text-decoration: none;
-}
-
-.contact-section a:hover {
-    text-decoration: underline;
-}
-
-.qr-code {
-    max-width: 100px;
-    margin: 15px auto;
+#back-to-top.show {
     display: block;
 }
 
-footer {
-    background-color: #004d4d;
-    color: #f8f8ff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9em;
+#back-to-top:hover {
+    background-color: #1A2E4A; /* Darker blue */
 }
 
-/* Responsive Adjustments */
+/* Footer */
+footer {
+    background-color: #213B5F; /* Deep blue */
+    color: #F2F4F7; /* Very light gray text */
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #213B5F; /* Deep blue for all headings */
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     .navbar a {
         font-size: 16px;
-        margin: 0 10px;
     }
-    
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar a {
-        font-size: 14px;
-    }
-    
-    h1 {
-        font-size: 1.6em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    .profile-image {
-        width: 120px;
-        height: 120px;
+    .experience-entry,
+    .skills-grid,
+    .achievements-grid {
+        grid-template-columns: 1fr;
     }
 }
