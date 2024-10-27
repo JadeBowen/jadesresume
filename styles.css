@@ -16,33 +16,33 @@ body {
 .navbar {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px; 
     background-color: #123456; 
-    position: sticky;
+    position: sticky; /* Makes the navbar sticky */
     top: 0;
     z-index: 1000;
-    padding: 10px;
-    flex-wrap: wrap;
+    padding: 8px; 
+    flex-wrap: wrap; 
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 8px 12px; /* Reduced padding */
+    padding: 5px 10px; 
     display: block;
     white-space: nowrap; 
-    flex-grow: 1;
+    font-size: 14px; 
 }
 
 @media (max-width: 768px) { 
     .navbar {
-        flex-direction: row;
+        flex-direction: row; /* Horizontal rows */
         flex-wrap: wrap;
         align-items: center;
     }
 
     .navbar a {
-        flex-basis: 50%;  /* Adjusted for 2 items per row */ 
+        flex-basis: 50%; /* Two items per row */
     }
 }
 
