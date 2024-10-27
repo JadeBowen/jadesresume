@@ -11,7 +11,7 @@
 
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/logo%202.0.jpg?raw=true" alt="Logo">
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/logo%202.0.jpg?raw=true" alt="Logo" class="splash-logo">
     </div>
 
     <!-- Sticky Navigation -->
@@ -22,7 +22,6 @@
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#philosophy">Philosophy</a>
-            <a href="#proficiencies">Proficiencies</a>
             <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -30,11 +29,18 @@
 
     <!-- About Me Section -->
     <section id="about" class="about-section">
-        <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Profile Image" class="profile-image">
         <h1>Jade Bowen</h1>
-        <p>Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
-        <p>Phone: <a href="tel:+12083710647">208-371-0647</a></p>
+        <p class="contact-info">
+            <span>Email:</span> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a><br>
+            <span>Phone:</span> 208-371-0647
+        </p>
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Profile Image" class="profile-image">
+        <h2>About Me</h2>
         <p>My journey into telecommunications began at the age of 12... <em>“Take the time to get it right, because what we build connects people.”</em> With over 21 years of experience, I focus on creating impactful connections.</p>
+        <details>
+            <summary><button class="toggle-btn">Show More</button></summary>
+            <p>Full biography content here...</p>
+        </details>
     </section>
 
     <!-- Professional Summary Section -->
@@ -49,37 +55,115 @@
         <div class="skills-grid">
             <div class="skill-card">Leadership & Team Management</div>
             <div class="skill-card">Project Management</div>
-            <!-- Add other skills here -->
+            <!-- Additional skills here -->
         </div>
     </section>
 
-    <!-- Key Achievements Section -->
-    <section id="achievements" class="achievements-section">
-        <h2>Key Achievements</h2>
-        <div class="achievements-grid">
-            <div class="achievement-card">Led Multimillion-Dollar Projects</div>
-            <div class="achievement-card">Enhanced Network Performance</div>
-            <!-- Add other achievements here -->
-        </div>
-    </section>
-
-    <!-- Professional Experience Section -->
+    <!-- Experience Section -->
     <section id="experience" class="experience-section">
         <h2>Professional Experience</h2>
         <div class="experience-grid">
-            <details>
-                <summary>Finance and Marketing Manager</summary>
+            <!-- Main Job Entry -->
+            <div class="experience-entry">
+                <h3>Finance and Marketing Manager</h3>
                 <p>Boise's Best Auto Sales – Boise, ID (June 2023 – Present)</p>
-                <p>Spearheaded financial strategy... <span class="read-more">Read More</span></p>
-            </details>
-            <!-- Add other experience entries here -->
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Full experience description for this position...</p>
+                </details>
+            </div>
+
+            <!-- Placeholder Entries for Additional Jobs -->
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 1</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 2</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 3</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 4</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 5</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 6</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 7</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 8</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 9</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
+
+            <div class="experience-entry">
+                <h3>Placeholder Job Title 10</h3>
+                <details>
+                    <summary><button class="toggle-btn">Read More</button></summary>
+                    <p>Placeholder content for this job...</p>
+                </details>
+            </div>
         </div>
     </section>
 
-    <!-- Proficiencies Section -->
-    <section id="proficiencies" class="proficiencies-section">
-        <h2>Proficiencies</h2>
-        <p>Detailed proficiencies in telecommunications infrastructure, wireless systems, and fiber optic technologies...</p>
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy-section">
+        <h2>Philosophy</h2>
+        <p>Brief introduction to philosophy...</p>
+        <details>
+            <summary><button class="toggle-btn">Show More</button></summary>
+            <p>Full philosophy content here...</p>
+        </details>
     </section>
 
     <!-- Certifications Section -->
@@ -88,24 +172,32 @@
         <ul>
             <li>OSHA 10 & 30 Certified</li>
             <li>First Aid & CPR Certified</li>
-            <!-- Add other certifications here -->
+            <!-- Additional certifications here -->
         </ul>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Contact Information</h2>
-        <a href="https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true" class="download-button" download>Download Full Resume</a>
         <ul>
-            <li>📧 Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></li>
-            <li>📞 Phone: <a href="tel:+12083710647">208-371-0647</a></li>
-            <li>📍 Location: Boise, Idaho</li>
-            <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/jadebowen">https://www.linkedin.com/in/jadebowen</a></li>
-            <li>🔗 GitHub: <a href="https://github.com/JadeBowen">https://github.com/JadeBowen</a></li>
+            <li><span>📧 Email:</span> <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></li>
+            <li><span>📞 Phone:</span> 208-371-0647</li>
+            <li><span>📍 Location:</span> Boise, Idaho</li>
+            <li><a href="https://www.linkedin.com/in/jadebowen">LinkedIn</a></li>
+            <li><a href="https://github.com/JadeBowen">GitHub</a></li>
         </ul>
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
+        <a href="https://github.com/JadeBowen/jadesresume/blob/main/Jade%20Bowen%20-%202024.pdf?raw=true" class="download-button" download>Download Full Resume</a>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jade Bowen | Phone: 208-371-0647 | Email: Jade.Bowen.career@gmail.com</p>
+    </footer>
+
+    <!-- Back to Top Button -->
     <button id="back-to-top">↑</button>
+
     <script src="scripts.js"></script>
 </body>
 </html>
