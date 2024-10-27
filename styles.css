@@ -2,60 +2,25 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    color: #f8f8ff;
-    background: linear-gradient(180deg, #008080, #006666); /* Subtle gradient background */
-    background-size: cover;
-    line-height: 1.6;
+    color: #f8f8ff; /* Off-white */
+    background: linear-gradient(to bottom, #008080, #006666); /* Subtle teal gradient */
 }
 
-/* Dark Overlay for Readability */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-    z-index: -1;
-}
-
-/* Splash Screen */
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh; /* Full screen height */
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 1s ease, visibility 1s ease; /* Smooth fade-out transition */
-}
-
-#splash-screen.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Navigation Bar */
+/* Sticky Navigation */
 header {
     position: sticky;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #004d4d;
     padding: 10px;
     text-align: center;
 }
 
 .navbar a {
-    color: #ff7f50; /* Coral accent */
+    color: #ff7f50; /* Coral color for links */
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    transition: opacity 0.3s ease; /* Hover effect */
+    font-size: 16px;
 }
 
 .navbar a:hover {
@@ -64,31 +29,33 @@ header {
 
 /* Section Styling */
 section {
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent background for sections */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
     padding: 20px;
     border-radius: 8px;
     margin: 20px;
 }
 
-h1, h2, h3 {
-    color: #00bfff; /* Brighter blue for headings */
+/* About Section */
+.about-section {
+    text-align: center;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px auto;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-top: 0;
+    font-size: 28px;
+    margin-bottom: 5px;
 }
 
-h2 {
-    font-size: 2em;
-    margin: 20px 0 10px;
-}
-
-h3 {
-    font-size: 1.5em;
-}
-
-.about-section, .contact-section {
+/* Contact Info and Footer */
+.contact-section p, footer p {
+    font-size: 14px;
+    line-height: 1.6;
     text-align: center;
 }
 
@@ -98,135 +65,96 @@ h3 {
     margin: 15px auto;
 }
 
-/* List Styling */
-.contact-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-section ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-}
-
-.contact-section ul li a {
-    color: #00bfff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-section ul li a:hover {
-    color: #ff7f50; /* Coral for hover */
+/* Footer Styling */
+footer {
+    background-color: #004d4d;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
 }
 
 /* Button Styling */
-button, .toggle-btn, .download-button {
+.download-button, .toggle-btn {
     background-color: #008080;
     color: #f8f8ff;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s ease;
 }
 
-button:hover, .toggle-btn:hover, .download-button:hover {
-    background-color: #006666; /* Slightly darker teal for hover */
-}
-
-.download-button {
-    display: inline-block;
-    width: auto;
-    text-align: center;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Experience, Skills, Certifications with "Show More" Functionality */
-.experience-details, .skills-section, .certifications-section, .summary-section, .philosophy-section {
-    position: relative;
-}
-
-.experience-details p, .skills-section p, .certifications-section ul, .summary-section p, .philosophy-section .sub-sections {
-    margin: 10px 0;
-}
-
-.experience-entry {
-    padding: 15px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-bottom: 15px;
-}
-
-.experience-entry h3, .experience-details p {
-    margin: 5px 0;
+.download-button:hover, .toggle-btn:hover {
+    background-color: #006666;
 }
 
 .toggle-btn {
-    display: inline-block;
-    background-color: #00bfff;
-    color: #f8f8ff;
-    border-radius: 5px;
-    padding: 8px 12px;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    margin-top: 5px;
 }
 
-.toggle-btn:hover {
-    background-color: #ff7f50;
+/* Hidden Content */
+.hidden-content {
+    display: none;
 }
 
-/* Footer */
-footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #f8f8ff;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
+/* Show/Hide Button for Expandable Sections */
+.toggle-btn::after {
+    content: ' ▼';
+    font-size: 12px;
+}
+
+.toggle-btn.expanded::after {
+    content: ' ▲';
 }
 
 /* Back-to-Top Button */
-#back-to-top {
-    display: none;
+.back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #008080;
+    background-color: #ff7f50;
     color: #f8f8ff;
+    border: none;
     padding: 10px;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    display: none; /* Hidden initially */
 }
 
-#back-to-top.show {
-    display: inline-block;
-    opacity: 0.8;
+.back-to-top:hover {
+    background-color: #e67e22;
 }
 
-#back-to-top:hover {
-    opacity: 1;
+/* Flexbox and Spacing Adjustments */
+.skills-section ul, .certifications-section ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Media Queries */
+.skills-section li, .certifications-section li {
+    padding: 5px 0;
+}
+
+/* Responsive Design */
 @media (min-width: 768px) {
-    .skills-section, .experience-section, .certifications-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .navbar a {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .contact-section p, footer p {
+        font-size: 14px;
     }
 }
 
 @media (min-width: 1200px) {
-    section {
-        max-width: 80%;
-        margin: 20px auto;
+    .experience-section, .philosophy-section, .skills-section, .certifications-section {
+        max-width: 800px;
+        margin: 0 auto;
     }
 }
