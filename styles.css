@@ -3,16 +3,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     color: #f8f8ff;
-    background: linear-gradient(180deg, #008080, #006666);
+    background: linear-gradient(180deg, #008080, #006666); /* Subtle gradient */
 }
 
-/* Header */
+/* Header and Navigation */
 header {
     position: sticky;
     top: 0;
     background-color: #004d4d;
     padding: 10px;
     text-align: center;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -20,11 +21,92 @@ header {
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
 }
 
-/* Contact Section */
-.contact-section h2 {
-    color: #00bfff;
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+/* Main Profile Section */
+.main-profile {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Sections Styling */
+section {
+    background-color: rgba(0, 77, 77, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #ff7f50;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Content Lists and Layout */
+ul, ol {
+    padding-left: 20px;
+    margin: 10px 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Button Styling */
+.toggle-btn, .download-button {
+    display: inline-block;
+    background-color: #008080;
+    color: #f8f8ff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.toggle-btn:hover, .download-button:hover {
+    background-color: #006666;
+}
+
+.hidden-content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Contact Information */
+.contact-section ul {
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.contact-section li {
+    margin: 5px 0;
 }
 
 .contact-section a {
@@ -33,107 +115,54 @@ header {
 }
 
 .contact-section a:hover {
-    color: #ff7f50;
-}
-
-#contact-info {
-    text-align: left;
-    padding: 20px;
-}
-
-.download-button {
-    display: block;
-    margin: 15px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #f8f8ff;
-    background-color: #008080;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.download-button:hover {
-    background-color: #006666;
-}
-
-.contact-info-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 8px 0;
-}
-
-.contact-info-item span {
-    margin-left: 10px;
-}
-
-/* QR Code */
-.qr-code-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.qr-code-container img {
-    width: 150px;
-    height: auto;
-}
-
-.qr-code-container p {
-    margin-top: 10px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #004d4d;
-    font-size: 14px;
-    color: #f8f8ff;
-}
-
-.footer-link {
-    color: #00bfff;
-    text-decoration: none;
-}
-
-.footer-link:hover {
-    color: #ff7f50;
-}
-
-/* Additional Styles */
-.hidden-content {
-    display: none;
-}
-
-.expanded {
-    display: block;
-}
-
-.button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.toggle-btn {
-    background-color: transparent;
-    color: #ff7f50;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
-
-.toggle-btn:hover {
     text-decoration: underline;
+}
+
+.qr-code {
+    max-width: 100px;
+    margin: 15px auto;
+    display: block;
+}
+
+footer {
+    background-color: #004d4d;
+    color: #f8f8ff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar a {
         font-size: 16px;
+        margin: 0 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
     }
 
-    #contact-info {
+    h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
         font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
     }
 }
