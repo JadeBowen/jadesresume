@@ -30,6 +30,14 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     });
 });
 
+// Expandable Section Indicators for <details> Elements
+document.querySelectorAll("details summary").forEach(summary => {
+    summary.addEventListener("click", function() {
+        const openStatus = this.parentElement.hasAttribute("open");
+        this.querySelector("i").textContent = openStatus ? "▶" : "▼";
+    });
+});
+
 // Back to Top Button
 const backToTopButton = document.createElement('button');
 backToTopButton.id = 'back-to-top';
