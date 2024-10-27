@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
         splashScreen.classList.add('fade-out');
     }, 2000); // 2-second delay before fade-out begins
 
-    // Remove splash screen from DOM after transition
     splashScreen.addEventListener('transitionend', () => {
         splashScreen.remove();
     });
@@ -21,36 +20,27 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-// Toggle for "Read More" Content
-document.querySelectorAll('.read-more-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === 'none' ? 'block' : 'none';
-        this.textContent = content.style.display === 'none' ? 'Read More' : 'Show Less';
-    });
+// Back-to-Top Button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
 });
 
-// Expandable Section Indicators for <details> Elements
-document.querySelectorAll("details summary").forEach(summary => {
-    summary.addEventListener("click", function() {
-        const openStatus = this.parentElement.hasAttribute("open");
-        this.querySelector("i").textContent = openStatus ? "▶" : "▼";
-    });
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Back to Top Button
-const backToTopButton = document.createElement('button');
-backToTopButton.id = 'back-to-top';
-backToTopButton.textContent = '⬆';
-document.body.appendChild(backToTopButton);
-
-window.addEventListener('scroll', function() {
-    backToTopButton.style.display = window.scrollY > 200 ? 'block' : 'none';
-});
-
-backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+// Toggle Show More/Show Less for About Me, Philosophy, and Job Entries
+const toggleButtons = document.querySelectorAll('.toggle-btn');
+toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.previousElementSibling;
+        content.classList.toggle('hidden');
+        button.textContent = content.classList.contains('hidden') ? 'Show More' : 'Show Less';
     });
 });
