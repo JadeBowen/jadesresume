@@ -22,30 +22,31 @@ body {
     top: 0;
     z-index: 1000;
     padding: 10px;
+    flex-wrap: nowrap; /* Ensure menu items stay in a row */
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
+    display: block;
+}
+
+/* Ensure menu stays horizontal on mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Allows horizontal scrolling if needed */
+    }
+    
+    .navbar a {
+        flex: 0 0 auto; /* Prevents wrapping on smaller screens */
+    }
 }
 
 .navbar a:hover {
     text-decoration: underline;
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        text-align: center;
-        padding: 5px;
-    }
-
-    .navbar a {
-        flex: 1 1 100%;
-        padding: 10px 0;
-    }
 }
 
 /* Section Styling */
