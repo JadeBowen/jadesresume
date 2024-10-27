@@ -1,18 +1,19 @@
-/* General Styling */
+/* Root Variables for Color Palette */
 :root {
-    --primary-color: #00CCCC;
-    --hover-color: #1E90FF;
+    --primary-color: #008080; /* Deep Teal */
+    --secondary-color: #f8f8ff; /* Off-White */
+    --accent-color: #ff7f50; /* Coral */
     --text-color: #ffffff;
     --background-overlay: rgba(0, 0, 0, 0.6);
     --section-bg: rgba(0, 0, 0, 0.5);
 }
 
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     color: var(--text-color);
-    background: url('https://github.com/JadeBowen/jadesresume/blob/main/network-enot-poloskun.jpg?raw=true') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(to right, #004d4d, #007373); /* Subtle gradient */
 }
 
 /* Overlay for readability */
@@ -60,25 +61,26 @@ header {
     z-index: 999;
 }
 .navbar a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
 }
 .navbar a.active {
-    color: var(--hover-color);
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 .navbar a:hover {
-    color: var(--hover-color);
+    color: var(--secondary-color);
 }
 
 /* Main Title */
 .main-title h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
     margin-top: 20px;
+    color: var(--primary-color);
 }
 
 /* Section Styling */
@@ -87,6 +89,7 @@ section {
     padding: 20px;
     border-radius: 8px;
     margin: 20px;
+    color: var(--secondary-color);
 }
 .about-section, .philosophy-section {
     text-align: center;
@@ -101,9 +104,9 @@ section {
 
 /* Icon Styling for Section Headings */
 h2 i {
-    margin-right: 8px;           /* Adds a small gap between icon and text */
-    color: var(--primary-color); /* Matches icon color with primary color */
-    vertical-align: middle;      /* Aligns icon vertically with the text */
+    margin-right: 8px;
+    color: var(--accent-color);
+    vertical-align: middle;
 }
 
 /* Flex/Grid Layouts */
@@ -128,7 +131,7 @@ details {
 details summary {
     cursor: pointer;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 details[open] {
     transition: max-height 0.3s ease-out;
@@ -147,7 +150,7 @@ details[open] {
     text-decoration: none;
 }
 .download-button:hover {
-    background-color: var(--hover-color);
+    background-color: var(--accent-color);
 }
 
 /* QR Code */
@@ -170,17 +173,19 @@ details[open] {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--hover-color);
+    background-color: var(--accent-color);
     color: var(--text-color);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     display: none;
     z-index: 999;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 /* Responsive Design */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     section {
         padding: 30px;
         max-width: 900px;
