@@ -27,17 +27,20 @@ header {
     top: 0;
     background-color: #213B5F;
     padding: 10px;
+    width: 100%;
     z-index: 1000;
 }
 
 .navbar {
     display: flex;
     justify-content: space-around;
+    list-style-type: none;
 }
 
 .navbar a {
     color: #F2F4F7;
     font-weight: bold;
+    padding: 10px;
 }
 
 .navbar a:hover {
@@ -145,7 +148,7 @@ footer {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     right: 20px;
     background-color: #213B5F;
     color: #F2F4F7;
