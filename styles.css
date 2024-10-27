@@ -10,80 +10,30 @@ body {
     min-height: 100vh;
 }
 
-h1, h2, h3 {
-    color: #213B5F;
-    margin: 10px 0;
-}
-
-a {
-    color: #213B5F;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #808B96;
-}
-
-/* Navbar */
+/* Header and Navigation Bar */
 header {
     position: sticky;
     top: 0;
     background-color: #213B5F;
-    padding: 10px;
+    padding: 10px 0;
     z-index: 1000;
     width: 100%;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
 }
 
 .navbar a {
     color: #F2F4F7;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .navbar a:hover {
     color: #808B96;
-}
-
-/* Splash Screen */
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000;
-    color: #FFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-}
-
-#splash-screen img, #splash-screen svg {
-    width: 200px;
-    margin-bottom: 10px;
-}
-
-.fade-in {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2em;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 2s;
-}
-
-/* About Me Section */
-.profile-photo {
-    display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 10px;
 }
 
 /* Sections */
@@ -96,10 +46,27 @@ section {
     max-width: 800px;
 }
 
+h1, h2, h3 {
+    color: #213B5F;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
 h2 {
     font-size: 1.5em;
     text-align: center;
-    color: #213B5F;
+}
+
+/* Profile Photo */
+.profile-photo {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
 }
 
 /* Contact Section */
@@ -154,6 +121,7 @@ footer {
     padding: 15px;
     font-size: 14px;
     margin-top: auto;
+    width: 100%;
 }
 
 /* Show More/Less Toggle */
@@ -185,7 +153,7 @@ footer {
     color: #F2F4F7;
     border: none;
     border-radius: 50%;
-    padding: 12px 16px;
+    padding: 10px 15px;
     font-size: 20px;
     cursor: pointer;
     display: none;
@@ -194,12 +162,6 @@ footer {
 
 #back-to-top:hover {
     background-color: #808B96;
-}
-
-/* Keyframes */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* Responsive Design */
