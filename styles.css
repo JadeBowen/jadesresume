@@ -5,6 +5,8 @@
     --accent-color: #ff7f50; /* Coral */
     --text-color: #ffffff;
     --background-overlay: rgba(0, 0, 0, 0.6);
+    --background-gradient-start: #008080;
+    --background-gradient-end: #006666; /* Lighter Teal */
     --section-bg: rgba(0, 0, 0, 0.5);
 }
 
@@ -13,7 +15,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     color: var(--text-color);
-    background: linear-gradient(to right, #004d4d, #007373); /* Subtle gradient */
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
 }
 
 /* Overlay for readability */
@@ -133,8 +135,15 @@ details summary {
     font-weight: bold;
     color: var(--accent-color);
 }
-details[open] {
-    transition: max-height 0.3s ease-out;
+details[open] summary::after {
+    content: " ▼";
+    font-size: 0.8em;
+    color: var(--accent-color);
+}
+details:not([open]) summary::after {
+    content: " ▶";
+    font-size: 0.8em;
+    color: var(--accent-color);
 }
 
 /* Button Styling */
@@ -143,14 +152,15 @@ details[open] {
     margin-top: 10px;
     padding: 10px 15px;
     font-size: 16px;
-    color: var(--text-color);
+    color: var(--secondary-color);
     background-color: var(--primary-color);
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 .download-button:hover {
-    background-color: var(--accent-color);
+    background-color: #006666;
 }
 
 /* QR Code */
@@ -182,6 +192,9 @@ details[open] {
     z-index: 999;
     font-size: 1.5em;
     text-align: center;
+}
+#back-to-top:hover {
+    background-color: #ff6347;
 }
 
 /* Responsive Design */
