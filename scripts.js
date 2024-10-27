@@ -21,29 +21,31 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-// Back-to-Top Button Functionality
-const backToTopButton = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
-});
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Expand/Collapse "Show More" Buttons
+// Show More/Show Less Toggle
 document.querySelectorAll('.toggle-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const target = document.getElementById(button.dataset.target);
+    button.addEventListener('click', function() {
+        const target = document.querySelector(this.getAttribute('data-target'));
         if (target.classList.contains('hidden')) {
             target.classList.remove('hidden');
-            button.textContent = "Show Less";
+            this.textContent = "Show Less";
         } else {
             target.classList.add('hidden');
-            button.textContent = "Show More";
+            this.textContent = "Show More";
         }
     });
+});
+
+// Back-to-Top Button Functionality
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
