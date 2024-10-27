@@ -28,93 +28,161 @@
     <section id="about">
         <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Profile Photo" class="profile-photo">
         <h1>Jade Bowen</h1>
-        <p>My journey into telecommunications began at the age of 12, when I visited my first cell phone site with my father, who is still an engineer for a well-known carrier today. Watching communication flow through the air like magic sparked something in me, and I’ll never forget the excitement of uploading that AOL disc and experiencing the internet for the first time. My father, who I’ve always looked up to as my hero, not only introduced me to this fascinating world but also taught me the importance of patience and precision—skills that have shaped my career. His words, “Take the time to get it right, because what we build connects people,” have guided me ever since.</p>
-        <p>With over 21 years of experience in construction and telecommunications, I’ve carried that lesson with me while overseeing large-scale projects and leading diverse teams. As a single father of four, I’ve mastered multitasking and time management, which have been invaluable in both my personal and professional life. My true passion lies in building systems that impact people and improve their lives—just like my hero showed me, creating connections that bring the world closer together.</p>
-    </section><!-- Philosophy Section -->
+        <div class="content-preview">
+            <p>My journey into telecommunications began at the age of 12, when I visited my first cell phone site with my father, who is still an engineer for a well-known carrier today. Watching communication flow through the air like magic sparked something in me, and I’ll never forget the excitement of uploading that AOL disc and experiencing the internet for the first time...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>With over 21 years of experience in construction and telecommunications, I’ve carried that lesson with me while overseeing large-scale projects and leading diverse teams. As a single father of four, I’ve mastered multitasking and time management, which have been invaluable in both my personal and professional life. My true passion lies in building systems that impact people and improve their lives—just like my hero showed me, creating connections that bring the world closer together.</p>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </section>
+
+    <!-- Show More/Show Less JavaScript -->
+    <script>
+        function toggleContent(button) {
+            const section = button.previousElementSibling;
+            section.classList.toggle('hidden');
+            button.textContent = section.classList.contains('hidden') ? "Show More" : "Show Less";
+        }
+    </script><!-- Philosophy Section -->
     <section id="philosophy">
         <h2>Philosophy</h2>
-        <p><strong>Mission Statement</strong><br>With over 21 years of experience in the construction and telecommunications industries, my mission is to lead with integrity, precision, and collaboration. Having grown up inspired by my father’s work in telecommunications, I have always believed that what we build connects people in meaningful ways. I strive to foster a culture that values honesty, respect, and innovation, ensuring that every project not only meets its goals but also contributes positively to the community. My focus is on continuous growth—both personally and professionally—as I guide teams to success, drive operational excellence, and inspire trust across all levels of an organization.</p>
-        <p><strong>Impact Statement</strong><br>Through strategic leadership and a commitment to operational efficiency, I aim to help companies not only meet their goals but exceed them. My passion for building infrastructure that impacts lives drives me to optimize processes, improve productivity, and deliver high-quality results that fuel long-term success. Whether leading a team, managing large-scale projects, or ensuring client satisfaction, I work to create value that resonates across the organization. By fostering an environment of respect and teamwork, I empower others to achieve bold strides in innovation and growth, helping organizations enhance their reputation and leadership in the industry.</p>
+        <div class="content-preview">
+            <p><strong>Mission Statement</strong><br>With over 21 years of experience in the construction and telecommunications industries, my mission is to lead with integrity, precision, and collaboration. Having grown up inspired by my father’s work in telecommunications, I have always believed that what we build connects people in meaningful ways...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>I strive to foster a culture that values honesty, respect, and innovation, ensuring that every project not only meets its goals but also contributes positively to the community. My focus is on continuous growth—both personally and professionally—as I guide teams to success, drive operational excellence, and inspire trust across all levels of an organization.</p>
+            <p><strong>Impact Statement</strong><br>Through strategic leadership and a commitment to operational efficiency, I aim to help companies not only meet their goals but exceed them. My passion for building infrastructure that impacts lives drives me to optimize processes, improve productivity, and deliver high-quality results that fuel long-term success. Whether leading a team, managing large-scale projects, or ensuring client satisfaction, I work to create value that resonates across the organization. By fostering an environment of respect and teamwork, I empower others to achieve bold strides in innovation and growth, helping organizations enhance their reputation and leadership in the industry.</p>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Professional Summary Section -->
     <section id="summary">
         <h2>Professional Summary</h2>
-        <p>Results-oriented professional with experience in project management, construction, and telecommunications. Known for my dedication to excellence and a track record of leading complex projects to successful completion. My expertise lies in leveraging strategic insights and strong operational skills to drive project performance, foster team growth, and exceed client expectations.</p>
-        <button class="toggle-btn" data-target="summary-content">Show More</button>
-        <div id="summary-content" class="hidden">Full summary content goes here...</div>
+        <div class="content-preview">
+            <p>Results-oriented professional with experience in project management, construction, and telecommunications. Known for my dedication to excellence and a track record of leading complex projects to successful completion...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>My expertise lies in leveraging strategic insights and strong operational skills to drive project performance, foster team growth, and exceed client expectations. Skilled in building relationships and executing projects that contribute to both business and community impact, I am committed to operational excellence and continuous improvement.</p>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Experience Section -->
     <section id="experience">
         <h2>Experience</h2>
-        <div class="experience-entry">
-            <h3>Finance and Marketing Manager</h3>
-            <p>Boise's Best Auto Sales – Boise, ID</p>
-            <p>June 2023 – Present</p>
-            <p>Spearheading financial strategies and overseeing marketing efforts to enhance revenue streams and brand presence. Managing budgeting, forecasting, and financial planning while driving customer engagement initiatives.</p>
-            <button class="toggle-btn" data-target="exp1-content">Show More</button>
-            <div id="exp1-content" class="hidden">Full experience details go here...</div>
+        <div class="content-preview">
+            <div class="experience-entry">
+                <h3>Finance and Marketing Manager</h3>
+                <p>Boise's Best Auto Sales – Boise, ID</p>
+                <p>June 2023 – Present</p>
+                <p>Spearheading financial strategies and overseeing marketing efforts to enhance revenue streams and brand presence...</p>
+            </div>
         </div>
+        <div class="content-full hidden">
+            <p>Managing budgeting, forecasting, and financial planning while driving customer engagement initiatives. Implemented cost-saving measures and led digital marketing campaigns that increased customer acquisition by 20% year-over-year.</p>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Skills & Proficiencies Section -->
     <section id="skills">
         <h2>Skills & Proficiencies</h2>
-        <ul>
-            <li><strong>Leadership & Team Management:</strong> Leading cross-functional teams, mentoring, and fostering team development to meet project goals.</li>
-            <li><strong>Project Management:</strong> Managing large-scale construction and telecommunications projects, ensuring timely delivery, safety, and budget adherence.</li>
-            <li><strong>Problem-Solving:</strong> Expertise in troubleshooting complex technical and operational challenges with efficient and effective solutions.</li>
-            <li><strong>Client & Vendor Relations:</strong> Building and maintaining strong relationships with clients, vendors, and stakeholders to align goals and ensure project success.</li>
-            <li><strong>Time Management:</strong> Mastering multitasking and prioritization, balancing multiple projects, developed through both personal and professional experiences.</li>
-            <li><strong>Communication:</strong> Strong verbal and written communication skills, ensuring clear directives to teams and maintaining client satisfaction.</li>
-        </ul>
+        <div class="content-preview">
+            <ul>
+                <li><strong>Leadership & Team Management:</strong> Leading cross-functional teams, mentoring, and fostering team development to meet project goals.</li>
+                <li><strong>Project Management:</strong> Managing large-scale construction and telecommunications projects, ensuring timely delivery, safety, and budget adherence.</li>
+                <li><strong>Problem-Solving:</strong> Expertise in troubleshooting complex technical and operational challenges with efficient and effective solutions.</li>
+            </ul>
+        </div>
+        <div class="content-full hidden">
+            <ul>
+                <li><strong>Client & Vendor Relations:</strong> Building and maintaining strong relationships with clients, vendors, and stakeholders to align goals and ensure project success.</li>
+                <li><strong>Time Management:</strong> Mastering multitasking and prioritization, balancing multiple projects, developed through both personal and professional experiences.</li>
+                <li><strong>Communication:</strong> Strong verbal and written communication skills, ensuring clear directives to teams and maintaining client satisfaction.</li>
+            </ul>
 
-        <h3>Proficiencies</h3>
-        <h4>Telecommunications & Wireless Infrastructure</h4>
-        <ul>
-            <li>Wireless communication systems: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
-            <li>Fiber optic infrastructure: OSP, FTTH, FTTC installation, splicing, and testing</li>
-            <li>Cell tower construction: Cellular and microwave antenna installation, commissioning, and calibration</li>
-            <li>RF equipment & antenna sweeps: Signal performance optimization and troubleshooting</li>
-            <li>Coaxial cabling: Installation, testing, and maintenance of wireless communication systems</li>
-        </ul>
+            <h3>Proficiencies</h3>
+            <h4>Telecommunications & Wireless Infrastructure</h4>
+            <ul>
+                <li>Wireless communication systems: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
+                <li>Fiber optic infrastructure: OSP, FTTH, FTTC installation, splicing, and testing</li>
+                <li>Cell tower construction: Cellular and microwave antenna installation, commissioning, and calibration</li>
+                <li>RF equipment & antenna sweeps: Signal performance optimization and troubleshooting</li>
+                <li>Coaxial cabling: Installation, testing, and maintenance of wireless communication systems</li>
+            </ul>
 
-        <h4>Construction Management</h4>
-        <ul>
-            <li>Project planning and scheduling: Overseeing all phases of construction from conception to completion</li>
-            <li>Budgeting and financial oversight: Cost control, forecasting, and profit & loss management for multimillion-dollar projects</li>
-            <li>Vendor & subcontractor management: Managing contracts, ensuring deadlines, safety, and quality adherence</li>
-            <li>Civil excavation and restoration: Managing site preparation, excavation, and restoration tasks</li>
-            <li>Site acquisition & permitting: Securing permits and working with local authorities to ensure regulatory compliance</li>
-            <li>Technology upgrades: LTE and 5G deployment, ensuring seamless integration with existing infrastructure</li>
-        </ul>
+            <h4>Construction Management</h4>
+            <ul>
+                <li>Project planning and scheduling: Overseeing all phases of construction from conception to completion</li>
+                <li>Budgeting and financial oversight: Cost control, forecasting, and profit & loss management for multimillion-dollar projects</li>
+                <li>Vendor & subcontractor management: Managing contracts, ensuring deadlines, safety, and quality adherence</li>
+                <li>Civil excavation and restoration: Managing site preparation, excavation, and restoration tasks</li>
+                <li>Site acquisition & permitting: Securing permits and working with local authorities to ensure regulatory compliance</li>
+                <li>Technology upgrades: LTE and 5G deployment, ensuring seamless integration with existing infrastructure</li>
+            </ul>
 
-        <h4>Operational Efficiency & Optimization</h4>
-        <ul>
-            <li>Process optimization: Streamlining workflows, enhancing productivity, and minimizing project delays</li>
-            <li>Quality assurance: Establishing protocols to ensure safety and high standards across projects</li>
-            <li>Scheduling & resource allocation: Optimizing crew schedules and managing resource distribution to improve operational efficiency</li>
-        </ul>
+            <h4>Operational Efficiency & Optimization</h4>
+            <ul>
+                <li>Process optimization: Streamlining workflows, enhancing productivity, and minimizing project delays</li>
+                <li>Quality assurance: Establishing protocols to ensure safety and high standards across projects</li>
+                <li>Scheduling & resource allocation: Optimizing crew schedules and managing resource distribution to improve operational efficiency</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Certifications Section -->
     <section id="certifications">
         <h2>Certifications</h2>
-        <ul>
-            <li>OSHA 10 & 30 Certified</li>
-            <li>First Aid & CPR Certified</li>
-            <li>Bloodborne Pathogens Certified</li>
-            <li>Tower Rescue & Rope Access (ComTrain Certified Instructor)</li>
-            <li>ODM Fiber Testing & Cleaning Certified</li>
-            <li>Commscope & Andrew’s Certification</li>
-        </ul>
+        <div class="content-preview">
+            <ul>
+                <li>OSHA 10 & 30 Certified</li>
+                <li>First Aid & CPR Certified</li>
+            </ul>
+        </div>
+        <div class="content-full hidden">
+            <ul>
+                <li>Bloodborne Pathogens Certified</li>
+                <li>Tower Rescue & Rope Access (ComTrain Certified Instructor)</li>
+                <li>ODM Fiber Testing & Cleaning Certified</li>
+                <li>Commscope & Andrew’s Certification</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Key Achievements Section -->
     <section id="achievements">
         <h2>Key Achievements</h2>
-        <ul>
-            <li><strong>Led Multimillion-Dollar Projects:</strong> Successfully managed and completed numerous large-scale telecommunications projects, including the installation of over 500 miles of fiber optic infrastructure, consistently meeting deadlines and budget targets.</li>
-            <li><strong>Enhanced Network Performance:</strong> Spearheaded cellular site upgrades and technology deployments, including LTE and 5G, which significantly improved network performance and reduced downtime for multiple clients.</li>
-            <li><strong>Operational Efficiency Improvements:</strong> Streamlined work processes and optimized resource allocation, resulting in significant reductions in project delays and cost overruns across multiple concurrent projects.</li>
-            <li><strong>Safety Leadership:</strong> Implemented comprehensive safety protocols across projects, resulting in zero work-related incidents on major fiber installation projects and ensuring strict adherence to OSHA standards.</li>
-            <li><strong>Vendor and Subcontractor Management:</strong> Managed relationships with key vendors and subcontractors, renegotiating contracts to reduce costs and ensuring the highest quality of work, ultimately driving operational efficiency and cost savings.</li>
-            <li><strong>Financial Success:</strong> Increased gross profit margins and reduced operational costs through strategic financial oversight and cost control measures, improving profitability across projects.</li>
-            <li><strong>Mentorship and Team Development:</strong> Trained and mentored junior technicians and team members, fostering a culture of safety, collaboration, and excellence, leading to higher team productivity and compliance with safety standards.</li>
-            <li><strong>Recognition for Safety and Performance:</strong> Awarded for excellence in safety and project performance, consistently maintaining high standards while exceeding client expectations in both field operations and project outcomes.</li>
-        </ul>
-    </section><!-- Footer with Contact Information -->
+        <div class="content-preview">
+            <ul>
+                <li><strong>Led Multimillion-Dollar Projects:</strong> Successfully managed and completed numerous large-scale telecommunications projects...</li>
+                <li><strong>Enhanced Network Performance:</strong> Spearheaded cellular site upgrades and technology deployments...</li>
+            </ul>
+        </div>
+        <div class="content-full hidden">
+            <ul>
+                <li><strong>Operational Efficiency Improvements:</strong> Streamlined work processes and optimized resource allocation, resulting in significant reductions in project delays and cost overruns across multiple concurrent projects.</li>
+                <li><strong>Safety Leadership:</strong> Implemented comprehensive safety protocols across projects, resulting in zero work-related incidents on major fiber installation projects and ensuring strict adherence to OSHA standards.</li>
+                <li><strong>Vendor and Subcontractor Management:</strong> Managed relationships with key vendors and subcontractors, renegotiating contracts to reduce costs and ensuring the highest quality of work, ultimately driving operational efficiency and cost savings.</li>
+                <li><strong>Financial Success:</strong> Increased gross profit margins and reduced operational costs through strategic financial oversight and cost control measures, improving profitability across projects.</li>
+                <li><strong>Mentorship and Team Development:</strong> Trained and mentored junior technicians and team members, fostering a culture of safety, collaboration, and excellence, leading to higher team productivity and compliance with safety standards.</li>
+                <li><strong>Recognition for Safety and Performance:</strong> Awarded for excellence in safety and project performance, consistently maintaining high standards while exceeding client expectations in both field operations and project outcomes.</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </section><!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
+        <p>Phone: <a href="tel:+12083710647">208-371-0647</a></p>
+        <p>Location: Boise, Idaho</p>
+        <p>GitHub: <a href="https://github.com/JadeBowen" target="_blank" rel="noopener">https://github.com/JadeBowen</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/jadebowen" target="_blank" rel="noopener">https://www.linkedin.com/in/jadebowen</a></p>
+        <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
+    </section>
+
+    <!-- Download Resumes Section -->
+    <section id="downloads">
+        <h2>Download Resumes</h2>
+        <button class="download-btn">Download Telecom Resume</button>
+        <button class="download-btn">Download Full Resume</button>
+        <button class="download-btn">Download Project & Construction Management Resume</button>
+    </section>
+
+    <!-- Footer with Contact Information -->
     <footer>
         © 2024 Jade Bowen | Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a> | Phone: <a href="tel:+12083710647">208-371-0647</a>
     </footer>
