@@ -1,5 +1,5 @@
 // Splash Screen Removal
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const splashScreen = document.getElementById('splash-screen');
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Smooth Scrolling for Navigation Links
+// Smooth Scroll for Navigation Links
 document.querySelectorAll('.navbar a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -21,60 +21,28 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-// Active Link Highlighting in Navigation
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active");
-        }
+// Toggle for "Read More" Content
+document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        this.textContent = content.style.display === 'none' ? 'Read More' : 'Show Less';
     });
 });
 
-// Back to Top Button Functionality
+// Back to Top Button
 const backToTopButton = document.createElement('button');
 backToTopButton.id = 'back-to-top';
-backToTopButton.innerHTML = '↑'; // Icon for back to top
-backToTopButton.setAttribute("aria-label", "Back to Top");
+backToTopButton.textContent = '⬆';
 document.body.appendChild(backToTopButton);
 
-// Show/Hide Back to Top Button on Scroll
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
+window.addEventListener('scroll', function() {
+    backToTopButton.style.display = window.scrollY > 200 ? 'block' : 'none';
 });
 
-// Smooth Scroll to Top on Button Click
-backToTopButton.addEventListener('click', () => {
+backToTopButton.addEventListener('click', function() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
-    });
-});
-
-// Expandable Content with Visual Indicators
-const detailsElements = document.querySelectorAll("details");
-detailsElements.forEach(details => {
-    details.addEventListener("toggle", () => {
-        if (details.open) {
-            detailsElements.forEach(otherDetails => {
-                if (otherDetails !== details && otherDetails.open) {
-                    otherDetails.open = false; // Close other open details
-                }
-            });
-        }
     });
 });
