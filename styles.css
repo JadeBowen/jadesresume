@@ -17,33 +17,30 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: nowrap; /* Ensures items stay in a single row */
-    background-color: #123456; /* Adjust to match branding */
+    background-color: #123456; /* Navbar background color */
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
-    display: block;
+    display: block; 
 }
 
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-/* Optional media query to control overflow on small screens */
-@media (max-width: 768px) { 
+@media (max-width: 768px) { /* Adjust this breakpoint as needed */
     .navbar {
-        overflow-x: auto; /* Allows horizontal scrolling if needed */
+        flex-direction: row; /* Keep items in a row */
+        flex-wrap: wrap;    /* Allow wrapping */
     }
-    
+
     .navbar a {
-        flex: 0 0 auto; /* Prevents items from wrapping */
+        flex-basis: 50%; /* Each item takes up 50% of the container width */
+        /* Or try: flex-basis: calc(100% / 3); for 3 items per row */
     }
 }
 
