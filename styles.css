@@ -1,13 +1,27 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
 /* Profile Photo and QR Code Styling */
 .profile-photo {
-    max-width: 120px; /* Adjusted to a smaller size */
+    max-width: 120px; /* Adjusted size */
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
 }
 
 .qr-code {
-    width: 80px; /* Adjusted to a smaller size */
+    width: 80px; /* Adjusted size */
     display: block;
     margin: 10px auto;
 }
@@ -15,7 +29,7 @@
 /* Dark Mode Toggle Button Position */
 .dark-mode-toggle {
     position: fixed;
-    top: 15px; /* Lowered slightly from the top */
+    top: 15px;
     right: 15px;
     padding: 10px;
     font-size: 14px;
@@ -24,12 +38,41 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-    z-index: 1000; /* Keeps it on top */
+    z-index: 1000;
     transition: background-color 0.3s;
 }
 
 .dark-mode-toggle:hover {
     background-color: #56789a;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #123456;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 8px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    white-space: nowrap;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #345678;
+    color: #f0f0f0;
 }
 
 /* Resume Button Styling */
@@ -48,7 +91,9 @@
 
 .download-btn:hover {
     background-color: #345678;
-}/* Box Styling for Job Entries */
+}
+
+/* Box Styling for Job Entries */
 .experience-entry {
     background-color: #f1f1f1;
     padding: 15px;
@@ -89,7 +134,7 @@
     margin: 5px 0;
 }
 
-/* Icons for Job Entries */
+/* Icons for Job Titles */
 .experience-entry h3::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -115,4 +160,78 @@
 
 .experience-entry[data-icon="clipboard"] h3::before {
     content: "\f0c1"; /* Clipboard icon for Cold Souls LLC */
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    margin: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.toggle-btn,
+.download-btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #123456;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:hover,
+.download-btn:hover {
+    background-color: #345678;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #123456;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+footer * {
+    color: #ffffff;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    background-color: #123456;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+#back-to-top:hover {
+    opacity: 1;
+}
+
+/* Hidden Content */
+.hidden {
+    display: none;
 }
