@@ -1,57 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Dark Mode Toggle
+
+    // Dark Mode Toggle Functionality
     const darkModeToggle = document.querySelector(".dark-mode-toggle");
     darkModeToggle.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
         darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
     });
 
-    // Mobile Menu Toggle with Auto-Collapse
-    const menuToggleButton = document.querySelector(".menu-toggle");
-    menuToggleButton.textContent = "Navigation";
-    const mobileNavbar = document.createElement("div");
-    mobileNavbar.className = "mobile-navbar";
-    mobileNavbar.innerHTML = document.querySelector(".navbar").innerHTML;
-    document.body.appendChild(mobileNavbar);
+    // Mobile Navigation Toggle Functionality
+    const navigationButton = document.querySelector(".navigation-button");
+    const dropdownContent = document.querySelector(".dropdown-content");
 
-    menuToggleButton.addEventListener("click", function () {
-        mobileNavbar.style.display = mobileNavbar.style.display === "block" ? "none" : "block";
+    navigationButton.addEventListener("click", function () {
+        dropdownContent.classList.toggle("active");
+        navigationButton.textContent = dropdownContent.classList.contains("active") ? "Close" : "Navigation";
     });
 
-    // Smooth Scroll and Scroll Spy
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-            });
+    // Auto-collapse the dropdown menu after navigating to a section on mobile
+    document.querySelectorAll(".dropdown-content a").forEach(link => {
+        link.addEventListener("click", function () {
+            dropdownContent.classList.remove("active");
+            navigationButton.textContent = "Navigation";
         });
     });
 
-    // Scroll Spy Highlight for Active Section
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
-
-    window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute("id");
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(current)) {
-                link.classList.add("active");
-            }
-        });
-    });
-
-    // Back-to-Top Button
+    // Back to Top Button
     const backToTopButton = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-        backToTopButton.style.opacity = window.scrollY > 300 ? "1" : "0";
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
     });
 
     backToTopButton.addEventListener("click", function () {
@@ -61,22 +41,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Section Fade-In Animation on Scroll
-    const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                fadeInObserver.unobserve(entry.target);
-            }
+    // Show More/Show Less Toggle Functionality for each section
+    const toggleButtons = document.querySelectorAll(".toggle-btn");
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const contentFull = button.previousElementSibling;
+            contentFull.classList.toggle("hidden");
+            button.textContent = contentFull.classList.contains("hidden") ? "Show More" : "Show Less";
         });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll(".fade-in").forEach(section => {
-        fadeInObserver.observe(section);
     });
 
-    // Skills Chart Placeholder (Dynamic Updates with Placeholder Chart Code)
-    document.querySelector(".skills-chart").addEventListener("click", function () {
-        alert("Skills chart interactivity under development!");
+    // Highlight Active Section on Scroll (PC View)
+    const sections = document.querySelectorAll("section");
+    const navbarLinks = document.querySelectorAll(".navbar a");
+
+    window.addEventListener("scroll", () => {
+        let currentSection = "";
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 50) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navbarLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection)) {
+                link.classList.add("active");
+            }
+        });
     });
 });
