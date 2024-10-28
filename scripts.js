@@ -1,58 +1,125 @@
-// Dark Mode Toggle
+// Dark Mode Toggle with Local Storage
 const toggleDarkMode = document.querySelector('.dark-mode-toggle');
 
 toggleDarkMode.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   toggleDarkMode.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+  localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 });
 
-// Show/Hide Sections Functionality (using event delegation)
-document.querySelector('#experience').addEventListener('click', (event) => {
-  if (event.target.classList.contains('toggle-btn')) {
-    const content = event.target.previousElementSibling;
-    content.classList.toggle('hidden');
-    event.target.textContent = content.classList.contains('hidden') ? 'Show More' : 'Show Less';
-  }
+// Check for user's dark mode preference on page load
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark-mode');
+  toggleDarkMode.textContent = 'Light Mode';
+}
+
+// Menu Toggle Functionality with Smooth Transition
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+  menuToggle.setAttribute('aria-expanded', navbar.classList.contains('active'));
 });
 
-// Sticky Navigation on Scroll
+// Show/Hide Sections Functionality with Transition
+document.querySelectorAll('.toggle-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.previousElementSibling;
+    content.style.transition = 'max-height 0.3s ease'; // Add transition for smooth effect
+
+    if (content.classList.contains('hidden')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.classList.remove('hidden');
+      button.textContent = 'Show Less';
+    } else {
+      content.style.maxHeight = '0';
+      content.classList.add('hidden');
+      button.textContent = 'Show More';
+    }
+  });
+});
+
+// Sticky Navigation on Scroll with Smooth Transition
 const navMenu = document.querySelector('.navbar');
+let prevScrollpos = window.pageYOffset;
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+  const currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos > currentScrollPos) {
+    navMenu.style.top = '0';
+  } else {
+    navMenu.style.top = '-80px'; // Adjust this value to match your navbar height
+  }
+  prevScrollpos = currentScrollPos;
+
+  if (currentScrollPos > 50) {
     navMenu.classList.add('sticky');
   } else {
     navMenu.classList.remove('sticky');
   }
 });
 
-// Lazy Loading Images
-document.addEventListener('DOMContentLoaded', () => { // Wait for DOM to fully load
-  document.querySelectorAll('img[data-src]').forEach(img => {
-    img.src = img.dataset.src; 
-  });
-});
+// Lazy Loading Images with Intersection Observer and Placeholder
+const imagesToLoad = document.querySelectorAll('img[data-src]');
 
-// Auto-Collapse Navigation Menu (Mobile Only)
-const navLinks = document.querySelectorAll('.navbar a');
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth < 768) {
-      navMenu.classList.remove('active'); // Assuming you have a class 'active' for the open menu
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      const placeholder = document.createElement('div'); 
+      placeholder.classList.add('image-placeholder'); // Add a placeholder while the image loads
+      img.parentNode.insertBefore(placeholder, img);
+
+      img.src = img.dataset.src;
+      img.onload = () => {
+        img.classList.remove('lazy');
+        img.parentNode.removeChild(placeholder); // Remove the placeholder after the image loads
+      };
+      observer.unobserve(img);
     }
   });
 });
 
-// Keyboard Navigation Shortcuts
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'm') {
-    document.querySelector('.menu-toggle').click(); // Assuming you have a menu toggle button
-  }
-  if (event.key === 'd') {
-    toggleDarkMode.click();
+imagesToLoad.forEach(img => imageObserver.observe(img));
+
+// Smooth Scrolling for Navigation Links
+const navLinks = document.querySelectorAll('.navbar a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+
+    // Close the mobile menu after clicking a link
+    if (window.innerWidth < 768) {
+      navbar.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', false);
+    }
+  });
+});
+
+// Back to Top Button Functionality with Smooth Transition
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = 'block';
+  } else {
+    backToTopButton.style.display = 'none';
   }
 });
 
-// Show Progress Bar
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Show Progress Bar with Gradient
 const progressBar = document.createElement('div');
 progressBar.className = 'progress-bar';
 document.body.appendChild(progressBar);
@@ -62,4 +129,5 @@ window.addEventListener('scroll', () => {
   const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrollPercentage = (scrollTop / scrollHeight) * 100;
   progressBar.style.width = `${scrollPercentage}%`;
+  progressBar.style.background = `linear-gradient(to right, #00bfa5, #ffc107 ${scrollPercentage}%)`; // Add a gradient to the progress bar
 });
