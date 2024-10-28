@@ -52,13 +52,20 @@ body {
     justify-content: center;
     gap: 10px;
     background-color: #123456;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     padding: 8px;
     flex-wrap: wrap;
+    z-index: 1000;
 }
 
+/* Sticky Navbar for Desktop */
+@media (min-width: 768px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* Navbar Links */
 .navbar a {
     color: white;
     text-decoration: none;
@@ -106,14 +113,11 @@ body {
     background-color: #56789a;
 }
 
-/* Dark Mode for Menu Toggle */
-body.dark-mode .menu-toggle {
-    background-color: #56789a;
-    color: #ffffff;
-}
-
-body.dark-mode .menu-toggle:hover {
-    background-color: #345678;
+/* Hide Hamburger Menu on Desktop */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
 }
 
 /* Resume Button Styling */
