@@ -30,12 +30,32 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollProgress.style.width = `${scrolled}%`;
     });
 
-    // Show More/Less Toggle for Content Sections
+    // Show More/Less Toggle for Sections
     document.querySelectorAll('.toggle-section-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const section = e.target.closest('section');
-            section.classList.toggle('collapsed');
-            button.textContent = section.classList.contains('collapsed') ? 'Show More' : 'Show Less';
+        button.addEventListener('click', () => {
+            const section = button.closest('section');
+            const content = section.querySelector('.content-full'); 
+
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            button.textContent = button.textContent === 'Show More' ? 'Show Less' : 'Show More';
+
+            document.querySelectorAll('section').forEach(otherSection => {
+                if (otherSection !== section) {
+                    otherSection.querySelector('.content-full').style.display = 'none';
+                    otherSection.querySelector('.toggle-section-btn').textContent = 'Show More';
+                }
+            });
+        });
+    });
+
+    // Show More/Less Toggle for Job Listings
+    document.querySelectorAll('.toggle-job-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const jobEntry = button.closest('.experience-entry');
+            const content = jobEntry.querySelector('.content-full');
+
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            button.textContent = button.textContent === 'Show More' ? 'Show Less' : 'Show More';
         });
     });
 
@@ -101,28 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Interactive Counters for Stats
-    const counters = document.querySelectorAll('.counter');
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = +counter.getAttribute('data-target');
-                const increment = target / 200;
-                let count = 0;
-                const updateCounter = () => {
-                    if (count < target) {
-                        count += increment;
-                        counter.textContent = Math.ceil(count);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                updateCounter();
-                counterObserver.unobserve(counter);
-            }
-        });
-    }, { threshold: 0.3 });
-    counters.forEach(counter => counterObserver.observe(counter));
+    // Initial Section Collapse on Page Load
+    document.querySelectorAll('section').forEach(section => {
+        const content = section.querySelector('.content-full');
+        content.style.display = 'none';
+        const button = section.querySelector('.toggle-section-btn');
+        button.textContent = 'Show More';
+    });
 });
