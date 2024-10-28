@@ -1,11 +1,22 @@
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Dark Mode Toggle Functionality
+    // Dark Mode Toggle Functionality with localStorage
     const darkModeToggle = document.querySelector(".dark-mode-toggle");
+
+    // Check for previously saved theme in localStorage
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        darkModeToggle.textContent = "Light Mode";
+    }
+
     darkModeToggle.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
-        darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        darkModeToggle.textContent = isDarkMode ? "Light Mode" : "Dark Mode";
+
+        // Save the preference in localStorage
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
     });
 
     // Mobile Menu Toggle Functionality
