@@ -5,26 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jade Bowen's Resume Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle">Dark Mode</button>
+
     <!-- Header with Menu Toggle and Navbar -->
     <header>
-    <button class="menu-toggle" onclick="toggleMenu(this)">Menu</button>
-    <nav class="navbar">
-        <a href="#about">About Me</a>
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#skills">Skills & Proficiencies</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#achievements">Key Achievements</a>
-        <a href="#contact">Contact</a>
-        <a href="#downloads">Downloads</a>
-    </nav>
-    </header>
-
-    <!-- About Me Section -->
+        <button class="menu-toggle" onclick="toggleMenu(this)">Menu</button>
+        <nav class="navbar">
+            <a href="#about"><i class="fas fa-user icon"></i> About Me</a>
+            <a href="#summary"><i class="fas fa-clipboard icon"></i> Summary</a>
+            <a href="#experience"><i class="fas fa-briefcase icon"></i> Experience</a>
+            <a href="#philosophy"><i class="fas fa-lightbulb icon"></i> Philosophy</a>
+            <a href="#skills"><i class="fas fa-tools icon"></i> Skills & Proficiencies</a>
+            <a href="#certifications"><i class="fas fa-certificate icon"></i> Certifications</a>
+            <a href="#achievements"><i class="fas fa-trophy icon"></i> Key Achievements</a>
+            <a href="#contact"><i class="fas fa-envelope icon"></i> Contact</a>
+            <a href="#downloads"><i class="fas fa-download icon"></i> Downloads</a>
+        </nav>
+    </header><!-- About Me Section -->
     <section id="about">
         <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Profile Photo" class="profile-photo">
         <h1>Jade Bowen</h1>
@@ -35,18 +37,9 @@
             <p>With over 21 years of experience in construction and telecommunications, I’ve carried that lesson with me while overseeing large-scale projects and leading diverse teams. As a single father of four, I’ve mastered multitasking and time management, which have been invaluable in both my personal and professional life. My true passion lies in building systems that impact people and improve their lives—just like my hero showed me, creating connections that bring the world closer together.</p>
         </div>
         <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
-    </section>
-
-    <!-- Show More/Show Less JavaScript -->
-    <script>
-        function toggleContent(button) {
-            const section = button.previousElementSibling;
-            section.classList.toggle('hidden');
-            button.textContent = section.classList.contains('hidden') ? "Show More" : "Show Less";
-        }
-    </script><!-- Philosophy Section -->
+    </section><!-- Philosophy Section -->
     <section id="philosophy">
-        <h2>Philosophy</h2>
+        <h2><i class="fas fa-lightbulb icon"></i> Philosophy</h2>
         <div class="content-preview">
             <p><strong>Mission Statement</strong><br>With over 21 years of experience in the construction and telecommunications industries, my mission is to lead with integrity, precision, and collaboration. Having grown up inspired by my father’s work in telecommunications, I have always believed that what we build connects people in meaningful ways...</p>
         </div>
@@ -57,7 +50,7 @@
         <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Professional Summary Section -->
     <section id="summary">
-        <h2>Professional Summary</h2>
+        <h2><i class="fas fa-clipboard icon"></i> Professional Summary</h2>
         <div class="content-preview">
             <p>Results-oriented professional with experience in project management, construction, and telecommunications. Known for my dedication to excellence and a track record of leading complex projects to successful completion...</p>
         </div>
@@ -67,119 +60,212 @@
         <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Experience Section -->
     <section id="experience">
-        <h2>Experience</h2>
-        <div class="content-preview">
-            <div class="experience-entry">
-                <h3>Finance and Marketing Manager</h3>
-                <p>Boise's Best Auto Sales – Boise, ID</p>
-                <p>June 2023 – Present</p>
-                <p>Spearheading financial strategies and overseeing marketing efforts to enhance revenue streams and brand presence...</p>
+        <h2><i class="fas fa-briefcase icon"></i> Experience</h2>
+        <div class="experience-entry">
+            <h3>Finance and Marketing Manager</h3>
+            <p>Boise's Best Auto Sales – Boise, ID</p>
+            <p>June 2023 – Present</p>
+            <div class="content-preview">
+                <p>Spearheaded financial strategy, managing budgeting, forecasting, and financial reporting to enhance profitability. Implemented systems for cash flow monitoring, profit analysis, and financial forecasting, leading to increased transparency...</p>
             </div>
+            <div class="content-full hidden">
+                <p>Developed and executed advanced marketing strategies, including digital advertising, social media campaigns, and public relations efforts. Collaborated with cross-functional teams to enhance operational processes, improve customer service delivery, and drive business growth. Analyzed market trends and competitor activities, identifying growth opportunities and guiding strategic decisions.</p>
+                <h4>Key Achievements:</h4>
+                <ul>
+                    <li>Increased gross profit margin through strategic cost management and marketing initiatives.</li>
+                    <li>Implemented a loyalty program and personalized marketing campaigns to improve customer retention.</li>
+                    <li>Reduced operational costs by renegotiating vendor contracts and streamlining financial processes.</li>
+                </ul>
+            </div>
+            <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
         </div>
-        <div class="content-full hidden">
-            <p>Managing budgeting, forecasting, and financial planning while driving customer engagement initiatives. Implemented cost-saving measures and led digital marketing campaigns that increased customer acquisition by 20% year-over-year.</p>
-        </div>
-        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
-    </section><!-- Skills & Proficiencies Section -->
-    <section id="skills">
-        <h2>Skills & Proficiencies</h2>
+    </section><!-- Experience - Westland Towers -->
+    <div class="experience-entry">
+        <h3>Senior Field Technician (Contract)</h3>
+        <p>Westland Towers – Boise, ID</p>
+        <p>July 2022 – June 2023</p>
         <div class="content-preview">
-            <ul>
-                <li><strong>Leadership & Team Management:</strong> Leading cross-functional teams, mentoring, and fostering team development to meet project goals.</li>
-                <li><strong>Project Management:</strong> Managing large-scale construction and telecommunications projects, ensuring timely delivery, safety, and budget adherence.</li>
-                <li><strong>Problem-Solving:</strong> Expertise in troubleshooting complex technical and operational challenges with efficient and effective solutions.</li>
-            </ul>
+            <p>Directed the installation, commissioning, and calibration of wireless communication systems, including cellular antenna and microwave technologies, ensuring optimal network performance and seamless connectivity...</p>
         </div>
         <div class="content-full hidden">
+            <p>Proactively performed preventive and corrective maintenance to maximize system reliability, increase equipment longevity, and minimize network downtime. Collaborated with project managers, engineers, and clients to troubleshoot and resolve technical challenges, ensuring projects remained on schedule and within scope. Mentored and trained junior technicians, fostering a collaborative environment and promoting adherence to safety protocols.</p>
+            <h4>Key Achievements:</h4>
             <ul>
-                <li><strong>Client & Vendor Relations:</strong> Building and maintaining strong relationships with clients, vendors, and stakeholders to align goals and ensure project success.</li>
-                <li><strong>Time Management:</strong> Mastering multitasking and prioritization, balancing multiple projects, developed through both personal and professional experiences.</li>
-                <li><strong>Communication:</strong> Strong verbal and written communication skills, ensuring clear directives to teams and maintaining client satisfaction.</li>
-            </ul>
-
-            <h3>Proficiencies</h3>
-            <h4>Telecommunications & Wireless Infrastructure</h4>
-            <ul>
-                <li>Wireless communication systems: GSM, CDMA, 3G, 4G LTE, 5G, VoLTE</li>
-                <li>Fiber optic infrastructure: OSP, FTTH, FTTC installation, splicing, and testing</li>
-                <li>Cell tower construction: Cellular and microwave antenna installation, commissioning, and calibration</li>
-                <li>RF equipment & antenna sweeps: Signal performance optimization and troubleshooting</li>
-                <li>Coaxial cabling: Installation, testing, and maintenance of wireless communication systems</li>
-            </ul>
-
-            <h4>Construction Management</h4>
-            <ul>
-                <li>Project planning and scheduling: Overseeing all phases of construction from conception to completion</li>
-                <li>Budgeting and financial oversight: Cost control, forecasting, and profit & loss management for multimillion-dollar projects</li>
-                <li>Vendor & subcontractor management: Managing contracts, ensuring deadlines, safety, and quality adherence</li>
-                <li>Civil excavation and restoration: Managing site preparation, excavation, and restoration tasks</li>
-                <li>Site acquisition & permitting: Securing permits and working with local authorities to ensure regulatory compliance</li>
-                <li>Technology upgrades: LTE and 5G deployment, ensuring seamless integration with existing infrastructure</li>
-            </ul>
-
-            <h4>Operational Efficiency & Optimization</h4>
-            <ul>
-                <li>Process optimization: Streamlining workflows, enhancing productivity, and minimizing project delays</li>
-                <li>Quality assurance: Establishing protocols to ensure safety and high standards across projects</li>
-                <li>Scheduling & resource allocation: Optimizing crew schedules and managing resource distribution to improve operational efficiency</li>
+                <li>Spearheaded successful cellular site upgrades, improving network performance and reducing downtime.</li>
+                <li>Implemented a proactive maintenance schedule, significantly reducing emergency callouts and enhancing overall system uptime.</li>
+                <li>Enhanced team productivity and compliance through hands-on training and mentorship of junior technicians, ensuring safety and operational standards were consistently met.</li>
             </ul>
         </div>
         <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
-    </section><!-- Certifications Section -->
-    <section id="certifications">
-        <h2>Certifications</h2>
+    </div>
+
+    <!-- Experience - First Point Group -->
+    <div class="experience-entry">
+        <h3>Telecommunications Construction Coordinator / Network Engineer (Contract)</h3>
+        <p>First Point Group – Ericsson – Boise, ID</p>
+        <p>October 2021 – July 2022</p>
         <div class="content-preview">
-            <ul>
-                <li>OSHA 10 & 30 Certified</li>
-                <li>First Aid & CPR Certified</li>
-            </ul>
+            <p>Coordinated all aspects of cell tower construction and network projects, ensuring efficient execution of site builds and meeting project milestones...</p>
         </div>
         <div class="content-full hidden">
+            <p>Managed multi-million-dollar project budgets, tracking expenditures, optimizing resource allocation, and ensuring adherence to financial constraints. Served as the primary point of contact for field operations, overseeing the dispatch of crews, cranes, and construction managers to project sites. Conducted site surveys and collaborated with engineering teams to refine project specifications, addressing potential challenges to ensure seamless execution.</p>
+            <h4>Key Achievements:</h4>
             <ul>
-                <li>Bloodborne Pathogens Certified</li>
-                <li>Tower Rescue & Rope Access (ComTrain Certified Instructor)</li>
-                <li>ODM Fiber Testing & Cleaning Certified</li>
-                <li>Commscope & Andrew’s Certification</li>
+                <li>Significantly reduced project delays and cost overruns by improving coordination, resource allocation, and optimizing workflows, leading to on-time project delivery.</li>
+                <li>Enhanced operational efficiency by streamlining work package review processes, accelerating project completion, and reducing administrative overhead.</li>
             </ul>
         </div>
         <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
-    </section><!-- Key Achievements Section -->
-    <section id="achievements">
-        <h2>Key Achievements</h2>
+    </div><!-- Experience - KGP Co -->
+    <div class="experience-entry">
+        <h3>Outside Plant (OSP) Construction Manager (Contract)</h3>
+        <p>KGP Co – Boise, ID</p>
+        <p>February 2021 – October 2021</p>
         <div class="content-preview">
-            <ul>
-                <li><strong>Led Multimillion-Dollar Projects:</strong> Successfully managed and completed numerous large-scale telecommunications projects...</li>
-                <li><strong>Enhanced Network Performance:</strong> Spearheaded cellular site upgrades and technology deployments...</li>
-            </ul>
+            <p>Managed high-profile Fiber-to-the-Home (FTTH) and Fiber-to-the-Curb (FTTC) projects, overseeing the installation of over 500 miles of fiber optic infrastructure...</p>
         </div>
         <div class="content-full hidden">
+            <p>Planned, scheduled, and directed all aspects of OSP construction projects, ensuring they were completed on time, within budget, and met quality expectations. Supervised a team of five supervisors and 20+ field crews, coordinating daily activities, site preparation, fiber installation, and quality control across multiple locations.</p>
+            <h4>Key Achievements:</h4>
             <ul>
-                <li><strong>Operational Efficiency Improvements:</strong> Streamlined work processes and optimized resource allocation, resulting in significant reductions in project delays and cost overruns across multiple concurrent projects.</li>
-                <li><strong>Safety Leadership:</strong> Implemented comprehensive safety protocols across projects, resulting in zero work-related incidents on major fiber installation projects and ensuring strict adherence to OSHA standards.</li>
-                <li><strong>Vendor and Subcontractor Management:</strong> Managed relationships with key vendors and subcontractors, renegotiating contracts to reduce costs and ensuring the highest quality of work, ultimately driving operational efficiency and cost savings.</li>
-                <li><strong>Financial Success:</strong> Increased gross profit margins and reduced operational costs through strategic financial oversight and cost control measures, improving profitability across projects.</li>
-                <li><strong>Mentorship and Team Development:</strong> Trained and mentored junior technicians and team members, fostering a culture of safety, collaboration, and excellence, leading to higher team productivity and compliance with safety standards.</li>
-                <li><strong>Recognition for Safety and Performance:</strong> Awarded for excellence in safety and project performance, consistently maintaining high standards while exceeding client expectations in both field operations and project outcomes.</li>
+                <li>Successfully completed a major fiber installation project ahead of schedule, preventing potential penalties and ensuring client satisfaction.</li>
+                <li>Developed and implemented safety protocols that resulted in zero work-related incidents during the entire project.</li>
+                <li>Streamlined permitting and scheduling processes, improving overall project efficiency and compliance with regulatory standards.</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </div>
+
+    <!-- Experience - MasTec Network Solutions -->
+    <div class="experience-entry">
+        <h3>Construction Manager</h3>
+        <p>MasTec Network Solutions – Boise, ID</p>
+        <p>January 2018 – April 2020</p>
+        <div class="content-preview">
+            <p>Directed large-scale construction projects across multiple states, overseeing new builds, site modifications, equipment upgrades, and technology enhancements like 5G deployment...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>Managed up to 15 crews and coordinated multiple subcontractors, ensuring compliance with safety, quality, and budget requirements. Planned and scheduled construction phases, from site acquisition and permitting to tower erection and equipment integration.</p>
+            <h4>Key Achievements:</h4>
+            <ul>
+                <li>Delivered multiple cell site construction projects on time and within budget, significantly improving network coverage across various regions.</li>
+                <li>Reduced project rework by implementing stricter quality assurance processes and monitoring contractor performance throughout construction phases.</li>
+                <li>Successfully led the integration of LTE and 5G technology upgrades, positioning the network for future growth and improved performance.</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </div><!-- Experience - Broken Arrow Communications -->
+    <div class="experience-entry">
+        <h3>Regional Manager</h3>
+        <p>Broken Arrow Communications – Boise, ID</p>
+        <p>July 2015 – May 2017</p>
+        <div class="content-preview">
+            <p>Managed 8 four-man crews across multiple cell tower construction and maintenance sites throughout the assigned region. Directed the construction, maintenance, upgrades, and technology implementations...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>Developed and implemented regional construction strategies, optimizing resource allocation and improving scheduling to enhance operational efficiency. Oversaw a diverse portfolio of projects, including new site builds, modifications, equipment upgrades, and ongoing maintenance.</p>
+            <h4>Key Achievements:</h4>
+            <ul>
+                <li>Improved project efficiency by developing a scheduling and crew coordination strategy that resulted in faster completion times.</li>
+                <li>Designed and implemented a training program that reduced onboarding time for new hires and significantly improved overall crew performance.</li>
+                <li>Led a regional initiative to improve project financial controls, ensuring projects were delivered within budget while maintaining high-quality standards.</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </div>
+
+    <!-- Experience - Benchmark Electric -->
+    <div class="experience-entry">
+        <h3>Construction Manager / Foreman – Cell Tower Infrastructure</h3>
+        <p>Benchmark Electric – Boise, ID</p>
+        <p>March 2012 – July 2015</p>
+        <div class="content-preview">
+            <p>Led and supervised construction teams, overseeing civil excavation, site restoration, antenna systems, and telco installations for wireless communication systems...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>Supervised all construction phases, including site preparation, foundation installation, tower erection, antenna and line installation, grounding, and equipment integration. Directed routine maintenance and repair activities to maximize the performance and longevity of tower sites.</p>
+            <h4>Key Achievements:</h4>
+            <ul>
+                <li>Successfully directed the installation of antenna systems, coaxial cabling, and lighting systems, ensuring full compliance with industry safety standards.</li>
+                <li>Improved project efficiency by developing enhanced task scheduling and resource management strategies.</li>
+                <li>Played a critical role in LTE and 5G network upgrades, ensuring seamless integration with existing infrastructure.</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </div><!-- Experience - Cold Souls LLC -->
+    <div class="experience-entry">
+        <h3>Owner/Operator</h3>
+        <p>Cold Souls LLC – Boise, ID</p>
+        <p>December 2007 – March 2013</p>
+        <div class="content-preview">
+            <p>Managed all aspects of business operations, including product design, marketing, sales, distribution, and customer relationship management for a custom clothing line...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>Balanced creative direction with operational efficiency to ensure sustainable business growth. Developed and executed comprehensive marketing strategies that increased online traffic and customer satisfaction. Cultivated a strong brand identity and social media presence, fostering customer engagement and driving conversions.</p>
+            <h4>Key Achievements:</h4>
+            <ul>
+                <li>Increased customer satisfaction by streamlining delivery processes and enhancing operational efficiency.</li>
+                <li>Drove significant online traffic and sales growth through effective marketing strategies and an engaging online presence.</li>
+                <li>Successfully managed the business through various challenges, achieving sustainable profitability over a six-year period.</li>
+            </ul>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </div>
+
+    <!-- Experience - Unit Drilling -->
+    <div class="experience-entry">
+        <h3>Floor Hand/Chain Hand</h3>
+        <p>Unit Drilling – Utah Market</p>
+        <p>March 2005 – November 2007</p>
+        <div class="content-preview">
+            <p>Serviced and operated hydraulic equipment such as winches, forklifts, skid steers, and loaders in hazardous conditions. Assisted with drilling rig operations, equipment maintenance, and rig setup, adhering to strict safety protocols...</p>
+        </div>
+        <div class="content-full hidden">
+            <p>Performed manual labor tasks, such as lifting, carrying, and operating hand tools, in all weather conditions. Helped assemble and disassemble sections of the drilling rig during "rig up" and "rig down" operations. Maintained a clean and organized work environment, adhering to safety standards and proper use of personal protective equipment (PPE).</p>
+        </div>
+        <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
+    </div><!-- Comprehensive Career Summary -->
+    <section id="career-summary">
+        <h2><i class="fas fa-briefcase icon"></i> Comprehensive Career Summary (1999 - 2015)</h2>
+        <div class="content-preview">
+            <p>This summary encompasses my experience as a Tower Technician, showcasing my progressive skill development and accomplishments in telecommunications construction and maintenance...</p>
+        </div>
+        <div class="content-full hidden">
+            <h3>Core Responsibilities and Expertise:</h3>
+            <ul>
+                <li><strong>Tower Construction and Installation:</strong> Assembled and erected steel towers with precise alignment and ensured structural integrity for wireless communication systems. Installed antennas, radios, transmission lines, and various telecom equipment to meet client specifications.</li>
+                <li><strong>Civil Works and Site Preparation:</strong> Conducted comprehensive site preparation tasks, including excavation, grounding, and concrete foundation work, establishing robust and compliant tower bases.</li>
+                <li><strong>Maintenance and Troubleshooting:</strong> Executed preventive and corrective maintenance on antennas and microwave systems, ensuring optimal functionality and reduced downtime. Performed antenna sweeps and system testing to verify and enhance signal performance and transmission quality.</li>
+                <li><strong>Safety and Quality Control:</strong> Maintained strict adherence to safety protocols and quality standards. Conducted daily toolbox meetings and rigorous site inspections to uphold industry best practices and regulatory requirements.</li>
+                <li><strong>Team Collaboration:</strong> Collaborated effectively with cross-functional teams, including engineers, project managers, and technicians, to deliver projects efficiently and within timelines.</li>
+                <li><strong>Leadership and Supervision (Benchmark Electric):</strong> Supervised construction teams, overseeing civil excavation, coaxial cabling, and telco installations. Led safety trainings and mentored team members, promoting adherence to safety and project standards.</li>
+            </ul>
+            <h4>Key Achievements:</h4>
+            <ul>
+                <li>Successfully installed and tested communication towers across multiple states, enhancing network coverage and reliability.</li>
+                <li>Led major tower installation projects, optimizing processes to reduce signal interference and improve performance.</li>
+                <li>Implemented maintenance schedules that minimized system outages and boosted operational efficiency.</li>
+                <li>Supervised numerous tower builds and maintenance projects with strict safety protocols, achieving zero on-site incidents.</li>
+                <li>Played a critical role in LTE and 5G network upgrades, ensuring seamless integration with existing infrastructure and leading team trainings that enhanced productivity and safety compliance.</li>
             </ul>
         </div>
         <button class="toggle-btn" onclick="toggleContent(this)">Show More</button>
     </section><!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Information</h2>
+        <h2><i class="fas fa-envelope icon"></i> Contact Information</h2>
         <p>Email: <a href="mailto:Jade.Bowen.career@gmail.com">Jade.Bowen.career@gmail.com</a></p>
         <p>Phone: <a href="tel:+12083710647">208-371-0647</a></p>
         <p>Location: Boise, Idaho</p>
         <p>GitHub: <a href="https://github.com/JadeBowen" target="_blank" rel="noopener">https://github.com/JadeBowen</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/jadebowen" target="_blank" rel="noopener">https://www.linkedin.com/in/jadebowen</a></p>
         <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="qr-code">
-    </section>
-
-    <!-- Download Resumes Section -->
+    </section><!-- Download Resumes Section -->
     <section id="downloads">
-        <h2>Download Resumes</h2>
-        <button class="download-btn">Download Telecom Resume</button>
-        <button class="download-btn">Download Full Resume</button>
-        <button class="download-btn">Download Project & Construction Management Resume</button>
+        <h2><i class="fas fa-download icon"></i> Download Resumes</h2>
+        <p>I offer three tailored resume versions to showcase my extensive experience and adapt to specific roles in today’s competitive market. Each version emphasizes different skills, helping hiring managers see the expertise most relevant to their needs. This approach maximizes alignment with distinct job opportunities.</p>
+        <a href="https://github.com/JadeBowen/jadesresume/blob/c2555c5f6d2ff2c536bbb5bf78582999ee26c216/Jade%20Bowen%20-%202024.pdf" class="download-btn" target="_blank">Download Telecom Resume</a>
+        <a href="https://github.com/JadeBowen/jadesresume/blob/c2555c5f6d2ff2c536bbb5bf78582999ee26c216/Jade%20Bowen%20-%202024.pdf" class="download-btn" target="_blank">Download Full Resume</a>
+        <a href="https://github.com/JadeBowen/jadesresume/blob/c2555c5f6d2ff2c536bbb5bf78582999ee26c216/Jade%20Bowen%20-%202024.pdf" class="download-btn" target="_blank">Download Project & Construction Management Resume</a>
     </section>
 
     <!-- Footer with Contact Information -->
