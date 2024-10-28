@@ -14,14 +14,14 @@ body {
 
 /* Profile Photo and QR Code Styling */
 .profile-photo {
-    max-width: 140px; /* Slightly increased */
+    max-width: 130px; /* Increased size for PC and mobile */
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
 }
 
 .qr-code {
-    width: 100px; /* Slightly increased */
+    width: 90px; /* Increased size for PC and mobile */
     display: block;
     margin: 10px auto;
 }
@@ -52,7 +52,7 @@ body {
     justify-content: center;
     gap: 10px;
     background-color: #123456;
-    position: sticky;
+    position: sticky; /* Make navbar sticky */
     top: 0;
     z-index: 1000;
     padding: 8px;
@@ -73,45 +73,6 @@ body {
 .navbar a:hover {
     background-color: #345678;
     color: #f0f0f0;
-}
-
-/* Navigation Button on Mobile */
-.navigation-button {
-    display: none;
-    background-color: #123456;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: sticky;
-    top: 15px;
-    z-index: 1000;
-}
-
-/* Show the navigation button only on mobile */
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-    .navigation-button {
-        display: block;
-    }
-}
-
-/* Dropdown Menu Styling */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #123456;
-    top: 50px;
-    width: 100%;
-    z-index: 1;
-    padding: 10px;
-}
-
-.navigation-button.active + .dropdown-content {
-    display: block;
 }
 
 /* Resume Button Styling */
@@ -141,6 +102,66 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Top Profile Information Styling */
+#about {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+#about h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about h1::before {
+    content: "\f007"; /* Font Awesome person icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* Email and Phone Info Styling */
+#about p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Icons for Job Titles */
+.experience-entry h3::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 8px;
+    color: #123456;
+}
+
+.experience-entry[data-icon="computer"] h3::before {
+    content: "\f108"; /* Icon for Senior Field Technician */
+}
+
+.experience-entry[data-icon="tech"] h3::before {
+    content: "\f0c3"; /* Icon for First Point Group */
+}
+
+.experience-entry[data-icon="briefcase"] h3::before {
+    content: "\f0b1"; /* Briefcase icon for KGP Co, MasTec, Broken Arrow */
+}
+
+.experience-entry[data-icon="wrench"] h3::before {
+    content: "\f0ad"; /* Wrench icon for technical roles */
+}
+
+.experience-entry[data-icon="clipboard"] h3::before {
+    content: "\f0c1"; /* Clipboard icon for Cold Souls LLC */
+}
+
 /* Section Styling */
 section {
     padding: 20px;
@@ -148,6 +169,45 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.toggle-btn,
+.download-btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #123456;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:hover,
+.download-btn:hover {
+    background-color: #345678;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #123456;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+footer * {
+    color: #ffffff;
+}
+
+footer a {
+    text-decoration: underline;
 }
 
 /* Back to Top Button */
@@ -171,12 +231,24 @@ section {
     opacity: 1;
 }
 
+/* Hidden Content */
+.hidden {
+    display: none;
+}
+
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #333;
     color: #f0f0f0;
 }
 
+/* About Me Section - Dark Mode */
+body.dark-mode #about {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+/* Button Styling - Dark Mode */
 body.dark-mode .download-btn, 
 body.dark-mode .toggle-btn, 
 body.dark-mode .menu-toggle, 
@@ -185,6 +257,7 @@ body.dark-mode .dark-mode-toggle {
     color: #ffffff;
 }
 
+/* Button Hover - Dark Mode */
 body.dark-mode .download-btn:hover,
 body.dark-mode .toggle-btn:hover, 
 body.dark-mode .menu-toggle:hover, 
@@ -193,9 +266,19 @@ body.dark-mode .dark-mode-toggle:hover {
     color: #ffffff;
 }
 
-body.dark-mode footer {
-    background-color: #123456;
+/* Resume Download Buttons - Dark Mode */
+body.dark-mode #downloads {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+body.dark-mode #downloads a.download-btn {
+    background-color: #56789a;
     color: #ffffff;
+}
+
+body.dark-mode #downloads a.download-btn:hover {
+    background-color: #345678;
 }
 
 /* Footer - Dark Mode */
