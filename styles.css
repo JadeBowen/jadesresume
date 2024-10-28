@@ -123,6 +123,27 @@ ul {
 .icon[data-tooltip]:hover::after {
     opacity: 1;
     visibility: visible;
+}.profile-photo,
+.qr-code {
+    max-width: 300px; /* Ensuring maximum size for larger screens */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    filter: grayscale(0.5);
+}
+
+.profile-photo:hover,
+.qr-code:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+@media (max-width: 768px) {
+    .profile-photo,
+    .qr-code {
+        max-width: 200px; /* Smaller size for mobile */
+    }
 }
 
 header {
@@ -141,7 +162,9 @@ header {
 body.dark-mode header {
     background-color: #222;
     background-image: linear-gradient(135deg, #222, #333);
-}.menu-toggle {
+}
+
+.menu-toggle {
     background: none;
     border: none;
     color: #fff;
@@ -171,9 +194,7 @@ body.dark-mode header {
 
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.navbar {
+}.navbar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,11 +252,13 @@ body.dark-mode header {
         margin: 10px 0;
         text-align: center;
     }
-}section {
+}
+
+section {
     padding: 60px 0;
-    opacity: 1; /* Set to 1 for visibility */
-    transform: translateY(0px); /* Reset downward shift */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1; /* Make sections visible */
+    transform: translateY(0px); /* Remove initial downward shift */
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
     max-height: 1000px;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.8);
@@ -244,7 +267,7 @@ body.dark-mode header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-attachment: fixed;
     background-size: cover;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid linear-gradient(to right, var(--primary-color), #555);
     margin-bottom: 40px;
 }
 
@@ -254,9 +277,7 @@ body.dark-mode section {
 
 section.collapsed {
     max-height: 80px;
-}
-
-.toggle-section-btn {
+}.toggle-section-btn {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
@@ -278,6 +299,25 @@ section.collapsed {
     transform: scale(0.95);
 }
 
+.toggle-section-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.toggle-section-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
 #skills .skills-chart,
 #certifications ul {
     display: grid;
@@ -291,7 +331,9 @@ section.collapsed {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
-}.download-btn {
+}
+
+.download-btn {
     display: inline-block;
     background-color: #28a745;
     color: #fff;
@@ -313,7 +355,24 @@ section.collapsed {
     transform: scale(0.95);
 }
 
-footer {
+.download-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.download-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -369,7 +428,9 @@ body.dark-mode footer {
 
 .dark-mode-toggle:hover {
     opacity: 1;
-}/* Scroll Progress Indicator */
+}
+
+/* Scroll Progress Indicator */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -397,45 +458,18 @@ body.dark-mode footer {
 
 body.dark-mode ::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.2);
+}/* Profile Photo and QR Code Resizing */
+.profile-photo,
+.qr-code {
+    max-width: 300px; /* General max size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-/* Media Query for Mobile */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    .navbar.show {
-        transform: translateY(0%);
-    }
-
-    .navbar a {
-        display: block;
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .icon[data-tooltip]::after {
-        font-size: 16px;
-    }
-
     .profile-photo,
     .qr-code {
-        width: 150px;
-        height: auto;
+        max-width: 200px; /* Reduced size for mobile */
     }
 }
