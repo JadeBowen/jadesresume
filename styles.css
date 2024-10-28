@@ -9,24 +9,54 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(to bottom, #f5f5f5, #eaeaea); /* Subtle gradient background */
+    background-color: #0f0f0f;
+    background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png'); /* High-tech background */
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
 }
 
-/* Profile Photo and QR Code Styling */
-.profile-photo {
-    max-width: 150px;
-    border-radius: 50%;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* Header & Sticky Navbar */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #123456;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
     display: block;
-    margin: 0 auto 20px;
+    white-space: nowrap;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.3s;
 }
 
-.qr-code {
-    width: 100px;
-    display: block;
-    margin: 10px auto;
+.navbar a:hover {
+    background-color: #345678;
+    transform: scale(1.05);
 }
 
-/* Dark Mode Toggle Button */
+/* Dark Mode Toggle */
 .dark-mode-toggle {
     position: fixed;
     top: 15px;
@@ -39,70 +69,13 @@ body {
     border: none;
     border-radius: 5px;
     z-index: 1000;
-    transition: background-color 0.3s;
 }
 
 .dark-mode-toggle:hover {
     background-color: #56789a;
 }
 
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #123456;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 8px;
-    flex-wrap: wrap;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    display: block;
-    white-space: nowrap;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar a:hover {
-    background-color: #345678;
-    color: #f0f0f0;
-}
-
-/* Resume Button Styling */
-.download-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #123456;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    margin: 10px auto;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.download-btn:hover {
-    background-color: #345678;
-}
-
-/* Box Styling for Job Entries */
-.experience-entry {
-    background-color: #f1f1f1;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Enhanced About Me Section */
+/* Profile Photo and QR Code */
 #about {
     text-align: center;
     padding: 40px;
@@ -113,89 +86,91 @@ body {
     max-width: 900px;
 }
 
-#about h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.profile-photo {
+    max-width: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s;
 }
 
-#about h1::before {
-    content: "\f007"; /* Font Awesome person icon */
+.profile-photo:hover {
+    transform: scale(1.1);
+}
+
+.qr-code {
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+    transition: transform 0.3s;
+}
+
+.qr-code:hover {
+    transform: scale(1.1);
+}
+
+/* Resume Download Button */
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #123456;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px auto;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-btn::before {
+    content: "\f1c1";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 8px;
 }
 
-/* Typography and Blockquote Styling */
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #345678;
-    margin-bottom: 15px;
+.download-btn:hover {
+    background-color: #345678;
+    transform: translateY(-2px);
 }
 
-blockquote {
-    font-style: italic;
-    color: #666;
-    padding: 10px 20px;
-    margin: 20px 0;
-    border-left: 3px solid #345678;
-    background-color: #f9f9f9;
+/* Experience Entry Cards */
+.experience-entry {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Card Layout (Desktop) */
+/* Section Styling */
 section {
     padding: 20px;
-    margin: 10px auto;
+    margin: 10px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
 }
 
-/* Section Divider Styling */
-section + section::before {
-    content: "";
-    display: block;
-    width: 80%;
-    height: 1px;
-    background: #cccccc;
-    margin: 20px auto;
-}
-
-/* Icon Hover Effects for Navigation */
-.navbar a {
-    color: #ffffff;
-    transition: transform 0.2s ease;
-}
-
-.navbar a:hover {
-    transform: scale(1.05);
-}
-
-/* Button Styling */
-.toggle-btn,
-.download-btn {
-    display: block;
+/* Skills Chart Placeholder */
+.skills-chart {
     width: 100%;
-    max-width: 250px;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    background-color: #123456;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 20px;
 }
 
-.toggle-btn:hover,
-.download-btn:hover {
-    background-color: #345678;
+/* Fade-In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer Styling */
@@ -228,27 +203,8 @@ footer a {
     border-radius: 50%;
     cursor: pointer;
     opacity: 0.7;
-    transition: opacity 0.3s;
 }
 
 #back-to-top:hover {
     opacity: 1;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #f0f0f0;
-}
-
-body.dark-mode #about,
-body.dark-mode .experience-entry,
-body.dark-mode section {
-    background-color: #444;
-    color: #f0f0f0;
-}
-
-body.dark-mode footer {
-    background-color: #123456;
-    color: #ffffff;
 }
