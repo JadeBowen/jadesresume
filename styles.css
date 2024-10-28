@@ -14,19 +14,19 @@ body {
 
 /* Profile Photo and QR Code Styling */
 .profile-photo {
-    max-width: 120px;
+    max-width: 150px;
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
 }
 
 .qr-code {
-    width: 80px;
+    width: 100px;
     display: block;
     margin: 10px auto;
 }
 
-/* Dark Mode Toggle Button */
+/* Dark Mode Toggle Button Position */
 .dark-mode-toggle {
     position: fixed;
     top: 15px;
@@ -46,17 +46,17 @@ body {
     background-color: #56789a;
 }
 
-/* Navbar Styling for Desktop */
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: center;
     gap: 10px;
     background-color: #123456;
-    padding: 8px;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 8px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -73,68 +73,6 @@ body {
 .navbar a:hover {
     background-color: #345678;
     color: #f0f0f0;
-}
-
-/* Hide Navbar Links on Mobile */
-@media (max-width: 767px) {
-    .navbar {
-        display: none; /* Hide full menu on mobile */
-    }
-}
-
-/* Hamburger Menu for Mobile */
-.menu-toggle {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #345678;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-.menu-toggle::before {
-    content: "☰ ";
-    font-size: 18px;
-    margin-right: 5px;
-}
-
-.menu-toggle:hover {
-    background-color: #56789a;
-}
-
-/* Mobile Dropdown Menu */
-.mobile-navbar {
-    display: none;
-    position: fixed;
-    top: 50px;
-    left: 15px;
-    background-color: #123456;
-    color: #ffffff;
-    border-radius: 5px;
-    width: calc(100% - 30px);
-    z-index: 1001;
-}
-
-.mobile-navbar a {
-    display: block;
-    padding: 10px;
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: 1px solid #345678;
-    text-align: center;
-}
-
-.mobile-navbar a:hover {
-    background-color: #345678;
 }
 
 /* Resume Button Styling */
@@ -164,35 +102,61 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Styling */
+/* Top Profile Information Styling */
+#about {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+#about h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about h1::before {
+    content: "\f007"; /* Font Awesome person icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* Section Card Layout (Desktop) */
 section {
     padding: 20px;
     margin: 10px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
 }
 
-/* Button Styling */
-.toggle-btn,
-.download-btn {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 14px;
+/* Back-to-Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
     border: none;
     background-color: #123456;
     color: white;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    opacity: 0.7;
+    transition: opacity 0.3s;
 }
 
-.toggle-btn:hover,
-.download-btn:hover {
-    background-color: #345678;
+#back-to-top:hover {
+    opacity: 1;
 }
 
 /* Dark Mode Styles */
@@ -206,36 +170,4 @@ body.dark-mode .experience-entry,
 body.dark-mode section {
     background-color: #444;
     color: #f0f0f0;
-}
-
-body.dark-mode .navbar,
-body.dark-mode .menu-toggle {
-    background-color: #56789a;
-    color: #ffffff;
-}
-
-body.dark-mode .download-btn,
-body.dark-mode .toggle-btn,
-body.dark-mode .menu-toggle {
-    background-color: #56789a;
-    color: #ffffff;
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #123456;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-footer a {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-/* Hidden Content for Show More/Show Less */
-.hidden {
-    display: none;
 }
