@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Dark Mode Toggle Functionality
+    // Dark Mode Toggle
     const darkModeToggle = document.querySelector(".dark-mode-toggle");
     darkModeToggle.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
         darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
     });
 
-    // Mobile Menu Toggle Functionality with "Navigation" label and auto-collapse
+    // Mobile Menu Toggle with Auto-Collapse
     const menuToggleButton = document.querySelector(".menu-toggle");
     menuToggleButton.textContent = "Navigation";
     const mobileNavbar = document.createElement("div");
@@ -18,15 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileNavbar.style.display = mobileNavbar.style.display === "block" ? "none" : "block";
     });
 
-    // Auto-Collapse Mobile Menu After Navigation
-    const mobileNavbarLinks = mobileNavbar.querySelectorAll("a");
-    mobileNavbarLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            mobileNavbar.style.display = "none";
-        });
-    });
-
-    // Smooth Scroll for Navigation Links
+    // Smooth Scroll and Scroll Spy
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -36,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Scroll Spy for Active Section in Navigation
+    // Scroll Spy Highlight for Active Section
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navbar a");
 
@@ -56,14 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Fixed Back-to-Top Button (Lower Right Corner)
+    // Back-to-Top Button
     const backToTopButton = document.getElementById("back-to-top");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.opacity = "1";
-        } else {
-            backToTopButton.style.opacity = "0";
-        }
+        backToTopButton.style.opacity = window.scrollY > 300 ? "1" : "0";
     });
 
     backToTopButton.addEventListener("click", function () {
@@ -73,45 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Auto-Hide Navigation on Scroll Down (for Desktop)
-    let lastScroll = 0;
-    window.addEventListener("scroll", () => {
-        let currentScroll = window.pageYOffset;
-        if (currentScroll > lastScroll) {
-            document.querySelector("header").style.top = "-60px";
-        } else {
-            document.querySelector("header").style.top = "0";
-        }
-        lastScroll = currentScroll;
-    });
-
     // Section Fade-In Animation on Scroll
-    const fadeInSections = document.querySelectorAll("section");
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in");
+                entry.target.classList.add("visible");
                 fadeInObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
-    fadeInSections.forEach(section => {
+    document.querySelectorAll(".fade-in").forEach(section => {
         fadeInObserver.observe(section);
     });
 
-    // Interactive Scroll Progress Using Menu
-    window.addEventListener("scroll", () => {
-        let scrollPosition = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        document.querySelector(".navbar").style.background = `linear-gradient(to right, #345678 ${scrollPosition}%, #123456 ${scrollPosition}%)`;
-    });
-
-    // Browser Tab Activity Indicator
-    let originalTitle = document.title;
-    window.addEventListener("blur", () => {
-        document.title = "Come back soon!";
-    });
-    window.addEventListener("focus", () => {
-        document.title = originalTitle;
+    // Skills Chart Placeholder (Dynamic Updates with Placeholder Chart Code)
+    document.querySelector(".skills-chart").addEventListener("click", function () {
+        alert("Skills chart interactivity under development!");
     });
 });
