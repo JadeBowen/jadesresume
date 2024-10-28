@@ -11,6 +11,7 @@ body {
     background-size: cover;
     overflow-x: hidden;
 }
+
 body.dark-mode {
     --primary-color: #6c757d;
     --bg-color: #222;
@@ -19,6 +20,7 @@ body.dark-mode {
     background-image: url("subtle-dark-texture.jpg");
     background-size: cover;
 }
+
 h1, h2, h3 {
     font-weight: 500;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -60,8 +62,7 @@ h2:hover::before {
 h3 {
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
-}
-a {
+}a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -128,15 +129,6 @@ ul {
     visibility: visible;
 }
 
-@media (max-width: 768px) {
-    .icon[data-tooltip]::after {
-        font-size: 16px;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
-}
 .profile-photo,
 .qr-code {
     max-width: 100%;
@@ -152,21 +144,7 @@ html {
 .qr-code:hover {
     transform: scale(1.05);
     filter: grayscale(0);
-}
-
-@media (min-width: 768px) {
-    .profile-photo {
-        width: 300px;
-        height: 300px;
-    }
-
-    .qr-code {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-header {
+}header {
     background-color: #333;
     color: #fff;
     padding: 1rem 0;
@@ -240,29 +218,6 @@ body.dark-mode header {
     transform: scale(1.05);
 }
 
-.navbar a:active {
-    transform: scale(1);
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-}
-
-.navbar a:active::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
-
 .navbar a:focus,
 .navbar a:target {
     background-color: rgba(255, 255, 255, 0.3);
@@ -297,9 +252,7 @@ body.dark-mode header {
         margin: 10px 0;
         text-align: center;
     }
-}
-
-section {
+}section {
     padding: 60px 0;
     opacity: 0;
     transform: translateY(20px);
@@ -324,9 +277,6 @@ section.collapsed {
     max-height: 80px;
 }
 
-#about {
-    text-align: center;
-}
 .toggle-section-btn {
     background-color: var(--primary-color);
     color: #fff;
@@ -366,97 +316,7 @@ section.collapsed {
 .toggle-section-btn:active::after {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-}
-
-#mission,
-#impact,
-#summary {
-    text-align: justify;
-}
-
-#experience .experience-entry {
-    margin-bottom: 40px;
-    position: relative;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#experience h3 {
-    margin-top: 0;
-}
-
-.content-preview {
-    margin-bottom: 15px;
-}
-
-.content-full {
-    margin-top: 15px;
-}
-
-.hidden {
-    display: none;
-}
-
-.toggle-btn {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.toggle-btn:hover {
-    background-color: #0056b3;
-}
-
-.toggle-btn:active {
-    transform: translateX(-50%) scale(0.95);
-}
-
-.toggle-btn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-}
-
-.toggle-btn:active::after {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
-
-.toggle-btn::after {
-    content: '\25BC';
-    font-size: 12px;
-    margin-left: 5px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.collapsed .toggle-btn::after {
-    content: '\25B2';
-    transform: rotate(180deg);
-}
-
-#skills .skills-chart,
+}#skills .skills-chart,
 #certifications ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -471,13 +331,6 @@ section.collapsed {
     gap: 15px;
 }
 
-#contact p {
-    margin-bottom: 10px;
-}
-
-#downloads {
-    text-align: center;
-}
 .download-btn {
     display: inline-block;
     background-color: #28a745;
@@ -517,9 +370,7 @@ section.collapsed {
 .download-btn:active::after {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-}
-
-footer {
+}footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -583,9 +434,9 @@ body.dark-mode footer {
     top: 0;
     left: 0;
     width: 0%;
-    height: 5px; /* Adjust thickness as needed */
+    height: 5px;
     background-color: var(--primary-color);
-    z-index: 98; /* Ensure it's below the header */
+    z-index: 98;
     transition: width 0.3s ease;
 }
 
