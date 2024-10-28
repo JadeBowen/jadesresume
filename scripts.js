@@ -1,27 +1,27 @@
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Toggle function for mobile menu
-    function toggleMenu() {
-        const navbar = document.querySelector(".navbar");
-        navbar.classList.toggle("show");
+    // Dark Mode Toggle Functionality
+    const darkModeToggle = document.querySelector(".dark-mode-toggle");
+    darkModeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+    });
+
+    // Mobile Menu Toggle Functionality
+    function toggleMenu(button) {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('show');
+        button.textContent = navbar.classList.contains('show') ? "Close" : "Menu";
     }
-
-    // Assign the toggle function to the menu button
-    document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
-
+    
     // Show More/Show Less Toggle Functionality
     const toggleButtons = document.querySelectorAll(".toggle-btn");
     toggleButtons.forEach(button => {
         button.addEventListener("click", function () {
-            const targetContent = document.getElementById(this.getAttribute("data-target"));
-            if (targetContent.classList.contains("hidden")) {
-                targetContent.classList.remove("hidden");
-                this.textContent = "Show Less";
-            } else {
-                targetContent.classList.add("hidden");
-                this.textContent = "Show More";
-            }
+            const targetContent = this.previousElementSibling;
+            targetContent.classList.toggle("hidden");
+            this.textContent = targetContent.classList.contains("hidden") ? "Show More" : "Show Less";
         });
     });
 
