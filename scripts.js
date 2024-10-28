@@ -8,10 +8,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mobile Menu Toggle Functionality
     const menuToggleButton = document.querySelector(".menu-toggle");
-    const navbar = document.querySelector(".navbar");
+    const mobileNavbar = document.createElement("div");
+    mobileNavbar.className = "mobile-navbar";
+    mobileNavbar.innerHTML = document.querySelector(".navbar").innerHTML;
+    document.body.appendChild(mobileNavbar);
 
     menuToggleButton.addEventListener("click", function () {
-        navbar.classList.toggle("show");
-        menuToggleButton.textContent = navbar.classList.contains("show") ? "Close Menu" : "Navigation Menu";
+        mobileNavbar.style.display = mobileNavbar.style.display === "block" ? "none" : "block";
+    });
+
+    // Show More/Show Less Toggle Functionality
+    const toggleButtons = document.querySelectorAll(".toggle-btn");
+    toggleButtons.forEach(button => {
+        const contentFull = button.previousElementSibling;
+        contentFull.classList.add("hidden"); // Hide initially
+        button.textContent = "Show More";
+
+        button.addEventListener("click", function () {
+            contentFull.classList.toggle("hidden");
+            button.textContent = contentFull.classList.contains("hidden") ? "Show More" : "Show Less";
+        });
     });
 });
