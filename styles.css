@@ -14,14 +14,14 @@ body {
 
 /* Profile Photo and QR Code Styling */
 .profile-photo {
-    max-width: 120px; /* Adjusted size */
+    max-width: 120px;
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
 }
 
 .qr-code {
-    width: 80px; /* Adjusted size */
+    width: 80px;
     display: block;
     margin: 10px auto;
 }
@@ -44,17 +44,6 @@ body {
 
 .dark-mode-toggle:hover {
     background-color: #56789a;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #f9f9f9;
-}
-
-body.dark-mode .navbar, body.dark-mode .download-btn, body.dark-mode .footer, body.dark-mode .experience-entry, body.dark-mode section {
-    background-color: #444;
-    color: #f9f9f9;
 }
 
 /* Navbar Styling */
@@ -86,10 +75,45 @@ body.dark-mode .navbar, body.dark-mode .download-btn, body.dark-mode .footer, bo
     color: #f0f0f0;
 }
 
-/* Mobile Menu - Show Class */
-.navbar.show {
+/* Menu Toggle Button Styling */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #345678;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    z-index: 1001;
+    transition: background-color 0.3s;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+/* Hamburger Icon Adjustment */
+.menu-toggle::before {
+    content: "☰ ";
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+/* Hover Effect for Menu Toggle */
+.menu-toggle:hover {
+    background-color: #56789a;
+}
+
+/* Dark Mode for Menu Toggle */
+body.dark-mode .menu-toggle {
+    background-color: #56789a;
+    color: #ffffff;
+}
+
+body.dark-mode .menu-toggle:hover {
+    background-color: #345678;
 }
 
 /* Resume Button Styling */
@@ -253,22 +277,53 @@ footer a {
     display: none;
 }
 
-/* Responsive Media Query for Mobile Only Menu Toggle */
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
 
-    .navbar.show {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-        background-color: #123456;
-        color: #ffffff;
-    }
+/* About Me Section - Dark Mode */
+body.dark-mode #about {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+/* Button Styling - Dark Mode */
+body.dark-mode .download-btn, 
+body.dark-mode .toggle-btn, 
+body.dark-mode .menu-toggle, 
+body.dark-mode .dark-mode-toggle {
+    background-color: #56789a;
+    color: #ffffff;
+}
+
+/* Button Hover - Dark Mode */
+body.dark-mode .download-btn:hover,
+body.dark-mode .toggle-btn:hover, 
+body.dark-mode .menu-toggle:hover, 
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: #345678;
+    color: #ffffff;
+}
+
+/* Resume Download Buttons - Dark Mode */
+body.dark-mode #downloads {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+body.dark-mode #downloads a.download-btn {
+    background-color: #56789a;
+    color: #ffffff;
+}
+
+body.dark-mode #downloads a.download-btn:hover {
+    background-color: #345678;
+}
+
+/* Footer - Dark Mode */
+body.dark-mode footer {
+    background-color: #123456;
+    color: #ffffff;
 }
