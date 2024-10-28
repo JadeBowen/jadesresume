@@ -9,19 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Mobile Menu Toggle Functionality
-    function toggleMenu(button) {
-        const navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('show');
-        button.textContent = navbar.classList.contains('show') ? "Close" : "Menu";
-    }
+    const menuToggleButton = document.querySelector(".menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    
+    menuToggleButton.addEventListener("click", function () {
+        navbar.classList.toggle("show");
+        menuToggleButton.textContent = navbar.classList.contains("show") ? "Close" : "Menu";
+    });
     
     // Show More/Show Less Toggle Functionality
     const toggleButtons = document.querySelectorAll(".toggle-btn");
     toggleButtons.forEach(button => {
         button.addEventListener("click", function () {
-            const targetContent = this.previousElementSibling;
-            targetContent.classList.toggle("hidden");
-            this.textContent = targetContent.classList.contains("hidden") ? "Show More" : "Show Less";
+            const contentFull = button.previousElementSibling;
+            contentFull.classList.toggle("hidden");
+            button.textContent = contentFull.classList.contains("hidden") ? "Show More" : "Show Less";
         });
     });
 
