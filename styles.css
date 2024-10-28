@@ -77,8 +77,8 @@ body {
 
 /* Hide Navbar Links on Mobile */
 @media (max-width: 767px) {
-    .navbar a {
-        display: none;
+    .navbar {
+        display: none; /* Hide full menu on mobile */
     }
 }
 
@@ -111,14 +111,30 @@ body {
     background-color: #56789a;
 }
 
-/* Show Navbar Links in Dropdown on Mobile */
-.navbar.show a {
+/* Mobile Dropdown Menu */
+.mobile-navbar {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 15px;
+    background-color: #123456;
+    color: #ffffff;
+    border-radius: 5px;
+    width: calc(100% - 30px);
+    z-index: 1001;
+}
+
+.mobile-navbar a {
     display: block;
     padding: 10px;
-    text-align: center;
-    background-color: #123456;
-    color: #fff;
+    color: #ffffff;
+    text-decoration: none;
     border-bottom: 1px solid #345678;
+    text-align: center;
+}
+
+.mobile-navbar a:hover {
+    background-color: #345678;
 }
 
 /* Resume Button Styling */
@@ -198,21 +214,11 @@ body.dark-mode .menu-toggle {
     color: #ffffff;
 }
 
-body.dark-mode .navbar a:hover {
-    background-color: #345678;
-}
-
 body.dark-mode .download-btn,
 body.dark-mode .toggle-btn,
 body.dark-mode .menu-toggle {
     background-color: #56789a;
     color: #ffffff;
-}
-
-body.dark-mode .download-btn:hover,
-body.dark-mode .toggle-btn:hover,
-body.dark-mode .menu-toggle:hover {
-    background-color: #345678;
 }
 
 /* Footer Styling */
@@ -227,4 +233,9 @@ footer {
 footer a {
     color: #ffffff;
     text-decoration: underline;
+}
+
+/* Hidden Content for Show More/Show Less */
+.hidden {
+    display: none;
 }
