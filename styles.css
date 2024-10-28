@@ -26,7 +26,7 @@ body {
     margin: 10px auto;
 }
 
-/* Dark Mode Toggle Button Position */
+/* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
     top: 15px;
@@ -46,7 +46,7 @@ body {
     background-color: #56789a;
 }
 
-/* Navbar Styling */
+/* Navbar Styling for Desktop */
 .navbar {
     display: flex;
     justify-content: center;
@@ -54,18 +54,11 @@ body {
     background-color: #123456;
     padding: 8px;
     flex-wrap: wrap;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-/* Sticky Navbar for Desktop */
-@media (min-width: 768px) {
-    .navbar {
-        position: sticky;
-        top: 0;
-    }
-}
-
-/* Navbar Links */
 .navbar a {
     color: white;
     text-decoration: none;
@@ -82,7 +75,14 @@ body {
     color: #f0f0f0;
 }
 
-/* Menu Toggle Button Styling */
+/* Hide Navbar Links on Mobile */
+@media (max-width: 767px) {
+    .navbar a {
+        display: none;
+    }
+}
+
+/* Hamburger Menu for Mobile */
 .menu-toggle {
     position: fixed;
     top: 15px;
@@ -96,28 +96,29 @@ body {
     border: none;
     border-radius: 5px;
     z-index: 1001;
-    transition: background-color 0.3s;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s;
 }
 
-/* Hamburger Icon Adjustment */
 .menu-toggle::before {
     content: "☰ ";
     font-size: 18px;
     margin-right: 5px;
 }
 
-/* Hover Effect for Menu Toggle */
 .menu-toggle:hover {
     background-color: #56789a;
 }
 
-/* Hide Hamburger Menu on Desktop */
-@media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
+/* Show Navbar Links in Dropdown on Mobile */
+.navbar.show a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background-color: #123456;
+    color: #fff;
+    border-bottom: 1px solid #345678;
 }
 
 /* Resume Button Styling */
@@ -145,66 +146,6 @@ body {
     margin: 10px 0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Top Profile Information Styling */
-#about {
-    text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-}
-
-#about h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#about h1::before {
-    content: "\f007"; /* Font Awesome person icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-/* Email and Phone Info Styling */
-#about p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-/* Icons for Job Titles */
-.experience-entry h3::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 8px;
-    color: #123456;
-}
-
-.experience-entry[data-icon="computer"] h3::before {
-    content: "\f108"; /* Icon for Senior Field Technician */
-}
-
-.experience-entry[data-icon="tech"] h3::before {
-    content: "\f0c3"; /* Icon for First Point Group */
-}
-
-.experience-entry[data-icon="briefcase"] h3::before {
-    content: "\f0b1"; /* Briefcase icon for KGP Co, MasTec, Broken Arrow */
-}
-
-.experience-entry[data-icon="wrench"] h3::before {
-    content: "\f0ad"; /* Wrench icon for technical roles */
-}
-
-.experience-entry[data-icon="clipboard"] h3::before {
-    content: "\f0c1"; /* Clipboard icon for Cold Souls LLC */
 }
 
 /* Section Styling */
@@ -238,6 +179,42 @@ section {
     background-color: #345678;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark-mode #about,
+body.dark-mode .experience-entry,
+body.dark-mode section {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .menu-toggle {
+    background-color: #56789a;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar a:hover {
+    background-color: #345678;
+}
+
+body.dark-mode .download-btn,
+body.dark-mode .toggle-btn,
+body.dark-mode .menu-toggle {
+    background-color: #56789a;
+    color: #ffffff;
+}
+
+body.dark-mode .download-btn:hover,
+body.dark-mode .toggle-btn:hover,
+body.dark-mode .menu-toggle:hover {
+    background-color: #345678;
+}
+
 /* Footer Styling */
 footer {
     text-align: center;
@@ -247,87 +224,7 @@ footer {
     font-size: 14px;
 }
 
-footer * {
-    color: #ffffff;
-}
-
 footer a {
+    color: #ffffff;
     text-decoration: underline;
-}
-
-/* Back to Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    border: none;
-    background-color: #123456;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-#back-to-top:hover {
-    opacity: 1;
-}
-
-/* Hidden Content */
-.hidden {
-    display: none;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #f0f0f0;
-}
-
-/* About Me Section - Dark Mode */
-body.dark-mode #about {
-    background-color: #444;
-    color: #f0f0f0;
-}
-
-/* Button Styling - Dark Mode */
-body.dark-mode .download-btn, 
-body.dark-mode .toggle-btn, 
-body.dark-mode .menu-toggle, 
-body.dark-mode .dark-mode-toggle {
-    background-color: #56789a;
-    color: #ffffff;
-}
-
-/* Button Hover - Dark Mode */
-body.dark-mode .download-btn:hover,
-body.dark-mode .toggle-btn:hover, 
-body.dark-mode .menu-toggle:hover, 
-body.dark-mode .dark-mode-toggle:hover {
-    background-color: #345678;
-    color: #ffffff;
-}
-
-/* Resume Download Buttons - Dark Mode */
-body.dark-mode #downloads {
-    background-color: #444;
-    color: #f0f0f0;
-}
-
-body.dark-mode #downloads a.download-btn {
-    background-color: #56789a;
-    color: #ffffff;
-}
-
-body.dark-mode #downloads a.download-btn:hover {
-    background-color: #345678;
-}
-
-/* Footer - Dark Mode */
-body.dark-mode footer {
-    background-color: #123456;
-    color: #ffffff;
 }
