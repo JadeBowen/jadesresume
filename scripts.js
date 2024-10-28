@@ -1,75 +1,66 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Dark Mode Toggle
+const toggleDarkMode = document.querySelector('.dark-mode-toggle');
+toggleDarkMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleDarkMode.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+});
 
-    // Dark Mode Toggle Functionality
-    const darkModeToggle = document.querySelector(".dark-mode-toggle");
-    darkModeToggle.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+// Show/Hide Sections Functionality
+document.querySelectorAll('.toggle-content').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.previousElementSibling;
+        content.classList.toggle('hidden');
+        button.textContent = content.classList.contains('hidden') ? 'Show More' : 'Show Less';
     });
+});
 
-    // Mobile Navigation Toggle Functionality
-    const navigationButton = document.querySelector(".navigation-button");
-    const dropdownContent = document.querySelector(".dropdown-content");
+// Sticky Navigation on Scroll (Mobile and Desktop Adjustments)
+const navMenu = document.querySelector('.navbar');
+const navigationButton = document.querySelector('.menu-toggle');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navMenu.classList.add('sticky');
+        navigationButton.classList.add('sticky');
+    } else {
+        navMenu.classList.remove('sticky');
+        navigationButton.classList.remove('sticky');
+    }
+});
 
-    navigationButton.addEventListener("click", function () {
-        dropdownContent.classList.toggle("active");
-        navigationButton.textContent = dropdownContent.classList.contains("active") ? "Close" : "Navigation";
-    });
+// Lazy Loading Images
+document.querySelectorAll('img[data-src]').forEach(img => {
+    img.setAttribute('src', img.getAttribute('data-src'));
+    img.onload = () => img.removeAttribute('data-src');
+});
 
-    // Auto-collapse the dropdown menu after navigating to a section on mobile
-    document.querySelectorAll(".dropdown-content a").forEach(link => {
-        link.addEventListener("click", function () {
-            dropdownContent.classList.remove("active");
-            navigationButton.textContent = "Navigation";
-        });
-    });
-
-    // Back to Top Button
-    const backToTopButton = document.getElementById("back-to-top");
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
+// Auto-Collapse Navigation Menu after Selection
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth < 768) { // Mobile view
+            const navMenu = document.querySelector('.navbar');
+            navMenu.classList.remove('active');
         }
     });
+});
 
-    backToTopButton.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
+// Keyboard Navigation Shortcuts
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'm') { // Example: 'm' to toggle menu
+        document.querySelector('.menu-toggle').click();
+    }
+    if (event.key === 'd') { // Example: 'd' to toggle dark mode
+        toggleDarkMode.click();
+    }
+});
 
-    // Show More/Show Less Toggle Functionality for each section
-    const toggleButtons = document.querySelectorAll(".toggle-btn");
-    toggleButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            const contentFull = button.previousElementSibling;
-            contentFull.classList.toggle("hidden");
-            button.textContent = contentFull.classList.contains("hidden") ? "Show More" : "Show Less";
-        });
-    });
+// Show Progress Bar
+const progressBar = document.createElement('div');
+progressBar.className = 'progress-bar';
+document.body.appendChild(progressBar);
 
-    // Highlight Active Section on Scroll (PC View)
-    const sections = document.querySelectorAll("section");
-    const navbarLinks = document.querySelectorAll(".navbar a");
-
-    window.addEventListener("scroll", () => {
-        let currentSection = "";
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 50) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        navbarLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(currentSection)) {
-                link.classList.add("active");
-            }
-        });
-    });
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = `${scrollPercentage}%`;
 });
