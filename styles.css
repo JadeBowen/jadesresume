@@ -8,9 +8,14 @@
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  color: #f0f0f0;
-  background: #252525;
+  color: #333;
+  background: #f4f4f4;
   transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background: #252525;
+  color: #f0f0f0;
 }
 
 /* Typography */
@@ -20,41 +25,52 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #00bfa5;
+}
+
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 /* Section Styling */
 section {
   padding: 3rem 2rem;
   margin: 2rem auto;
-  background: rgba(37, 37, 37, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode section {
+  background: rgba(37, 37, 37, 0.9);
+  color: #f0f0f0;
 }
 
 /* Section Title Styling */
 section h2 {
-  color: #00bfa5;
   position: relative;
   margin-bottom: 2rem;
+  display: flex; 
+  align-items: center; 
 }
 
 /* Icon Styling (using Font Awesome) */
 section h2 i {
   color: #ffc107;
   margin-right: 10px;
+  font-size: 1.2em; 
 }
 
 /* Profile Photo and QR Code Styling */
@@ -63,13 +79,23 @@ section h2 i {
   border-radius: 50%;
   display: block;
   margin: 0 auto 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to the image */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
+}
+
+.profile-photo:hover {
+  transform: scale(1.1); 
 }
 
 .qr-code {
   width: 100px;
   display: block;
   margin: 10px auto;
+  transition: transform 0.3s ease; 
+}
+
+.qr-code:hover {
+  transform: rotate(10deg) scale(1.1); 
 }
 
 /* Dark Mode Toggle Button Position */
@@ -80,88 +106,102 @@ section h2 i {
   padding: 10px 15px;
   font-size: 14px;
   cursor: pointer;
-  background-color: #00bfa5; /* Teal background color */
+  background-color: #00bfa5;
   color: #fff;
   border: none;
   border-radius: 5px;
   z-index: 1000;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: background-color 0.3s, transform 0.3s ease; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode-toggle:hover {
-  background-color: #008c7a; /* Darker teal on hover */
+  background-color: #008c7a;
+  transform: translateY(-2px); 
 }
 
-/* Navbar Styling */
+/* Navbar Styling (with hamburger menu for mobile) */
 .navbar {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(5px);
   flex-wrap: wrap;
-  backdrop-filter: blur(5px); /* Add a blur effect to the navbar */
+}
+
+body.dark-mode .navbar {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #f0f0f0;
 }
 
 .navbar a {
-  color: white;
+  color: #333;
   text-decoration: none;
   padding: 8px 15px;
   display: block;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 1rem;
   border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s ease; 
 }
 
 .navbar a:hover {
-  background-color: #345678;
-  color: #f0f0f0;
+  background-color: #00bfa5;
+  color: #fff;
+  transform: translateY(-2px); 
+}
+
+.navbar a.active,
+.navbar a:focus {
+  outline: 2px solid #00bfa5;
 }
 
 /* Resume Button Styling */
 .download-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ffc107; /* Gold background color for buttons */
-  color: #252525; /* Dark text color for contrast */
+  background-color: #ffc107;
+  color: #252525;
   text-decoration: none;
   border-radius: 5px;
   font-size: 14px;
   margin: 10px auto;
   text-align: center;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: background-color 0.3s, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .download-btn:hover {
-  background-color: #d39e00; /* Slightly darker gold on hover */
+  background-color: #d39e00;
+  transform: translateY(-2px);
 }
 
 /* Box Styling for Job Entries */
 .experience-entry {
-  background-color: #373737; /* Slightly lighter background for contrast */
+  background-color: #f9f9f9;
   padding: 15px;
   margin: 10px 0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add transitions for hover effects */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .experience-entry:hover {
-  transform: translateY(-5px); /* Slightly lift the box on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Top Profile Information Styling */
 #about {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(to bottom right, #252525, #373737); /* Subtle gradient background */
+  background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 20px auto;
@@ -174,15 +214,15 @@ section h2 i {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffc107; /* Gold color for the name */
+  color: #ffc107;
 }
 
 #about h1::before {
-  content: "\f007"; /* Font Awesome person icon */
+  content: "\f007";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 8px;
-  color: #00bfa5; /* Teal color for the icon */
+  color: #00bfa5;
 }
 
 /* Email and Phone Info Styling */
@@ -196,37 +236,4 @@ section h2 i {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 8px;
-  color: #00bfa5; /* Teal color for the icons */
-}
-
-.experience-entry[data-icon="computer"] h3::before {
-  content: "\f108"; /* Icon for Senior Field Technician */
-}
-
-.experience-entry[data-icon="tech"] h3::before {
-  content: "\f0c3"; /* Icon for First Point Group */
-}
-
-.experience-entry[data-icon="briefcase"] h3::before {
-  content: "\f0b1"; /* Briefcase icon for KGP Co, MasTec, Broken Arrow */
-}
-
-.experience-entry[data-icon="wrench"] h3::before {
-  content: "\f0ad"; /* Wrench icon for technical roles */
-}
-
-.experience-entry[data-icon="clipboard"] h3::before {
-  content: "\f0c1"; /* Clipboard icon for Cold Souls LLC */
-}
-
-/* Button Styling */
-.toggle-btn {
-  display: block;
-  width: 100%;
-  max-width: 250px;
-  margin: 10px auto;
-  padding: 10px;
-  font-size: 14px;
-  border: none;
-  background-color: #00bfa5; /* Teal background color for buttons */
-  color: white;
+  color: #00bfa5;
