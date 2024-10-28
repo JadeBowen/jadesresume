@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
         darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
     });
 
-    // Mobile Menu Toggle Functionality
+    // Mobile Menu Toggle Functionality with "Navigation" label and auto-collapse
     const menuToggleButton = document.querySelector(".menu-toggle");
+    menuToggleButton.textContent = "Navigation";
     const mobileNavbar = document.createElement("div");
     mobileNavbar.className = "mobile-navbar";
     mobileNavbar.innerHTML = document.querySelector(".navbar").innerHTML;
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileNavbar.style.display = mobileNavbar.style.display === "block" ? "none" : "block";
     });
 
-    // Auto-Collapse Mobile Menu
+    // Auto-Collapse Mobile Menu After Navigation
     const mobileNavbarLinks = mobileNavbar.querySelectorAll("a");
     mobileNavbarLinks.forEach(link => {
         link.addEventListener("click", () => {
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Animated Back-to-Top Button
+    // Fixed Back-to-Top Button (Lower Right Corner)
     const backToTopButton = document.getElementById("back-to-top");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Auto-Hide Navigation on Scroll Down
+    // Auto-Hide Navigation on Scroll Down (for Desktop)
     let lastScroll = 0;
     window.addEventListener("scroll", () => {
         let currentScroll = window.pageYOffset;
@@ -103,35 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", () => {
         let scrollPosition = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
         document.querySelector(".navbar").style.background = `linear-gradient(to right, #345678 ${scrollPosition}%, #123456 ${scrollPosition}%)`;
-    });
-
-    // Page Load Animation
-    document.body.classList.add("page-loaded");
-
-    // Hover Effects for Navigation Items
-    navLinks.forEach(link => {
-        link.addEventListener("mouseover", () => {
-            link.style.transform = "scale(1.05)";
-        });
-        link.addEventListener("mouseout", () => {
-            link.style.transform = "scale(1)";
-        });
-    });
-
-    // Reading Time Estimation
-    const wordsPerMinute = 200;
-    const textContent = document.body.textContent || "";
-    const wordCount = textContent.split(/\s+/).length;
-    const readingTime = Math.ceil(wordCount / wordsPerMinute);
-    const readingTimeElement = document.createElement("div");
-    readingTimeElement.textContent = `Estimated reading time: ${readingTime} min`;
-    readingTimeElement.style.textAlign = "center";
-    readingTimeElement.style.margin = "10px 0";
-    document.body.insertBefore(readingTimeElement, document.body.firstChild);
-
-    // Persistent Back-to-Top Button Position on Scroll
-    window.addEventListener("scroll", () => {
-        backToTopButton.style.transform = `translateY(${window.scrollY / 10}px)`;
     });
 
     // Browser Tab Activity Indicator
