@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #f5f5f5, #eaeaea); /* Subtle gradient background */
 }
 
 /* Profile Photo and QR Code Styling */
@@ -26,7 +26,7 @@ body {
     margin: 10px auto;
 }
 
-/* Dark Mode Toggle Button Position */
+/* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
     top: 15px;
@@ -102,20 +102,21 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Top Profile Information Styling */
+/* Enhanced About Me Section */
 #about {
     text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
+    max-width: 900px;
 }
 
 #about h1 {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,18 +129,93 @@ body {
     margin-right: 8px;
 }
 
+/* Typography and Blockquote Styling */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #345678;
+    margin-bottom: 15px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #666;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-left: 3px solid #345678;
+    background-color: #f9f9f9;
+}
+
 /* Section Card Layout (Desktop) */
 section {
     padding: 20px;
-    margin: 10px;
+    margin: 10px auto;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 900px;
+}
+
+/* Section Divider Styling */
+section + section::before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 1px;
+    background: #cccccc;
     margin: 20px auto;
 }
 
-/* Back-to-Top Button */
+/* Icon Hover Effects for Navigation */
+.navbar a {
+    color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.05);
+}
+
+/* Button Styling */
+.toggle-btn,
+.download-btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #123456;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:hover,
+.download-btn:hover {
+    background-color: #345678;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #123456;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+footer * {
+    color: #ffffff;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+/* Fixed Back-to-Top Button */
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -170,4 +246,9 @@ body.dark-mode .experience-entry,
 body.dark-mode section {
     background-color: #444;
     color: #f0f0f0;
+}
+
+body.dark-mode footer {
+    background-color: #123456;
+    color: #ffffff;
 }
