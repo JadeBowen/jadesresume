@@ -46,6 +46,17 @@ body {
     background-color: #56789a;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+body.dark-mode .navbar, body.dark-mode .download-btn, body.dark-mode .footer, body.dark-mode .experience-entry, body.dark-mode section {
+    background-color: #444;
+    color: #f9f9f9;
+}
+
 /* Navbar Styling */
 .navbar {
     display: flex;
@@ -73,6 +84,12 @@ body {
 .navbar a:hover {
     background-color: #345678;
     color: #f0f0f0;
+}
+
+/* Mobile Menu - Show Class */
+.navbar.show {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Resume Button Styling */
@@ -234,4 +251,24 @@ footer a {
 /* Hidden Content */
 .hidden {
     display: none;
+}
+
+/* Responsive Media Query for Mobile Only Menu Toggle */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar.show {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        background-color: #123456;
+        color: #ffffff;
+    }
 }
