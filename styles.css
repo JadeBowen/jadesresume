@@ -1,3 +1,4 @@
+/* Theme Variables and Basic Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -21,7 +22,7 @@ body.light-mode { /* Class for light mode */
     background-color: #f8f8f8; /* Light background */
 }
 
-/* Import Google Fonts */
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Montserrat:wght@400;600&family=Lato:wght@400;700&display=swap');
 
 h1 {
@@ -61,9 +62,7 @@ a {
 
 a:hover {
     color: var(--secondary-color);
-}
-/* ... (previous CSS code) ... */
-
+}/* Container and Icon Styles */
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -79,26 +78,22 @@ a:hover {
     transform: rotate(20deg) scale(1.1);
 }
 
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
-
+/* Profile Photo Styling */
 .profile-photo {
     max-width: 300px;
     height: auto;
     display: block;
     margin: 0 auto 20px auto; /* Added margin-bottom */
     transition: transform 0.3s ease;
-    border-radius: 10px; /* Added rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .profile-photo:hover {
     transform: scale(1.05);
 }
 
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
-
+/* Basic Header Styling */
 header {
     background-color: #333;
     color: #fff;
@@ -116,6 +111,7 @@ header {
     color: #333; /* Dark text color for header */
 }
 
+/* Menu Toggle Button */
 .menu-toggle {
     background-color: var(--primary-color); /* Button appearance */
     color: white;
@@ -130,11 +126,7 @@ header {
 
 .menu-toggle:hover {
     background-color: var(--secondary-color);
-}
-
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
-
+}/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: center;
@@ -165,6 +157,7 @@ header {
     outline: none;
 }
 
+/* Mobile Menu */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -204,13 +197,9 @@ header {
     .dark-mode-toggle {
         top: 10px; /* Align with the hamburger menu */
     }
-}
-
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
-
+}/* Dark Mode Toggle Button */
 .dark-mode-toggle {
-    background-color: var(--primary-color); /* Button appearance */
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -218,23 +207,38 @@ header {
     cursor: pointer;
     position: relative;
     z-index: 102; /* Ensure button is on top */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .dark-mode-toggle i {
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-}
-
-.dark-mode-toggle:hover i {
-    transform: rotate(90deg); /* Rotate the moon icon on hover */
+    transition: transform 0.3s ease;
 }
 
 .dark-mode-toggle:hover {
     background-color: var(--secondary-color);
+    transform: rotate(15deg); /* Rotate the icon on hover */
 }
 
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
+/* Show More/Less Toggle Buttons */
+.toggle-section-btn,
+.toggle-job-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; /* Centered with increased margin */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Lato', sans-serif; /* Font alignment with job titles */
+}
 
+.toggle-section-btn:hover,
+.toggle-job-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}/* General Section Styling */
 section {
     padding: 40px 0;
     opacity: 1;
@@ -244,7 +248,7 @@ section {
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 60px; /* Increased spacing between sections */
+    margin-bottom: 60px; /* Spacing between sections */
 }
 
 .light-mode section {
@@ -255,70 +259,18 @@ section {
     text-align: left;
 }
 
-.toggle-section-btn,
-.toggle-job-btn {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto; /* Increased margin */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-family: 'Lato', sans-serif; /* Use the same font as job titles */
-}
-
-.toggle-section-btn:hover,
-.toggle-job-btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-section .content-full,
-.experience-entry .content-full {
-    display: none; /* Initially hide full content */
-}
-
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
-
-#experience .experience-entry {
-    margin-bottom: 40px;
-    position: relative;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.light-mode #experience .experience-entry {
-    border-color: #ddd; /* Adjust border color for light mode */
-}
-
-#experience h3 {
-    margin-top: 0;
-}
-
-/* Skills & Proficiencies and Certifications Grid */
+/* Achievements and Skills Grid */
+#achievements ul,
 #skills .skills-chart,
 #certifications ul {
+    list-style: none;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-#achievements ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
-/* ... (rest of the CSS code) ... */
-/* ... (previous CSS code) ... */
-
+/* Download Button */
 .download-btn {
     display: inline-block;
     background-color: #28a745;
@@ -335,6 +287,7 @@ section .content-full,
 
 .download-btn:hover {
     background-color: #218838;
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Footer */
@@ -368,11 +321,12 @@ footer {
     padding: 15px;
     border-radius: 5px;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 #back-to-top:hover {
     opacity: 1;
+    transform: translateY(-2px);
 }
 
 /* Scroll Progress Indicator */
