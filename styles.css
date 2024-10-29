@@ -1,9 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    --primary-color: #007bff;
-    --bg-color: #f8f8f8;
-    --text-color: #333;
+    --primary-color: #007bff; /* A nice blue */
+    --bg-color: #f8f8f8; /* Light background */
+    --text-color: #333; /* Dark text */
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -11,22 +11,22 @@ body {
 }
 
 body.dark-mode {
-    --primary-color: #6c757d;
-    --bg-color: #222;
-    --text-color: #eee;
+    --primary-color: #6c757d; /* A more muted blue for dark mode */
+    --bg-color: #222; /* Dark background */
+    --text-color: #eee; /* Light text */
     color: var(--text-color);
 }
 
 h1, h2, h3 {
     font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    animation: fadeIn 1s ease forwards;
-    text-align: center;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+    text-align: center; /* Center the name */
 }
 
 @keyframes fadeIn {
@@ -38,10 +38,10 @@ h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
     position: relative;
-    cursor: pointer;
+    cursor: pointer; /* Indicate it's clickable */
 }
 
-h2::before {
+h2::before { /* Underline effect on hover */
     content: '';
     position: absolute;
     bottom: -5px;
@@ -68,11 +68,13 @@ a {
 }
 
 a:hover {
-    color: #0056b3;
+    color: #0056b3; /* Slightly darker blue on hover */
 }
 
 p {
     margin-bottom: 1.2rem;
+    word-spacing: normal; /* Fix for odd spacing */
+    letter-spacing: normal;
 }
 
 strong {
@@ -95,7 +97,7 @@ ul {
     transition: transform 0.3s ease;
 }
 
-.icon:hover {
+.icon:hover { /* Subtle rotate and scale on hover */
     transform: rotate(20deg) scale(1.1);
 }
 
@@ -104,7 +106,7 @@ ul {
     cursor: help;
 }
 
-.icon[data-tooltip]::after {
+.icon[data-tooltip]::after { /* Tooltip styling */
     content: attr(data-tooltip);
     position: absolute;
     bottom: 100%;
@@ -129,7 +131,7 @@ ul {
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 .profile-photo,
@@ -140,24 +142,25 @@ html {
     margin-left: auto;
     margin-right: auto;
     transition: transform 0.3s ease;
-    filter: grayscale(0.5);
+    filter: grayscale(0.5); /* Slight grayscale effect */
 }
 
 .profile-photo:hover,
 .qr-code:hover {
     transform: scale(1.05);
-    filter: grayscale(0);
-}header {
+    filter: grayscale(0); /* Remove grayscale on hover */
+}
+header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1.2rem 0; /* Increased padding for dark mode toggle */
     position: fixed;
     width: 100%;
     z-index: 100;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(135deg, #333, #555);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); /* Modern blur effect */
 }
 
 body.dark-mode header {
@@ -171,12 +174,12 @@ body.dark-mode header {
     color: #fff;
     cursor: pointer;
     font-size: 1.2rem;
-    display: none;
+    display: none; /* Hidden by default, shown on mobile */
     position: relative;
     padding: 10px;
 }
 
-.menu-toggle span {
+.menu-toggle span { /* Hamburger icon bars */
     display: block;
     width: 25px;
     height: 3px;
@@ -185,7 +188,7 @@ body.dark-mode header {
     transition: 0.3s;
 }
 
-.menu-toggle.active span:nth-child(1) {
+.menu-toggle.active span:nth-child(1) { /* Animation for active state */
     transform: rotate(45deg) translate(5px, 5px);
 }
 
@@ -222,7 +225,7 @@ body.dark-mode header {
 }
 
 .navbar a:focus,
-.navbar a:target {
+.navbar a:target { /* Visual feedback for focused/active link */
     background-color: rgba(255, 255, 255, 0.3);
     outline: none;
 }
@@ -234,25 +237,24 @@ body.dark-mode header {
         position: fixed;
         top: 10px;
         left: 10px;
-        z-index: 101;
+        z-index: 101; /* Ensure it's on top */
     }
 
     .navbar {
-        display: none; /* Hide on mobile */
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 70px; /* Adjusted for header padding */
         left: 0;
         width: 100%;
         background-color: #333;
-        height: auto;
-        overflow-y: auto;
+        height: 300px; /* Example fixed height, adjust as needed */
+        overflow-y: auto; /* Enable vertical scrolling */
         transform: translateY(-100%);
         transition: transform 0.3s ease;
+        z-index: 100;
     }
 
     .navbar.show {
-        display: flex;
         transform: translateY(0%);
     }
 
@@ -266,7 +268,7 @@ body.dark-mode header {
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
-    top: 70px; /* Adjust as needed to be under the menu */
+    top: 30px; /* Adjusted for header padding */
     right: 20px;
     z-index: 101;
     background-color: var(--primary-color);
@@ -279,10 +281,11 @@ body.dark-mode header {
 
 .dark-mode-toggle:hover {
     opacity: 0.8;
-}section {
-    padding: 60px 0;
-    opacity: 1; /* Ensure sections are visible */
-    transform: translateY(0px); /* No downward shift */
+}
+section {
+    padding: 40px 0;
+    opacity: 1;
+    transform: translateY(0px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
@@ -291,7 +294,7 @@ body.dark-mode header {
     background-attachment: fixed;
     background-size: cover;
     border-bottom: 2px solid var(--primary-color);
-    margin-bottom: 60px;
+    margin-bottom: 60px; /* Increased spacing between sections */
 }
 
 body.dark-mode section {
@@ -299,15 +302,16 @@ body.dark-mode section {
 }
 
 section.collapsed {
-    max-height: 80px;
+    max-height: 80px; /* For collapsed sections (if needed) */
 }
 
-/* About Me, Contact, and other Section Styles */
-#about, #mission, #impact, #summary, #experience, #skills, #certifications, #achievements, #contact, #downloads {
-    text-align: justify;
+/* Removed IDs for styling, using class instead */
+.section-content { 
+    text-align: left; /* Or your preferred alignment */
 }
 
-.toggle-section-btn, .toggle-job-btn {
+.toggle-section-btn,
+.toggle-job-btn {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
@@ -321,15 +325,18 @@ section.collapsed {
     overflow: hidden;
 }
 
-.toggle-section-btn:hover, .toggle-job-btn:hover {
+.toggle-section-btn:hover,
+.toggle-job-btn:hover {
     background-color: #0056b3;
 }
 
-.toggle-section-btn:active, .toggle-job-btn:active {
+.toggle-section-btn:active,
+.toggle-job-btn:active {
     transform: scale(0.95);
 }
 
-.toggle-section-btn::after, .toggle-job-btn::after {
+.toggle-section-btn::after,
+.toggle-job-btn::after { /* Ripple effect on click */
     content: '';
     position: absolute;
     top: 50%;
@@ -343,16 +350,17 @@ section.collapsed {
     transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-.toggle-section-btn:active::after, .toggle-job-btn:active::after {
+.toggle-section-btn:active::after,
+.toggle-job-btn:active::after {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
-section .content-full, .experience-entry .content-full {
+section .content-full,
+.experience-entry .content-full {
     display: none; /* Initially hide full content */
 }
 
-/* Experience Section Entry */
 #experience .experience-entry {
     margin-bottom: 40px;
     position: relative;
@@ -365,9 +373,9 @@ section .content-full, .experience-entry .content-full {
 #experience h3 {
     margin-top: 0;
 }
-
 /* Skills & Proficiencies and Certifications Grid */
-#skills .skills-chart, #certifications ul {
+#skills .skills-chart,
+#certifications ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -379,10 +387,11 @@ section .content-full, .experience-entry .content-full {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
-}/* Download Button */
+}
+
 .download-btn {
     display: inline-block;
-    background-color: #28a745;
+    background-color: #28a745; /* Green for downloads */
     color: #fff;
     padding: 12px 20px;
     margin: 10px;
@@ -395,14 +404,14 @@ section .content-full, .experience-entry .content-full {
 }
 
 .download-btn:hover {
-    background-color: #218838;
+    background-color: #218838; /* Slightly darker green on hover */
 }
 
 .download-btn:active {
     transform: scale(0.95);
 }
 
-.download-btn::after {
+.download-btn::after { /* Ripple effect on click */
     content: '';
     position: absolute;
     top: 50%;
@@ -468,7 +477,7 @@ body.dark-mode footer {
     width: 0%;
     height: 5px;
     background-color: var(--primary-color);
-    z-index: 98; /* Ensure it's below the header */
+    z-index: 98;
     transition: width 0.3s ease;
 }
 
