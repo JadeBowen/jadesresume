@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     menuToggle.addEventListener('click', () => {
         navbar.classList.toggle('show');
-        menuToggle.classList.toggle('active');
+        navbar.style.transition = 'transform 0.3s ease-in-out';
     });
 
     // Smooth Scrolling for Navigation Links
@@ -27,28 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Collapse the mobile menu after clicking a link
                 navbar.classList.remove('show');
                 menuToggle.classList.remove('active');
             }
         });
     });
 
-    // Scroll Progress Bar
-    const scrollProgress = document.querySelector('.scroll-progress');
-    window.addEventListener('scroll', () => {
-        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        scrollProgress.style.width = `${scrolled}%`;
-    });
+    // Interactive Timeline (using a JavaScript timeline library)
+    const timelineItems = [
+        { id: 1, content: 'SBA Tower Technician', start: '2002-05-01', end: '2005-11-30' },
+        { id: 2, content: 'Construction Manager at MasTec', start: '2018-01-01', end: '2020-04-30' },
+        // Additional job entries can be added here
+    ];
+    const timelineContainer = document.getElementById('timeline-container');
+    const timeline = new vis.Timeline(timelineContainer, timelineItems, {});
 
-    // Show More/Less Toggle for Collapsible Sections
-    document.querySelectorAll('.toggle-section-btn').forEach(button => {
+    // Show More/Less Toggle for Job Entries
+    document.querySelectorAll('.toggle-job-btn').forEach(button => {
         button.addEventListener('click', () => {
-            const section = button.closest('section');
-            const content = section.querySelector('.content-full');
-
+            const jobEntry = button.closest('.experience-entry');
+            const content = jobEntry.querySelector('.content-full');
             if (content.style.display === 'none' || content.style.display === '') {
                 content.style.display = 'block';
+                content.style.transition = 'max-height 0.3s ease-in-out';
                 button.textContent = 'Show Less';
             } else {
                 content.style.display = 'none';
@@ -57,13 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initial Collapse Setup for Sections
-    const sectionsToCollapse = document.querySelectorAll('.content-full');
-    sectionsToCollapse.forEach(content => {
-        content.style.display = 'none'; // Initially collapse sections
-    });
-    document.querySelectorAll('.toggle-section-btn').forEach(button => {
-        button.textContent = 'Show More';
+    // Scroll-triggered Skill Bars Animation
+    const skillBars = document.querySelectorAll('.skill-bar');
+    window.addEventListener('scroll', () => {
+        skillBars.forEach(bar => {
+            const rect = bar.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                bar.classList.add('fill'); // Adds a class to animate filling the skill bar
+            }
+        });
     });
 
     // Back to Top Button
