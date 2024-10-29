@@ -26,6 +26,7 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     animation: fadeIn 1s ease forwards;
+    text-align: center;
 }
 
 @keyframes fadeIn {
@@ -72,6 +73,7 @@ a:hover {
 
 p {
     margin-bottom: 1.2rem;
+    word-spacing: normal;
 }
 
 strong {
@@ -96,63 +98,14 @@ ul {
 
 .icon:hover {
     transform: rotate(20deg) scale(1.1);
-}
-
-.icon[data-tooltip] {
-    position: relative;
-    cursor: help;
-}
-
-.icon[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    white-space: nowrap;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.icon[data-tooltip]:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.profile-photo,
-.qr-code {
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    transition: transform 0.3s ease;
-    filter: grayscale(0.5);
-}
-
-.profile-photo:hover,
-.qr-code:hover {
-    transform: scale(1.05);
-    filter: grayscale(0);
-}header {
+}/* Header Styling */
+header {
     background-color: #333;
     color: #fff;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 101;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(135deg, #333, #555);
@@ -164,13 +117,34 @@ body.dark-mode header {
     background-image: linear-gradient(135deg, #222, #333);
 }
 
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 70px; /* Adjusted to sit under the menu */
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 101;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    opacity: 1;
+}
+
+/* Menu Toggle (Hamburger for Mobile) */
 .menu-toggle {
+    display: none;
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
     font-size: 1.2rem;
-    display: none;
     position: relative;
     padding: 10px;
 }
@@ -196,6 +170,7 @@ body.dark-mode header {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: center;
@@ -203,6 +178,7 @@ body.dark-mode header {
     list-style: none;
     margin: 0;
     padding: 0;
+    transition: all 0.3s ease;
 }
 
 .navbar a {
@@ -210,9 +186,8 @@ body.dark-mode header {
     padding: 10px 15px;
     margin: 0 5px;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
 
 .navbar a:hover {
@@ -230,12 +205,14 @@ body.dark-mode header {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 10px;
-        right: 20px;
+        left: 10px;
+        z-index: 101;
     }
 
     .navbar {
+        display: none; /* Hide on mobile */
         flex-direction: column;
         position: absolute;
         top: 70px;
@@ -245,11 +222,11 @@ body.dark-mode header {
         height: auto;
         overflow-y: auto;
         transform: translateY(-100%);
-        transition: transform 0.3s ease;
         z-index: 100;
     }
 
     .navbar.show {
+        display: block;
         transform: translateY(0%);
     }
 
@@ -258,37 +235,18 @@ body.dark-mode header {
         margin: 10px 0;
         text-align: center;
     }
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    left: 30px;
-    z-index: 101;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.dark-mode-toggle:hover {
-    opacity: 0.8;
-}section {
+}/* Section Styling */
+section {
     padding: 60px 0;
-    opacity: 1; /* Ensure sections are visible */
-    transform: translateY(0px); /* No downward shift */
+    opacity: 1; /* Ensures sections are visible */
+    transform: translateY(0px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-attachment: fixed;
-    background-size: cover;
     border-bottom: 2px solid var(--primary-color);
-    margin-bottom: 40px;
+    margin-bottom: 60px; /* Increased spacing between sections */
 }
 
 body.dark-mode section {
@@ -299,42 +257,77 @@ section.collapsed {
     max-height: 80px;
 }
 
-#about,
-#mission,
-#impact,
-#summary,
-#experience,
-#skills,
-#certifications,
-#achievements,
-#contact,
-#downloads {
-    text-align: justify;
+/* Section Headers */
+h1, h2, h3 {
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.toggle-section-btn {
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+h2:hover::before {
+    width: 100px;
+}
+
+/* Section Content */
+p {
+    margin-bottom: 1.2rem;
+}
+
+strong {
+    font-weight: 600;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 40px;
+}
+
+/* Toggle Buttons for Sections */
+.toggle-section-btn, .toggle-job-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 15px;
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
-    display: block;
-    margin: 10px auto;
     transition: background-color 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.toggle-section-btn:hover {
+.toggle-section-btn:hover, .toggle-job-btn:hover {
     background-color: #0056b3;
 }
 
-.toggle-section-btn:active {
+.toggle-section-btn:active, .toggle-job-btn:active {
     transform: scale(0.95);
 }
 
-.toggle-section-btn::after {
+.toggle-section-btn::after, .toggle-job-btn::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -348,16 +341,23 @@ section.collapsed {
     transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-.toggle-section-btn:active::after {
+.toggle-section-btn:active::after, .toggle-job-btn:active::after {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
-section .content-full,
-.experience-entry .content-full {
-    display: none; /* Initially hide full content */
-}
-
+/* Specific Section Adjustments */
+#about,
+#mission,
+#impact,
+#experience,
+#skills,
+#certifications,
+#achievements,
+#contact,
+#downloads {
+    text-align: justify;
+}/* Experience Section Styling */
 #experience .experience-entry {
     margin-bottom: 40px;
     position: relative;
@@ -371,42 +371,7 @@ section .content-full,
     margin-top: 0;
 }
 
-.toggle-job-btn {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 10px auto;
-    transition: background-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.toggle-job-btn:hover {
-    background-color: #0056b3;
-}
-
-.toggle-job-btn:active {
-    transform: scale(0.95);
-}/* Skills & Proficiencies and Certifications Grid */
-#skills .skills-chart,
-#certifications ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-#achievements ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
+/* Download Resume Button Styling */
 .download-btn {
     display: inline-block;
     background-color: #28a745;
@@ -448,91 +413,18 @@ section .content-full,
     opacity: 1;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 40px;
-    transition: background-color 0.3s ease;
-    background-image: linear-gradient(135deg, #333, #555);
+/* Skills & Proficiencies and Certifications Grid */
+#skills .skills-chart,
+#certifications ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-body.dark-mode footer {
-    background-color: #222;
-    background-image: linear-gradient(135deg, #222, #333);
-}
-
-/* Back to Top Button */
-#back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: var(--primary-color);
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-#back-to-top:hover {
-    opacity: 1;
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    left: 30px;
-    z-index: 101; /* Above the header */
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-    opacity: 1;
-}
-
-/* Scroll Progress Indicator */
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 5px;
-    background-color: var(--primary-color);
-    z-index: 98; /* Ensure it's below the header */
-    transition: width 0.3s ease;
-}
-
-/* Custom Scrollbar (Webkit browsers only) */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-body.dark-mode ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2);
+#achievements ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
 }
