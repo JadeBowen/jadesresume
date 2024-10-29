@@ -1,131 +1,152 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Dark Mode Toggle
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) document.body.classList.add('dark-mode');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    --primary-color: #007bff; /* A nice blue */
+    --bg-color: #f8f8f8; /* Light background */
+    --text-color: #333; /* Dark text */
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
 
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
+body.dark-mode {
+    --primary-color: #6c757d; /* A more muted blue for dark mode */
+    --bg-color: #222; /* Dark background */
+    --text-color: #eee; /* Light text */
+    color: var(--text-color);
+}
 
-    // Mobile Hamburger Menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-    menuToggle.addEventListener('click', () => {
-        navbar.classList.toggle('show');
-        menuToggle.classList.toggle('active');
-    });
-    navbar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navbar.classList.remove('show');
-            menuToggle.classList.remove('active');
-        });
-    });
+h1, h2, h3 {
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 
-    // Scroll Progress Bar
-    const scrollProgress = document.querySelector('.scroll-progress');
-    window.addEventListener('scroll', () => {
-        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        scrollProgress.style.width = `${scrolled}%`;
-    });
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+    text-align: center; /* Center the name */
+}
 
-    // Show More/Less Toggle for Sections
-    document.querySelectorAll('.toggle-section-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const section = button.closest('section');
-            const content = section.querySelector('.content-full'); 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
-            button.textContent = button.textContent === 'Show More' ? 'Show Less' : 'Show More';
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    cursor: pointer; /* Indicate it's clickable */
+}
 
-            document.querySelectorAll('section').forEach(otherSection => {
-                if (otherSection !== section) {
-                    otherSection.querySelector('.content-full').style.display = 'none';
-                    otherSection.querySelector('.toggle-section-btn').textContent = 'Show More';
-                }
-            });
-        });
-    });
+h2::before { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
 
-    // Show More/Less Toggle for Job Listings
-    document.querySelectorAll('.toggle-job-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const jobEntry = button.closest('.experience-entry');
-            const content = jobEntry.querySelector('.content-full');
+h2:hover::before {
+    width: 100px;
+}
 
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
-            button.textContent = button.textContent === 'Show More' ? 'Show Less' : 'Show More';
-        });
-    });
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
 
-    // Back to Top Button
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-    // Lazy Load Animations for Sections
-    const lazySections = document.querySelectorAll('section');
-    const lazyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                lazyObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    lazySections.forEach(section => lazyObserver.observe(section));
+a:hover {
+    color: #0056b3; /* Slightly darker blue on hover */
+}
 
-    // Tooltip Hover for Icons
-    document.querySelectorAll('.icon[data-tooltip]').forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            const tooltip = document.createElement('div');
-            tooltip.className = 'tooltip';
-            tooltip.textContent = icon.getAttribute('data-tooltip');
-            document.body.appendChild(tooltip);
-            const rect = icon.getBoundingClientRect();
-            tooltip.style.left = `${rect.left + rect.width / 2}px`;
-            tooltip.style.top = `${rect.top - tooltip.offsetHeight - 8}px`;
-            icon.addEventListener('mouseleave', () => tooltip.remove());
-        });
-    });
+p {
+    margin-bottom: 1.2rem;
+    word-spacing: normal; /* Fix for odd spacing */
+    letter-spacing: normal;
+}
 
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('.navbar a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            if (this.hash !== "") {
-                e.preventDefault();
-                const target = document.querySelector(this.hash);
-                window.scrollTo({
-                    top: target.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+strong {
+    font-weight: 600;
+}
 
-    // Highlight Active Menu Section on Scroll
-    const sections = document.querySelectorAll('section');
-    const menuLinks = document.querySelectorAll('.navbar a');
-    window.addEventListener('scroll', () => {
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) current = section.getAttribute('id');
-        });
-        menuLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
-        });
-    });
+ul {
+    list-style: disc;
+    padding-left: 40px;
+}
 
-    // Initial Section Collapse on Page Load
-    document.querySelectorAll('section').forEach(section => {
-        const content = section.querySelector('.content-full');
-        content.style.display = 'none';
-        const button = section.querySelector('.toggle-section-btn');
-        button.textContent = 'Show More';
-    });
-});
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.icon {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover { /* Subtle rotate and scale on hover */
+    transform: rotate(20deg) scale(1.1);
+}
+
+.icon[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+.icon[data-tooltip]::after { /* Tooltip styling */
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.icon[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+.profile-photo,
+.qr-code {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+    filter: grayscale(0.5); /* Slight grayscale effect */
+}
+
+.profile-photo:hover,
+.qr-code:hover {
+    transform: scale(1.05);
+    filter: grayscale(0); /* Remove grayscale on hover */
+}
