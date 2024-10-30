@@ -1,0 +1,405 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Deep navy background */
+  color: #ffffff; /* White text color */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #001f3f;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header img {
+  max-height: 80px;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #001f3f;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 0;
+}
+
+.section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* About Section Styles */
+#about {
+  background-image: url("https://github.com/JadeBowen/jadesresume/blob/b9d7e312ca568b4f815256ea4be5547102938f8f/network-enot-poloskun.jpg");
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; /* To position the overlay */
+}
+
+#about .container {
+  position: relative; /* To ensure text is above the overlay */
+  z-index: 2; /* Ensure text is on top */
+}
+
+#about .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1; /* Ensure overlay is below text */
+}
+
+#about article {
+  padding: 80px 0; /* Add some padding */
+  text-align: center; /* Center the text */
+}
+
+#about h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #00ffff; /* Teal color */
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.1em;
+  line-height: 1.6; /* Improve readability */
+  color: #ffffff; /* White text color */
+  max-width: 800px; /* Limit paragraph width */
+  margin: 0 auto; /* Center the paragraphs */
+}
+
+/* Philosophy Section Styles */
+#philosophy {
+  background-color: #1a1a1a; /* Slightly darker background */
+}
+
+#philosophy .philosophy-item {
+  margin-bottom: 40px;
+}
+
+#philosophy h3 {
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+/* Experience Section Styles (Timeline) */
+#experience {
+  background-color: #001f3f; /* Deep navy */
+  color: #ffffff; /* White text color */
+  padding: 80px 0; /* Add padding to the section */
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #00ffff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+}
+
+.container {
+  padding: 20px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #00ffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #00ffff;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #00ffff;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #00ffff;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #00ffff transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: #1a1a1a;
+  position: relative;
+  border-radius: 6px;
+}
+
+.content h2 {
+  color: #00ffff; /* Teal company name */
+  margin-bottom: 10px;
+}
+
+.content p {
+  margin-bottom: 15px;
+}
+
+.content h3 {
+  color: #00ffff; /* Teal heading for key achievements */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.content ul {
+  list-style: disc; /* Use bullet points for achievements */
+  padding-left: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-bottom: 40px;
+  }
+
+  .container::before {
+    left: 60px;
+    border: medium solid #00ffff;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #00ffff transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  .right {
+    left: 0%;
+  }
+}
+/* Skills Section Styles */
+#skills .skill-category {
+  margin-bottom: 40px;
+}
+
+#skills h3 {
+  color: #00ffff; /* Teal category headings */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#skills ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+#skills li {
+  margin-bottom: 10px;
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Skill Bar Styles */
+.skill-bar {
+  width: 100%;
+  height: 20px; /* Adjust height as needed */
+  background-color: #282828; /* Dark background for the bar */
+  border-radius: 5px;
+  overflow: hidden; /* Hide excess fill */
+  margin-bottom: 15px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  width: 0%; /* Initially, the fill is 0% */
+  background-color: #00ffff; /* Teal fill color */
+  transition: width 0.5s ease; /* Smooth width transition */
+}
+
+.skill-bar-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+/* Contact Section Styles */
+#contact {
+  background-color: #1a1a1a; /* Slightly darker background */
+  padding: 80px 0;
+}
+
+#contact h2 {
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 40px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack list items vertically */
+  align-items: center;
+}
+
+.contact-list li {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+  color: #00ffff;
+}
+
+.qr-code {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.qr-code img {
+  max-width: 200px; /* Adjust size as needed */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #001f3f;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}
+/* Fade-in Effect Styles */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+/* Background Effect Styles */
+body {
+  background-image: url("subtle_pattern.jpg"); /* Replace with your subtle pattern image URL */
+  background-repeat: repeat; /* Or repeat-x/repeat-y if needed */
+  background-size: cover; /* Adjust as needed */
+}
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for tablets */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  #experience .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Adjust styles for mobile phones */
+  nav ul {
+    display: none; /* Hide the navigation menu */
+  }
+
+  /* Add a hamburger menu icon here (you'll need to add the HTML for it as well) */
+
+  #experience .container {
+    padding: 10px 30px;
+  }
+}
