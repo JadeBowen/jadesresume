@@ -109,3 +109,29 @@ function debounce(func, wait = 20, immediate = true) {
     if (callNow) func.apply(context, args);
   };
 }
+// Function to toggle Show More / Show Less for experience sections on mobile
+function toggleShowMore(button) {
+  const moreDetails = button.previousElementSibling;
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+  // Toggle display of more details
+  moreDetails.classList.toggle('show');
+  button.setAttribute('aria-expanded', !isExpanded);
+  button.textContent = isExpanded ? 'Show More' : 'Show Less';
+}
+
+// Ensure each Show More button operates independently
+document.querySelectorAll('.show-more').forEach(button => {
+  button.addEventListener('click', () => toggleShowMore(button));
+});
+
+// Mobile Menu Toggle (Ensuring ARIA and styling adjustments)
+const mobileMenuButton = document.querySelector('.hamburger-menu');
+const navMenu = document.querySelector('nav ul');
+
+if (mobileMenuButton) {
+  mobileMenuButton.addEventListener('click', () => {
+    const isExpanded = navMenu.classList.toggle('show');
+    mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+  });
+}
