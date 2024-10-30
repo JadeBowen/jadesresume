@@ -51,9 +51,24 @@ function toggleLightDarkMode() {
   button.textContent = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 }
 
-// Function to create an interactive timeline (you'll need to add the necessary HTML elements)
+// Event listener to trigger light/dark mode toggle button
+document.querySelector('.toggle-dark-mode').addEventListener('click', toggleLightDarkMode);
+// Function to create an interactive timeline
 function createInteractiveTimeline() {
-  // Code to implement timeline interactivity
+  const timelineItems = document.querySelectorAll('.timeline .container');
+
+  // Basic interactivity: Fade-in effect as timeline items scroll into view
+  timelineItems.forEach(item => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          item.classList.add('appear');
+          observer.unobserve(item);
+        }
+      });
+    });
+    observer.observe(item);
+  });
 }
 
 // Function to implement smooth scrolling for navigation links
@@ -75,5 +90,17 @@ function smoothScroll() {
 // Event listener to trigger smooth scrolling
 window.addEventListener('load', smoothScroll);
 
-// Attach the light/dark mode toggle button (assuming HTML button added)
-document.querySelector('.toggle-dark-mode').addEventListener('click', toggleLightDarkMode);
+// Mobile menu toggle functionality for hamburger menu
+function toggleMobileMenu() {
+  const navMenu = document.querySelector('nav ul');
+  navMenu.classList.toggle('show');
+}
+
+// Event listener for mobile menu toggle (assuming a hamburger button is added in HTML with the class "hamburger-menu")
+const mobileMenuButton = document.querySelector('.hamburger-menu');
+if (mobileMenuButton) {
+  mobileMenuButton.addEventListener('click', toggleMobileMenu);
+}
+
+// Call the interactive timeline function on load
+window.addEventListener('load', createInteractiveTimeline);
