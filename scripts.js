@@ -1,4 +1,4 @@
-// DOM Content Loaded - Ensure all elements are ready before scripts run
+// Ensure all elements are ready before scripts run
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Dark Mode Toggle
@@ -21,12 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Splash Screen Signature Animation
     const signatureCanvas = document.querySelector('#signature');
     if (signatureCanvas) {
-        // Assuming setup of the canvas drawing context for signature effect
-        // Here, signature.js library would handle drawing signature effect
-        drawSignature(signatureCanvas);
+        drawSignature(signatureCanvas); // Assuming a library or function is handling signature drawing
     }
 
-    // 4. Smooth Scrolling
+    // 4. Smooth Scrolling for In-Page Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. "Show More/Show Less" for Job History
+    // 5. Show More/Show Less for Job History
     document.querySelectorAll('.toggle-job-btn').forEach(button => {
         button.addEventListener('click', () => {
             const jobEntry = button.closest('.experience-entry');
@@ -44,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (content.style.display === 'none' || content.style.display === '') {
                 content.style.display = 'block';
                 button.textContent = 'Show Less';
-                content.style.transition = 'max-height 0.3s ease-in-out';
             } else {
                 content.style.display = 'none';
                 button.textContent = 'Show More';
