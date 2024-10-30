@@ -1,7 +1,7 @@
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Montserrat:wght@400;600&family=Lato:wght@400;700&display=swap');
 
-/* Theme Variables for Light & Dark Mode */
+/* Theme Variables and Basic Styles */
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
@@ -13,7 +13,6 @@
     --transition-speed: 0.3s;
 }
 
-/* Global Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
@@ -24,25 +23,14 @@ body {
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-/* Dark Mode */
 body.dark-mode {
     background-color: var(--dark-bg-color);
     color: var(--light-text-color);
 }
 
-/* Headings & Text */
-h1, h2, h3, p, a {
-    color: inherit;
-}
-
-/* General Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* Header & Navbar Styling */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+}/* Header and Navbar */
 header {
     background-color: rgba(51, 51, 51, 0.9);
     color: #fff;
@@ -51,20 +39,14 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color var(--transition-speed) ease;
-}
-
-header .logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode header {
     background-color: rgba(18, 18, 18, 0.9);
 }
 
-/* Navbar & Menu Toggle */
 .navbar {
     display: flex;
     justify-content: center;
@@ -93,79 +75,29 @@ body.dark-mode header {
     border-radius: 5px;
     cursor: pointer;
     display: none;
+    z-index: 102;
 }
 
-.menu-toggle:hover {
-    background-color: var(--secondary-color);
+/* Main Section Layout */
+main {
+    margin-top: 80px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    .navbar {
-        display: none;
-    }
+section {
+    padding: 30px 0;
+    margin-bottom: 40px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-}
-
-.dark-mode-toggle:hover {
-    background-color: var(--secondary-color);
-    transform: rotate(15deg);
-}/* Splash Screen */
-#splash-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--primary-color);
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
-    animation: fadeIn 1s ease forwards;
-}
-
-#splash-screen #logo-container img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-#splash-screen h1#signature {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    animation: writeSignature 4s steps(50, end) forwards;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid white;
-}
-
-/* Keyframes for Signature Writing Animation */
-@keyframes writeSignature {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Button Styles */
-button, .button, .download-btn {
+section:hover {
+    transform: translateY(-5px);
+}/* Button Styling */
+button, .button {
     display: inline-block;
     background-color: var(--accent-color);
     color: white;
@@ -174,13 +106,69 @@ button, .button, .download-btn {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color var(--transition-speed) ease, transform 0.2s ease;
-    font-family: 'Roboto', sans-serif;
 }
 
-button:hover, .button:hover, .download-btn:hover {
+button:hover, .button:hover {
     background-color: #218838;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Show More/Show Less Button for Job History */
+.toggle-job-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+}
+
+.toggle-job-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Contact Section Styling */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
 }
 
 /* Back to Top Button */
@@ -208,375 +196,46 @@ button:hover, .button:hover, .download-btn:hover {
     transform: translateY(-2px);
 }
 
-/* Skills Section */
-.skill-bar-container {
-    margin: 20px 0;
-    background-color: var(--secondary-color);
-    border-radius: 5px;
-    overflow: hidden;
+/* Parallax Background */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 300px;
 }
 
-.skill-bar {
-    display: block;
-    height: 100%;
-    background-color: var(--accent-color);
-    text-align: right;
-    line-height: 1.5rem;
-    padding-right: 10px;
-    color: white;
-    font-weight: bold;
-    animation: loadSkillBar 1.5s ease forwards;
-}
-
-/* Keyframes for Skill Bar Animation */
-@keyframes loadSkillBar {
-    from { width: 0%; }
-    to { width: var(--skill-level); }
-}
-
-/* Interactive Skill Bars */
-.skills-chart .skill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 8px;
-    background: var(--primary-color);
-    color: #fff;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.skills-chart .skill:hover {
-    transform: translateY(-3px);
-}/* About Section */
-#about {
-    padding: 50px 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    margin-bottom: 40px;
-}
-
-#about h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
-/* Experience Section */
-#experience .experience-entry {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f3f3f3;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-#experience .experience-entry h3 {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.8rem;
-    color: var(--text-color);
-    margin-bottom: 5px;
-}
-
-#experience .experience-entry p {
-    font-size: 1rem;
-    color: var(--secondary-color);
-}
-
-#experience .experience-entry ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#experience .experience-entry ul li {
-    padding-left: 20px;
-    position: relative;
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-#experience .experience-entry ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}
-
-/* Skills & Proficiencies Section */
-#skills h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    list-style-type: none;
-    padding: 0;
-}
-
-#skills ul li {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-#skills ul li:hover {
-    transform: translateY(-3px);
-}
-
-/* Certifications Section */
-#certifications {
-    padding: 30px 20px;
-    background-color: rgba(245, 245, 245, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-#certifications h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#certifications ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-#certifications ul li {
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-/* Achievements Section */
-#achievements {
-    padding: 30px 20px;
-    background-color: rgba(250, 250, 250, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-#achievements h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#achievements ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#achievements ul li {
-    font-size: 1.1rem;
-    padding-left: 20px;
-    position: relative;
-    color: var(--text-color);
-}
-
-#achievements ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}/* Contact Section */
-#contact {
-    padding: 30px 20px;
-    background-color: rgba(240, 240, 240, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-#contact h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-#contact .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-#contact .contact-info a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#contact .contact-info a:hover {
-    color: var(--secondary-color);
-}
-
-#contact .qr-code img {
+/* Contact Section QR Code */
+.contact-info .qr-code {
     width: 100px;
     height: 100px;
     margin-top: 10px;
 }
 
-/* Social Icons */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+/* Smooth Scroll for Back to Top */
+html {
+    scroll-behavior: smooth;
 }
 
+/* Button Hover and Focus Styles */
+button:focus, .button:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Section Hover Effect */
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
 .social-icons a {
     font-size: 1.5rem;
-    color: white;
+    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
     color: var(--secondary-color);
-}
-
-/* Download Buttons */
-.download-btn {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 15px;
-}
-
-.download-btn:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15);
-    font-size: 0.9rem;
-}
-
-footer p {
-    margin: 0;
-    color: #fff;
-}
-
-footer a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--secondary-color);
-}
-
-/* Back to Top Button */
-#back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    font-size: 18px;
-    border: none;
-    background-color: var(--primary-color);
-    color: white;
-    cursor: pointer;
-    padding: 12px 15px;
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-}
-
-#back-to-top:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        padding: 10px;
-    }
-
-    #about, #experience, #skills, #certifications, #achievements, #contact, footer {
-        padding: 20px 15px;
-        margin-bottom: 30px;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    #experience .experience-entry h3, #certifications ul li, #achievements ul li {
-        font-size: 1.4rem;
-    }
-
-    .navbar {
-        flex-direction: column;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .navbar.show {
-        display: flex;
-    }
-
-    /* Contact & Social Icons */
-    .contact-info a {
-        font-size: 1rem;
-    }
-
-    .social-icons a {
-        font-size: 1.2rem;
-    }
 }
