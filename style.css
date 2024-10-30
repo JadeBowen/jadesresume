@@ -4,6 +4,9 @@ body {
   margin: 0;
   background-color: #001f3f; /* Deep navy background */
   color: #ffffff; /* White text color */
+  background-image: url("subtle_pattern.jpg"); /* Replace with your subtle pattern image URL */
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 .container {
@@ -62,6 +65,7 @@ nav a {
   color: #00ffff;
   text-align: center;
   margin-bottom: 30px;
+  letter-spacing: 1px; /* Improved readability */
 }
 
 /* About Section Styles */
@@ -71,12 +75,12 @@ nav a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative; /* To position the overlay */
+  position: relative;
 }
 
 #about .container {
-  position: relative; /* To ensure text is above the overlay */
-  z-index: 2; /* Ensure text is on top */
+  position: relative;
+  z-index: 2;
 }
 
 #about .overlay {
@@ -85,33 +89,38 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
-  z-index: 1; /* Ensure overlay is below text */
+  background-color: rgba(0, 0, 0, 0.5); /* Added opacity for overlay */
+  z-index: 1;
 }
 
 #about article {
-  padding: 80px 0; /* Add some padding */
-  text-align: center; /* Center the text */
+  padding: 80px 0;
+  text-align: center;
 }
 
 #about h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #00ffff; /* Teal color */
+  color: #00ffff;
   margin-bottom: 20px;
 }
 
 #about p {
   font-size: 1.1em;
-  line-height: 1.6; /* Improve readability */
-  color: #ffffff; /* White text color */
-  max-width: 800px; /* Limit paragraph width */
-  margin: 0 auto; /* Center the paragraphs */
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  #about {
+    background-attachment: scroll; /* Disable parallax on smaller screens */
+  }
+}
 /* Philosophy Section Styles */
 #philosophy {
-  background-color: #1a1a1a; /* Slightly darker background */
+  background-color: #1a1a1a;
 }
 
 #philosophy .philosophy-item {
@@ -123,11 +132,17 @@ nav a {
   margin-bottom: 10px;
 }
 
+#philosophy p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
 /* Experience Section Styles (Timeline) */
 #experience {
   background-color: #001f3f; /* Deep navy */
-  color: #ffffff; /* White text color */
-  padding: 80px 0; /* Add padding to the section */
+  color: #ffffff;
+  padding: 80px 0;
 }
 
 .timeline {
@@ -212,7 +227,7 @@ nav a {
 }
 
 .content h2 {
-  color: #00ffff; /* Teal company name */
+  color: #00ffff;
   margin-bottom: 10px;
 }
 
@@ -221,13 +236,13 @@ nav a {
 }
 
 .content h3 {
-  color: #00ffff; /* Teal heading for key achievements */
+  color: #00ffff;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .content ul {
-  list-style: disc; /* Use bullet points for achievements */
+  list-style: disc;
   padding-left: 40px;
 }
 
@@ -271,30 +286,32 @@ nav a {
 }
 
 #skills ul {
-  list-style: none; /* Remove default bullet points */
+  list-style: none;
   padding: 0;
 }
 
 #skills li {
   margin-bottom: 10px;
-  line-height: 1.6; /* Improve readability */
+  line-height: 1.6;
 }
 
 /* Skill Bar Styles */
 .skill-bar {
   width: 100%;
-  height: 20px; /* Adjust height as needed */
-  background-color: #282828; /* Dark background for the bar */
+  height: 20px;
+  background-color: #282828;
   border-radius: 5px;
-  overflow: hidden; /* Hide excess fill */
+  overflow: hidden;
   margin-bottom: 15px;
+  padding: 2px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .skill-bar-fill {
   height: 100%;
   width: 0%; /* Initially, the fill is 0% */
-  background-color: #00ffff; /* Teal fill color */
-  transition: width 0.5s ease; /* Smooth width transition */
+  background-color: #00ffff;
+  transition: width 1s ease; /* Smooth width transition */
 }
 
 .skill-bar-label {
@@ -305,7 +322,7 @@ nav a {
 
 /* Contact Section Styles */
 #contact {
-  background-color: #1a1a1a; /* Slightly darker background */
+  background-color: #1a1a1a;
   padding: 80px 0;
 }
 
@@ -319,7 +336,7 @@ nav a {
   list-style: none;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Stack list items vertically */
+  flex-direction: column;
   align-items: center;
 }
 
@@ -344,7 +361,7 @@ nav a {
 }
 
 .qr-code img {
-  max-width: 200px; /* Adjust size as needed */
+  max-width: 200px;
 }
 
 /* Footer Styles */
@@ -357,19 +374,22 @@ footer {
 /* Fade-in Effect Styles */
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
 }
 
 .fade-in.appear {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* Background Effect Styles */
 body {
-  background-image: url("subtle_pattern.jpg"); /* Replace with your subtle pattern image URL */
-  background-repeat: repeat; /* Or repeat-x/repeat-y if needed */
-  background-size: cover; /* Adjust as needed */
+  background-image: url("subtle_pattern.jpg"); /* Subtle pattern background */
+  background-repeat: repeat;
+  background-size: auto;
 }
+
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
   /* Adjust styles for tablets */
@@ -397,9 +417,33 @@ body {
     display: none; /* Hide the navigation menu */
   }
 
-  /* Add a hamburger menu icon here (you'll need to add the HTML for it as well) */
+  /* Optional: Add a hamburger menu icon for mobile navigation */
 
   #experience .container {
     padding: 10px 30px;
   }
+}
+
+/* Toggle Dark Mode Button */
+.toggle-dark-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body.light-mode .toggle-dark-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #ffffff;
+  color: #121212;
 }
