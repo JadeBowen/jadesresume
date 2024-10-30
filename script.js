@@ -1,47 +1,34 @@
 // JavaScript for interactive elements
 
-// Function to animate skill bars
-function animateSkillBars() {
-  const skillBars = document.querySelectorAll('.skill-bar');
+// Function to observe and handle intersections for various elements
+function observeElements() {
+  const elementsToObserve = document.querySelectorAll('.skill-bar, .fade-in, .timeline .container');
 
-  skillBars.forEach(bar => {
-    const barFill = bar.querySelector('.skill-bar-fill');
-    const percentage = bar.dataset.percentage;
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('skill-bar')) {
+          // Animate skill bars
+          const barFill = entry.target.querySelector('.skill-bar-fill');
+          const percentage = entry.target.dataset.percentage;
           barFill.style.width = `${percentage}%`;
-          observer.unobserve(bar);
+        } else {
+          // Apply fade-in effect
+          entry.target.classList.add('appear');
         }
-      });
+        observer.unobserve(entry.target);
+      }
     });
-
-    observer.observe(bar);
   });
-}
 
-// Fade-in effect on scroll
-function fadeInOnScroll() {
-  const elements = document.querySelectorAll('.fade-in');
-
-  elements.forEach(element => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          element.classList.add('appear');
-          observer.unobserve(element);
-        }
-      });
-    });
-
+  elementsToObserve.forEach(element => {
     observer.observe(element);
   });
 }
 
-// Event listeners to trigger functions on load
-window.addEventListener('load', animateSkillBars);
-window.addEventListener('load', fadeInOnScroll);
+// Event listener to trigger observation on load
+window.addEventListener('load', observeElements);
+
 
 // Function to toggle light/dark mode
 function toggleLightDarkMode() {
@@ -53,23 +40,6 @@ function toggleLightDarkMode() {
 
 // Event listener to trigger light/dark mode toggle button
 document.querySelector('.toggle-dark-mode').addEventListener('click', toggleLightDarkMode);
-// Function to create an interactive timeline
-function createInteractiveTimeline() {
-  const timelineItems = document.querySelectorAll('.timeline .container');
-
-  // Basic interactivity: Fade-in effect as timeline items scroll into view
-  timelineItems.forEach(item => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          item.classList.add('appear');
-          observer.unobserve(item);
-        }
-      });
-    });
-    observer.observe(item);
-  });
-}
 
 // Function to implement smooth scrolling for navigation links
 function smoothScroll() {
@@ -93,17 +63,36 @@ window.addEventListener('load', smoothScroll);
 // Mobile menu toggle functionality for hamburger menu
 function toggleMobileMenu() {
   const navMenu = document.querySelector('nav ul');
-  navMenu.classList.toggle('show');
+  // Add ARIA attributes for accessibility
+  const isExpanded = navMenu.classList.toggle('show');
+  mobileMenuButton.setAttribute('aria-expanded', isExpanded); 
+
+  // Add visual cue (e.g., change background color)
+  mobileMenuButton.style.backgroundColor = isExpanded ? '#333' : 'transparent'; 
 }
 
-// Event listener for mobile menu toggle (assuming a hamburger button is added in HTML with the class "hamburger-menu")
+// Event listener for mobile menu toggle
+// (assuming a hamburger button is added in HTML with the class "hamburger-menu")
 const mobileMenuButton = document.querySelector('.hamburger-menu');
 if (mobileMenuButton) {
   mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+  // Add ARIA attributes for accessibility
+  mobileMenuButton.setAttribute('aria-label', 'Toggle Navigation Menu');
+  mobileMenuButton.setAttribute('aria-haspopup', 'true');
+  mobileMenuButton.setAttribute('aria-expanded', 'false'); 
+
+  // Close mobile menu when a link is clicked
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('show')) {
+        toggleMobileMenu(); // Close the menu
+      }
+    });
+  });
 }
 
-// Call the interactive timeline function on load
-window.addEventListener('load', createInteractiveTimeline);
 // Utility function to debounce scroll events
 function debounce(func, wait = 20, immediate = true) {
   let timeout;
