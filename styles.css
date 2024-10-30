@@ -1,136 +1,445 @@
-/* Theme Variables and Basic Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --bg-color: #121212; /* Darker background for better contrast */
-    --text-color: #e0e0e0; /* Lighten text color for dark mode */
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
-    background-color: var(--bg-color);
-}
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Montserrat:wght@400;600&family=Lato:wght@400;700&display=swap');
 
-body.light-mode { /* Light mode adjustments */
+/* Theme Variables and Basic Styles */
+:root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
     --bg-color: #f8f8f8;
+    --dark-bg-color: #121212;
     --text-color: #333;
+    --light-text-color: #e0e0e0;
+    --accent-color: #28a745;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
     color: var(--text-color);
     background-color: var(--bg-color);
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-/* Global Heading and Link Adjustments */
-h1, h2, h3, p, a {
-    color: inherit;
+body.dark-mode {
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
 }
 
-/* Header Contrast Improvement */
+/* Header and Navbar */
 header {
-    background-color: rgba(51, 51, 51, 0.95); /* Slight transparency */
-    color: #ffffff;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
     padding: 1rem;
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 100;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.light-mode header {
-    background-color: #f8f8f8;
-    color: #333;
+body.dark-mode header {
+    background-color: rgba(18, 18, 18, 0.9);
 }
 
-/* Navbar Link Visibility */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .navbar a {
-    color: #ffffff;
+    color: #fff;
     padding: 10px 15px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    transition: all var(--transition-speed) ease;
 }
 
 .navbar a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Button Contrast and Visibility */
-.toggle-section-btn, .toggle-job-btn, .download-btn, .dark-mode-toggle {
+.navbar.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.95);
+    z-index: 100;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
-.toggle-section-btn:hover, .toggle-job-btn:hover, .download-btn:hover, .dark-mode-toggle:hover {
+.dark-mode-toggle:hover {
     background-color: var(--secondary-color);
-}/* General Section Spacing */
-section {
-    padding: 40px 20px;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 60px;
+    transform: rotate(15deg);
 }
 
-.light-mode section {
-    background-color: rgba(248, 248, 248, 0.8);
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 102;
 }
 
-.section-content {
-    text-align: left;
-    margin-bottom: 1.5rem; /* Additional spacing for readability */
+.menu-toggle:hover {
+    background-color: var(--secondary-color);
 }
 
-/* Profile Picture and Header Spacing */
-.profile-photo {
-    max-width: 300px;
-    height: auto;
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .navbar {
+        display: none;
+    }
+}/* Splash Screen */
+.splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    animation: fadeIn 1s ease forwards;
+}
+
+.splash-screen h1.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    animation: writeSignature 4s steps(50, end) forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+}
+
+/* Keyframes for Signature Writing Animation */
+@keyframes writeSignature {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Skill Bars */
+.skill-bar-container {
+    margin: 20px 0;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar {
     display: block;
-    margin: 0 auto 20px auto;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
+    height: 100%;
+    background-color: var(--accent-color);
+    text-align: right;
+    line-height: 1.5rem;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    animation: loadSkillBar 1.5s ease forwards;
+}
+
+/* Keyframes for Skill Bar Animation */
+@keyframes loadSkillBar {
+    from { width: 0%; }
+    to { width: var(--skill-level); }
+}
+
+/* Button Styling */
+button, .button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header + .content {
-    margin-top: 100px; /* Ensures profile photo isn't covered by the header */
+button:focus, .button:focus {
+    outline: none;
 }
 
-/* Button Adjustments for Readability */
-.toggle-section-btn,
+/* Show More/Show Less Button for Job History */
 .toggle-job-btn {
-    padding: 12px 24px;
-    font-size: 1rem;
-    margin: 20px auto;
     display: block;
-    width: fit-content;
-}
-
-/* Download Button Style */
-.download-btn {
-    display: inline-block;
-    background-color: #28a745;
-    color: #fff;
-    padding: 12px 20px;
-    margin: 10px;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
     border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
 }
 
-.download-btn:hover {
-    background-color: #218838;
+.toggle-job-btn:hover {
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
+}/* Layout and Main Content */
+main {
+    margin-top: 80px; /* Offset for the fixed header */
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    padding: 30px 0;
+    margin-bottom: 40px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Experience Section */
+.experience-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.experience-entry h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.experience-entry ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-entry ul li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.experience-entry ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px 10px;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .experience-entry h3 {
+        font-size: 1.6rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+}
+
+/* Contact Section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+/* QR Code and Social Media Icons */
+.contact-info img.qr-code {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}/* Parallax Background */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 300px;
+}
+
+/* Skills Section */
+.skills-chart {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skills-chart .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.skills-chart .skill:hover {
+    transform: translateY(-3px);
+}
+
+.skills-chart .skill-bar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.skills-chart .skill-bar-fill {
+    height: 100%;
+    background: #fff;
+    transition: width 0.5s ease;
+}
+
+.skills-chart .skill-bar[data-skill-level="90"] .skill-bar-fill {
+    width: 90%;
+}
+
+.skills-chart .skill-bar[data-skill-level="75"] .skill-bar-fill {
+    width: 75%;
+}
+
+/* Animated Button Hover Effect */
+button {
+    font-family: 'Roboto', sans-serif;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
 }
 
 /* Back to Top Button */
@@ -139,210 +448,26 @@ header + .content {
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 99;
     font-size: 18px;
     border: none;
     outline: none;
     background-color: var(--primary-color);
     color: white;
     cursor: pointer;
-    padding: 15px;
+    padding: 12px 15px;
     border-radius: 5px;
     opacity: 0.8;
     transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 99;
 }
 
 #back-to-top:hover {
     opacity: 1;
     transform: translateY(-2px);
-}/* Hamburger Menu Styling */
-.menu-toggle {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    position: relative;
-    z-index: 102;
 }
 
-.menu-toggle:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Navbar Styles for Mobile */
-.navbar {
-    display: none; /* Initially hidden on mobile */
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    padding-top: 1rem;
-    z-index: 100;
-    transition: transform 0.3s ease;
-}
-
-.navbar.show {
-    display: flex; /* Show navbar when toggled */
-}
-
-.navbar a {
-    color: #ffffff;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Dark Mode Toggle Positioning */
-.dark-mode-toggle {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.dark-mode-toggle:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Media Query for Mobile Adjustments */
-@media (max-width: 768px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Ensure adequate padding for top elements on smaller screens */
-    .content {
-        margin-top: 80px;
-    }
-}
-
-/* Interactive Elements: Show More/Less Button */
-.toggle-section-btn,
-.toggle-job-btn {
-    display: block;
-    font-size: 1rem;
-    margin: 15px auto;
-    padding: 12px 24px;
-    text-align: center;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: fit-content;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.toggle-section-btn:hover,
-.toggle-job-btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-}/* General Section Padding and Margins */
-section {
-    padding: 40px 20px;
-    margin-bottom: 60px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.light-mode section {
-    background-color: rgba(248, 248, 248, 0.9);
-}
-
-/* Download Button Styling */
-.download-btn {
-    display: inline-block;
-    background-color: #28a745;
-    color: #fff;
-    padding: 12px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.download-btn:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
-
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    transition: background-color 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.light-mode footer {
-    background-color: #f8f8f8;
-    color: #333;
-}
-
-/* Profile Picture Adjustments */
-.profile-photo {
-    max-width: 300px;
-    height: auto;
-    margin: 0 auto 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-}
-
-/* Skills, Certifications, and Achievements Grid */
-#skills .skills-chart,
-#certifications ul,
-#achievements ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* QR Code Sizing */
-.qr-code {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto 20px;
-    display: block;
-}
-
-/* Scroll Progress Indicator */
+/* Scroll Progress Bar */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -352,25 +477,4 @@ footer {
     background-color: var(--primary-color);
     z-index: 98;
     transition: width 0.3s ease;
-}
-
-/* Back to Top Button */
-#back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.2s ease;
-}
-
-#back-to-top:hover {
-    opacity: 1;
-    transform: translateY(-2px);
 }
