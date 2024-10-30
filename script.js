@@ -42,17 +42,20 @@ function fadeInOnScroll() {
 // Event listeners to trigger functions on load
 window.addEventListener('load', animateSkillBars);
 window.addEventListener('load', fadeInOnScroll);
+
 // Function to toggle light/dark mode
 function toggleLightDarkMode() {
   const body = document.body;
+  const button = document.querySelector('.toggle-dark-mode');
   body.classList.toggle('light-mode');
-
-  // You'll need to add the toggle button in your HTML and update this code to toggle its state as well
+  button.textContent = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 }
+
 // Function to create an interactive timeline (you'll need to add the necessary HTML elements)
 function createInteractiveTimeline() {
   // Code to implement timeline interactivity
 }
+
 // Function to implement smooth scrolling for navigation links
 function smoothScroll() {
   const navLinks = document.querySelectorAll('nav a');
@@ -62,10 +65,15 @@ function smoothScroll() {
       event.preventDefault();
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 }
 
 // Event listener to trigger smooth scrolling
 window.addEventListener('load', smoothScroll);
+
+// Attach the light/dark mode toggle button (assuming HTML button added)
+document.querySelector('.toggle-dark-mode').addEventListener('click', toggleLightDarkMode);
