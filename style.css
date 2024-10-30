@@ -2,8 +2,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #001f3f; /* Deep navy background */
-  color: #ffffff; /* White text color */
+  background-color: #001f3f;
+  color: #ffffff;
 }
 
 .container {
@@ -17,7 +17,7 @@ header {
   background-color: #001f3f;
   padding: 20px 0;
   text-align: center;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header img {
@@ -28,11 +28,11 @@ header img {
 nav {
   background-color: #001f3f;
   padding: 10px 0;
-  position: sticky; /* Keep the navigation bar at the top */
+  position: sticky;
   top: 0;
   z-index: 100;
-  width: 100%; /* Ensure full width */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+  width: 100%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -56,8 +56,8 @@ nav a {
 }
 
 nav a:hover, nav a:focus {
-  color: #00cccc; /* Teal hover color */
-  background-color: #003366; /* Darker background for contrast */
+  color: #00cccc;
+  background-color: #003366;
 }
 
 /* Section Styles */
@@ -71,13 +71,13 @@ nav a:hover, nav a:focus {
   color: #00ffff;
   text-align: center;
   margin-bottom: 30px;
-  letter-spacing: 1px; /* Improved readability */
+  letter-spacing: 1px;
 }
 
 /* About Section Styles */
 #about {
   background-image: url("https://github.com/JadeBowen/jadesresume/blob/b9d7e312ca568b4f815256ea4be5547102938f8f/network-enot-poloskun.jpg");
-  background-attachment: fixed; /* Parallax effect */
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,7 +95,7 @@ nav a:hover, nav a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Added opacity for overlay */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -121,7 +121,7 @@ nav a:hover, nav a:focus {
 
 @media screen and (max-width: 768px) {
   #about {
-    background-attachment: scroll; /* Disable parallax on smaller screens */
+    background-attachment: scroll;
   }
 }
 
@@ -147,7 +147,7 @@ nav a:hover, nav a:focus {
 
 /* Experience Section Styles (Timeline) */
 #experience {
-  background-color: #001f3f; /* Deep navy */
+  background-color: #001f3f;
   color: #ffffff;
   padding: 80px 0;
 }
@@ -230,7 +230,7 @@ nav a:hover, nav a:focus {
   background-color: #1a1a1a;
   position: relative;
   border-radius: 6px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .content h2 {
@@ -280,10 +280,9 @@ nav a:hover, nav a:focus {
     left: 0%;
   }
 }
-
 /* Skills Section Styles */
 #skills {
-  background-color: #1a1a1a; /* Dark background for the skills section */
+  background-color: #1a1a1a;
 }
 
 #skills .skill-category {
@@ -291,7 +290,7 @@ nav a:hover, nav a:focus {
 }
 
 #skills h3 {
-  color: #00ffff; /* Teal category headings */
+  color: #00ffff;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
@@ -300,48 +299,24 @@ nav a:hover, nav a:focus {
 #skills ul {
   list-style: none;
   padding: 0;
-  display: flex; /* Make the list items display horizontally */
-  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-  gap: 10px; /* Add some space between the items */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 #skills li {
   margin-bottom: 10px;
   line-height: 1.6;
-  border: 1px solid #00ffff; /* Add a border to each skill item */
+  border: 1px solid #00ffff;
   padding: 8px 15px;
-  border-radius: 5px; /* Add rounded corners */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Add hover effects */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #skills li:hover {
-  background-color: #00ffff; /* Change background color on hover */
-  color: #001f3f; /* Change text color on hover */
-  transform: translateY(-2px); /* Slightly lift the item on hover */
-}
-/* Skill Bar Styles */
-.skill-bar {
-  width: 100%;
-  height: 20px;
-  background-color: #282828;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 15px;
-  padding: 2px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.skill-bar-fill {
-  height: 100%;
-  width: 0%; /* Initially, the fill is 0% */
   background-color: #00ffff;
-  transition: width 1s ease; /* Smooth width transition */
-}
-
-.skill-bar-label {
-  display: block;
-  margin-top: 5px;
-  font-size: 0.9em;
+  color: #001f3f;
+  transform: translateY(-2px);
 }
 
 /* Contact Section Styles */
@@ -407,13 +382,6 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Background Effect Styles */
-body {
-  background-image: url("subtle_pattern.jpg");
-  background-repeat: repeat;
-  background-size: auto;
-}
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
   nav ul {
@@ -435,12 +403,10 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  /* Hide the navigation menu on mobile screens */
   nav ul {
     display: none;
   }
 
-  /* Display the hamburger menu icon */
   .hamburger-menu {
     display: block;
     position: fixed;
@@ -450,17 +416,16 @@ body {
     color: #ffffff;
     cursor: pointer;
     z-index: 200;
-    background-color: transparent; /* Initial background color */
-    padding: 10px; /* Add some padding */
-    border-radius: 5px; /* Add rounded corners */
-    transition: background-color 0.3s ease; /* Add transition for smooth effect */
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
   }
 
   .hamburger-menu:hover {
-    background-color: #333; /* Change background color on hover */
+    background-color: #333;
   }
 
-  /* Show the navigation when the menu is active */
   nav ul.show {
     display: flex;
     flex-direction: column;
@@ -482,14 +447,14 @@ body {
 .toggle-dark-mode {
   position: fixed;
   top: 20px;
-  right: 80px; /* Adjusted position to avoid overlap with hamburger menu */
+  right: 80px;
   padding: 10px 15px;
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 200; /* Ensure it's above other elements */
+  z-index: 200;
 }
 
 body.light-mode .toggle-dark-mode {
@@ -501,29 +466,27 @@ body.light-mode .toggle-dark-mode {
 body.light-mode {
   background-color: #ffffff;
   color: #121212;
-
-  /* Add more styles for light mode */
   header, nav {
-    background-color: #f2f2f2; /* Light gray background for header and nav */
-    color: #333; /* Darker text color for header and nav */
+    background-color: #f2f2f2;
+    color: #333;
   }
 
   .content {
-    background-color: #fff; /* White background for content */
-    color: #333; /* Darker text color for content */
+    background-color: #fff;
+    color: #333;
   }
 
   #skills {
-    background-color: #f2f2f2; /* Light gray background for skills section */
+    background-color: #f2f2f2;
   }
 
   #skills li {
-    border-color: #333; /* Darker border color for skill items */
-    color: #333; /* Darker text color for skill items */
+    border-color: #333;
+    color: #333;
   }
 
   #skills li:hover {
-    background-color: #333; /* Darker background color on hover */
-    color: #fff; /* White text color on hover */
+    background-color: #333;
+    color: #fff;
   }
 }
