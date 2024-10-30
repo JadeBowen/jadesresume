@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jade Bowen - Portfolio</title>
+    <title>Jade Bowen - Professional Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Splash Screen with Signature Animation -->
+    <!-- Splash Screen -->
     <div id="splash-screen">
         <div id="logo-container">
-            <img src="https://github.com/JadeBowen/jadesresume/blob/b9d7e312ca568b4f815256ea4be5547102938f8f/vector%20logo.svg" alt="Jade Bowen Logo">
+            <img src="https://github.com/JadeBowen/jadesresume/blob/main/vector%20logo.svg" alt="Jade Bowen Logo">
         </div>
         <h1 id="signature">Jade Bowen</h1>
     </div>
@@ -21,37 +22,27 @@
         <div class="container">
             <h1 class="logo">Jade Bowen</h1>
             <nav class="navbar">
-                <button class="menu-toggle" aria-label="Toggle Navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="menu-toggle" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
                 <ul class="nav-links">
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills & Proficiencies</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#philosophy">Philosophy</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button class="dark-mode-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
         </div>
     </header>
-    
-    <!-- Main Content Start -->
+
+    <!-- Main Content -->
     <main>
-        <!-- About Section with Contact Information -->
+        <!-- About Me Section -->
         <section id="about" class="fade-in">
             <div class="container">
                 <h2>About Me</h2>
-                <p>
-                    My journey into telecommunications began at the age of 12, inspired by my father’s work. With over 21 years in construction and telecommunications, I've led large-scale projects and guided teams, balancing a career with being a single father of four. My true passion lies in building systems that connect people and improve lives.
-                </p>
-                <p><strong>Contact:</strong> Jade Bowen | Email: <a href="mailto:your.email@example.com">your.email@example.com</a> | Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+                <p>My journey into telecommunications began at the age of 12, inspired by my father’s work. With over 21 years in construction and telecommunications, I've led large-scale projects and guided teams, balancing a career with being a single father of four. My true passion lies in building systems that connect people and improve lives.</p>
             </div>
         </section>
 
@@ -59,7 +50,7 @@
         <section id="experience" class="fade-in">
             <div class="container">
                 <h2>Professional Experience</h2>
-                <!-- Example entry structure for Experience entries -->
+                <!-- Experience Entry: Boise's Best Auto Sales -->
                 <div class="experience-entry">
                     <h3>Finance and Marketing Manager</h3>
                     <p>Boise's Best Auto Sales – Boise, ID | June 2023 – Present</p>
@@ -71,21 +62,20 @@
                     </ul>
                     <button class="toggle-job-btn">Show More</button>
                 </div>
-                <!-- More entries can be added here in the same format -->
+                <!-- Repeatable structure for other jobs -->
             </div>
         </section>
 
         <!-- Skills and Proficiencies Section -->
         <section id="skills" class="fade-in">
             <div class="container">
-                <h2>Skills & Proficiencies</h2>
+                <h2>Skills and Proficiencies</h2>
                 <ul>
                     <li>Leadership & Team Management</li>
                     <li>Project Management</li>
                     <li>Telecommunications & Wireless Infrastructure</li>
                     <li>Construction Management</li>
                     <li>Operational Efficiency & Optimization</li>
-                    <!-- Add more skills and proficiencies as needed -->
                 </ul>
             </div>
         </section>
@@ -103,7 +93,7 @@
             </div>
         </section>
 
-        <!-- Key Achievements Section -->
+        <!-- Achievements Section -->
         <section id="achievements" class="fade-in">
             <div class="container">
                 <h2>Key Achievements</h2>
@@ -116,40 +106,28 @@
             </div>
         </section>
 
-        <!-- Philosophy Section -->
-        <section id="philosophy" class="fade-in">
-            <div class="container">
-                <h2>Philosophy</h2>
-                <p id="mission-impact">
-                    With over 21 years of experience in the construction and telecommunications industries, my mission is to lead with integrity, precision, and collaboration. I strive to foster a culture that values honesty, respect, and innovation, ensuring that every project not only meets its goals but also contributes positively to the community.
-                </p>
-                <button class="toggle-philosophy-btn">Show More</button>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact" class="fade-in">
             <div class="container">
                 <h2>Contact</h2>
                 <ul class="contact-info">
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:jade.bowen@example.com">jade.bowen@example.com</a></li>
                     <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jade-bowen" target="_blank">LinkedIn</a></li>
                     <li><i class="fas fa-globe"></i> <a href="https://jadebowen.github.io/jadesresume/" target="_blank">Portfolio Site</a></li>
-                    <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
                 </ul>
-                <div class="qr-code">
-                    <img src="https://github.com/JadeBowen/jadesresume/blob/b9d7e312ca568b4f815256ea4be5547102938f8f/linked%20in%20qr%20code.png" alt="LinkedIn QR Code" />
-                </div>
+                <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png" alt="LinkedIn QR Code" class="qr-code" />
             </div>
         </section>
 
         <!-- Downloads Section -->
         <section id="downloads" class="fade-in">
             <div class="container">
-                <h2>Download Resumes</h2>
-                <a href="path/to/full_resume.pdf" class="download-btn" download>Full Resume</a>
-                <a href="path/to/telecom_resume.pdf" class="download-btn" download>Telecom Resume</a>
-                <a href="path/to/project_construction_resume.pdf" class="download-btn" download>Project & Construction Resume</a>
+                <h2>Download Resume</h2>
+                <a href="https://jadebowen.github.io/jadesresume/" class="download-btn" download>
+                    <i class="fas fa-download"></i> Download Full Resume
+                </a>
+                <!-- Additional resume buttons if needed -->
             </div>
         </section>
     </main>
@@ -162,8 +140,6 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
