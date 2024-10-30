@@ -1,44 +1,71 @@
-// Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", function () {
+// JavaScript for interactive elements
 
-    // Toggle function for mobile menu
-    function toggleMenu() {
-        const navbar = document.querySelector(".navbar");
-        navbar.classList.toggle("show");
-    }
+// Function to animate skill bars
+function animateSkillBars() {
+  const skillBars = document.querySelectorAll('.skill-bar');
 
-    // Assign the toggle function to the menu button
-    document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
+  skillBars.forEach(bar => {
+    const barFill = bar.querySelector('.skill-bar-fill');
+    const percentage = bar.dataset.percentage;
 
-    // Show More/Show Less Toggle Functionality
-    const toggleButtons = document.querySelectorAll(".toggle-btn");
-    toggleButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            const targetContent = document.getElementById(this.getAttribute("data-target"));
-            if (targetContent.classList.contains("hidden")) {
-                targetContent.classList.remove("hidden");
-                this.textContent = "Show Less";
-            } else {
-                targetContent.classList.add("hidden");
-                this.textContent = "Show More";
-            }
-        });
-    });
-
-    // Back to Top Button Functionality
-    const backToTopButton = document.getElementById("back-to-top");
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          barFill.style.width = `${percentage}%`;
+          observer.unobserve(bar);
         }
+      });
     });
 
-    backToTopButton.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    observer.observe(bar);
+  });
+}
+
+// Fade-in effect on scroll
+function fadeInOnScroll() {
+  const elements = document.querySelectorAll('.fade-in');
+
+  elements.forEach(element => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          element.classList.add('appear');
+          observer.unobserve(element);
+        }
+      });
     });
-});
+
+    observer.observe(element);
+  });
+}
+
+// Event listeners to trigger functions on load
+window.addEventListener('load', animateSkillBars);
+window.addEventListener('load', fadeInOnScroll);
+// Function to toggle light/dark mode
+function toggleLightDarkMode() {
+  const body = document.body;
+  body.classList.toggle('light-mode');
+
+  // You'll need to add the toggle button in your HTML and update this code to toggle its state as well
+}
+// Function to create an interactive timeline (you'll need to add the necessary HTML elements)
+function createInteractiveTimeline() {
+  // Code to implement timeline interactivity
+}
+// Function to implement smooth scrolling for navigation links
+function smoothScroll() {
+  const navLinks = document.querySelectorAll('nav a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+}
+
+// Event listener to trigger smooth scrolling
+window.addEventListener('load', smoothScroll);
