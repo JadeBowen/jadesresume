@@ -3,13 +3,13 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   background-color: #001f3f; /* Dark mode background color */
-  color: #ffffff; /* Default text color for dark mode */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for light/dark mode */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode {
-  background-color: #ffffff; /* Light mode background color */
-  color: #001f3f; /* Default text color for light mode */
+  background-color: #ffffff;
+  color: #001f3f;
 }
 
 h1, h2, h3 {
@@ -18,48 +18,100 @@ h1, h2, h3 {
 
 /* Link Styling */
 a {
-  color: #00cccc; /* Teal link color */
+  color: #00cccc;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ffffff; /* Lighter color on hover */
+  color: #ffffff;
   text-decoration: underline;
 }
+
 /* Header Styling */
 header {
   background-color: #001f3f;
   color: #ffffff;
   padding: 10px 20px;
-  position: fixed; /* Sticky header */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* Ensure header stays on top */
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* Remove the logo */
-header .logo { 
-  display: none; 
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Horizontal menu */
+  display: flex;
 }
 
 nav li {
-  margin-left: 20px;
+  margin-left: 20px; /* Even spacing for navigation links */
 }
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #001f3f;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Link Styling */
+a {
+  color: #00cccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px; /* Even spacing for navigation links */
+}
+
 /* Hamburger Menu Styling */
 .hamburger-menu {
-  display: none; /* Hide by default on desktop */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -70,10 +122,10 @@ nav li {
 /* Media Query for Mobile Navigation */
 @media (max-width: 768px) {
   nav ul {
-    display: none; /* Hide the regular menu on mobile */
-    flex-direction: column; /* Vertical menu for mobile */
+    display: none;
+    flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust based on header height */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #001f3f;
@@ -81,7 +133,7 @@ nav li {
   }
 
   nav ul.show {
-    display: flex; /* Show the menu when toggled */
+    display: flex;
   }
 
   nav li {
@@ -89,14 +141,106 @@ nav li {
   }
 
   .hamburger-menu {
-    display: block; /* Show the hamburger menu on mobile */
+    display: block;
   }
 }
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #001f3f;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Link Styling */
+a {
+  color: #00cccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px; /* Even spacing for navigation links */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+/* Media Query for Mobile Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #001f3f;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
 /* Section Styling */
 section {
-  padding: 80px 20px; /* Increased padding to account for fixed header */
-  position: relative; /* To position the overlay */
-  overflow: hidden; /* To prevent overlay from overflowing */
+  padding: 100px 20px; /* Increased padding for better spacing */
+  position: relative;
+  overflow: hidden;
 }
 
 .section-overlay {
@@ -106,40 +250,303 @@ section {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1; /* Ensure overlay is behind the content */
+  z-index: 1;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  position: relative; /* To position the content above the overlay */
+  position: relative;
   z-index: 2;
 }
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #001f3f;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Link Styling */
+a {
+  color: #00cccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px; /* Even spacing for navigation links */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+/* Media Query for Mobile Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #001f3f;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 100px 20px; /* Increased padding for better spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
 /* About Me Section */
 #about {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Fixed background for parallax effect */
+  background-attachment: fixed;
 }
 
 .profile-photo {
   width: 200px;
   height: auto;
   border-radius: 50%;
-  display: block; /* To center the image */
+  display: block;
   margin: 20px auto;
+  border: 5px solid #00cccc; /* Added a border to the profile image */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Added a subtle shadow */
 }
 
 @media (max-width: 768px) {
   #about {
-    background-attachment: scroll; /* Scroll on mobile to prevent jittering */
+    background-attachment: scroll;
   }
   .profile-photo {
     width: 150px;
   }
 }
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #001f3f;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Link Styling */
+a {
+  color: #00cccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px; /* Even spacing for navigation links */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+/* Media Query for Mobile Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #001f3f;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 100px 20px; /* Increased padding for better spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* About Me Section */
+#about {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+  border: 5px solid #00cccc; /* Added a border to the profile image */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Added a subtle shadow */
+}
+
+@media (max-width: 768px) {
+  #about {
+    background-attachment: scroll;
+  }
+  .profile-photo {
+    width: 150px;
+  }
+}
+
 /* Philosophy, Experience, Skills Sections */
 #philosophy {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
@@ -149,7 +556,7 @@ section {
 }
 
 #experience {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df121140677902160a/background%203.jpg");
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -169,6 +576,180 @@ section {
     background-attachment: scroll;
   }
 }
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #001f3f;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Link Styling */
+a {
+  color: #00cccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px; /* Even spacing for navigation links */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+/* Media Query for Mobile Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #001f3f;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 100px 20px; /* Increased padding for better spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* About Me Section */
+#about {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+  border: 5px solid #00cccc; /* Added a border to the profile image */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Added a subtle shadow */
+}
+
+@media (max-width: 768px) {
+  #about {
+    background-attachment: scroll;
+  }
+  .profile-photo {
+    width: 150px;
+  }
+}
+
+/* Philosophy, Experience, Skills Sections */
+#philosophy {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#experience {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#skills {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  #philosophy,
+  #experience,
+  #skills {
+    background-attachment: scroll;
+  }
+}
+
 /* Download Resume and Contact Sections */
 #download-resume {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
@@ -190,36 +771,231 @@ section {
     background-attachment: scroll;
   }
 }
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #001f3f;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Link Styling */
+a {
+  color: #00cccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px; /* Even spacing for navigation links */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+/* Media Query for Mobile Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #001f3f;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 100px 20px; /* Increased padding for better spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* About Me Section */
+#about {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+  border: 5px solid #00cccc; /* Added a border to the profile image */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Added a subtle shadow */
+}
+
+@media (max-width: 768px) {
+  #about {
+    background-attachment: scroll;
+  }
+  .profile-photo {
+    width: 150px;
+  }
+}
+
+/* Philosophy, Experience, Skills Sections */
+#philosophy {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#experience {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#skills {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  #philosophy,
+  #experience,
+  #skills {
+    background-attachment: scroll;
+  }
+}
+
+/* Download Resume and Contact Sections */
+#download-resume {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#contact {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  #download-resume,
+  #contact {
+    background-attachment: scroll;
+  }
+}
+
 /* Button Styling */
 button,
 .resume-button {
-  /* Style download resume buttons like regular buttons */
-  background-color: #00cccc; /* Teal background color */
-  color: #001f3f; /* Dark blue text color */
+  background-color: #00cccc;
+  color: #001f3f;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-block; /* To make the button behave like a link */
+  display: inline-block;
   text-align: center;
 }
 
 button:hover,
 .resume-button:hover {
-  background-color: #008b8b; /* Darker teal on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: #008b8b;
+  transform: translateY(-2px);
 }
 
 .show-more {
-  display: none; /* Hide "Show More" buttons by default */
+  display: none;
   margin-top: 10px;
 }
 
 @media (max-width: 768px) {
   .show-more {
-    display: block; /* Show "Show More" buttons on mobile */
+    display: block;
   }
 }
 
@@ -228,14 +1004,14 @@ footer {
   background-color: #001f3f;
   color: #ffffff;
   padding: 20px;
-  text-align: center; /* Center text for mobile */
+  text-align: center;
 }
 
 footer .container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -247,15 +1023,15 @@ footer ul {
   list-style: none;
   padding: 0;
   margin: 10px 0;
-  text-align: left; /* Align contact list to the left */
+  text-align: left;
 }
 
 @media (max-width: 768px) {
   footer .container {
-    flex-direction: column; /* Stack footer items vertically on mobile */
+    flex-direction: column;
   }
 
   footer ul {
-    text-align: center; /* Center contact list on mobile */
+    text-align: center;
   }
 }
