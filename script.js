@@ -14,7 +14,8 @@ function toggleLightDarkMode() {
 
 // Event Listener for Light/Dark Mode Button
 const toggleButton = document.querySelector('.toggle-dark-mode');
-toggleButton.addEventListener('click', toggleLightDarkMode);// Mobile Menu Toggle Functionality
+toggleButton.addEventListener('click', toggleLightDarkMode);
+// Mobile Menu Toggle Functionality
 function toggleMobileMenu() {
   const navMenu = document.querySelector('nav ul');
   const mobileMenuButton = document.querySelector('.hamburger-menu');
@@ -22,6 +23,7 @@ function toggleMobileMenu() {
 
   // Update aria-expanded for accessibility
   mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+  mobileMenuButton.setAttribute('aria-label', isExpanded ? 'Close Navigation Menu' : 'Open Navigation Menu'); 
 }
 
 // Event Listener for Mobile Menu Button
@@ -36,7 +38,8 @@ document.querySelectorAll('nav a').forEach(link => {
       toggleMobileMenu();
     }
   });
-});// Show More / Show Less Toggle Functionality
+});
+// Show More / Show Less Toggle Functionality
 function toggleShowMore(button) {
   const moreDetails = button.previousElementSibling.querySelector('.more-details');
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
@@ -59,22 +62,39 @@ if (window.innerWidth >= 768) {
   document.querySelectorAll('.more-details').forEach(details => {
     details.style.display = 'block';
   });
-}// Smooth Scrolling for Navigation Links
-function smoothScroll() {
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault(); // Prevent default anchor behavior
+}
+// Smooth Scrolling for Navigation Links
+function smoothScroll(event) { 
+  event.preventDefault(); // Prevent default anchor behavior
 
-      const targetId = this.getAttribute('href'); // Get the target section ID
-      const targetElement = document.querySelector(targetId);
+  const targetId = this.getAttribute('href'); // Get the target section ID
+  const targetElement = document.querySelector(targetId);
 
-      // Scroll to the target element if it exists
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+  // Scroll to the target element if it exists
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 // Initialize Smooth Scrolling on Window Load
-window.addEventListener('load', smoothScroll);
+window.addEventListener('load', () => {
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', smoothScroll);
+  });
+});
+
+// Back to Top Button Functionality
+const backToTopButton = document.getElementById('back-to-top-btn');
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+};
+
+backToTopButton.addEventListener('click', () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
