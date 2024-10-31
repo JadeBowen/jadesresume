@@ -8,9 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <button class="toggle-dark-mode" aria-label="Toggle Light/Dark Mode">Switch to Light Mode</button> 
 
   <header>
+    <img src="https://github.com/JadeBowen/jadesresume/blob/e45cf8e92ccc20d8f04f9495e4abb1e104ff82f4/old%20logo.JPG" 
+           alt="Jade Bowen Logo" class="header-logo">
     <nav>
       <ul>
         <li><a href="#about">About Me</a></li>
@@ -21,13 +22,19 @@
         <li><a href="#contact">Contact</a></li>
         <li><button class="toggle-dark-mode" aria-label="Toggle Light/Dark Mode">Toggle Light/Dark Mode</button></li>
       </ul>
-      <button class="hamburger-menu" aria-haspopup="true" aria-label="Toggle Navigation Menu" aria-expanded="false">&#9776;</button>
     </nav>
+    <img src="https://github.com/JadeBowen/jadesresume/blob/e45cf8e92ccc20d8f04f9495e4abb1e104ff82f4/old%20logo.JPG" 
+           alt="Jade Bowen Logo" class="header-logo">
   </header>
+
   <section id="about">
     <div class="section-overlay"></div>
     <div class="container">
-      <h2>About Me</h2>
+      <div class="contact-info"> 
+        <h3>Jade Bowen</h3>
+        <p><a href="mailto:Jade.Bowen.Career@gmail.com" aria-label="Email Jade Bowen">Jade.Bowen.Career@gmail.com</a></p>
+        <p><a href="tel:+12083710647" aria-label="Call Jade Bowen">+1 (208) 371-0647</a></p>
+      </div>
       <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" 
            alt="Jade Bowen Headshot" class="profile-photo">
       <p>
@@ -52,19 +59,15 @@
           Driven by a deep-rooted belief in the power of connection, my mission is to lead with integrity, precision, and a collaborative spirit. Throughout my 21-year career in construction and telecommunications, I've consistently sought to foster a work environment that values honesty, respect, and innovation. I believe that every project should not only meet its objectives but also contribute positively to the community it serves. My commitment to continuous improvement, both personally and professionally, guides me as I lead teams to success, drive operational excellence, and inspire trust at all levels of an organization.
         </p>
 
-        <div class="more-details" style="display: none;"> 
-          <p><strong>Impact Statement</strong></p>
-          <p>
-            I am passionate about empowering companies to not only achieve their goals but to surpass them. Through strategic leadership and an unwavering commitment to operational efficiency, I help organizations optimize processes, enhance productivity, and deliver exceptional results. Whether I'm leading a team, managing a complex project, or ensuring client satisfaction, my focus remains on creating lasting value. By cultivating a culture of respect and teamwork, I empower individuals to reach their full potential and drive innovation. Ultimately, I strive to help organizations strengthen their industry leadership and make a positive impact on the world.
-          </p>
+        <p><strong>Impact Statement</strong></p>
+        <p>
+          I am passionate about empowering companies to not only achieve their goals but to surpass them. Through strategic leadership and an unwavering commitment to operational efficiency, I help organizations optimize processes, enhance productivity, and deliver exceptional results. Whether I'm leading a team, managing a complex project, or ensuring client satisfaction, my focus remains on creating lasting value. By cultivating a culture of respect and teamwork, I empower individuals to reach their full potential and drive innovation. Ultimately, I strive to help organizations strengthen their industry leadership and make a positive impact on the world.
+        </p>
 
-          <p><strong>Professional Summary</strong></p>
-          <p>
-            As a seasoned professional with over 21 years of experience in the construction and telecommunications fields, I possess a unique blend of technical expertise and leadership acumen. My career has been defined by a passion for building critical infrastructure that connects people and empowers communities. From overseeing complex wireless communication installations to managing multimillion-dollar projects, I have a proven track record of delivering high-quality results while prioritizing safety, regulatory compliance, and operational efficiency.
-          </p>
-        </div>
-
-        <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+        <p><strong>Professional Summary</strong></p>
+        <p>
+          As a seasoned professional with over 21 years of experience in the construction and telecommunications fields, I possess a unique blend of technical expertise and leadership acumen. My career has been defined by a passion for building critical infrastructure that connects people and empowers communities. From overseeing complex wireless communication installations to managing multimillion-dollar projects, I have a proven track record of delivering high-quality results while prioritizing safety, regulatory compliance, and operational efficiency.
+        </p>
       </div>
     </div>
   </section>
@@ -79,16 +82,13 @@
         <ul>
           <li>Increased gross profit margin through strategic cost management and targeted marketing initiatives.</li>
           <li>Implemented a customer loyalty program and personalized marketing campaigns to enhance customer retention.</li>
-          <div class="more-details" style="display: none;">
-            <li>Reduced operational costs by renegotiating vendor contracts and streamlining financial processes.</li>
-            <p>
-              At Boise's Best Auto Sales, I spearheaded the development and implementation of financial strategies to enhance profitability. This included managing budgeting, forecasting, and financial reporting processes. By implementing systems for cash flow monitoring, profit analysis, and financial forecasting, I increased transparency and facilitated informed decision-making.
-            </p>
-            <p>
-              In addition to my financial responsibilities, I played a key role in developing and executing advanced marketing strategies. These strategies encompassed digital advertising, social media campaigns, and public relations efforts, all aimed at increasing brand visibility and driving sales growth. I also collaborated effectively with cross-functional teams to enhance operational processes, improve customer service delivery, and contribute to overall business growth.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Reduced operational costs by renegotiating vendor contracts and streamlining financial processes.</li>
+          <p>
+            At Boise's Best Auto Sales, I spearheaded the development and implementation of financial strategies to enhance profitability. This included managing budgeting, forecasting, and financial reporting processes. By implementing systems for cash flow monitoring, profit analysis, and financial forecasting, I increased transparency and facilitated informed decision-making.
+          </p>
+          <p>
+            In addition to my financial responsibilities, I played a key role in developing and executing advanced marketing strategies. These strategies encompassed digital advertising, social media campaigns, and public relations efforts, all aimed at increasing brand visibility and driving sales growth. I also collaborated effectively with cross-functional teams to enhance operational processes, improve customer service delivery, and contribute to overall business growth.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -97,13 +97,10 @@
         <ul>
           <li>Spearheaded successful cellular site upgrades, resulting in improved network performance and reduced downtime.</li>
           <li>Implemented a proactive maintenance schedule that significantly reduced emergency callouts and enhanced overall system uptime.</li>
-          <div class="more-details" style="display: none;">
-            <li>Enhanced team productivity and compliance by providing hands-on training and mentorship to junior technicians, ensuring safety and operational standards were consistently met.</li>
-            <p>
-              During my time at Westland Towers, I played a critical role in directing the installation, commissioning, and calibration of wireless communication systems. This included working with cellular antenna and microwave technologies to ensure optimal network performance and seamless connectivity.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Enhanced team productivity and compliance by providing hands-on training and mentorship to junior technicians, ensuring safety and operational standards were consistently met.</li>
+          <p>
+            During my time at Westland Towers, I played a critical role in directing the installation, commissioning, and calibration of wireless communication systems. This included working with cellular antenna and microwave technologies to ensure optimal network performance and seamless connectivity.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -112,16 +109,13 @@
         <ul>
           <li>Led the successful completion of a $35 million Micron construction project, ensuring on-time and within-budget delivery while maintaining strict safety and quality standards.</li>
           <li>Drove operational efficiency by streamlining communication channels and implementing project management best practices, resulting in improved team productivity and reduced project timelines.</li>
-          <div class="more-details" style="display: none;">
-            <li>Fostered a collaborative and results-oriented team environment, effectively managing a diverse group of subcontractors, vendors, and stakeholders to achieve project milestones.</li>
-            <p>
-              At Micron Technology, I played a pivotal role in managing the construction of a new facility. This encompassed overseeing all aspects of the project lifecycle, from initial planning and budgeting to final execution and handover. I effectively managed a budget of $35 million, ensuring cost-effectiveness and adherence to financial targets.
-            </p>
-            <p>
-              My responsibilities included coordinating with architects, engineers, and subcontractors, ensuring seamless collaboration and timely completion of tasks. I also prioritized safety and regulatory compliance, conducting regular site inspections and implementing safety protocols to maintain a secure work environment.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Fostered a collaborative and results-oriented team environment, effectively managing a diverse group of subcontractors, vendors, and stakeholders to achieve project milestones.</li>
+          <p>
+            At Micron Technology, I played a pivotal role in managing the construction of a new facility. This encompassed overseeing all aspects of the project lifecycle, from initial planning and budgeting to final execution and handover. I effectively managed a budget of $35 million, ensuring cost-effectiveness and adherence to financial targets.
+          </p>
+          <p>
+            My responsibilities included coordinating with architects, engineers, and subcontractors, ensuring seamless collaboration and timely completion of tasks. I also prioritized safety and regulatory compliance, conducting regular site inspections and implementing safety protocols to maintain a secure work environment.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -130,16 +124,13 @@
         <ul>
           <li>Spearheaded the successful completion of multiple telecommunications infrastructure projects, ensuring adherence to project timelines, budgetary constraints, and quality standards.</li>
           <li>Optimized resource allocation and streamlined workflows, resulting in increased efficiency and cost savings across projects.</li>
-          <div class="more-details" style="display: none;">
-            <li>Effectively managed and mentored a team of field technicians, fostering a culture of collaboration, accountability, and continuous improvement.</li>
-            <p>
-              At KGPCo, I led the construction of telecommunications infrastructure projects, ensuring the successful deployment of communication networks. This involved managing all stages of the project lifecycle, from site acquisition and permitting to construction, installation, and commissioning.
-            </p>
-            <p>
-              I prioritized safety and quality, implementing rigorous quality control measures and ensuring compliance with industry standards. I also fostered strong relationships with clients, vendors, and subcontractors, facilitating effective communication and collaboration.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Effectively managed and mentored a team of field technicians, fostering a culture of collaboration, accountability, and continuous improvement.</li>
+          <p>
+            At KGPCo, I led the construction of telecommunications infrastructure projects, ensuring the successful deployment of communication networks. This involved managing all stages of the project lifecycle, from site acquisition and permitting to construction, installation, and commissioning.
+          </p>
+          <p>
+            I prioritized safety and quality, implementing rigorous quality control measures and ensuring compliance with industry standards. I also fostered strong relationships with clients, vendors, and subcontractors, facilitating effective communication and collaboration.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -148,16 +139,13 @@
         <ul>
           <li>Successfully managed a portfolio of telecommunications infrastructure projects, valued at over $10 million, ensuring on-time and within-budget delivery while adhering to strict quality standards.</li>
           <li>Implemented project management methodologies and tools to streamline workflows, enhance team collaboration, and improve project tracking and reporting.</li>
-          <div class="more-details" style="display: none;">
-            <li>Mitigated project risks and challenges through proactive planning, effective communication, and timely decision-making.</li>
-            <p>
-              At Velocitel, I managed a diverse range of telecommunications infrastructure projects, including the construction of new cell towers, upgrades to existing sites, and fiber optic installations. I oversaw all phases of the project lifecycle, from initial planning and design to final implementation and closeout.
-            </p>
-            <p>
-              My responsibilities included managing project budgets, schedules, and resources, ensuring efficient allocation and utilization. I also prioritized safety and regulatory compliance, conducting regular site visits and implementing safety protocols to maintain a secure work environment.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Mitigated project risks and challenges through proactive planning, effective communication, and timely decision-making.</li>
+          <p>
+            At Velocitel, I managed a diverse range of telecommunications infrastructure projects, including the construction of new cell towers, upgrades to existing sites, and fiber optic installations. I oversaw all phases of the project lifecycle, from initial planning and design to final implementation and closeout.
+          </p>
+          <p>
+            My responsibilities included managing project budgets, schedules, and resources, ensuring efficient allocation and utilization. I also prioritized safety and regulatory compliance, conducting regular site visits and implementing safety protocols to maintain a secure work environment.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -166,16 +154,13 @@
         <ul>
           <li>Successfully secured over 50 site leases for telecommunications infrastructure deployments, negotiating favorable terms and ensuring compliance with zoning regulations and landlord requirements.</li>
           <li>Developed and maintained strong relationships with landowners, property managers, and government agencies, facilitating effective communication and collaboration throughout the site acquisition process.</li>
-          <div class="more-details" style="display: none;">
-            <li>Conducted thorough due diligence reviews of potential sites, assessing zoning requirements, environmental impact, and lease terms to ensure project feasibility and compliance.</li>
-            <p>
-              At Crown Castle, I played a key role in acquiring new sites for the deployment of telecommunications infrastructure. This involved identifying suitable locations, negotiating lease agreements, and obtaining necessary permits and approvals.
-            </p>
-            <p>
-              My responsibilities included conducting site assessments, evaluating zoning regulations, and coordinating with environmental consultants to ensure compliance with all applicable requirements. I also developed strong relationships with landowners and property managers, fostering trust and collaboration throughout the site acquisition process.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Conducted thorough due diligence reviews of potential sites, assessing zoning requirements, environmental impact, and lease terms to ensure project feasibility and compliance.</li>
+          <p>
+            At Crown Castle, I played a key role in acquiring new sites for the deployment of telecommunications infrastructure. This involved identifying suitable locations, negotiating lease agreements, and obtaining necessary permits and approvals.
+          </p>
+          <p>
+            My responsibilities included conducting site assessments, evaluating zoning regulations, and coordinating with environmental consultants to ensure compliance with all applicable requirements. I also developed strong relationships with landowners and property managers, fostering trust and collaboration throughout the site acquisition process.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -184,16 +169,13 @@
         <ul>
           <li>Installed, tested, and maintained telecommunications equipment, ensuring optimal network performance and adherence to quality standards.</li>
           <li>Troubleshooted and resolved network issues, minimizing downtime and ensuring seamless connectivity for clients.</li>
-          <div class="more-details" style="display: none;">
-            <li>Collaborated effectively with cross-functional teams to implement network upgrades and expansions, enhancing network capacity and coverage.</li>
-            <p>
-              At Black & Veatch, I gained valuable experience in the installation, maintenance, and troubleshooting of telecommunications equipment. I worked on a variety of projects, including the deployment of new wireless networks, upgrades to existing infrastructure, and fiber optic installations.
-            </p>
-            <p>
-              My responsibilities included conducting site surveys, installing and configuring equipment, and performing routine maintenance to ensure optimal network performance. I also played a key role in troubleshooting network issues, identifying root causes, and implementing solutions to minimize downtime and ensure client satisfaction.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Collaborated effectively with cross-functional teams to implement network upgrades and expansions, enhancing network capacity and coverage.</li>
+          <p>
+            At Black & Veatch, I gained valuable experience in the installation, maintenance, and troubleshooting of telecommunications equipment. I worked on a variety of projects, including the deployment of new wireless networks, upgrades to existing infrastructure, and fiber optic installations.
+          </p>
+          <p>
+            My responsibilities included conducting site surveys, installing and configuring equipment, and performing routine maintenance to ensure optimal network performance. I also played a key role in troubleshooting network issues, identifying root causes, and implementing solutions to minimize downtime and ensure client satisfaction.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -202,16 +184,13 @@
         <ul>
           <li>Installed and maintained radio frequency (RF) equipment, ensuring optimal signal strength and coverage for critical communication systems.</li>
           <li>Conducted site surveys and assessments, evaluating RF signal propagation and identifying potential interference sources.</li>
-          <div class="more-details" style="display: none;">
-            <li>Collaborated with engineers and technicians to optimize RF system performance, ensuring reliable communication for mission-critical operations.</li>
-            <p>
-              At General Dynamics Mission Systems, I gained expertise in the installation and maintenance of radio frequency (RF) equipment. I worked on projects involving the deployment of communication systems for military and government applications, ensuring reliable connectivity in challenging environments.
-            </p>
-            <p>
-              My responsibilities included conducting site surveys, installing antennas and transmission lines, and testing RF signal strength and quality. I also played a role in troubleshooting RF interference issues, identifying sources of interference, and implementing mitigation strategies to ensure optimal system performance.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Collaborated with engineers and technicians to optimize RF system performance, ensuring reliable communication for mission-critical operations.</li>
+          <p>
+            At General Dynamics Mission Systems, I gained expertise in the installation and maintenance of radio frequency (RF) equipment. I worked on projects involving the deployment of communication systems for military and government applications, ensuring reliable connectivity in challenging environments.
+          </p>
+          <p>
+            My responsibilities included conducting site surveys, installing antennas and transmission lines, and testing RF signal strength and quality. I also played a role in troubleshooting RF interference issues, identifying sources of interference, and implementing mitigation strategies to ensure optimal system performance.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -220,16 +199,13 @@
         <ul>
           <li>Led and mentored field crews in the installation, maintenance, and repair of telecommunications infrastructure, ensuring project completion within deadlines and budget constraints.</li>
           <li>Conducted site surveys, evaluated site conditions, and coordinated with subcontractors and vendors to ensure efficient project execution.</li>
-          <div class="more-details" style="display: none;">
-            <li>Troubleshooted and resolved technical issues, minimizing downtime and ensuring optimal network performance.</li>
-            <p>
-              At U.S. Cellular, I gained extensive experience in the construction and maintenance of telecommunications infrastructure. I led field crews in the installation of cell towers, antennas, and transmission lines, ensuring projects were completed on time, within budget, and met quality standards.
-            </p>
-            <p>
-              My responsibilities included conducting site surveys, evaluating site conditions, and coordinating with subcontractors and vendors to ensure efficient project execution. I also played a key role in troubleshooting technical issues, identifying root causes, and implementing solutions to minimize downtime and ensure network reliability.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Troubleshooted and resolved technical issues, minimizing downtime and ensuring optimal network performance.</li>
+          <p>
+            At U.S. Cellular, I gained extensive experience in the construction and maintenance of telecommunications infrastructure. I led field crews in the installation of cell towers, antennas, and transmission lines, ensuring projects were completed on time, within budget, and met quality standards.
+          </p>
+          <p>
+            My responsibilities included conducting site surveys, evaluating site conditions, and coordinating with subcontractors and vendors to ensure efficient project execution. I also played a key role in troubleshooting technical issues, identifying root causes, and implementing solutions to minimize downtime and ensure network reliability.
+          </p>
         </ul>
       </article>
       <article class="job">
@@ -238,16 +214,13 @@
         <ul>
           <li>Accurately read and recorded customer electricity meters, ensuring timely and accurate billing information.</li>
           <li>Provided excellent customer service, addressing customer inquiries and resolving billing discrepancies.</li>
-          <div class="more-details" style="display: none;">
-            <li>Maintained detailed records of meter readings and customer interactions, ensuring data integrity and compliance with company procedures.</li>
-            <p>
-              At Rocky Mountain Power, I gained valuable experience in customer service and data collection. I was responsible for accurately reading and recording customer electricity meters, ensuring timely and accurate billing information.
-            </p>
-            <p>
-              My responsibilities included interacting with customers, addressing their inquiries, and resolving billing discrepancies. I also maintained detailed records of meter readings and customer interactions, ensuring data integrity and compliance with company procedures.
-            </p>
-          </div>
-          <button class="show-more" aria-expanded="false" onclick="toggleShowMore(this)">Show More</button>
+          <li>Maintained detailed records of meter readings and customer interactions, ensuring data integrity and compliance with company procedures.</li>
+          <p>
+            At Rocky Mountain Power, I gained valuable experience in customer service and data collection. I was responsible for accurately reading and recording customer electricity meters, ensuring timely and accurate billing information.
+          </p>
+          <p>
+            My responsibilities included interacting with customers, addressing their inquiries, and resolving billing discrepancies. I also maintained detailed records of meter readings and customer interactions, ensuring data integrity and compliance with company procedures.
+          </p>
         </ul>
       </article>
     </div> 
@@ -325,6 +298,7 @@
         </a>
         <p>Focused on my expertise and achievements in telecommunications.</p>
       </div>
+
       <div class="resume-option">
         <a href="https://github.com/JadeBowen/jadesresume/raw/main/Jade%20Bowen%20-%20Project%20Management%20and%20Construction%20Resume%20-%202024.pdf" 
            target="_blank" class="resume-button" aria-label="Download Project Management & Construction Resume" download>
@@ -332,7 +306,6 @@
         </a>
         <p>Emphasizes my skills and experience in construction and project management.</p>
       </div>
-
     </div>
   </section>
   <section id="contact">
@@ -349,27 +322,20 @@
 
       <div class="qr-code">
         <p>Scan to connect on LinkedIn:</p>
-        <img src="https://github.com/JadeBowen/jadesresume/blob/2cfcb7d0aafae33ca804807f2851f411fa42a181/linked%20in%20qr%20code.png" 
+        <img src="https://github.com/JadeBowen/jadesresume/blob/e45cf8e92ccc20d8f04f9495e4abb1e104ff82f4/linked%20in%20qr%20code.png" 
              alt="LinkedIn QR Code for Jade Bowen">
       </div>
-
     </div>
   </section>
   <footer>
     <div class="container">
-      <img src="https://raw.githubusercontent.com/JadeBowen/jadesresume/main/small%20logo.jpg" 
+      <img src="https://github.com/JadeBowen/jadesresume/blob/e45cf8e92ccc20d8f04f9495e4abb1e104ff82f4/old%20logo.JPG" 
            alt="Jade Bowen Logo" class="footer-logo">
-
-      <ul class="footer-contact-list">
-        <li>Jade Bowen</li>
-        <li>Email: <a href="mailto:Jade.Bowen.Career@gmail.com" aria-label="Email Jade Bowen in footer">Jade.Bowen.Career@gmail.com</a></li>
-        <li>Phone: <a href="tel:+12083710647" aria-label="Call Jade Bowen in footer">+1 (208) 371-0647</a></li> 
-      </ul>
-
-      <img src="https://raw.githubusercontent.com/JadeBowen/jadesresume/main/small%20logo.jpg" 
-           alt="Jade Bowen Logo" class="footer-logo">
-      
       <p>&copy; 2024 Jade Bowen. All rights reserved.</p> 
+      <a href="mailto:Jade.Bowen.Career@gmail.com" aria-label="Email Jade Bowen in footer">Jade.Bowen.Career@gmail.com</a>
+      <a href="tel:+12083710647" aria-label="Call Jade Bowen in footer">+1 (208) 371-0647</a>
+      <img src="https://github.com/JadeBowen/jadesresume/blob/e45cf8e92ccc20d8f04f9495e4abb1e104ff82f4/old%20logo.JPG" 
+           alt="Jade Bowen Logo" class="footer-logo">
     </div>
   </footer>
 
