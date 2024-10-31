@@ -1,77 +1,214 @@
-// Light/Dark Mode Toggle Functionality
-function toggleLightDarkMode() {
-  const body = document.body;
-  const button = document.querySelector('.toggle-dark-mode');
-
-  // Toggle light mode class on the body
-  body.classList.toggle('light-mode');
-
-  // Update button text and aria-label based on current mode
-  const modeText = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
-  button.textContent = modeText;
-  button.setAttribute('aria-label', modeText); // Accessibility support
-
-  // Update the menu button's aria-label as well
-  const menuButton = document.querySelector('.hamburger-menu');
-  if (menuButton) { // Check if the menu button exists
-    const menuModeText = body.classList.contains('light-mode') ? 'Open Navigation Menu (Light Mode)' : 'Open Navigation Menu (Dark Mode)';
-    menuButton.setAttribute('aria-label', menuModeText);
-  }
-}
-
-// Event Listener for Light/Dark Mode Button
-const toggleButton = document.querySelector('.toggle-dark-mode');
-if (toggleButton) { // Check if the button exists
-  toggleButton.addEventListener('click', toggleLightDarkMode);
-}
-// Mobile Menu Toggle Functionality
-function toggleMobileMenu() {
-  const navMenu = document.querySelector('nav ul');
-  const mobileMenuButton = document.querySelector('.hamburger-menu');
-
-  if (navMenu && mobileMenuButton) { // Check if both elements exist
-    const isExpanded = navMenu.classList.toggle('show');
-
-    // Update aria-expanded for accessibility
-    mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-    mobileMenuButton.setAttribute('aria-label', isExpanded ? 'Close Navigation Menu' : 'Open Navigation Menu');
-  }
-}
-
-// Event Listener for Mobile Menu Button
-const mobileMenuButton = document.querySelector('.hamburger-menu');
-if (mobileMenuButton) { // Check if the button exists
-  mobileMenuButton.addEventListener('click', toggleMobileMenu);
-}
-
-// Close the mobile menu when a link inside the menu is clicked
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    const navMenu = document.querySelector('nav ul');
-    const mobileMenuButton = document.querySelector('.hamburger-menu');
-
-    if (navMenu && mobileMenuButton && navMenu.classList.contains('show')) {
-      toggleMobileMenu();
-    }
-  });
-});
-// Show More / Show Less Toggle Functionality
+// Function to toggle the "show-more" class for additional details
 function toggleShowMore(button) {
-  const moreDetails = button.previousElementSibling; 
-  const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-  // Toggle visibility and update aria-expanded attribute
-  moreDetails.style.display = isExpanded ? 'none' : 'block';
-  button.setAttribute('aria-expanded', !isExpanded);
-  button.textContent = isExpanded ? 'Show More' : 'Show Less';
+  const moreDetails = button.previousElementSibling;
+  moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
+  button.textContent = button.textContent === "Show More" ? "Show Less" : "Show More";
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
 }
 
-// Add Event Listeners for Show More Buttons
-document.querySelectorAll('.show-more').forEach(button => {
-  button.addEventListener('click', function () {
-    toggleShowMore(this);
+// Function to toggle a class on an element and update button text/attributes
+function toggleState(element, className, button, labels, ariaLabels) {
+  element.classList.toggle(className);
+  const isToggled = element.classList.contains(className);
+  button.textContent = labels[isToggled ? 1 : 0];
+  button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
+}
+
+// Dark mode toggle
+const darkModeButton = document.querySelector(".toggle-dark-mode");
+darkModeButton.addEventListener("click", () => {
+  toggleState(
+    document.body,
+    "light-mode",
+    darkModeButton,
+    ["Switch to Light Mode", "Switch to Dark Mode"],
+    ["Switch to Light Mode", "Switch to Dark Mode"]
+  );
+  // Save the user's preference in localStorage
+  localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
+});
+
+// Check for user's preference on page load
+const darkModePreference = localStorage.getItem("darkMode");
+if (darkModePreference === "light") {
+  document.body.classList.add("light-mode");
+  darkModeButton.textContent = "Switch to Dark Mode";
+  darkModeButton.setAttribute('aria-label', "Switch to Dark Mode");
+}
+// Function to toggle the "show-more" class for additional details
+function toggleShowMore(button) {
+  const moreDetails = button.previousElementSibling;
+  moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
+  button.textContent = button.textContent === "Show More" ? "Show Less" : "Show More";
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+}
+
+// Function to toggle a class on an element and update button text/attributes
+function toggleState(element, className, button, labels, ariaLabels) {
+  element.classList.toggle(className);
+  const isToggled = element.classList.contains(className);
+  button.textContent = labels[isToggled ? 1 : 0];
+  button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
+}
+
+// Dark mode toggle
+const darkModeButton = document.querySelector(".toggle-dark-mode");
+darkModeButton.addEventListener("click", () => {
+  toggleState(
+    document.body,
+    "light-mode",
+    darkModeButton,
+    ["Switch to Light Mode", "Switch to Dark Mode"],
+    ["Switch to Light Mode", "Switch to Dark Mode"]
+  );
+  // Save the user's preference in localStorage
+  localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
+});
+
+// Check for user's preference on page load
+const darkModePreference = localStorage.getItem("darkMode");
+if (darkModePreference === "light") {
+  document.body.classList.add("light-mode");
+  darkModeButton.textContent = "Switch to Dark Mode";
+  darkModeButton.setAttribute('aria-label', "Switch to Dark Mode");
+}
+
+// Hamburger menu toggle
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const navUl = document.querySelector("nav ul");
+
+hamburgerMenu.addEventListener("click", () => {
+  toggleState(
+    navUl,
+    "show",
+    hamburgerMenu,
+    ["Open Navigation Menu", "Close Navigation Menu"],
+    ["Open Navigation Menu", "Close Navigation Menu"]
+  );
+});
+// Function to toggle the "show-more" class for additional details
+function toggleShowMore(button) {
+  const moreDetails = button.previousElementSibling;
+  moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
+  button.textContent = button.textContent === "Show More" ? "Show Less" : "Show More";
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+}
+
+// Function to toggle a class on an element and update button text/attributes
+function toggleState(element, className, button, labels, ariaLabels) {
+  element.classList.toggle(className);
+  const isToggled = element.classList.contains(className);
+  button.textContent = labels[isToggled ? 1 : 0];
+  button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
+}
+
+// Dark mode toggle
+const darkModeButton = document.querySelector(".toggle-dark-mode");
+darkModeButton.addEventListener("click", () => {
+  toggleState(
+    document.body,
+    "light-mode",
+    darkModeButton,
+    ["Switch to Light Mode", "Switch to Dark Mode"],
+    ["Switch to Light Mode", "Switch to Dark Mode"]
+  );
+  // Save the user's preference in localStorage
+  localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
+});
+
+// Check for user's preference on page load
+const darkModePreference = localStorage.getItem("darkMode");
+if (darkModePreference === "light") {
+  document.body.classList.add("light-mode");
+  darkModeButton.textContent = "Switch to Dark Mode";
+  darkModeButton.setAttribute('aria-label', "Switch to Dark Mode");
+}
+
+// Hamburger menu toggle
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const navUl = document.querySelector("nav ul");
+
+hamburgerMenu.addEventListener("click", () => {
+  toggleState(
+    navUl,
+    "show",
+    hamburgerMenu,
+    ["Open Navigation Menu", "Close Navigation Menu"],
+    ["Open Navigation Menu", "Close Navigation Menu"]
+  );
+});
+
+// Smooth Scrolling for Navigation Links
+function smoothScroll(event) {
+  event.preventDefault(); // Prevent default anchor behavior
+
+  const targetId = this.getAttribute('href'); // Get the target section ID
+  const targetElement = document.querySelector(targetId);
+
+  // Scroll to the target element if it exists
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Initialize Smooth Scrolling on Window Load
+window.addEventListener('load', () => {
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', smoothScroll);
   });
 });
+// Function to toggle the "show-more" class for additional details
+function toggleShowMore(button) {
+  const moreDetails = button.previousElementSibling;
+  moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
+  button.textContent = button.textContent === "Show More" ? "Show Less" : "Show More";
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+}
+
+// Function to toggle a class on an element and update button text/attributes
+function toggleState(element, className, button, labels, ariaLabels) {
+  element.classList.toggle(className);
+  const isToggled = element.classList.contains(className);
+  button.textContent = labels[isToggled ? 1 : 0];
+  button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
+}
+
+// Dark mode toggle
+const darkModeButton = document.querySelector(".toggle-dark-mode");
+darkModeButton.addEventListener("click", () => {
+  toggleState(
+    document.body,
+    "light-mode",
+    darkModeButton,
+    ["Switch to Light Mode", "Switch to Dark Mode"],
+    ["Switch to Light Mode", "Switch to Dark Mode"]
+  );
+  // Save the user's preference in localStorage
+  localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
+});
+
+// Check for user's preference on page load
+const darkModePreference = localStorage.getItem("darkMode");
+if (darkModePreference === "light") {
+  document.body.classList.add("light-mode");
+  darkModeButton.textContent = "Switch to Dark Mode";
+  darkModeButton.setAttribute('aria-label', "Switch to Dark Mode");
+}
+
+// Hamburger menu toggle
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const navUl = document.querySelector("nav ul");
+
+hamburgerMenu.addEventListener("click", () => {
+  toggleState(
+    navUl,
+    "show",
+    hamburgerMenu,
+    ["Open Navigation Menu", "Close Navigation Menu"],
+    ["Open Navigation Menu", "Close Navigation Menu"]
+  );
+});
+
 // Smooth Scrolling for Navigation Links
 function smoothScroll(event) {
   event.preventDefault(); // Prevent default anchor behavior
@@ -92,9 +229,10 @@ window.addEventListener('load', () => {
   });
 });
 
-// Back to Top Button Functionality
-const backToTopButton = document.getElementById('back-to-top-btn');
+// Back-to-top button functionality
+const backToTopButton = document.getElementById("back-to-top-btn");
 
+// Show the button when the user scrolls down 20px from the top
 window.onscroll = function() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     backToTopButton.style.display = "block";
@@ -103,10 +241,8 @@ window.onscroll = function() {
   }
 };
 
-backToTopButton.addEventListener('click', () => {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+// Scroll to the top of the document when the button is clicked
+backToTopButton.addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
-
-// Start in dark mode by default
-toggleLightDarkMode(); // Call the function to initialize dark mode
