@@ -52,37 +52,19 @@ header .header-logo {
   max-height: 50px;
 }
 
-nav {
-  display: flex; /* Align logo and hamburger menu horizontally */
-  align-items: center;
-}
-
-nav button {
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  color: #00cccc;
-  cursor: pointer;
-  margin-left: 20px; /* Add space between logo and button */
-}
-
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: none; /* Hide the navigation menu by default */
-  position: absolute;
-  top: 70px; /* Position below the header */
-  left: 0;
+  display: flex; /* Display menu horizontally on PC */
+  justify-content: space-between; /* Distribute menu items evenly */
   width: 100%;
-  background-color: #001f3f;
-  text-align: center;
 }
 
-nav ul li {
-  margin: 10px 0;
+nav li {
+  margin: 0 10px;
+  flex-grow: 1; /* Allow menu items to grow and fill the space */
+  text-align: center; /* Center the text within each menu item */
 }
 
 nav ul a, nav button {
@@ -95,13 +77,9 @@ nav ul a, nav button {
   cursor: pointer;
   text-decoration: none;
 }
-
-nav ul.show {
-  display: block; /* Show the menu when the hamburger menu is clicked */
-}
 /* Section Styling */
 section {
-  padding: 80px 20px; /* Reduced section spacing */
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -127,7 +105,7 @@ section {
 /* About Me Section */
 #about .contact-info {
   text-align: center;
-  margin-bottom: 30px; /* Increased spacing */
+  margin-bottom: 30px;
 }
 
 #about .contact-info h3 {
@@ -153,7 +131,7 @@ section {
   height: auto;
   border-radius: 50%;
   display: block;
-  margin: 40px auto; /* Increased spacing */
+  margin: 40px auto;
   border: 5px solid #00cccc;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -181,10 +159,6 @@ section {
   background-attachment: fixed;
 }
 
-#experience .more-details {
-  display: block; /* Show all job details by default on PC */
-}
-
 #skills {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
   background-size: cover;
@@ -197,10 +171,6 @@ section {
   #experience,
   #skills {
     background-attachment: scroll;
-  }
-
-  #experience .more-details {
-    display: none; /* Hide job details by default on mobile */
   }
 }
 /* Download Resume and Contact Sections */
@@ -225,7 +195,7 @@ section {
 }
 
 #contact .qr-code img {
-  width: 200px; /* Reduced QR code size */
+  width: 200px;
 }
 
 #contact .contact-list li {
@@ -269,7 +239,7 @@ footer {
 
 footer .container {
   display: flex;
-  justify-content: space-between; /* Distribute logos to edges */
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -279,7 +249,7 @@ footer .footer-logo {
   margin: 10px;
 }
 
-footer .footer-contact { /* Center contact details in footer */
+footer .footer-contact {
   text-align: center;
 }
 
@@ -318,10 +288,10 @@ footer p, footer a {
   color: #001f3f;
   cursor: pointer;
   padding: 10px 15px;
-  border-radius: 10px; /* Added rounded corners */
+  border-radius: 10px;
   font-size: 1rem;
   opacity: 0.8;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow effect */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #back-to-top-btn:hover {
@@ -350,6 +320,32 @@ footer p, footer a {
     display: none;
   }
 
+  nav ul {
+    display: none; /* Hide the navigation menu by default on mobile */
+    flex-direction: column; /* Make menu items vertical */
+    position: absolute;
+    top: 70px; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: #001f3f;
+    text-align: center;
+  }
+
+  nav button {
+    display: block; /* Show the hamburger menu on mobile */
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #00cccc;
+    cursor: pointer;
+  }
+
+  nav ul.show {
+    display: flex; /* Show the menu when the hamburger menu is clicked */
+  }
+
   .show-more {
     display: block;
     margin: 20px auto;
@@ -369,14 +365,7 @@ footer p, footer a {
     background-color: #008b8b;
   }
 
-  #back-to-top-btn {
-    background-color: #ffffff;
-    color: #001f3f;
-    right: 10px; /* Adjusted position to prevent text overlap */
-    bottom: 70px;
-  }
-
   #contact .qr-code img {
-    width: 150px; /* Further reduced QR code size for mobile */
+    width: 150px;
   }
 }
