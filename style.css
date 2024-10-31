@@ -1,231 +1,46 @@
-/* Light/Dark Mode Toggle Button Styling */
-.toggle-dark-mode {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  background-color: #333;
-  color: #fff;
+/* General Layout Adjustments */
+body {
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 200;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Light Mode Styles for Toggle Button */
-body.light-mode .toggle-dark-mode {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Smooth Transition Effect for Mode Switch */
-body, .toggle-dark-mode {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}/* General Navigation Bar Styles */
-nav {
-  background-color: #001f3f;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Navigation Links */
-nav ul {
-  list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }
 
-nav li {
-  margin: 0;
+/* Profile Photo and Logo Adjustments */
+.profile-photo {
+  width: 150px; /* Scaled down for better fit */
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
-nav a {
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  transition: color 0.3s ease, background-color 0.3s ease;
+.logo img {
+  max-height: 50px; /* Adjust for navigation bar */
 }
 
-/* Hover Effect for Navigation Links */
-nav a:hover,
-nav a:focus {
-  color: #00cccc;
-  background-color: #003366;
-  padding: 5px 10px;
-  border-radius: 5px;
+.small-logo {
+  max-height: 40px;
+  margin-bottom: 10px;
 }
 
-/* Mobile Hamburger Menu Button */
-.hamburger-menu {
-  display: none;
-  font-size: 24px;
-  color: #ffffff;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 200;
-  transition: background-color 0.3s ease;
-}
-
-.hamburger-menu:hover {
-  background-color: #333;
-}
-
-/* Responsive Navigation - Mobile View */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #001f3f;
-    width: 100%;
-    padding: 20px 0;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  /* Show Mobile Menu when Hamburger Menu is Toggled */
-  nav ul.show {
-    display: flex;
-  }
-
-  /* Display Hamburger Menu on Mobile */
-  .hamburger-menu {
-    display: block;
-  }
-
-  /* Mobile Navigation Link Styles */
-  nav ul.show a {
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}/* Back to Top Button Styling */
-.back-to-top {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  padding: 10px 15px;
-  background-color: #333;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 100;
-  display: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover Effect for Back to Top Button */
-.back-to-top:hover {
-  background-color: #444;
-  transform: translateY(-2px);
-}
-
-/* Show Back to Top Button on Mobile */
-@media (max-width: 768px) {
-  .back-to-top {
-    font-size: 14px;
-    padding: 8px 12px;
-    bottom: 15px;
-    right: 15px;
-  }
-}/* About Me Section Background */
-#about {
-  background-image: url("https://github.com/JadeBowen/jadesresume/blob/main/network-enot-poloskun.jpg?raw=true");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Experience Section Background */
-#experience {
-  background-image: url("https://github.com/JadeBowen/jadesresume/blob/main/glowing%20tower.jpg?raw=true");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Philosophy Section Background */
-#philosophy {
-  background-image: url("https://github.com/JadeBowen/jadesresume/blob/main/philosophy.jpg?raw=true");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Skills Section Background */
-#skills {
-  background-image: url("https://github.com/JadeBowen/jadesresume/blob/main/world%20internet.JPG?raw=true");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Contact Section Background */
-#contact {
-  background-image: url("https://github.com/JadeBowen/jadesresume/blob/main/data%20to%20pc.jpg?raw=true");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Download Resume Section Background */
-#download-resume {
-  background-image: url("https://github.com/JadeBowen/jadesresume/blob/main/world%20on%20chip.jpg?raw=true");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Mobile Adjustments for Background Images */
+/* Responsive Image Sizing for Mobile */
 @media screen and (max-width: 768px) {
-  #about, #experience, #philosophy, #skills, #contact, #download-resume {
-    background-attachment: scroll;
+  .profile-photo {
+    width: 100px;
   }
-}/* Overlay for Background Images */
+
+  .small-logo {
+    max-height: 30px;
+  }
+}/* Background Image Overlays for Readability */
 .section-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
   z-index: 1;
-}
-
-/* Position Overlay in Each Section */
-#about, #experience, #philosophy, #skills, #contact, #download-resume {
-  position: relative;
 }
 
 #about .section-overlay,
@@ -237,7 +52,6 @@ nav a:focus {
   content: '';
 }
 
-/* Ensure Text Sits Above Overlay */
 #about .container,
 #experience .container,
 #philosophy .container,
@@ -246,94 +60,222 @@ nav a:focus {
 #download-resume .container {
   position: relative;
   z-index: 2;
+  color: #ffffff; /* Ensures text is readable on dark overlay */
 }
 
-/* Mobile Overlay Adjustment */
-@media screen and (max-width: 768px) {
-  .section-overlay {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-}/* Show More/Show Less Button Styling */
-.show-more {
+/* Text Shadow for Enhanced Contrast */
+h2, h3, p, ul {
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Adjusted Text Color for Contact Section */
+.contact-list a {
+  color: #ffffff;
+}/* Navigation Bar Styles */
+nav {
+  background-color: #001f3f;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00cccc;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
   display: none;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 200;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #001f3f;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Footer Layout Adjustments */
+footer {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+footer p, footer a {
+  margin: 0;
+  color: #00cccc;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+  }
+}
+
+/* Button Styling */
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 70px; /* Adjusted position above footer */
+  right: 20px;
+  background-color: #333;
+  color: #ffffff;
+}/* Light/Dark Mode Toggle Button */
+.toggle-dark-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 200;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode .toggle-dark-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Back to Top Button Adjustments */
+#back-to-top-btn {
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top-btn:hover {
+  background-color: #777;
+  transform: translateY(-2px);
+}
+
+/* Show More / Show Less Button Styling */
+.show-more {
+  display: inline-block;
   background-color: #00cccc;
   color: #001f3f;
   padding: 8px 12px;
-  font-family: 'Roboto', sans-serif;
   font-size: 1em;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 10px;
 }
 
-/* Hover Effect for Show More/Show Less Button */
 .show-more:hover {
   background-color: #008b8b;
   transform: translateY(-2px);
-}
-
-/* Display Show More/Show Less Button on Mobile */
-@media screen and (max-width: 768px) {
-  .show-more {
-    display: inline-block;
+}/* Responsive Text and Layout Adjustments for Mobile */
+@media (max-width: 768px) {
+  /* Adjust Text Sizes for Readability */
+  h2 {
+    font-size: 1.8em;
   }
-}
 
-/* More Details Section for Hidden Content */
-.more-details {
-  display: none;
-}
+  h3 {
+    font-size: 1.4em;
+  }
 
-.more-details.show {
-  display: block;
-}/* Footer Styling */
-footer {
-  background-color: #001f3f;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 0;
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-}
+  p, ul {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
 
-footer .container {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+  /* Adjust Profile Photo Sizing */
+  .profile-photo {
+    width: 80px;
+    margin-bottom: 10px;
+  }
 
-/* Footer Logo */
-footer .small-logo {
-  max-height: 50px;
-  margin-bottom: 10px;
-}
+  /* Navigation Menu Adjustments */
+  .hamburger-menu {
+    top: 15px;
+    right: 15px;
+  }
 
-/* Footer Contact Information */
-footer p {
-  margin: 5px 0;
-  font-size: 1em;
-}
+  nav ul {
+    padding: 10px 0;
+  }
 
-/* Footer Links */
-footer a {
-  color: #00cccc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #008b8b;
-}
-
-/* Mobile Layout for Footer */
-@media screen and (max-width: 768px) {
+  /* Footer Adjustments */
   footer .container {
     flex-direction: column;
     align-items: center;
@@ -341,49 +283,17 @@ footer a:hover {
   }
 
   footer .small-logo {
-    max-height: 40px;
+    max-height: 30px;
   }
-}/* Download Resume Section Styling */
-#download-resume {
-  padding: 80px 0;
-  text-align: center;
-}
 
-#download-resume h2 {
-  color: #00ffff;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
+  /* Back to Top Button Positioning on Mobile */
+  #back-to-top-btn {
+    bottom: 50px; /* Adjusted to avoid overlapping footer */
+    right: 10px;
+  }
 
-/* Resume Download Button Styling */
-.resume-option a {
-  display: inline-block;
-  padding: 12px 20px;
-  margin: 10px;
-  background-color: #00cccc;
-  color: #001f3f;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  font-size: 1em;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover Effect for Download Buttons */
-.resume-option a:hover {
-  background-color: #008b8b;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* Responsive Download Button Layout for Mobile */
-@media screen and (max-width: 768px) {
-  .resume-option a {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
+  /* Background Attachment for Mobile Backgrounds */
+  #about, #experience, #philosophy, #skills, #contact, #download-resume {
+    background-attachment: scroll;
   }
 }
