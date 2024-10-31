@@ -23,36 +23,14 @@ button:hover {
   padding: 8px 12px;
   font-size: 1em;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .show-more:hover {
   background-color: #008b8b;
-  transform: translateY(-2px);
-}/* Navigation Bar Styles */
-nav {
-  background-color: #001f3f;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* Navigation Links Styling */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
 nav a {
   color: #ffffff;
   text-decoration: none;
@@ -65,154 +43,10 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hamburger Menu for Mobile */
-.hamburger-menu {
-  display: none;
-  font-size: 24px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 200;
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #001f3f;
-    width: 100%;
-    padding: 20px 0;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .hamburger-menu {
-    display: block;
-  }
-}/* Footer Styling */
-footer {
-  background-color: #001f3f;
+/* Footer Links Hover Effect */
+footer a:hover {
   color: #ffffff;
-  padding: 30px 0;
-  border-top: 1px solid #333;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-/* Footer Container Styling */
-footer .container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* Footer Text and Link Styling */
-footer p, footer a {
-  margin: 0;
-  color: #00cccc;
-}
-
-/* Small Logo Styling in Footer */
-.small-logo {
-  max-height: 40px;
-  margin-bottom: 10px;
-}
-
-/* Footer Responsive Layout */
-@media (max-width: 768px) {
-  footer .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  footer .small-logo {
-    max-height: 30px;
-  }
-}/* Light/Dark Mode Toggle Button */
-.toggle-dark-mode {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 200;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Light Mode Styles */
-body.light-mode .toggle-dark-mode {
-  background-color: #fff;
-  color: #333;
-}/* Back to Top Button */
-#back-to-top-btn {
-  display: none;
-  position: fixed;
-  bottom: 70px; /* Positioned above footer */
-  right: 20px;
-  background-color: #555;
-  color: #ffffff;
-  font-size: 1em;
-  font-weight: bold;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 100;
-}
-
-#back-to-top-btn:hover {
-  background-color: #777;
-  transform: translateY(-2px);
-}/* Background Image Overlays for Readability */
-.section-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-  z-index: 1;
-}
-
-/* Section Overlay for Each Section */
-#about .section-overlay,
-#experience .section-overlay,
-#philosophy .section-overlay,
-#skills .section-overlay,
-#contact .section-overlay,
-#download-resume .section-overlay {
-  content: '';
-}
-
-/* Text Layer Styling for Sections with Overlay */
-#about .container,
-#experience .container,
-#philosophy .container,
-#skills .container,
-#contact .container,
-#download-resume .container {
-  position: relative;
-  z-index: 2;
-  color: #ffffff; /* Ensures text is readable on dark overlay */
+  text-decoration: underline;
 }/* Responsive Text and Layout Adjustments for Mobile */
 @media (max-width: 768px) {
   /* Adjust Text Sizes for Readability */
@@ -266,6 +100,78 @@ body.light-mode .toggle-dark-mode {
   #about, #experience, #philosophy, #skills, #contact, #download-resume {
     background-attachment: scroll;
   }
+}/* Consistent Padding and Margin for Sections */
+section {
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Improved Spacing Between Headings and Content */
+h2, h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+p, ul {
+  margin: 0 0 20px 0;
+}
+
+/* Button Margin Consistency */
+button {
+  margin: 10px 0;
+}
+
+/* Footer Padding Adjustments */
+footer {
+  padding: 30px 20px;
+}
+
+/* Additional Margin for Footer Elements */
+footer ul, footer p {
+  margin-bottom: 10px;
+}
+
+/* Reduce Space Between "Show More" Button and Content */
+.show-more {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}/* Background Image Overlays for Readability */
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  z-index: 1;
+}
+
+/* Section Overlay for Each Section */
+#about .section-overlay,
+#experience .section-overlay,
+#philosophy .section-overlay,
+#skills .section-overlay,
+#contact .section-overlay,
+#download-resume .section-overlay {
+  content: '';
+}
+
+/* Text Layer Styling for Sections with Overlay */
+#about .container,
+#experience .container,
+#philosophy .container,
+#skills .container,
+#contact .container,
+#download-resume .container {
+  position: relative;
+  z-index: 2;
+  color: #ffffff; /* Ensures text is readable on dark overlay */
 }/* Hover Effects for Buttons and Links */
 button:hover {
   background-color: #008b8b; /* Darker color on hover for contrast */
@@ -278,17 +184,144 @@ nav a:hover {
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-/* Additional Touches for Consistency */
+/* "Show More" Button Hover */
 .show-more:hover {
   background-color: #008b8b;
   transform: translateY(-2px);
 }
 
-.contact-list a:hover {
+/* Contact List and Footer Link Hover Effect */
+.contact-list a:hover,
+footer a:hover {
   color: #00cccc;
+  text-decoration: underline;
+}
+
+/* Additional Touches for Consistency */
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}/* Final Consistency Adjustments for Buttons and Links */
+button, .show-more {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+/* Ensure Smooth Transitions for Buttons and Links Across Browsers */
+button, a {
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition: color 0.3s ease, background-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Fix Button and Link Outline on Focus (for Accessibility) */
+button:focus, a:focus {
+  outline: 2px solid #00cccc;
+  outline-offset: 2px;
+}
+
+/* Additional Cross-Browser Consistency Adjustments */
+img, button {
+  border: none;
+  vertical-align: middle;
+}
+
+/* Box-Sizing for Consistent Element Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Additional Tweaks for Edge and Safari Compatibility */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* Adjust Button Styling for Edge */
+  button {
+    padding: 10px 15px;
+  }
+}
+
+@supports (-webkit-appearance: none) and (display: flex) {
+  /* Additional Styling for Safari */
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}/* Responsive Layout Adjustments for Smaller Screens */
+@media (max-width: 576px) {
+  /* Refine Heading and Text Sizes */
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  /* Refine Button Padding for Smaller Screens */
+  button, .show-more {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+
+  /* Section Padding for Small Devices */
+  section {
+    padding: 20px 15px;
+  }
+
+  /* Footer Spacing */
+  footer .container {
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Refine Container Width for Tablets and Smaller Screens */
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+}/* Final Hover Effect Polishing */
+button:hover, .show-more:hover {
+  background-color: #008b8b; /* Enhanced contrast */
+  color: #ffffff;
+  transform: translateY(-2px);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Footer Layout and Spacing Refinement */
+footer {
+  background-color: #001f3f;
+  padding: 20px 15px;
+}
+
+footer a {
+  color: #00cccc;
+  text-decoration: none;
 }
 
 footer a:hover {
   color: #ffffff;
   text-decoration: underline;
+}
+
+.footer-logo {
+  max-height: 30px;
+}
+
+/* Polished Outline for Button Focus State (Accessibility) */
+button:focus, a:focus {
+  outline: 3px solid #00cccc;
+  outline-offset: 2px;
+}
+
+/* Button and Link Transition for Consistency */
+button, a {
+  transition: all 0.3s ease;
 }
