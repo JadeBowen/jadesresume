@@ -5,7 +5,7 @@ body {
   background-color: #001f3f;
   color: #e0e0e0;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-align: justify; /* Justify body text */
+  text-align: justify;
 }
 
 body.light-mode {
@@ -17,7 +17,7 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-h2 { /* Emphasize section headers */
+h2 {
   font-size: 2.5em;
   text-decoration: underline;
 }
@@ -25,7 +25,7 @@ h2 { /* Emphasize section headers */
 /* Link Styling */
 a {
   color: #00cccc;
-  text-decoration: underline; /* Add underline to hyperlinks */
+  text-decoration: underline;
   transition: color 0.3s ease;
 }
 
@@ -44,7 +44,7 @@ header {
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-between; /* Distribute space around */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -52,20 +52,12 @@ header .header-logo {
   max-height: 50px;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+nav {
+  display: flex; /* Align logo and hamburger menu horizontally */
+  align-items: center;
 }
 
-nav li {
-  margin: 0 10px;
-}
-
-nav a, nav button { /* Style menu items consistently */
+nav button {
   background: none;
   border: none;
   padding: 0;
@@ -73,33 +65,43 @@ nav a, nav button { /* Style menu items consistently */
   font-size: 1rem;
   color: #00cccc;
   cursor: pointer;
-  text-decoration: none; /* Remove underline from menu links */
+  margin-left: 20px; /* Add space between logo and button */
 }
 
-/* Hamburger Menu Styling (hidden on PC) */
-.hamburger-menu {
-  display: none;
-}
-/* Media Query for Mobile Navigation */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav ul, nav a, nav button {
-    text-align: center;
-  }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* Hide the navigation menu by default */
+  position: absolute;
+  top: 70px; /* Position below the header */
+  left: 0;
+  width: 100%;
+  background-color: #001f3f;
+  text-align: center;
 }
 
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul a, nav button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #00cccc;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav ul.show {
+  display: block; /* Show the menu when the hamburger menu is clicked */
+}
 /* Section Styling */
 section {
-  padding: 100px 20px;
+  padding: 80px 20px; /* Reduced section spacing */
   position: relative;
   overflow: hidden;
 }
@@ -125,7 +127,7 @@ section {
 /* About Me Section */
 #about .contact-info {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Increased spacing */
 }
 
 #about .contact-info h3 {
@@ -136,7 +138,7 @@ section {
 #about .contact-info a {
   display: block;
   margin-bottom: 0.5em;
-  font-size: 1.2em; /* Consistent font size for contact info */
+  font-size: 1.2em;
 }
 
 #about {
@@ -145,12 +147,13 @@ section {
   background-position: center;
   background-attachment: fixed;
 }
+
 .profile-photo {
-  width: 250px; /* Slightly enlarged profile photo */
+  width: 250px;
   height: auto;
   border-radius: 50%;
   display: block;
-  margin: 30px auto; /* Increased spacing */
+  margin: 40px auto; /* Increased spacing */
   border: 5px solid #00cccc;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -163,7 +166,6 @@ section {
     width: 150px;
   }
 }
-
 /* Philosophy, Experience, Skills Sections */
 #philosophy {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
@@ -179,8 +181,8 @@ section {
   background-attachment: fixed;
 }
 
-#experience .more-details { /* Initially hide "more details" on mobile */
-  display: none;
+#experience .more-details {
+  display: block; /* Show all job details by default on PC */
 }
 
 #skills {
@@ -189,14 +191,18 @@ section {
   background-position: center;
   background-attachment: fixed;
 }
+
 @media (max-width: 768px) {
   #philosophy,
   #experience,
   #skills {
     background-attachment: scroll;
   }
-}
 
+  #experience .more-details {
+    display: none; /* Hide job details by default on mobile */
+  }
+}
 /* Download Resume and Contact Sections */
 #download-resume {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
@@ -218,7 +224,11 @@ section {
   text-align: center;
 }
 
-#contact .contact-list li { /* Consistent spacing for contact details */
+#contact .qr-code img {
+  width: 200px; /* Reduced QR code size */
+}
+
+#contact .contact-list li {
   margin-bottom: 10px;
 }
 
@@ -249,11 +259,6 @@ button:hover,
   transform: translateY(-2px);
 }
 
-/* Show More button is always hidden on PC */
-.show-more {
-  display: none;
-}
-
 /* Footer Styling */
 footer {
   background-color: #001f3f;
@@ -264,7 +269,7 @@ footer {
 
 footer .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Distribute logos to edges */
   align-items: center;
   flex-wrap: wrap;
 }
@@ -274,31 +279,35 @@ footer .footer-logo {
   margin: 10px;
 }
 
+footer .footer-contact { /* Center contact details in footer */
+  text-align: center;
+}
+
 footer p, footer a {
   margin: 10px;
 }
 
 @media (max-width: 768px) {
   footer .container {
-    flex-direction: column; /* Stack footer items vertically on mobile */
+    flex-direction: column;
     gap: 10px;
   }
 
   footer .footer-logo {
-    order: -1; /* Place logo at the top on mobile */
+    order: -1;
   }
 
   footer p {
-    order: 0; /* Place copyright info below logo */
+    order: 0;
   }
 
   footer a {
-    order: 1; /* Place contact info below copyright */
+    order: 1;
   }
 }
 /* Back to Top Button Styling */
 #back-to-top-btn {
-  display: inline-block; /* Make the button floating */
+  display: inline-block;
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -309,38 +318,39 @@ footer p, footer a {
   color: #001f3f;
   cursor: pointer;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 10px; /* Added rounded corners */
   font-size: 1rem;
-  opacity: 0.8; /* Increase visibility */
+  opacity: 0.8;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow effect */
 }
 
 #back-to-top-btn:hover {
   background-color: #008b8b;
-  opacity: 1; /* Increase visibility on hover */
+  opacity: 1;
 }
 
 /* Additional Styling */
-.philosophy-content p { /* Increased line spacing in Philosophy section */
+.philosophy-content p {
   line-height: 1.6;
 }
 
-.skill-category ul li { /* Increased spacing between bullet points in Skills section */
+.skill-category ul li {
   margin-bottom: 10px;
 }
 
 /* Responsive Adjustments */
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px; /* Set maximum width for large screens */
+    max-width: 1140px;
   }
 }
 
 @media (max-width: 768px) {
-  #about h2 { /* Remove "About Me" from section title on mobile */
+  #about h2 {
     display: none;
   }
 
-  .show-more { /* Style "Show More/Less" button for mobile */
+  .show-more {
     display: block;
     margin: 20px auto;
     background-color: #00cccc;
@@ -351,7 +361,7 @@ footer p, footer a {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    width: 100%; /* Make button full width on mobile */
+    width: 100%;
     text-align: center;
   }
 
@@ -360,7 +370,13 @@ footer p, footer a {
   }
 
   #back-to-top-btn {
-    background-color: #ffffff; /* Adjust color/contrast for mobile */
+    background-color: #ffffff;
     color: #001f3f;
+    right: 10px; /* Adjusted position to prevent text overlap */
+    bottom: 70px;
+  }
+
+  #contact .qr-code img {
+    width: 150px; /* Further reduced QR code size for mobile */
   }
 }
