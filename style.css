@@ -137,7 +137,6 @@ section {
   background-position: center;
   background-attachment: fixed;
 }
-
 .profile-photo {
   width: 200px;
   height: auto;
@@ -156,6 +155,7 @@ section {
     width: 150px;
   }
 }
+
 /* Philosophy, Experience, Skills Sections */
 #philosophy {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
@@ -237,7 +237,6 @@ button:hover,
 .show-more {
   display: none;
 }
-
 /* Footer Styling */
 footer {
   background-color: #001f3f;
