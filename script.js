@@ -1,55 +1,129 @@
-// JavaScript for interactive elements
-
-// Function to observe and handle intersections for various elements
-function observeElements() {
-  const elementsToObserve = document.querySelectorAll('.skill-bar, .fade-in, .timeline .container');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains('skill-bar')) {
-          // Animate skill bars
-          const barFill = entry.target.querySelector('.skill-bar-fill');
-          const percentage = entry.target.dataset.percentage;
-          barFill.style.width = `${percentage}%`;
-        } else {
-          // Apply fade-in effect
-          entry.target.classList.add('appear');
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  });
-
-  elementsToObserve.forEach(element => {
-    observer.observe(element);
-  });
-}
-
-// Event listener to trigger observation on load
-window.addEventListener('load', observeElements);
-
-
-// Function to toggle light/dark mode
+// Light/Dark Mode Toggle Functionality
 function toggleLightDarkMode() {
+  // Select the body element and the toggle button
   const body = document.body;
   const button = document.querySelector('.toggle-dark-mode');
+  
+  // Toggle light mode class on the body element
   body.classList.toggle('light-mode');
-  button.textContent = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+  
+  // Update button text based on current mode
+  if (body.classList.contains('light-mode')) {
+    button.textContent = 'Switch to Dark Mode';
+  } else {
+    button.textContent = 'Switch to Light Mode';
+  }
 }
 
-// Event listener to trigger light/dark mode toggle button
-document.querySelector('.toggle-dark-mode').addEventListener('click', toggleLightDarkMode);
+// Add an event listener to the light/dark mode toggle button
+const toggleButton = document.querySelector('.toggle-dark-mode');
+toggleButton.addEventListener('click', function() {
+  toggleLightDarkMode();
+});
 
-// Function to implement smooth scrolling for navigation links
+// Sticky positioning setup for the mobile light/dark toggle button
+toggleButton.style.position = 'fixed';
+toggleButton.style.top = '20px';
+toggleButton.style.right = '20px';
+toggleButton.style.zIndex = '200';// Sticky Navigation Bar Setup
+window.addEventListener('scroll', function () {
+  // Select the navigation bar
+  const nav = document.querySelector('nav');
+  
+  // Toggle the 'sticky' class based on the scroll position
+  if (window.scrollY > 0) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
+});
+
+// Back to Top Button Functionality
+function scrollToTop() {
+  // Smoothly scroll to the top of the page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Create Back to Top Button and Append it to the Body
+const backToTopButton = document.createElement('button');
+backToTopButton.textContent = 'Back to Top';
+backToTopButton.classList.add('back-to-top');
+
+// Apply inline styles for positioning and appearance of Back to Top button
+backToTopButton.style.position = 'fixed';
+backToTopButton.style.bottom = '10px';
+backToTopButton.style.right = '10px';
+backToTopButton.style.padding = '10px 15px';
+backToTopButton.style.backgroundColor = '#333';
+backToTopButton.style.color = '#fff';
+backToTopButton.style.border = 'none';
+backToTopButton.style.borderRadius = '5px';
+backToTopButton.style.cursor = 'pointer';
+backToTopButton.style.zIndex = '100';
+backToTopButton.style.display = 'none'; // Hidden initially
+
+// Append Back to Top button to the body
+document.body.appendChild(backToTopButton);
+
+// Show or hide the Back to Top button based on scroll position
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = 'block';
+  } else {
+    backToTopButton.style.display = 'none';
+  }
+});
+
+// Add Event Listener for Back to Top Button Click
+backToTopButton.addEventListener('click', function() {
+  scrollToTop();
+});// Function to toggle Show More / Show Less content for Experience and Philosophy sections
+function toggleShowMore(button) {
+  // Select the content to expand/collapse
+  const moreDetails = button.previousElementSibling;
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+  // Toggle display of more details
+  if (isExpanded) {
+    moreDetails.classList.remove('show');
+    button.setAttribute('aria-expanded', 'false');
+    button.textContent = 'Show More';
+  } else {
+    moreDetails.classList.add('show');
+    button.setAttribute('aria-expanded', 'true');
+    button.textContent = 'Show Less';
+  }
+}
+
+// Enable Show More / Show Less only on mobile devices (screens below 768px)
+if (window.innerWidth < 768) {
+  // Select all Show More buttons and add event listeners to each one
+  document.querySelectorAll('.show-more').forEach(button => {
+    button.addEventListener('click', function () {
+      toggleShowMore(button);
+    });
+  });
+} else {
+  // Automatically expand content on desktop by adding the 'show' class to all hidden content sections
+  document.querySelectorAll('.more-details').forEach(details => {
+    details.classList.add('show');
+  });
+}// Smooth Scrolling for Navigation Links
 function smoothScroll() {
-  const navLinks = document.querySelectorAll('nav a');
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
+  // Select all navigation links
+  document.querySelectorAll('nav a').forEach(link => {
+    // Add click event listener to each navigation link
+    link.addEventListener('click', function (event) {
+      // Prevent the default link behavior
       event.preventDefault();
+      
+      // Get the target section ID from the href attribute
       const targetId = this.getAttribute('href');
+      
+      // Select the target element by its ID
       const targetElement = document.querySelector(targetId);
+      
+      // Scroll smoothly to the target element if it exists
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
       }
@@ -57,81 +131,39 @@ function smoothScroll() {
   });
 }
 
-// Event listener to trigger smooth scrolling
+// Call the smoothScroll function on window load to set up the event listeners
 window.addEventListener('load', smoothScroll);
 
-// Mobile menu toggle functionality for hamburger menu
+// Mobile Menu Toggle Functionality for Hamburger Menu
 function toggleMobileMenu() {
+  // Select the navigation menu and toggle the 'show' class
   const navMenu = document.querySelector('nav ul');
-  // Add ARIA attributes for accessibility
   const isExpanded = navMenu.classList.toggle('show');
-  mobileMenuButton.setAttribute('aria-expanded', isExpanded); 
+  
+  // Update the ARIA attribute for accessibility
+  mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
 
-  // Add visual cue (e.g., change background color)
-  mobileMenuButton.style.backgroundColor = isExpanded ? '#333' : 'transparent'; 
+  // Change the background color as a visual cue for the menu being open or closed
+  mobileMenuButton.style.backgroundColor = isExpanded ? '#333' : 'transparent';
 }
 
-// Event listener for mobile menu toggle
-// (assuming a hamburger button is added in HTML with the class "hamburger-menu")
+// Set up the hamburger menu button for mobile
 const mobileMenuButton = document.querySelector('.hamburger-menu');
+const navMenu = document.querySelector('nav ul');
+
+// Add event listener for mobile menu toggle functionality
 if (mobileMenuButton) {
-  mobileMenuButton.addEventListener('click', toggleMobileMenu);
+  mobileMenuButton.addEventListener('click', function() {
+    toggleMobileMenu();
+  });
 
-  // Add ARIA attributes for accessibility
-  mobileMenuButton.setAttribute('aria-label', 'Toggle Navigation Menu');
-  mobileMenuButton.setAttribute('aria-haspopup', 'true');
-  mobileMenuButton.setAttribute('aria-expanded', 'false'); 
-
-  // Close mobile menu when a link is clicked
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  // Close the mobile menu when a link inside the menu is clicked
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+      // Check if the mobile menu is open before toggling
       if (navMenu.classList.contains('show')) {
         toggleMobileMenu(); // Close the menu
       }
     });
-  });
-}
-
-// Utility function to debounce scroll events
-function debounce(func, wait = 20, immediate = true) {
-  let timeout;
-  return function () {
-    const context = this,
-          args = arguments;
-    const later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
-// Function to toggle Show More / Show Less for experience sections on mobile
-function toggleShowMore(button) {
-  const moreDetails = button.previousElementSibling;
-  const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-  // Toggle display of more details
-  moreDetails.classList.toggle('show');
-  button.setAttribute('aria-expanded', !isExpanded);
-  button.textContent = isExpanded ? 'Show More' : 'Show Less';
-}
-
-// Ensure each Show More button operates independently
-document.querySelectorAll('.show-more').forEach(button => {
-  button.addEventListener('click', () => toggleShowMore(button));
-});
-
-// Mobile Menu Toggle (Ensuring ARIA and styling adjustments)
-const mobileMenuButton = document.querySelector('.hamburger-menu');
-const navMenu = document.querySelector('nav ul');
-
-if (mobileMenuButton) {
-  mobileMenuButton.addEventListener('click', () => {
-    const isExpanded = navMenu.classList.toggle('show');
-    mobileMenuButton.setAttribute('aria-expanded', isExpanded);
   });
 }
