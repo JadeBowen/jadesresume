@@ -10,38 +10,54 @@ function toggleLightDarkMode() {
   const modeText = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
   button.textContent = modeText;
   button.setAttribute('aria-label', modeText); // Accessibility support
+
+  // Update the menu button's aria-label as well
+  const menuButton = document.querySelector('.hamburger-menu');
+  if (menuButton) { // Check if the menu button exists
+    const menuModeText = body.classList.contains('light-mode') ? 'Open Navigation Menu (Light Mode)' : 'Open Navigation Menu (Dark Mode)';
+    menuButton.setAttribute('aria-label', menuModeText);
+  }
 }
 
 // Event Listener for Light/Dark Mode Button
 const toggleButton = document.querySelector('.toggle-dark-mode');
-toggleButton.addEventListener('click', toggleLightDarkMode);
+if (toggleButton) { // Check if the button exists
+  toggleButton.addEventListener('click', toggleLightDarkMode);
+}
 // Mobile Menu Toggle Functionality
 function toggleMobileMenu() {
   const navMenu = document.querySelector('nav ul');
   const mobileMenuButton = document.querySelector('.hamburger-menu');
-  const isExpanded = navMenu.classList.toggle('show');
 
-  // Update aria-expanded for accessibility
-  mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-  mobileMenuButton.setAttribute('aria-label', isExpanded ? 'Close Navigation Menu' : 'Open Navigation Menu'); 
+  if (navMenu && mobileMenuButton) { // Check if both elements exist
+    const isExpanded = navMenu.classList.toggle('show');
+
+    // Update aria-expanded for accessibility
+    mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    mobileMenuButton.setAttribute('aria-label', isExpanded ? 'Close Navigation Menu' : 'Open Navigation Menu');
+  }
 }
 
 // Event Listener for Mobile Menu Button
 const mobileMenuButton = document.querySelector('.hamburger-menu');
-mobileMenuButton.addEventListener('click', toggleMobileMenu);
+if (mobileMenuButton) { // Check if the button exists
+  mobileMenuButton.addEventListener('click', toggleMobileMenu);
+}
 
 // Close the mobile menu when a link inside the menu is clicked
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     const navMenu = document.querySelector('nav ul');
-    if (navMenu.classList.contains('show')) {
+    const mobileMenuButton = document.querySelector('.hamburger-menu');
+
+    if (navMenu && mobileMenuButton && navMenu.classList.contains('show')) {
       toggleMobileMenu();
     }
   });
 });
 // Show More / Show Less Toggle Functionality
 function toggleShowMore(button) {
-  const moreDetails = button.previousElementSibling.querySelector('.more-details');
+  const moreDetails = button.previousElementSibling; 
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
   // Toggle visibility and update aria-expanded attribute
@@ -56,15 +72,8 @@ document.querySelectorAll('.show-more').forEach(button => {
     toggleShowMore(this);
   });
 });
-
-// Expand details by default on larger screens
-if (window.innerWidth >= 768) {
-  document.querySelectorAll('.more-details').forEach(details => {
-    details.style.display = 'block';
-  });
-}
 // Smooth Scrolling for Navigation Links
-function smoothScroll(event) { 
+function smoothScroll(event) {
   event.preventDefault(); // Prevent default anchor behavior
 
   const targetId = this.getAttribute('href'); // Get the target section ID
@@ -98,3 +107,6 @@ backToTopButton.addEventListener('click', () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
+
+// Start in dark mode by default
+toggleLightDarkMode(); // Call the function to initialize dark mode
