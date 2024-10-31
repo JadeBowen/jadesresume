@@ -2,9 +2,10 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #001f3f; /* Dark mode background color */
-  color: #e0e0e0; /* Lighter text color for better contrast */
+  background-color: #001f3f;
+  color: #e0e0e0;
   transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: justify; /* Justify body text */
 }
 
 body.light-mode {
@@ -16,16 +17,20 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
+h2 { /* Emphasize section headers */
+  font-size: 2.5em;
+  text-decoration: underline;
+}
+
 /* Link Styling */
 a {
   color: #00cccc;
-  text-decoration: none;
+  text-decoration: underline; /* Add underline to hyperlinks */
   transition: color 0.3s ease;
 }
 
 a:hover {
   color: #ffffff;
-  text-decoration: underline;
 }
 
 /* Header Styling */
@@ -39,60 +44,62 @@ header {
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-around; /* Distribute space around */
+  justify-content: space-between; /* Distribute space around */
   align-items: center;
 }
 
 header .header-logo {
-  max-height: 50px; /* Adjust logo size as needed */
+  max-height: 50px;
 }
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Center the menu items */
+  justify-content: center;
   width: 100%;
 }
 
 nav li {
-  margin: 0 10px; /* Even spacing for navigation links */
+  margin: 0 10px;
 }
 
-nav button {
-  background: none; /* Remove button default background */
+nav a, nav button { /* Style menu items consistently */
+  background: none;
   border: none;
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   color: #00cccc;
   cursor: pointer;
+  text-decoration: none; /* Remove underline from menu links */
 }
 
 /* Hamburger Menu Styling (hidden on PC) */
 .hamburger-menu {
   display: none;
 }
-
 /* Media Query for Mobile Navigation */
 @media (max-width: 768px) {
   header {
-    flex-wrap: wrap; /* Allow wrapping on mobile */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
   nav ul {
     flex-direction: column;
-    gap: 10px; /* Spacing between menu items on mobile */
+    gap: 10px;
   }
 
-  nav ul, nav button {
+  nav ul, nav a, nav button {
     text-align: center;
   }
 }
+
 /* Section Styling */
 section {
-  padding: 100px 20px; /* Increased padding for better spacing */
+  padding: 100px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -110,7 +117,7 @@ section {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 20px; /* Added padding to the container */
+  padding: 20px;
   position: relative;
   z-index: 2;
 }
@@ -129,6 +136,7 @@ section {
 #about .contact-info a {
   display: block;
   margin-bottom: 0.5em;
+  font-size: 1.2em; /* Consistent font size for contact info */
 }
 
 #about {
@@ -138,13 +146,13 @@ section {
   background-attachment: fixed;
 }
 .profile-photo {
-  width: 200px;
+  width: 250px; /* Slightly enlarged profile photo */
   height: auto;
   border-radius: 50%;
   display: block;
-  margin: 20px auto;
-  border: 5px solid #00cccc; /* Added a border to the profile image */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Added a subtle shadow */
+  margin: 30px auto; /* Increased spacing */
+  border: 5px solid #00cccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -171,13 +179,16 @@ section {
   background-attachment: fixed;
 }
 
+#experience .more-details { /* Initially hide "more details" on mobile */
+  display: none;
+}
+
 #skills {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
-
 @media (max-width: 768px) {
   #philosophy,
   #experience,
@@ -185,6 +196,7 @@ section {
     background-attachment: scroll;
   }
 }
+
 /* Download Resume and Contact Sections */
 #download-resume {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
@@ -201,9 +213,13 @@ section {
 }
 
 #contact .qr-code {
-  display: block; /* Ensure QR code is visible */
+  display: block;
   margin-top: 20px;
   text-align: center;
+}
+
+#contact .contact-list li { /* Consistent spacing for contact details */
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -237,6 +253,7 @@ button:hover,
 .show-more {
   display: none;
 }
+
 /* Footer Styling */
 footer {
   background-color: #001f3f;
@@ -247,7 +264,7 @@ footer {
 
 footer .container {
   display: flex;
-  justify-content: space-around; /* Distribute space around */
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -258,7 +275,7 @@ footer .footer-logo {
 }
 
 footer p, footer a {
-  margin: 10px; /* Spacing for footer elements */
+  margin: 10px;
 }
 
 @media (max-width: 768px) {
@@ -268,20 +285,20 @@ footer p, footer a {
   }
 
   footer .footer-logo {
-    order: 1; /* Place logo at the top on mobile */
+    order: -1; /* Place logo at the top on mobile */
   }
 
   footer p {
-    order: 2; /* Place copyright info below logo */
+    order: 0; /* Place copyright info below logo */
   }
 
   footer a {
-    order: 3; /* Place contact info below copyright */
+    order: 1; /* Place contact info below copyright */
   }
 }
 /* Back to Top Button Styling */
 #back-to-top-btn {
-  display: none;
+  display: inline-block; /* Make the button floating */
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -294,8 +311,56 @@ footer p, footer a {
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 1rem;
+  opacity: 0.8; /* Increase visibility */
 }
 
 #back-to-top-btn:hover {
   background-color: #008b8b;
+  opacity: 1; /* Increase visibility on hover */
+}
+
+/* Additional Styling */
+.philosophy-content p { /* Increased line spacing in Philosophy section */
+  line-height: 1.6;
+}
+
+.skill-category ul li { /* Increased spacing between bullet points in Skills section */
+  margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px; /* Set maximum width for large screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #about h2 { /* Remove "About Me" from section title on mobile */
+    display: none;
+  }
+
+  .show-more { /* Style "Show More/Less" button for mobile */
+    display: block;
+    margin: 20px auto;
+    background-color: #00cccc;
+    color: #001f3f;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width on mobile */
+    text-align: center;
+  }
+
+  .show-more:hover {
+    background-color: #008b8b;
+  }
+
+  #back-to-top-btn {
+    background-color: #ffffff; /* Adjust color/contrast for mobile */
+    color: #001f3f;
+  }
 }
