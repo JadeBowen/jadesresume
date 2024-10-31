@@ -14,31 +14,7 @@ function toggleLightDarkMode() {
 
 // Event Listener for Light/Dark Mode Button
 const toggleButton = document.querySelector('.toggle-dark-mode');
-toggleButton.addEventListener('click', toggleLightDarkMode);
-
-// Back to Top Button Functionality
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Create and Append Back to Top Button
-const backToTopBtn = document.createElement('button');
-backToTopBtn.id = 'back-to-top-btn';
-backToTopBtn.textContent = 'Back to Top';
-backToTopBtn.style.position = 'fixed';
-backToTopBtn.style.bottom = '70px';
-backToTopBtn.style.right = '20px';
-backToTopBtn.style.display = 'none';
-backToTopBtn.setAttribute('aria-label', 'Back to Top'); // Accessibility support
-document.body.appendChild(backToTopBtn);
-
-// Show/Hide Back to Top Button on Scroll
-window.addEventListener('scroll', () => {
-  backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
-
-// Scroll to Top on Button Click
-backToTopBtn.addEventListener('click', scrollToTop);// Mobile Menu Toggle Functionality for Hamburger Menu
+toggleButton.addEventListener('click', toggleLightDarkMode);// Mobile Menu Toggle Functionality
 function toggleMobileMenu() {
   const navMenu = document.querySelector('nav ul');
   const mobileMenuButton = document.querySelector('.hamburger-menu');
@@ -46,7 +22,6 @@ function toggleMobileMenu() {
 
   // Update aria-expanded for accessibility
   mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-  mobileMenuButton.style.backgroundColor = isExpanded ? '#333' : 'transparent'; // Visual cue
 }
 
 // Event Listener for Mobile Menu Button
@@ -61,9 +36,9 @@ document.querySelectorAll('nav a').forEach(link => {
       toggleMobileMenu();
     }
   });
-});// Show More / Show Less Toggle Functionality for Mobile
+});// Show More / Show Less Toggle Functionality
 function toggleShowMore(button) {
-  const moreDetails = button.nextElementSibling; // Correct targeting with nextElementSibling
+  const moreDetails = button.previousElementSibling.querySelector('.more-details');
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
   // Toggle visibility and update aria-expanded attribute
@@ -72,9 +47,11 @@ function toggleShowMore(button) {
   button.textContent = isExpanded ? 'Show More' : 'Show Less';
 }
 
-// Add Event Listeners for Show More Buttons on Mobile
+// Add Event Listeners for Show More Buttons
 document.querySelectorAll('.show-more').forEach(button => {
-  button.addEventListener('click', () => toggleShowMore(button));
+  button.addEventListener('click', function () {
+    toggleShowMore(this);
+  });
 });
 
 // Expand details by default on larger screens
