@@ -16,32 +16,9 @@ function toggleShowMore(button) {
 }
 
 // Toggles class on element, updates button text/attributes
-function toggleState(element, className, button, labels, ariaLabels) {
+function toggleState(element, className, button, ariaExpanded) {
   element.classList.toggle(className);
-  const isToggled = element.classList.contains(className);
-  button.textContent = labels[isToggled ? 1 : 0];
-  button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
-}
-// Dark mode toggle
-const darkModeBtn = document.querySelector(".toggle-dark-mode");
-darkModeBtn.addEventListener("click", () => {
-  toggleState(
-    document.body,
-    "light-mode",
-    darkModeBtn,
-    ["Switch to Light Mode", "Switch to Dark Mode"],
-    ["Switch to Light Mode", "Switch to Dark Mode"]
-  );
-  // Save preference in localStorage
-  localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
-});
-
-// Check for user's preference on page load
-const darkModePreference = localStorage.getItem("darkMode");
-if (darkModePreference === "light") {
-  document.body.classList.add("light-mode");
-  darkModeBtn.textContent = "Switch to Dark Mode";
-  darkModeBtn.setAttribute('aria-label', "Switch to Dark Mode");
+  button.setAttribute('aria-expanded', !ariaExpanded);
 }
 // Hamburger menu toggle
 const hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -72,7 +49,6 @@ hamburgerMenu.addEventListener("click", () => {
     });
   });
 });
-
 // Smooth scrolling for navigation links (using event delegation)
 document.querySelector("nav").addEventListener("click", (event) => {
   if (event.target.tagName === "A") {
