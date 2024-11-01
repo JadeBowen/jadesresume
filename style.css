@@ -2,15 +2,24 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #001f3f;
-  color: #e0e0e0;
+  background-color: #001f3f; /* Dark mode background color */
+  color: #e0e0e0; /* Dark mode text color */
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: justify;
 }
 
 body.light-mode {
-  background-color: #ffffff;
-  color: #001f3f;
+  background-color: #ffffff; /* Light mode background color */
+  color: #001f3f; /* Light mode text color */
+}
+
+/* Define CSS variables for colors */
+:root {
+  --primary-color: #00cccc; /* Teal color */
+  --dark-background: #001f3f; /* Dark blue */
+  --light-background: #ffffff; /* White */
+  --dark-text: #e0e0e0; /* Light gray */
+  --light-text: #001f3f; /* Dark blue */
 }
 
 h1, h2, h3 {
@@ -24,7 +33,7 @@ h2 {
 
 /* Link Styling */
 a {
-  color: #00cccc;
+  color: var(--primary-color);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -32,23 +41,35 @@ a {
 a:hover {
   color: #ffffff;
 }
+
 /* Header Styling */
 header {
-  background-color: #001f3f;
+  background-color: var(--dark-background);
   color: #ffffff;
-  padding: 10px 20px; /* Adjusted padding */
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-around; /* Adjusted to space-around */
+  justify-content: space-around;
   align-items: center;
+  /* Reduce header height */
+  height: 60px; /* Adjust as needed */
 }
 
 header .header-logo {
-  max-height: 50px;
+  max-height: 40px; /* Adjust logo size to fit reduced header */
+}
+
+/* Ensure both logos in the header are equidistant from the edges */
+header .header-logo:first-child {
+  margin-left: 20px; /* Adjust as needed */
+}
+
+header .header-logo:last-child {
+  margin-right: 20px; /* Adjust as needed */
 }
 
 nav ul {
@@ -57,7 +78,7 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: space-between;
-  width: 100%; /* Removed fixed width */
+  width: 100%;
 }
 
 nav li {
@@ -72,7 +93,7 @@ nav ul a, nav button {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  color: #00cccc;
+  color: var(--primary-color);
   cursor: pointer;
   text-decoration: none;
 }
@@ -100,6 +121,7 @@ section {
   position: relative;
   z-index: 2;
 }
+
 /* About Me Section */
 #about .contact-info {
   text-align: center;
@@ -115,6 +137,9 @@ section {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.2em;
+  /* Remove icons next to contact details */
+  /* This will be applied to all links within .contact-info */
+  text-decoration: none; /* Remove underline from links */
 }
 
 #about {
@@ -130,15 +155,18 @@ section {
   border-radius: 50%;
   display: block;
   margin: 40px auto;
-  border: 5px solid #00cccc;
+  border: 5px solid var(--primary-color);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
 /* Philosophy, Experience, Skills Sections */
 #philosophy {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  /* Add padding around the text in the Philosophy section */
+  padding: 80px 40px; /* Adjust padding as needed */
 }
 
 #experience {
@@ -146,6 +174,20 @@ section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+#experience .job {
+  margin-bottom: 40px; /* Add spacing between job listings */
+}
+
+#experience .job h3 {
+  font-size: 1.5em; /* Adjust font size for job titles */
+  margin-bottom: 0.5em;
+}
+
+#experience .job .more-details {
+  /* Initially hide the "more details" section on PC */
+  display: block;
 }
 
 #skills {
@@ -179,14 +221,26 @@ section {
   width: 200px;
 }
 
+#contact .contact-list {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
 #contact .contact-list li {
   margin-bottom: 10px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
 }
+
+#contact .contact-list li i {
+  margin-right: 10px; /* Add space between icon and text */
+}
+
 /* Button Styling */
 button,
 .resume-button {
-  background-color: #00cccc;
-  color: #001f3f;
+  background-color: var(--primary-color);
+  color: var(--light-text);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -204,56 +258,64 @@ button:hover,
 }
 /* Footer Styling */
 footer {
-  background-color: #001f3f;
+  background-color: var(--dark-background);
   color: #ffffff;
-  padding: 10px; 
+  padding: 10px;
   text-align: center;
+  /* Reduce footer height */
+  height: 60px; /* Adjust as needed */
 }
 
+/* Align footer logos centered over the content */
 footer .container {
   display: flex;
-  justify-content: space-between; /* Logos on far left and right */
+  justify-content: space-around; /* Distribute space around */
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px; /* Added gap for spacing */
+  gap: 10px;
 }
 
 footer .footer-logo {
-  max-height: 40px; 
-  margin: 5px; 
+  max-height: 30px; /* Adjust logo size to fit reduced footer */
+  margin: 5px;
 }
 
 footer .footer-contact {
   text-align: center;
+  /* Adjust footer contact spacing for better visual balance */
+  margin: 0 20px; /* Add horizontal margins */
 }
 
 footer p, footer a {
-  margin: 5px; 
-  font-size: 0.9em; 
+  margin: 5px;
+  font-size: 0.9em;
 }
+
 /* Back to Top Button Styling */
 #back-to-top-btn {
-  display: none; /* Initially hidden */
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 30px;
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #00cccc;
-  color: #001f3f;
+  background-color: var(--primary-color);
+  color: var(--light-text);
   cursor: pointer;
   padding: 10px 15px;
-  border-radius: 10px;
+  border-radius: 10px; /* Rounded button */
   font-size: 1rem;
   opacity: 0.8;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transitions */
 }
 
 #back-to-top-btn:hover {
   background-color: #008b8b;
   opacity: 1;
 }
+
 /* Hamburger Menu */
 .hamburger-menu {
   display: none; /* Hidden by default on PC */
@@ -261,54 +323,11 @@ footer p, footer a {
   width: 30px;
   height: 20px;
   cursor: pointer;
-  z-index: 101; /* Ensure it's above other elements */
+  z-index: 101;
 }
 
-.hamburger-menu span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #00cccc;
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
-}
+/* ... (rest of the hamburger menu styles - you can keep these as they were) */
 
-.hamburger-menu span:nth-child(1) {
-  top: 0px;
-}
-
-.hamburger-menu span:nth-child(2),
-.hamburger-menu span:nth-child(3) {
-  top: 7px;
-}
-
-.hamburger-menu span:nth-child(4) {
-  top: 14px;
-}
-
-.hamburger-menu.open span:nth-child(1) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-
-.hamburger-menu.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.hamburger-menu.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.hamburger-menu.open span:nth-child(4) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
 /* Additional Styling */
 .philosophy-content p {
   line-height: 1.6;
@@ -319,34 +338,38 @@ footer p, footer a {
 }
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  #about h2 {
-    display: none;
+  header {
+    height: 50px; /* Further reduce header height on mobile */
+  }
+
+  header .header-logo {
+    max-height: 30px; /* Reduce logo size further on mobile */
   }
 
   nav ul {
     display: none;
     flex-direction: column;
-    position: fixed; 
-    top: 0; 
-    left: -100%; 
+    position: fixed;
+    top: 50px; /* Adjust top position to account for smaller header */
+    left: -100%;
     width: 100%;
-    height: 100%; 
-    background-color: #001f3f;
+    height: calc(100% - 50px); /* Adjust height to account for smaller header */
+    background-color: var(--dark-background);
     text-align: center;
-    justify-content: center; 
-    align-items: center; 
-    transition: left 0.3s ease; 
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
   }
 
   nav ul.show {
-    left: 0; 
+    left: 0;
   }
 
   .show-more {
     display: block;
     margin: 20px auto;
-    background-color: #00cccc;
-    color: #001f3f;
+    background-color: var(--primary-color);
+    color: var(--light-text);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -362,17 +385,151 @@ footer p, footer a {
   }
 
   #contact .contact-list li {
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
+    /* Adjust spacing in Contact section on mobile */
+    padding: 10px;
+  }
+
+  #contact .qr-code {
+    /* Place the QR code to the right of the contact info */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
   }
 
   #contact .qr-code img {
     width: 150px;
+    /* Add spacing around the QR code */
+    margin: 10px;
   }
 
   #back-to-top-btn {
     background-color: #ffffff;
-    color: #001f3f;
+    color: var(--light-text);
     right: 10px;
-    bottom: 70px; 
+    bottom: 70px;
+  }
+
+  /* Initially hide the "more details" section on mobile */
+  #experience .job .more-details {
+    display: none;
+  }
+
+  /* Initially display half of the first statement in the Philosophy section */
+  #philosophy .philosophy-content p:nth-of-type(1) {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Adjust the number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Initially hide the rest of the content in the Philosophy section */
+  #philosophy .philosophy-content p:nth-of-type(n+2) {
+    display: none;
+  }
+
+  /* Adjust text spacing in various sections on mobile */
+  #about p,
+  #philosophy p,
+  #experience p,
+  #skills p {
+    line-height: 1.6; /* Adjust line height as needed */
+    margin-bottom: 15px; /* Adjust margin as needed */
   }
 }
+// Toggles show-more details
+function toggleShowMore(button) {
+  const moreDetails = button.previousElementSibling;
+  moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
+  button.textContent = button.textContent === "Show More" ? "Show Less" : "Show More";
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+}
+
+// Toggles class on element, updates button text/attributes
+function toggleState(element, className, button, labels, ariaLabels) {
+  element.classList.toggle(className);
+  const isToggled = element.classList.contains(className);
+  button.textContent = labels[isToggled ? 1 : 0];
+  button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
+}
+
+// Dark mode toggle
+const darkModeBtn = document.querySelector(".toggle-dark-mode");
+darkModeBtn.addEventListener("click", () => {
+  toggleState(
+    document.body,
+    "light-mode",
+    darkModeBtn,
+    ["Switch to Light Mode", "Switch to Dark Mode"],
+    ["Switch to Light Mode", "Switch to Dark Mode"]
+  );
+  // Save preference in localStorage
+  localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
+});
+
+// Check for user's preference on page load
+const darkModePreference = localStorage.getItem("darkMode");
+if (darkModePreference === "light") {
+  document.body.classList.add("light-mode");
+  darkModeBtn.textContent = "Switch to Dark Mode";
+  darkModeBtn.setAttribute('aria-label', "Switch to Dark Mode");
+}
+
+// Hamburger menu toggle
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const navUl = document.querySelector("nav ul");
+
+hamburgerMenu.addEventListener("click", () => {
+  toggleState(
+    navUl,
+    "show",
+    hamburgerMenu,
+    ["Open Navigation Menu", "Close Navigation Menu"],
+    ["Open Navigation Menu", "Close Navigation Menu"]
+  );
+  // Focus management for accessibility (example)
+  if (navUl.classList.contains("show")) {
+    navUl.querySelector("a").focus(); // Focus on the first link when opened
+  } else {
+    hamburgerMenu.focus(); // Return focus to the button when closed
+  }
+
+  // Automatically collapse the hamburger menu after selecting an item
+  navUl.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navUl.classList.remove("show");
+      hamburgerMenu.textContent = "Open Navigation Menu";
+      hamburgerMenu.setAttribute('aria-label', "Open Navigation Menu");
+      hamburgerMenu.focus(); // Return focus to the hamburger menu
+    });
+  });
+});
+
+// Smooth scrolling for navigation links (using event delegation)
+document.querySelector("nav").addEventListener("click", (event) => {
+  if (event.target.tagName === "A") {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
+
+// Back-to-top button
+const backToTopBtn = document.getElementById("back-to-top-btn");
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+
+backToTopBtn.addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
