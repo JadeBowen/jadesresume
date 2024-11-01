@@ -6,6 +6,7 @@ body {
   color: #e0e0e0; /* Dark mode text color */
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: justify;
+  font-size: 18px; /* Increased font size for better readability */
 }
 
 body.light-mode {
@@ -35,13 +36,12 @@ h2 {
 a {
   color: var(--primary-color);
   text-decoration: underline;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Added transition */
 }
 
 a:hover {
   color: #ffffff;
 }
-
 /* Header Styling */
 header {
   background-color: var(--dark-background);
@@ -53,22 +53,16 @@ header {
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Changed to column */
   align-items: center;
   /* Reduce header height */
-  height: 60px; /* Adjust as needed */
+  height: 80px; /* Adjusted as needed */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Added box shadow */
 }
 
 header .header-logo {
   max-height: 40px; /* Adjust logo size to fit reduced header */
-}
-/* Ensure both logos in the header are equidistant from the edges */
-header .header-logo:first-child {
-  margin-left: 20px; /* Adjust as needed */
-}
-
-header .header-logo:last-child {
-  margin-right: 20px; /* Adjust as needed */
+  margin-bottom: 10px; /* Added margin */
 }
 
 nav ul {
@@ -86,23 +80,61 @@ nav li {
   text-align: center;
 }
 
-nav ul a, nav button {
+nav ul a,
+nav button {
   background: none;
   border: none;
-  padding: 0;
+  padding: 8px 16px; /* Added padding */
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   color: var(--primary-color);
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.3s ease; /* Added transition */
 }
 /* Section Styling */
 section {
-  padding: 80px 20px;
+  padding: 100px 20px; /* Increased padding to account for fixed header */
   position: relative;
   overflow: hidden;
+  /* Add background images to each section */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 110%;
+  transition: background-size 0.5s ease;
+  /* Add background-repeat property */
+  background-repeat: no-repeat;
 }
 
+section:hover {
+  background-size: 120%; /* Added zoom effect on hover */
+}
+
+/* Specific background images for each section */
+#about {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
+}
+
+#philosophy {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
+}
+
+#experience {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
+}
+
+#skills {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
+}
+
+#download-resume {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
+}
+
+#contact {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
+}
 .section-overlay {
   position: absolute;
   top: 0;
@@ -136,18 +168,8 @@ section {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.2em;
-  /* Remove icons next to contact details */
-  /* This will be applied to all links within .contact-info */
   text-decoration: none; /* Remove underline from links */
 }
-
-#about {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 .profile-photo {
   width: 250px;
   height: auto;
@@ -157,26 +179,15 @@ section {
   border: 5px solid var(--primary-color);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
 /* Philosophy, Experience, Skills Sections */
 #philosophy {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   /* Add padding around the text in the Philosophy section */
-  padding: 80px 40px; /* Adjust padding as needed */
+  padding: 100px 40px; /* Increased padding to account for fixed header */
 }
-
-#experience {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 /* Add spacing between job listings */
 #experience .job {
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Increased margin */
 }
 
 #experience .job h3 {
@@ -185,41 +196,22 @@ section {
 }
 
 #experience .job .more-details {
-  /* Initially hide the "more details" section on PC */
-  display: block;
-}
-
-#skills {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  display: none; /* Initially hide the "more details" section */
+  background-color: rgba(0, 0, 0, 0.1); /* Add a subtle background color */
+  padding: 10px; /* Add some padding */
+  margin-top: 10px; /* Add some space above */
 }
 /* Download Resume and Contact Sections */
-#download-resume {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-#contact {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 #contact .qr-code {
-  display: block;
+  display: flex; /* Changed to flex */
+  align-items: center; /* Align items vertically */
   margin-top: 20px;
-  text-align: center;
 }
 
 #contact .qr-code img {
   width: 200px;
+  margin-left: 20px; /* Added margin */
 }
-
 #contact .contact-list {
   list-style: none; /* Remove bullet points */
   padding: 0;
@@ -313,13 +305,39 @@ footer a {
   background-color: #008b8b;
   opacity: 1;
 }
+/* Back to Top Button Styling */
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 10px; /* Rounded button */
+  font-size: 1rem;
+  opacity: 0.8;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transitions */
+}
 
+#back-to-top-btn:hover {
+  background-color: #008b8b;
+  opacity: 1;
+}
+
+This snippet styles the "Back to Top" button with fixed positioning, rounded corners, hover effects, and transitions for a smooth user experience.
+ * https://github.com/AmauryGarcia/AmauryGarcia.github.io
 /* Hamburger Menu */
 .hamburger-menu {
   display: none; /* Hidden by default on PC */
   position: relative;
-  width: 30px;
-  height: 20px;
+  width: 40px; /* Increased size */
+  height: 30px; /* Increased size */
   cursor: pointer;
   z-index: 101;
 }
@@ -377,7 +395,6 @@ footer a {
 .skill-category ul li {
   margin-bottom: 10px;
 }
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   header {
@@ -436,6 +453,7 @@ footer a {
   #contact .qr-code {
     /* Place the QR code to the right of the contact info */
     display: flex;
+    flex-direction: column; /* Changed to column */
     align-items: center;
     justify-content: space-around;
     margin-top: 20px;
@@ -446,7 +464,7 @@ footer a {
     /* Add spacing around the QR code */
     margin: 10px;
   }
-
+}
   #back-to-top-btn {
     background-color: #ffffff;
     color: var(--light-text);
@@ -458,7 +476,7 @@ footer a {
   #experience .job .more-details {
     display: none;
   }
-}
+
   /* Initially display half of the first statement in the Philosophy section */
   #philosophy .philosophy-content p:nth-of-type(1) {
     display: -webkit-box;
