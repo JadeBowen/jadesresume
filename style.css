@@ -1,20 +1,12 @@
-/* General Styling */
+/* Mobile-First Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #001f3f; /* Dark mode background color */
-  color: #e0e0e0; /* Dark mode text color */
+  background-color: #001f3f;
+  color: #e0e0e0;
   text-align: justify;
-  font-size: 18px; /* Increased font size for better readability */
-}
-
-/* Define CSS variables for colors */
-:root {
-  --primary-color: #00cccc; /* Teal color */
-  --dark-background: #001f3f; /* Dark blue */
-  --light-background: #ffffff; /* White */
-  --dark-text: #e0e0e0; /* Light gray */
-  --light-text: #001f3f; /* Dark blue */
+  font-size: 16px; /* Start with a comfortable mobile font size */
+  line-height: 1.6; /* Improve readability */
 }
 
 h1, h2, h3 {
@@ -22,105 +14,65 @@ h1, h2, h3 {
 }
 
 h2 {
-  font-size: 2.5em;
-  text-decoration: underline;
+  font-size: 2em; /* Adjust heading size for mobile */
 }
 
-/* Link Styling */
 a {
-  color: var(--primary-color);
-  text-decoration: underline;
-  transition: color 0.3s ease; /* Added transition */
+  color: #00cccc;
+  text-decoration: none; /* Remove underlines for a cleaner look */
 }
 
-a:hover {
-  color: #ffffff;
-}
-/* Header Styling */
+/* Header */
 header {
-  background-color: var(--dark-background);
+  background-color: #001f3f;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 100; /* Ensure header stays on top */
   display: flex;
-  flex-direction: column; /* Changed to column */
+  justify-content: space-between;
   align-items: center;
-  /* Reduce header height */
-  height: 80px; /* Adjusted as needed */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Added box shadow */
 }
 
-header .header-logo {
-  max-height: 40px; /* Adjust logo size to fit reduced header */
-  margin-bottom: 10px; /* Added margin */
+.header-logo {
+  max-height: 30px;
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  display: none; /* Initially hide the full menu on mobile */
 }
 
-nav li {
-  margin: 0 10px;
-  flex-grow: 1;
-  text-align: center;
-}
-
-nav ul a,
-nav button {
-  background: none;
-  border: none;
-  padding: 8px 16px; /* Added padding */
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  color: var(--primary-color);
+/* Hamburger Menu */
+.hamburger-menu {
+  position: relative;
+  width: 30px;
+  height: 20px;
   cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease; /* Added transition */
+  z-index: 101;
 }
-/* Section Styling */
+
+/* ... (Hamburger menu styles - same as before) ... */
+
+/* Sections */
 section {
-  padding: 100px 20px; /* Increased padding to account for fixed header */
+  padding-top: 60px; /* Adjust top padding to account for the header */
+  padding-bottom: 40px;
   position: relative;
   overflow: hidden;
-  /* Add background images to each section */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Specific background images for each section */
-#about {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
-}
+/* ... (Section-specific background images - same as before) ... */
 
-#philosophy {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
-}
-
-#experience {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
-}
-
-#skills {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
-}
-
-#download-resume {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
-}
-
-#contact {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
-}
 .section-overlay {
   position: absolute;
   top: 0;
@@ -135,334 +87,267 @@ section {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
-  position: relative;
-  z-index: 2;
 }
 
-/* About Me Section */
-#about .contact-info {
-  text-align: center;
-  margin-bottom: 30px;
+/* ... (About Me styles - adjust spacing as needed) ... */
+
+/* Philosophy */
+#philosophy .philosophy-content p {
+  margin-bottom: 20px;
 }
 
-#about .contact-info h3 {
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
+/* ... (Experience styles - adjust spacing as needed) ... */
+
+/* Skills */
+.skill-category {
+  margin-bottom: 20px;
 }
 
-#about .contact-info a {
-  display: block;
-  margin-bottom: 0.5em;
-  font-size: 1.2em;
-  text-decoration: none; /* Remove underline from links */
-}
-.profile-photo {
-  width: 250px;
-  height: auto;
-  border-radius: 50%;
-  display: block;
-  margin: 40px auto;
-  border: 5px solid var(--primary-color);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
+/* ... (Other mobile styles) ... */
+/* Larger Screen Styles */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px; /* Increase font size for larger screens */
+  }
 
-/* Philosophy, Experience, Skills Sections */
-#philosophy {
-  /* Add padding around the text in the Philosophy section */
-  padding: 100px 40px; /* Increased padding to account for fixed header */
-}
+  h2 {
+    font-size: 2.5em; /* Adjust heading size for larger screens */
+  }
 
-/* Add spacing between job listings */
-#experience .job {
-  margin-bottom: 40px; /* Increased margin */
-}
+  /* Header */
+  header {
+    height: 80px; /* Increase header height */
+    justify-content: space-around; /* Distribute space around logos */
+  }
 
-#experience .job h3 {
-  font-size: 1.5em; /* Adjust font size for job titles */
-  margin-bottom: 0.5em;
-}
+  .header-logo {
+    max-height: 40px; /* Increase logo size */
+  }
 
-#experience .job .more-details {
-  display: none; /* Initially hide the "more details" section */
-  background-color: rgba(0, 0, 0, 0.1); /* Add a subtle background color */
-  padding: 10px; /* Add some padding */
-  margin-top: 10px; /* Add some space above */
-}
-/* Download Resume and Contact Sections */
-#contact .qr-code {
-  display: flex; /* Changed to flex */
-  align-items: center; /* Align items vertically */
-  margin-top: 20px;
-}
+  /* Navigation */
+  nav ul {
+    display: flex; /* Show the full menu on larger screens */
+    justify-content: space-between;
+    width: 60%; /* Adjust width as needed */
+  }
 
-#contact .qr-code img {
-  width: 200px;
-  margin-left: 20px; /* Added margin */
-}
+  nav li {
+    margin: 0 10px;
+    flex-grow: 1;
+    text-align: center;
+  }
 
-#contact .contact-list {
-  list-style: none; /* Remove bullet points */
-  padding: 0;
-}
+  .hamburger-menu {
+    display: none; /* Hide the hamburger menu on larger screens */
+  }
 
-#contact .contact-list li {
-  margin-bottom: 10px;
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically align items */
-}
+  /* Sections */
+  section {
+    padding-top: 100px; /* Increase top padding for larger screens */
+    padding-bottom: 60px;
+  }
 
-#contact .contact-list li i {
-  margin-right: 10px; /* Add space between icon and text */
+  /* ... (Adjust styles for other sections as needed) ... */
+
+  /* Footer */
+  footer {
+    height: 60px; /* Adjust footer height as needed */
+  }
+
+  .footer-logo {
+    max-height: 40px; /* Adjust logo size */
+  }
 }
 /* Button Styling */
 button,
 .resume-button {
-  background-color: var(--primary-color);
-  color: var(--light-text);
+  background-color: #00cccc;
+  color: #001f3f;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 button:hover,
 .resume-button:hover {
   background-color: #008b8b;
-  transform: translateY(-2px);
-}
-/* Footer Styling */
-footer {
-  background-color: var(--dark-background);
-  color: #ffffff;
-  padding: 10px;
-  text-align: center;
-  /* Reduce footer height */
-  height: 60px; /* Adjust as needed */
 }
 
-/* Align footer logos centered over the content */
-footer .container {
-  display: flex;
-  justify-content: space-around; /* Distribute space around */
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+/* Show More Button - Mobile Only */
+.show-more {
+  display: block;
+  margin: 20px auto;
+  width: 100%; /* Make it span the container on mobile */
 }
 
-footer .footer-logo {
-  max-height: 60px; /* Increased logo size */
-  margin: 5px;
+@media (min-width: 768px) {
+  .show-more {
+    display: none; /* Hide the button on larger screens */
+  }
 }
 
-footer .footer-contact {
-  text-align: center;
-  /* Adjust footer contact spacing for better visual balance */
-  margin: 0 20px; /* Add horizontal margins */
-}
-
-footer p,
-footer a {
-  margin: 5px;
-  font-size: 0.9em;
-}
-/* Back to Top Button Styling */
+/* Back to Top Button */
 #back-to-top-btn {
   display: none;
   position: fixed;
   bottom: 20px;
   right: 30px;
   z-index: 99;
+  background-color: #00cccc;
+  color: #001f3f;
   border: none;
-  outline: none;
-  background-color: var(--primary-color);
-  color: var(--light-text);
-  cursor: pointer;
   padding: 10px 15px;
-  border-radius: 10px; /* Rounded button */
+  border-radius: 5px;
   font-size: 1rem;
-  opacity: 0.5; /* Increased transparency */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transitions */
+  cursor: pointer;
+  opacity: 0.7; /* Slightly transparent */
+  transition: opacity 0.3s ease;
 }
 
 #back-to-top-btn:hover {
-  background-color: #008b8b;
   opacity: 1;
 }
-/* Hamburger Menu */
-.hamburger-menu {
-  display: none; /* Hidden by default on PC */
-  position: relative;
-  width: 40px; /* Increased size */
-  height: 30px; /* Increased size */
-  cursor: pointer;
-  z-index: 101;
+/* Contact Section */
+#contact .contact-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.hamburger-menu span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--primary-color);
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
-}
-
-.hamburger-menu span:nth-child(1) {
-  top: 0px;
-}
-
-.hamburger-menu span:nth-child(2),
-.hamburger-menu span:nth-child(3) {
-  top: 7px;
-}
-
-.hamburger-menu span:nth-child(4) {
-  top: 14px;
-}
-
-.hamburger-menu.open span:nth-child(1) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-
-.hamburger-menu.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.hamburger-menu.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.hamburger-menu.open span:nth-child(4) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-/* Additional Styling */
-.philosophy-content p {
-  line-height: 1.6;
-}
-
-.skill-category {
-  margin-bottom: 20px; /* Added spacing between skill categories */
-}
-
-.skill-category ul li {
+#contact .contact-list li {
   margin-bottom: 10px;
 }
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  header {
-    height: 50px; /* Further reduce header height on mobile */
-  }
 
-  header .header-logo {
-    max-height: 30px; /* Reduce logo size further on mobile */
-  }
+#contact .contact-list a {
+  text-decoration: none; /* Remove underline from links */
+}
 
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: fixed; /* This should make it sticky */
-    top: 50px; /* Adjust to match your header height */
-    left: -100%;
-    width: 100%;
-    height: calc(100% - 50px); 
-    background-color: var(--dark-background);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    transition: left 0.3s ease;
-    z-index: 100; /* Ensure the menu stays on top */
-  }
+#contact .qr-code {
+  display: flex;
+  align-items: center;
+}
 
-  nav ul.show {
-    left: 0;
-  }
+#contact .qr-code img {
+  width: 150px;
+  margin-left: 20px;
+}
 
-  /* Show More/Show Less button styling for mobile */
-  .show-more {
-    display: block; /* Show the button on mobile */
-    margin: 20px auto;
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    text-align: center;
-  }
+/* Footer */
+footer {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
 
-  .show-more:hover {
-    background-color: #008b8b;
-  }
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
 
-  #contact .contact-list li {
-    margin-bottom: 15px;
-    /* Adjust spacing in Contact section on mobile */
-    padding: 10px;
-  }
-
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
   #contact .qr-code {
-    /* Place the QR code to the right of the contact info */
-    display: flex;
-    flex-direction: column; /* Changed to column */
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: flex-end; /* Align QR code to the right */
   }
 
   #contact .qr-code img {
-    width: 150px;
-    /* Add spacing around the QR code */
-    margin: 10px;
+    margin-left: 40px; /* Increase spacing */
   }
 }
-  #back-to-top-btn {
-    background-color: #ffffff;
-    color: var(--light-text);
-    right: 10px;
-    bottom: 70px;
-    opacity: 0.5; /* Increased transparency */
+/* About Me Section */
+#about {
+  background-color: #e0e0e0; /* Light background for contrast */
+}
+
+#about .container {
+  text-align: center; /* Center content */
+}
+
+#about .profile-photo {
+  margin-top: 40px;
+}
+
+#about p {
+  margin-bottom: 20px;
+}
+
+/* Philosophy Section */
+#philosophy article {
+  margin-bottom: 30px;
+}
+
+#philosophy h3 {
+  margin-bottom: 10px;
+}
+
+/* Experience Section */
+#experience .job {
+  margin-bottom: 40px;
+}
+
+#experience .job h3 {
+  margin-bottom: 5px;
+}
+
+#experience .job .more-details {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Skills Section */
+#skills .skill-category {
+  margin-bottom: 30px;
+}
+
+#skills h3 {
+  margin-bottom: 10px;
+}
+
+/* Download Resume Section */
+#download-resume .resume-option {
+  margin-bottom: 20px;
+}
+
+#download-resume .resume-button {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  #contact .qr-code {
+    display: flex;
+    flex-direction: column; /* Stack QR code vertically on mobile */
+    align-items: center;
   }
 
-  /* Initially hide the "more details" section on mobile */
-  #experience .job .more-details {
-    display: none;
+  #contact .qr-code img {
+    margin-left: 0; /* Remove left margin on mobile */
+    margin-top: 20px; /* Add top margin for spacing */
   }
+}
+/* Additional fine-tuning */
+#philosophy .philosophy-content p {
+  /* Initially display only half of the first mission statement */
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Adjust the number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
-  /* Initially display half of the first statement in the Philosophy section */
-  #philosophy .philosophy-content p:nth-of-type(1) {
-    display: -webkit-box;
-    -webkit-line-clamp: 5; /* Adjust the number of lines to show */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+#philosophy .philosophy-content article:nth-child(n+2) {
+  /* Initially hide the rest of the philosophy content */
+  display: none;
+}
 
-  /* Initially hide the rest of the content in the Philosophy section */
-  #philosophy .philosophy-content p:nth-of-type(n+2) {
-    display: none;
-  }
-
-  /* Adjust text spacing in various sections on mobile */
-  #about p,
-  #philosophy p,
-  #experience p,
-  #skills p {
-    line-height: 1.6; /* Adjust line height as needed */
-    margin-bottom: 20px; /* Increased margin */
-  }
+/* Adjust spacing for consistency */
+#about p,
+#experience p,
+#skills p {
+  margin-bottom: 20px;
 }
