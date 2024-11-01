@@ -1,5 +1,6 @@
 // Toggles show-more details
 function toggleShowMore(button) {
+  if (window.innerWidth > 768) return; // Skip on desktop
   const moreDetails = button.previousElementSibling;
 
   // Toggle the display of the more-details section
@@ -42,20 +43,19 @@ if (darkModePreference === "light") {
   darkModeBtn.textContent = "Switch to Dark Mode";
   darkModeBtn.setAttribute('aria-label', "Switch to Dark Mode");
 }
-
 // Hamburger menu toggle
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const navUl = document.querySelector("nav ul");
 
 hamburgerMenu.addEventListener("click", () => {
-  toggleState(
-    navUl,
-    "show",
-    hamburgerMenu,
-    ["Open Navigation Menu", "Close Navigation Menu"],
-    ["Open Navigation Menu", "Close Navigation Menu"]
-  );
-  // Focus management for accessibility (example)
+  hamburgerMenu.classList.toggle('open');
+  navUl.classList.toggle("show");
+
+  // Update ARIA attributes
+  const ariaExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true';
+  hamburgerMenu.setAttribute('aria-expanded', !ariaExpanded);
+
+  // Focus management for accessibility
   if (navUl.classList.contains("show")) {
     navUl.querySelector("a").focus(); // Focus on the first link when opened
   } else {
@@ -66,12 +66,13 @@ hamburgerMenu.addEventListener("click", () => {
   navUl.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       navUl.classList.remove("show");
-      hamburgerMenu.textContent = "Open Navigation Menu";
-      hamburgerMenu.setAttribute('aria-label', "Open Navigation Menu");
+      hamburgerMenu.classList.remove('open'); // Ensure the icon updates
+      hamburgerMenu.setAttribute('aria-expanded', 'false');
       hamburgerMenu.focus(); // Return focus to the hamburger menu
     });
   });
 });
+
 // Smooth scrolling for navigation links (using event delegation)
 document.querySelector("nav").addEventListener("click", (event) => {
   if (event.target.tagName === "A") {
@@ -79,7 +80,15 @@ document.querySelector("nav").addEventListener("click", (event) => {
     const targetId = event.target.getAttribute('href');
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      // Adjust scroll position to account for fixed header
+      const headerOffset = 80; // Adjust this value to match your header height
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 });
@@ -96,6 +105,8 @@ window.onscroll = function() {
 };
 
 backToTopBtn.addEventListener("click", function() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });
