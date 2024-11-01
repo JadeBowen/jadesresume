@@ -1,9 +1,17 @@
 // Toggles show-more details
 function toggleShowMore(button) {
   const moreDetails = button.previousElementSibling;
-  moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
-  button.textContent = button.textContent === "Show More" ? "Show Less" : "Show More";
-  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+
+  // Toggle the display of the more-details section
+  if (moreDetails.style.display === "none" || moreDetails.style.display === "") {
+    moreDetails.style.display = "block";
+    button.textContent = "Show Less";
+    button.setAttribute('aria-expanded', 'true');
+  } else {
+    moreDetails.style.display = "none";
+    button.textContent = "Show More";
+    button.setAttribute('aria-expanded', 'false');
+  }
 }
 
 // Toggles class on element, updates button text/attributes
@@ -13,7 +21,6 @@ function toggleState(element, className, button, labels, ariaLabels) {
   button.textContent = labels[isToggled ? 1 : 0];
   button.setAttribute('aria-label', ariaLabels[isToggled ? 1 : 0]);
 }
-
 // Dark mode toggle
 const darkModeBtn = document.querySelector(".toggle-dark-mode");
 darkModeBtn.addEventListener("click", () => {
@@ -65,7 +72,6 @@ hamburgerMenu.addEventListener("click", () => {
     });
   });
 });
-
 // Smooth scrolling for navigation links (using event delegation)
 document.querySelector("nav").addEventListener("click", (event) => {
   if (event.target.tagName === "A") {
