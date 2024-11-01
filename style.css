@@ -1,738 +1,400 @@
-/* Mobile-First Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #001f3f;
-  color: #e0e0e0;
-  text-align: justify;
-  font-size: 16px;
-  line-height: 1.6;
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: bold;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
 h2 {
-  font-size: 2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #ffcc00;
+}
+
+.section {
+    padding: 4em 1em;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
 }
 
 a {
-  color: #00cccc;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
-/* Header */
-header {
-  background-color: #001f3f;
-  color: #ffffff;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-logo {
-  max-height: 30px;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: none;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  position: relative;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 101;
-}
-
-.hamburger-menu span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #00cccc;
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-.hamburger-menu span:nth-child(1) {
-  top: 0px;
-}
-
-.hamburger-menu span:nth-child(2),
-.hamburger-menu span:nth-child(3) {
-  top: 7px;
-}
-
-.hamburger-menu span:nth-child(4) {
-  top: 14px;
-}
-
-.hamburger-menu.open span:nth-child(1) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-
-.hamburger-menu.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.hamburger-menu.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.hamburger-menu.open span:nth-child(4) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-
-/* Sections */
-section {
-  padding-top: 60px;
-  padding-bottom: 40px;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#about {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
-}
-
-#philosophy {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
-}
-
-#experience {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
-}
-
-#skills {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
-}
-
-#download-resume {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
-}
-
-#contact {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
-}
-
-.section-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0; /* Updated z-index */
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* About Me */
-#about .container {
-  text-align: center;
-}
-
-#about .profile-photo {
-  margin-top: 40px;
-}
-
-#about p {
-  margin-bottom: 20px;
-}
-
-/* Philosophy */
-#philosophy article {
-  margin-bottom: 30px;
-}
-
-#philosophy h3 {
-  margin-bottom: 10px;
-}
-
-#philosophy .philosophy-content p {
-  margin-bottom: 20px;
-  /* Initially display only half of the first mission statement */
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-#philosophy .philosophy-content article:nth-child(n+2) {
-  /* Initially hide the rest of the philosophy content */
-  display: none;
-}
-
-/* Experience */
-#experience .job {
-  margin-bottom: 40px;
-}
-
-#experience .job h3 {
-  margin-bottom: 5px;
-}
-
-#experience .job .more-details {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-top: 10px;
-}
-
-/* Skills */
-.skill-category {
-  margin-bottom: 30px;
-}
-
-#skills h3 {
-  margin-bottom: 10px;
-}
-
-/* Download Resume */
-#download-resume .resume-option {
-  margin-bottom: 20px;
-}
-
-#download-resume .resume-button {
-  display: block;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Larger Screen Styles */
-@media (min-width: 768px) {
-
-  body {
-    font-size: 18px;
-  }
-
-  h2 {
-    font-size: 2.5em;
-  }
-
-  /* Header */
-  header {
-    height: 80px;
-    justify-content: space-around;
-  }
-
-  .header-logo {
-    max-height: 40px;
-  }
-
-  /* Navigation */
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-  }
-
-  nav li {
-    margin: 0 10px;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .hamburger-menu {
-    display: none;
-  }
-
-  /* Sections */
-  section {
-    padding-top: 100px;
-    padding-bottom: 60px;
-  }
-
-  /* Footer */
-  footer {
-    height: 60px;
-  }
-
-  .footer-logo {
-    max-height:
-/* Mobile-First Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #001f3f;
-  color: #e0e0e0;
-  text-align: justify;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 2em;
-}
-
-a {
-  color: #00cccc;
-  text-decoration: none;
-}
-
-/* Header */
-header {
-  background-color: #001f3f;
-  color: #ffffff;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-logo {
-  max-height: 30px;
-}
-/* Navigation */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: none;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  position: relative;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 101;
-}
-
-.hamburger-menu span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #00cccc;
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-.hamburger-menu span:nth-child(1) {
-  top: 0px;
-}
-
-.hamburger-menu span:nth-child(2),
-.hamburger-menu span:nth-child(3) {
-  top: 7px;
-}
-
-.hamburger-menu span:nth-child(4) {
-  top: 14px;
-}
-
-.hamburger-menu.open span:nth-child(1) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-
-.hamburger-menu.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.hamburger-menu.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.hamburger-menu.open span:nth-child(4) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
-}
-/* Sections */
-section {
-  padding-top: 60px;
-  padding-bottom: 40px;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#about {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
-}
-
-#philosophy {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
-}
-
-#experience {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
-}
-
-#skills {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
-}
-
-#download-resume {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
-}
-
-#contact {
-  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
-}
-
-.section-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* About Me */
-#about .container {
-  text-align: center;
-}
-
-#about .profile-photo {
-  margin-top: 40px;
-}
-
-#about p {
-  margin-bottom: 20px;
-}
-
-/* Philosophy */
-#philosophy article {
-  margin-bottom: 30px;
-}
-
-#philosophy h3 {
-  margin-bottom: 10px;
-}
-
-#philosophy .philosophy-content p {
-  margin-bottom: 20px;
-  /* Initially display only half of the first mission statement */
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-#philosophy .philosophy-content article:nth-child(n+2) {
-  /* Initially hide the rest of the philosophy content */
-  display: none;
-}
-/* Experience */
-#experience .job {
-  margin-bottom: 40px;
-}
-
-#experience .job h3 {
-  margin-bottom: 5px;
-}
-
-#experience .job .more-details {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-top: 10px;
-}
-
-/* Skills */
-.skill-category {
-  margin-bottom: 30px;
-}
-
-#skills h3 {
-  margin-bottom: 10px;
-}
-
-/* Download Resume */
-#download-resume .resume-option {
-  margin-bottom: 20px;
-}
-
-#download-resume .resume-button {
-  display: block;
-  margin-bottom: 10px;
-  text-align: center;
-}
-/* Larger Screen Styles */
-@media (min-width: 768px) {
-
-  body {
-    font-size: 18px;
-  }
-
-  h2 {
-    font-size: 2.5em;
-  }
-
-  /* Header */
-  header {
-    height: 80px;
-    justify-content: space-around;
-  }
-
-  .header-logo {
-    max-height: 40px;
-  }
-
-  /* Navigation */
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-  }
-
-  nav li {
-    margin: 0 10px;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .hamburger-menu {
-    display: none;
-  }
-
-  /* Sections */
-  section {
-    padding-top: 100px;
-    padding-bottom: 60px;
-  }
-
-  /* Footer */
-  footer {
-    height: 60px;
-  }
-
-  .footer-logo {
-    max-height: 40px;
-  }
-}
-/* Button Styling */
-button,
-.resume-button {
-  background-color: #00cccc;
-  color: #001f3f;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-button:hover,
-.resume-button:hover {
-  background-color: #008b8b;
-}
-
-/* Show More Button - Mobile Only */
-.show-more {
-  display: block;
-  margin: 20px auto;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .show-more {
-    display: none;
-  }
-}
-
-/* Back to Top Button */
-#back-to-top-btn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  background-color: #00cccc;
-  color: #001f3f;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-#back-to-top-btn:hover {
-  opacity: 1;
-}
-/* Contact Section */
-#contact .contact-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-#contact .contact-list li {
-  margin-bottom: 10px;
-}
-
-#contact .contact-list a {
-  text-decoration: none;
-}
-
-#contact .qr-code {
-  display: flex;
-  align-items: center;
-}
-
-#contact .qr-code img {
-  width: 150px;
-  margin-left: 20px;
-}
-
-/* Footer */
-footer {
-  background-color: #001f3f;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-}
-
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* Media Query for Larger Screens */
-@media (min-width: 768px) {
-  #contact .qr-code {
-    justify-content: flex-end;
-  }
-
-  #contact .qr-code img {
-    margin-left: 40px;
-  }
-}
-/* Mobile-Specific Adjustments */
-@media (max-width: 768px) {
-
-  #about .profile-photo {
-    width: 200px;
-    margin-top: 20px;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: column;
+button {
+    cursor: pointer;
+}/* Header and Navigation */
+.fixed-header {
     position: fixed;
-    top: 50px;
-    left: 0; /* Adjusted to show the menu */
+    top: 0;
     width: 100%;
-    height: calc(100% - 50px);
-    background-color: #001f3f;
-    text-align: center;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    transition: left 0.3s ease;
-    z-index: 100;
-  }
+    color: #fff;
+    z-index: 10;
+}
 
-  header {
-    padding: 10px 20px;
-  }
+.fixed-header .logo {
+    display: inline-flex;
+    align-items: center;
+}
 
-  #contact .qr-code {
+.fixed-header .logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+.navigation ul li a {
+    font-size: 1em;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #ffcc00;
+}
+
+.menu-icon {
+    display: none; /* Hidden on desktop */
+}
+
+/* Mobile Navigation Overlay */
+@media (max-width: 768px) {
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 0;
+        overflow-x: hidden;
+        transition: width 0.5s;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 60px;
+        z-index: 15;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        align-items: center;
+    }
+
+    .navigation.open {
+        width: 70%;
+    }
+
+    .menu-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #ffcc00;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 20;
+    }
+}/* About Me Section */
+.about {
+    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 6em;
+}
+
+.about .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 120px; /* Adjusted from 150px */
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 1em auto;
+}
+
+.about h2 {
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.about p {
+    font-size: 1.1em;
+    margin-top: 1em;
+    color: #e0e0e0;
+}
+
+.social-links {
+    margin-top: 1.5em;
+}
+
+.social-links .social-icon {
+    display: inline-block;
+    margin: 0 0.5em;
+    font-size: 1.2em;
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
+
+.social-links .social-icon:hover {
+    color: #fff;
+}/* Philosophy Section */
+.philosophy {
+    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.philosophy .mission {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.philosophy h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.show-more {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more:hover {
+    background-color: #ffd633;
+}/* Experience Section */
+.experience {
+    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.experience h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ffcc00;
+}
+
+.job {
+    max-width: 800px;
+    margin: 2em auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5em;
+    border-radius: 8px;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+.job h3 {
+    font-size: 1.5em;
+    color: #ffcc00;
+}
+
+.job p {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+.job ul {
+    list-style: disc;
+    padding-left: 1.5em;
+}
+
+.job ul li {
+    margin-top: 0.5em;
+    line-height: 1.6;
+}/* Skills & Proficiencies Section */
+.skills {
+    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.skills h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ffcc00;
+}
+
+.skills-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: #e0e0e0;
+}
+
+.skill-category {
+    margin-top: 2em;
+}
+
+.skill-category h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #ffcc00;
+    border-bottom: 1px solid #ffcc00;
+    padding-bottom: 0.3em;
+}
+
+.skill-category ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+}
+
+.skill-category ul li {
+    margin-top: 0.5em;
+    line-height: 1.6;
+}/* Resume Download Section */
+.resume {
+    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.resume h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ffcc00;
+}
+
+.resume p {
+    max-width: 800px;
+    margin: 0 auto 2em;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.download-options {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  #contact .qr-code img {
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-  footer {
-    height: auto;
-    padding: 10px 20px;
-  }
-
-  footer .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  footer .footer-logo {
-    max-height: 30px;
-    margin-bottom: 10px;
-  }
-
-  footer .footer-contact p,
-  footer .footer-contact a {
-    margin: 5px 0;
-  }
-}
-/* Additional fine-tuning */
-#philosophy .philosophy-content p {
-  /* Initially display only half of the first mission statement */
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    gap: 1.5em;
 }
 
-#philosophy .philosophy-content article:nth-child(n+2) {
-  /* Initially hide the rest of the philosophy content */
-  display: none;
+.resume-option {
+    text-align: center;
 }
 
-/* Adjust spacing for consistency */
-#about p,
-#experience p,
-#skills p {
-  margin-bottom: 20px;
+.download-button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background-color: #ffd633;
+    transform: translateY(-3px);
+}
+
+.resume-option p {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-top: 0.5em;
+}/* Contact Section */
+.contact {
+    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ffcc00;
+}
+
+.contact p {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin: 0.5em 0;
+}
+
+.contact a {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+.contact a:hover {
+    color: #ffd633;
+}
+
+.qr-code {
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.qr-code img {
+    width: 100px; /* Adjusted from 150px */
+    height: 100px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+}/* Footer */
+footer {
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 2em;
+}
+
+footer p {
+    margin: 0;
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #ffd633;
 }
