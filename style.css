@@ -32,33 +32,32 @@ a {
 a:hover {
   color: #ffffff;
 }
-
 /* Header Styling */
 header {
   background-color: #001f3f;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Adjusted padding */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* Adjusted to space-around */
   align-items: center;
 }
 
 header .header-logo {
   max-height: 50px;
 }
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
-  width: calc(100% - 100px); /* Adjust width to prevent logo cutoff */
-  margin-left: 50px; /* Add margin to center the menu */
+  width: 100%; /* Removed fixed width */
 }
 
 nav li {
@@ -77,7 +76,6 @@ nav ul a, nav button {
   cursor: pointer;
   text-decoration: none;
 }
-
 /* Section Styling */
 section {
   padding: 80px 20px;
@@ -135,15 +133,6 @@ section {
   border: 5px solid #00cccc;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-
-@media (max-width: 768px) {
-  #about {
-    background-attachment: scroll;
-  }
-  .profile-photo {
-    width: 150px;
-  }
-}
 /* Philosophy, Experience, Skills Sections */
 #philosophy {
   background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
@@ -164,14 +153,6 @@ section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
-
-@media (max-width: 768px) {
-  #philosophy,
-  #experience,
-  #skills {
-    background-attachment: scroll;
-  }
 }
 /* Download Resume and Contact Sections */
 #download-resume {
@@ -201,13 +182,6 @@ section {
 #contact .contact-list li {
   margin-bottom: 10px;
 }
-
-@media (max-width: 768px) {
-  #download-resume,
-  #contact {
-    background-attachment: scroll;
-  }
-}
 /* Button Styling */
 button,
 .resume-button {
@@ -228,25 +202,25 @@ button:hover,
   background-color: #008b8b;
   transform: translateY(-2px);
 }
-
 /* Footer Styling */
 footer {
   background-color: #001f3f;
   color: #ffffff;
-  padding: 10px; /* Reduced padding */
+  padding: 10px; 
   text-align: center;
 }
 
 footer .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Logos on far left and right */
   align-items: center;
   flex-wrap: wrap;
+  gap: 10px; /* Added gap for spacing */
 }
 
 footer .footer-logo {
-  max-height: 40px; /* Reduced logo size */
-  margin: 5px; /* Reduced margin */
+  max-height: 40px; 
+  margin: 5px; 
 }
 
 footer .footer-contact {
@@ -254,27 +228,12 @@ footer .footer-contact {
 }
 
 footer p, footer a {
-  margin: 5px; /* Reduced margin */
-  font-size: 0.9em; /* Reduced font size */
-}
-
-@media (max-width: 768px) {
-  footer .container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  footer .footer-logo {
-    order: -1;
-  }
-
-  footer .footer-contact {
-    order: 0;
-  }
+  margin: 5px; 
+  font-size: 0.9em; 
 }
 /* Back to Top Button Styling */
 #back-to-top-btn {
-  display: inline-block;
+  display: none; /* Initially hidden */
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -295,7 +254,61 @@ footer p, footer a {
   background-color: #008b8b;
   opacity: 1;
 }
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none; /* Hidden by default on PC */
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 101; /* Ensure it's above other elements */
+}
 
+.hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #00cccc;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger-menu span:nth-child(2),
+.hamburger-menu span:nth-child(3) {
+  top: 7px;
+}
+
+.hamburger-menu span:nth-child(4) {
+  top: 14px;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+
+.hamburger-menu.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.hamburger-menu.open span:nth-child(4) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
 /* Additional Styling */
 .philosophy-content p {
   line-height: 1.6;
@@ -304,14 +317,7 @@ footer p, footer a {
 .skill-category ul li {
   margin-bottom: 10px;
 }
-
 /* Responsive Adjustments */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
 @media (max-width: 768px) {
   #about h2 {
     display: none;
@@ -320,34 +326,20 @@ footer p, footer a {
   nav ul {
     display: none;
     flex-direction: column;
-    position: fixed; /* Make the menu sticky */
-    top: 0; /* Position at the top of the screen */
-    left: 0;
+    position: fixed; 
+    top: 0; 
+    left: -100%; 
     width: 100%;
-    height: 100%; /* Take full screen height */
+    height: 100%; 
     background-color: #001f3f;
     text-align: center;
-    justify-content: center; /* Center menu items vertically */
-    align-items: center; /* Center menu items horizontally */
-  }
-
-  nav button {
-    display: block;
-    background: none;
-    border: none;
-    padding: 10px 20px; /* Add padding to the button */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #00cccc;
-    cursor: pointer;
-    position: fixed; /* Make the button sticky */
-    top: 10px;
-    left: 10px;
-    z-index: 101; /* Ensure button is above the menu */
+    justify-content: center; 
+    align-items: center; 
+    transition: left 0.3s ease; 
   }
 
   nav ul.show {
-    display: flex;
+    left: 0; 
   }
 
   .show-more {
@@ -370,7 +362,7 @@ footer p, footer a {
   }
 
   #contact .contact-list li {
-    margin-bottom: 15px; /* Add more space between contact details */
+    margin-bottom: 15px; 
   }
 
   #contact .qr-code img {
@@ -381,6 +373,6 @@ footer p, footer a {
     background-color: #ffffff;
     color: #001f3f;
     right: 10px;
-    bottom: 70px;
+    bottom: 70px; 
   }
 }
