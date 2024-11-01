@@ -5,21 +5,23 @@ body {
   background-color: #001f3f;
   color: #e0e0e0;
   text-align: justify;
-  font-size: 16px; /* Start with a comfortable mobile font size */
-  line-height: 1.6; /* Improve readability */
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
 }
 
 h2 {
-  font-size: 2em; /* Adjust heading size for mobile */
+  font-size: 2em;
 }
 
 a {
   color: #00cccc;
-  text-decoration: none; /* Remove underlines for a cleaner look */
+  text-decoration: none;
 }
 
 /* Header */
@@ -31,7 +33,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* Ensure header stays on top */
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +48,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: none; /* Initially hide the full menu on mobile */
+  display: none;
 }
 
 /* Hamburger Menu */
@@ -58,11 +60,55 @@ nav ul {
   z-index: 101;
 }
 
-/* ... (Hamburger menu styles - same as before) ... */
+.hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #00cccc;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger-menu span:nth-child(2),
+.hamburger-menu span:nth-child(3) {
+  top: 7px;
+}
+
+.hamburger-menu span:nth-child(4) {
+  top: 14px;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+
+.hamburger-menu.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.hamburger-menu.open span:nth-child(4) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
 
 /* Sections */
 section {
-  padding-top: 60px; /* Adjust top padding to account for the header */
+  padding-top: 60px;
   padding-bottom: 40px;
   position: relative;
   overflow: hidden;
@@ -71,7 +117,29 @@ section {
   background-repeat: no-repeat;
 }
 
-/* ... (Section-specific background images - same as before) ... */
+#about {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
+}
+
+#philosophy {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
+}
+
+#experience {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
+}
+
+#skills {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
+}
+
+#download-resume {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
+}
+
+#contact {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
+}
 
 .section-overlay {
   position: absolute;
@@ -80,7 +148,7 @@ section {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1;
+  z-index: 0; /* Updated z-index */
 }
 
 .container {
@@ -89,46 +157,103 @@ section {
   padding: 20px;
 }
 
-/* ... (About Me styles - adjust spacing as needed) ... */
+/* About Me */
+#about .container {
+  text-align: center;
+}
 
-/* Philosophy */
-#philosophy .philosophy-content p {
+#about .profile-photo {
+  margin-top: 40px;
+}
+
+#about p {
   margin-bottom: 20px;
 }
 
-/* ... (Experience styles - adjust spacing as needed) ... */
+/* Philosophy */
+#philosophy article {
+  margin-bottom: 30px;
+}
+
+#philosophy h3 {
+  margin-bottom: 10px;
+}
+
+#philosophy .philosophy-content p {
+  margin-bottom: 20px;
+  /* Initially display only half of the first mission statement */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#philosophy .philosophy-content article:nth-child(n+2) {
+  /* Initially hide the rest of the philosophy content */
+  display: none;
+}
+
+/* Experience */
+#experience .job {
+  margin-bottom: 40px;
+}
+
+#experience .job h3 {
+  margin-bottom: 5px;
+}
+
+#experience .job .more-details {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 10px;
+}
 
 /* Skills */
 .skill-category {
+  margin-bottom: 30px;
+}
+
+#skills h3 {
+  margin-bottom: 10px;
+}
+
+/* Download Resume */
+#download-resume .resume-option {
   margin-bottom: 20px;
 }
 
-/* ... (Other mobile styles) ... */
+#download-resume .resume-button {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 /* Larger Screen Styles */
 @media (min-width: 768px) {
+
   body {
-    font-size: 18px; /* Increase font size for larger screens */
+    font-size: 18px;
   }
 
   h2 {
-    font-size: 2.5em; /* Adjust heading size for larger screens */
+    font-size: 2.5em;
   }
 
   /* Header */
   header {
-    height: 80px; /* Increase header height */
-    justify-content: space-around; /* Distribute space around logos */
+    height: 80px;
+    justify-content: space-around;
   }
 
   .header-logo {
-    max-height: 40px; /* Increase logo size */
+    max-height: 40px;
   }
 
   /* Navigation */
   nav ul {
-    display: flex; /* Show the full menu on larger screens */
+    display: flex;
     justify-content: space-between;
-    width: 60%; /* Adjust width as needed */
+    width: 60%;
   }
 
   nav li {
@@ -138,24 +263,298 @@ section {
   }
 
   .hamburger-menu {
-    display: none; /* Hide the hamburger menu on larger screens */
+    display: none;
   }
 
   /* Sections */
   section {
-    padding-top: 100px; /* Increase top padding for larger screens */
+    padding-top: 100px;
     padding-bottom: 60px;
   }
 
-  /* ... (Adjust styles for other sections as needed) ... */
-
   /* Footer */
   footer {
-    height: 60px; /* Adjust footer height as needed */
+    height: 60px;
   }
 
   .footer-logo {
-    max-height: 40px; /* Adjust logo size */
+    max-height:
+/* Mobile-First Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #001f3f;
+  color: #e0e0e0;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+a {
+  color: #00cccc;
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  max-height: 30px;
+}
+/* Navigation */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #00cccc;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger-menu span:nth-child(2),
+.hamburger-menu span:nth-child(3) {
+  top: 7px;
+}
+
+.hamburger-menu span:nth-child(4) {
+  top: 14px;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+
+.hamburger-menu.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.hamburger-menu.open span:nth-child(4) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+/* Sections */
+section {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#about {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg");
+}
+
+#philosophy {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg");
+}
+
+#experience {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg");
+}
+
+#skills {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg");
+}
+
+#download-resume {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg");
+}
+
+#contact {
+  background-image: url("https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg");
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* About Me */
+#about .container {
+  text-align: center;
+}
+
+#about .profile-photo {
+  margin-top: 40px;
+}
+
+#about p {
+  margin-bottom: 20px;
+}
+
+/* Philosophy */
+#philosophy article {
+  margin-bottom: 30px;
+}
+
+#philosophy h3 {
+  margin-bottom: 10px;
+}
+
+#philosophy .philosophy-content p {
+  margin-bottom: 20px;
+  /* Initially display only half of the first mission statement */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#philosophy .philosophy-content article:nth-child(n+2) {
+  /* Initially hide the rest of the philosophy content */
+  display: none;
+}
+/* Experience */
+#experience .job {
+  margin-bottom: 40px;
+}
+
+#experience .job h3 {
+  margin-bottom: 5px;
+}
+
+#experience .job .more-details {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Skills */
+.skill-category {
+  margin-bottom: 30px;
+}
+
+#skills h3 {
+  margin-bottom: 10px;
+}
+
+/* Download Resume */
+#download-resume .resume-option {
+  margin-bottom: 20px;
+}
+
+#download-resume .resume-button {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+/* Larger Screen Styles */
+@media (min-width: 768px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  /* Header */
+  header {
+    height: 80px;
+    justify-content: space-around;
+  }
+
+  .header-logo {
+    max-height: 40px;
+  }
+
+  /* Navigation */
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  nav li {
+    margin: 0 10px;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Sections */
+  section {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  /* Footer */
+  footer {
+    height: 60px;
+  }
+
+  .footer-logo {
+    max-height: 40px;
   }
 }
 /* Button Styling */
@@ -180,12 +579,12 @@ button:hover,
 .show-more {
   display: block;
   margin: 20px auto;
-  width: 100%; /* Make it span the container on mobile */
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .show-more {
-    display: none; /* Hide the button on larger screens */
+    display: none;
   }
 }
 
@@ -203,7 +602,7 @@ button:hover,
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  opacity: 0.7; /* Slightly transparent */
+  opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
@@ -222,7 +621,7 @@ button:hover,
 }
 
 #contact .contact-list a {
-  text-decoration: none; /* Remove underline from links */
+  text-decoration: none;
 }
 
 #contact .qr-code {
@@ -251,91 +650,77 @@ footer a {
 /* Media Query for Larger Screens */
 @media (min-width: 768px) {
   #contact .qr-code {
-    justify-content: flex-end; /* Align QR code to the right */
+    justify-content: flex-end;
   }
 
   #contact .qr-code img {
-    margin-left: 40px; /* Increase spacing */
+    margin-left: 40px;
   }
 }
-/* About Me Section */
-#about {
-  background-color: #e0e0e0; /* Light background for contrast */
-}
-
-#about .container {
-  text-align: center; /* Center content */
-}
-
-#about .profile-photo {
-  margin-top: 40px;
-}
-
-#about p {
-  margin-bottom: 20px;
-}
-
-/* Philosophy Section */
-#philosophy article {
-  margin-bottom: 30px;
-}
-
-#philosophy h3 {
-  margin-bottom: 10px;
-}
-
-/* Experience Section */
-#experience .job {
-  margin-bottom: 40px;
-}
-
-#experience .job h3 {
-  margin-bottom: 5px;
-}
-
-#experience .job .more-details {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-top: 10px;
-}
-
-/* Skills Section */
-#skills .skill-category {
-  margin-bottom: 30px;
-}
-
-#skills h3 {
-  margin-bottom: 10px;
-}
-
-/* Download Resume Section */
-#download-resume .resume-option {
-  margin-bottom: 20px;
-}
-
-#download-resume .resume-button {
-  display: block;
-  margin-bottom: 10px;
-  text-align: center;
-}
-/* Responsive Adjustments for Mobile */
+/* Mobile-Specific Adjustments */
 @media (max-width: 768px) {
+
+  #about .profile-photo {
+    width: 200px;
+    margin-top: 20px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    left: 0; /* Adjusted to show the menu */
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: #001f3f;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+
+  header {
+    padding: 10px 20px;
+  }
+
   #contact .qr-code {
     display: flex;
-    flex-direction: column; /* Stack QR code vertically on mobile */
+    flex-direction: column;
     align-items: center;
   }
 
   #contact .qr-code img {
-    margin-left: 0; /* Remove left margin on mobile */
-    margin-top: 20px; /* Add top margin for spacing */
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  footer {
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-logo {
+    max-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  footer .footer-contact p,
+  footer .footer-contact a {
+    margin: 5px 0;
   }
 }
 /* Additional fine-tuning */
 #philosophy .philosophy-content p {
   /* Initially display only half of the first mission statement */
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Adjust the number of lines to show */
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
