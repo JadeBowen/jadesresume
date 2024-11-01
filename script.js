@@ -1,4 +1,4 @@
-// Function to toggle the "show-more" class for additional details
+// Toggles show-more details
 function toggleShowMore(button) {
   const moreDetails = button.previousElementSibling;
   moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
@@ -6,7 +6,7 @@ function toggleShowMore(button) {
   button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
 }
 
-// Function to toggle a class on an element and update button text/attributes
+// Toggles class on element, updates button text/attributes
 function toggleState(element, className, button, labels, ariaLabels) {
   element.classList.toggle(className);
   const isToggled = element.classList.contains(className);
@@ -15,16 +15,16 @@ function toggleState(element, className, button, labels, ariaLabels) {
 }
 
 // Dark mode toggle
-const darkModeButton = document.querySelector(".toggle-dark-mode");
-darkModeButton.addEventListener("click", () => {
+const darkModeBtn = document.querySelector(".toggle-dark-mode");
+darkModeBtn.addEventListener("click", () => {
   toggleState(
     document.body,
     "light-mode",
-    darkModeButton,
+    darkModeBtn,
     ["Switch to Light Mode", "Switch to Dark Mode"],
     ["Switch to Light Mode", "Switch to Dark Mode"]
   );
-  // Save the user's preference in localStorage
+  // Save preference in localStorage
   localStorage.setItem("darkMode", document.body.classList.contains("light-mode") ? "light" : "dark");
 });
 
@@ -32,8 +32,8 @@ darkModeButton.addEventListener("click", () => {
 const darkModePreference = localStorage.getItem("darkMode");
 if (darkModePreference === "light") {
   document.body.classList.add("light-mode");
-  darkModeButton.textContent = "Switch to Dark Mode";
-  darkModeButton.setAttribute('aria-label', "Switch to Dark Mode");
+  darkModeBtn.textContent = "Switch to Dark Mode";
+  darkModeBtn.setAttribute('aria-label', "Switch to Dark Mode");
 }
 
 // Hamburger menu toggle
@@ -48,42 +48,48 @@ hamburgerMenu.addEventListener("click", () => {
     ["Open Navigation Menu", "Close Navigation Menu"],
     ["Open Navigation Menu", "Close Navigation Menu"]
   );
-});
-
-// Smooth Scrolling for Navigation Links
-function smoothScroll(event) {
-  event.preventDefault(); // Prevent default anchor behavior
-
-  const targetId = this.getAttribute('href'); // Get the target section ID
-  const targetElement = document.querySelector(targetId);
-
-  // Scroll to the target element if it exists
-  if (targetElement) {
-    targetElement.scrollIntoView({ behavior: 'smooth' });
+  // Focus management for accessibility (example)
+  if (navUl.classList.contains("show")) {
+    navUl.querySelector("a").focus(); // Focus on the first link when opened
+  } else {
+    hamburgerMenu.focus(); // Return focus to the button when closed
   }
-}
 
-// Initialize Smooth Scrolling on Window Load
-window.addEventListener('load', () => {
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', smoothScroll);
+  // Automatically collapse the hamburger menu after selecting an item
+  navUl.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navUl.classList.remove("show");
+      hamburgerMenu.textContent = "Open Navigation Menu";
+      hamburgerMenu.setAttribute('aria-label', "Open Navigation Menu");
+      hamburgerMenu.focus(); // Return focus to the hamburger menu
+    });
   });
 });
 
-// Back-to-top button functionality
-const backToTopButton = document.getElementById("back-to-top-btn");
+// Smooth scrolling for navigation links (using event delegation)
+document.querySelector("nav").addEventListener("click", (event) => {
+  if (event.target.tagName === "A") {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
 
-// Show the button when the user scrolls down 20px from the top
+// Back-to-top button
+const backToTopBtn = document.getElementById("back-to-top-btn");
+
 window.onscroll = function() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    backToTopButton.style.display = "block";
+    backToTopBtn.style.display = "block";
   } else {
-    backToTopButton.style.display = "none";
+    backToTopBtn.style.display = "none";
   }
 };
 
-// Scroll to the top of the document when the button is clicked
-backToTopButton.addEventListener("click", function() {
+backToTopBtn.addEventListener("click", function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
