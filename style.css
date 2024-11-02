@@ -22,7 +22,7 @@ body {
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.85);
-    color: #ffcc00;
+    color: #1e90ff; /* Changed to a sexy blue */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,20 +42,20 @@ body {
 }
 
 .navigation ul li a {
-    color: #ffcc00;
+    color: #1e90ff; /* Updated to blue */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .navigation ul li a:hover {
-    color: #e6b800;
+    color: #0057a3; /* Darker blue on hover */
 }
 
 /* Menu Button Styling */
 .menu-icon {
-    background-color: #ffcc00;
-    color: #333;
+    background-color: #1e90ff;
+    color: #fff;
     padding: 8px 16px;
     border: none;
     cursor: pointer;
@@ -63,7 +63,7 @@ body {
 }
 
 .menu-icon:hover {
-    background-color: #e6b800;
+    background-color: #0057a3;
 }
 
 /* Mobile Navigation */
@@ -91,9 +91,22 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid #ffcc00;
+    border: 4px solid #1e90ff; /* Updated to blue */
     margin-bottom: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header for Name and Contact in About Section */
+.about-header {
+    color: #1e90ff;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-contact {
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .social-links {
@@ -101,7 +114,7 @@ body {
 }
 
 .social-links a {
-    color: #ffcc00;
+    color: #1e90ff; /* Updated to blue */
     margin: 0 10px;
     font-size: 1.2em;
     text-decoration: none;
@@ -109,7 +122,7 @@ body {
 }
 
 .social-links a:hover {
-    color: #e6b800;
+    color: #0057a3; /* Darker blue on hover */
 }/* CSS Part 4: Philosophy Section Styling */
 .philosophy {
     background-size: cover;
@@ -128,9 +141,15 @@ body {
     overflow: hidden;
 }
 
+.philosophy h3 {
+    color: #1e90ff; /* Updated to blue for section headers */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
 .toggle-button {
-    background-color: #ffcc00;
-    color: #333;
+    background-color: #1e90ff; /* Updated to blue */
+    color: #fff;
     border: none;
     padding: 8px 16px;
     margin-top: 10px;
@@ -140,7 +159,7 @@ body {
 }
 
 .toggle-button:hover {
-    background-color: #e6b800;
+    background-color: #0057a3; /* Darker blue on hover */
 }/* CSS Part 5: Experience Section Styling */
 .experience {
     background-size: cover;
@@ -153,7 +172,7 @@ body {
 }
 
 .job h3 {
-    color: #ffcc00;
+    color: #1e90ff; /* Updated to blue */
     font-size: 1.4em;
     margin-bottom: 5px;
 }
@@ -170,8 +189,8 @@ body {
 }
 
 .toggle-button {
-    background-color: #ffcc00;
-    color: #333;
+    background-color: #1e90ff; /* Updated to blue */
+    color: #fff;
     border: none;
     padding: 8px 16px;
     margin-top: 10px;
@@ -181,7 +200,7 @@ body {
 }
 
 .toggle-button:hover {
-    background-color: #e6b800;
+    background-color: #0057a3; /* Darker blue on hover */
 }/* CSS Part 6: Skills Section Styling */
 .skills {
     background-size: cover;
@@ -207,7 +226,7 @@ body {
 }
 
 .skill-category h3 {
-    color: #ffcc00;
+    color: #1e90ff; /* Updated to blue */
     font-size: 1.2em;
     margin-bottom: 10px;
 }
@@ -246,7 +265,7 @@ body {
 }
 
 .download-button {
-    background-color: #ffcc00;
+    background-color: #1e90ff; /* Updated to blue */
     color: #333;
     padding: 10px 20px;
     font-weight: bold;
@@ -257,7 +276,7 @@ body {
 }
 
 .download-button:hover {
-    background-color: #e6b800;
+    background-color: #1c86ee;
 }/* CSS Part 8: Contact Section Styling */
 .contact {
     background-size: cover;
@@ -272,14 +291,14 @@ body {
 }
 
 .contact a {
-    color: #ffcc00;
+    color: #1e90ff; /* Updated to blue */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .contact a:hover {
-    color: #e6b800;
+    color: #1c86ee;
 }
 
 .qr-code {
@@ -289,13 +308,15 @@ body {
 .qr-code img {
     width: 150px;
     height: 150px;
-    border: 4px solid #ffcc00;
+    border: 4px solid #1e90ff; /* Updated to blue */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}/* CSS Part 9: Footer and Back to Top Button Styling */
+}
+
+/* Footer and Back to Top Button Styling */
 footer {
     background-color: #333;
-    color: #ffcc00;
+    color: #1e90ff; /* Updated to blue */
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
@@ -306,7 +327,7 @@ footer p {
 }
 
 .back-to-top {
-    background-color: #ffcc00;
+    background-color: #1e90ff; /* Updated to blue */
     color: #333;
     padding: 10px 20px;
     border: none;
@@ -317,5 +338,5 @@ footer p {
 }
 
 .back-to-top:hover {
-    background-color: #e6b800;
+    background-color: #1c86ee;
 }
