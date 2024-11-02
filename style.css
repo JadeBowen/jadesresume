@@ -129,7 +129,7 @@ button {
 }
 
 .profile-photo {
-    width: 120px; /* Adjusted from 150px */
+    width: 120px; /* Adjusted for better balance */
     height: 120px;
     border-radius: 50%;
     border: 4px solid #fff;
@@ -152,7 +152,7 @@ button {
     margin-top: 1.5em;
 }
 
-.social-links .social-icon {
+.social-links a {
     display: inline-block;
     margin: 0 0.5em;
     font-size: 1.2em;
@@ -160,7 +160,7 @@ button {
     transition: color 0.3s ease;
 }
 
-.social-links .social-icon:hover {
+.social-links a:hover {
     color: #fff;
 }/* Philosophy Section */
 .philosophy {
