@@ -1,34 +1,25 @@
-// Toggle mobile navigation
-document.getElementById('menuToggle').addEventListener('click', function () {
-    const navigation = document.querySelector('.navigation');
-    navigation.classList.toggle('open');
-});// Smooth scroll for navigation links
-document.querySelectorAll('.navigation a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});// Intersection Observer for scroll animations
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-// Apply the observer to elements with the 'fade-in' class
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Scroll to Top Function
+// JavaScript Part 1: Toggle Functionality for Show More/Show Less
+function toggleDetails(button) {
+    const details = button.previousElementSibling;
+    if (details.style.display === "none" || !details.style.display) {
+        details.style.display = "block";
+        button.textContent = "Show Less";
+    } else {
+        details.style.display = "none";
+        button.textContent = "Show More";
+    }
+}// JavaScript Part 2: Smooth Scroll to Top
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth"
     });
-}
+}// JavaScript Part 3: Toggle Mobile Menu
+document.getElementById("menuToggle").addEventListener("click", function () {
+    const navigation = document.querySelector(".navigation ul");
+    if (navigation.style.display === "none" || !navigation.style.display) {
+        navigation.style.display = "block";
+    } else {
+        navigation.style.display = "none";
+    }
+});
