@@ -1,4 +1,4 @@
-/* Global Styling */
+/* CSS Part 1: Base Styling and General Layout */
 * {
     margin: 0;
     padding: 0;
@@ -8,393 +8,314 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f5f5f5;
     color: #333;
-    background-color: #f4f4f4;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 0.5em;
-    color: #ffcc00;
 }
 
 .section {
-    padding: 4em 1em;
-    color: #fff;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    position: relative;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-}/* Header and Navigation */
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}/* CSS Part 2: Header and Navigation Styling */
 .fixed-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffcc00;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
-    z-index: 10;
+    padding: 10px 20px;
+    z-index: 1000;
 }
 
 .fixed-header .logo {
-    display: inline-flex;
-    align-items: center;
-}
-
-.fixed-header .logo img {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
 }
 
 .navigation ul {
     list-style: none;
     display: flex;
-    gap: 1.5em;
+    gap: 15px;
 }
 
 .navigation ul li a {
-    font-size: 1em;
-    color: #fff;
-    transition: color 0.3s ease;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .navigation ul li a:hover {
-    color: #ffcc00;
+    color: #e6b800;
 }
 
+/* Menu Button Styling */
 .menu-icon {
-    display: none; /* Hidden on desktop */
+    background-color: #ffcc00;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* Mobile Navigation Overlay */
+.menu-icon:hover {
+    background-color: #e6b800;
+}
+
+/* Mobile Navigation */
 @media (max-width: 768px) {
-    .navigation {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 0;
-        overflow-x: hidden;
-        transition: width 0.5s;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding-top: 60px;
-        z-index: 15;
-    }
-
     .navigation ul {
-        display: flex;
+        display: none;
         flex-direction: column;
-        gap: 2em;
-        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 5px;
     }
-
-    .navigation.open {
-        width: 70%;
-    }
-
-    .menu-icon {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        background-color: #ffcc00;
-        border-radius: 4px;
-        cursor: pointer;
-        z-index: 20;
-    }
-}/* About Me Section */
+}/* CSS Part 3: About Section Styling */
 .about {
-    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg');
     background-size: cover;
-    background-position: center;
-    padding-top: 6em;
-}
-
-.about .content {
-    max-width: 800px;
-    margin: 0 auto;
+    color: #333;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .profile-photo {
-    width: 120px; /* Adjusted for better balance */
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin: 1em auto;
-}
-
-.about h2 {
-    font-size: 2em;
-    margin-top: 1em;
-}
-
-.about p {
-    font-size: 1.1em;
-    margin-top: 1em;
-    color: #e0e0e0;
+    border: 4px solid #ffcc00;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .social-links {
-    margin-top: 1.5em;
+    margin-top: 20px;
 }
 
 .social-links a {
-    display: inline-block;
-    margin: 0 0.5em;
-    font-size: 1.2em;
     color: #ffcc00;
+    margin: 0 10px;
+    font-size: 1.2em;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #fff;
-}/* Philosophy Section */
+    color: #e6b800;
+}/* CSS Part 4: Philosophy Section Styling */
 .philosophy {
-    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg');
     background-size: cover;
-    background-position: center;
-}
-
-.philosophy .mission {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #e0e0e0;
+    color: #333;
     text-align: center;
+    padding: 40px 20px;
 }
 
-.philosophy h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+.philosophy .story {
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
 
-.show-more {
-    display: inline-block;
-    margin-top: 1em;
-    padding: 0.5em 1em;
+.philosophy-details {
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+.toggle-button {
     background-color: #ffcc00;
     color: #333;
     border: none;
-    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 10px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.show-more:hover {
-    background-color: #ffd633;
-}/* Experience Section */
+.toggle-button:hover {
+    background-color: #e6b800;
+}/* CSS Part 5: Experience Section Styling */
 .experience {
-    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg');
     background-size: cover;
-    background-position: center;
-}
-
-.experience h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #ffcc00;
+    color: #333;
+    padding: 40px 20px;
 }
 
 .job {
-    max-width: 800px;
-    margin: 2em auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1.5em;
-    border-radius: 8px;
-    color: #e0e0e0;
-    text-align: left;
+    margin-bottom: 30px;
 }
 
 .job h3 {
-    font-size: 1.5em;
     color: #ffcc00;
+    font-size: 1.4em;
+    margin-bottom: 5px;
 }
 
 .job p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.job-details {
+    display: none;
+    margin-top: 10px;
+    transition: max-height 0.3s ease;
+}
+
+.toggle-button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
     font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
-.job ul {
-    list-style: disc;
-    padding-left: 1.5em;
-}
-
-.job ul li {
-    margin-top: 0.5em;
-    line-height: 1.6;
-}/* Skills & Proficiencies Section */
+.toggle-button:hover {
+    background-color: #e6b800;
+}/* CSS Part 6: Skills Section Styling */
 .skills {
-    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg');
     background-size: cover;
-    background-position: center;
-}
-
-.skills h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #ffcc00;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .skills-list {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    color: #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .skill-category {
-    margin-top: 2em;
+    flex: 1 1 300px;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .skill-category h3 {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
     color: #ffcc00;
-    border-bottom: 1px solid #ffcc00;
-    padding-bottom: 0.3em;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .skill-category ul {
     list-style-type: disc;
-    padding-left: 1.5em;
+    padding-left: 20px;
+    text-align: left;
 }
 
-.skill-category ul li {
-    margin-top: 0.5em;
-    line-height: 1.6;
-}/* Resume Download Section */
+.skill-category li {
+    margin-bottom: 5px;
+}/* CSS Part 7: Resume Download Section Styling */
 .resume {
-    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg');
     background-size: cover;
-    background-position: center;
-}
-
-.resume h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #ffcc00;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .resume p {
-    max-width: 800px;
-    margin: 0 auto 2em;
     font-size: 1.1em;
-    color: #e0e0e0;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .download-options {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5em;
+    gap: 20px;
 }
 
 .resume-option {
+    display: inline-block;
     text-align: center;
 }
 
 .download-button {
-    display: inline-block;
-    padding: 0.8em 1.5em;
     background-color: #ffcc00;
     color: #333;
+    padding: 10px 20px;
     font-weight: bold;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .download-button:hover {
-    background-color: #ffd633;
-    transform: translateY(-3px);
-}
-
-.resume-option p {
-    font-size: 0.9em;
-    color: #ccc;
-    margin-top: 0.5em;
-}/* Contact Section */
+    background-color: #e6b800;
+}/* CSS Part 8: Contact Section Styling */
 .contact {
-    background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%206.jpg');
     background-size: cover;
-    background-position: center;
-}
-
-.contact h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #ffcc00;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .contact p {
     font-size: 1.1em;
-    color: #e0e0e0;
-    margin: 0.5em 0;
+    margin-bottom: 10px;
 }
 
 .contact a {
     color: #ffcc00;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .contact a:hover {
-    color: #ffd633;
+    color: #e6b800;
 }
 
 .qr-code {
-    margin-top: 1.5em;
-    text-align: center;
+    margin-top: 20px;
 }
 
 .qr-code img {
-    width: 100px; /* Adjusted from 150px */
-    height: 100px;
-    border: 2px solid #ffcc00;
-    border-radius: 8px;
-}/* Footer */
+    width: 150px;
+    height: 150px;
+    border: 4px solid #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}/* CSS Part 9: Footer and Back to Top Button Styling */
 footer {
-    padding: 1em;
     background-color: #333;
-    color: #fff;
+    color: #ffcc00;
     text-align: center;
+    padding: 20px;
     font-size: 0.9em;
-    margin-top: 2em;
 }
 
 footer p {
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .back-to-top {
-    display: inline-block;
-    margin-top: 1em;
-    padding: 0.5em 1em;
     background-color: #ffcc00;
     color: #333;
-    font-weight: bold;
-    border-radius: 6px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .back-to-top:hover {
-    background-color: #ffd633;
+    background-color: #e6b800;
 }
