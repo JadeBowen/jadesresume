@@ -321,3 +321,8 @@ footer p {
 .back-to-top:hover {
     background-color: #1c86ee;
 }
+#about, #experience {
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+}
