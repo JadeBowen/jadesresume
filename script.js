@@ -18,8 +18,8 @@ function scrollToTop() {
 document.getElementById("menuToggle").addEventListener("click", function () {
     const navigation = document.querySelector(".navigation ul");
     if (navigation.style.display === "none" || !navigation.style.display) {
-        navigation.style.display = "flex"; // Adjusted for vertical alignment
-        navigation.style.flexDirection = "column"; 
+        navigation.style.display = "flex"; /* Changed from 'block' to 'flex' for alignment */
+        navigation.style.flexDirection = "column"; /* Ensures items stack vertically on mobile */
     } else {
         navigation.style.display = "none";
     }
