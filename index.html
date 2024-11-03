@@ -11,31 +11,33 @@
 
     <!-- Header Section -->
     <header class="fixed-header">
-        <a href="#about" class="logo left-logo" aria-label="Home">
-            <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade Bowen Logo">
-        </a>
-        <nav class="navigation">
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#about" class="logo right-logo" aria-label="Home">
-            <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade Bowen Logo">
-        </a>
-        <button class="menu-icon" id="menuToggle" aria-label="Menu">Menu</button>
-    </header><!-- About Me Section -->
+        <div class="header-content">
+            <a href="#about" class="logo left-logo" aria-label="Home">
+                <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade Bowen Logo">
+            </a>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#about" class="logo right-logo" aria-label="Home">
+                <img src="https://github.com/JadeBowen/jadesresume/blob/main/old%20logo.JPG?raw=true" alt="Jade Bowen Logo">
+            </a>
+            <button class="menu-icon" id="menuToggle" aria-label="Menu">Menu</button>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
     <section id="about" class="section about" style="background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background.jpg');">
         <div class="content fade-in">
-            <!-- Name and Contact Information Above Profile Photo -->
             <h1>Jade Bowen</h1>
             <p>Email: <a href="mailto:Jade.Bowen.Career@gmail.com">Jade.Bowen.Career@gmail.com</a></p>
             <p>Phone: <a href="tel:+12083710647">+1 (208) 371-0647</a></p>
-            
             <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Profile photo of Jade Bowen" class="profile-photo">
             <h2>About Me</h2>
             <p>
@@ -50,167 +52,160 @@
                 <a href="https://github.com/jadebowen" class="social-icon" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
-    </section><!-- Philosophy Section with Titles for Mission, Impact, and Career Summary -->
+    </section><!-- Philosophy Section with Mission, Impact, and Professional Summary -->
     <section id="philosophy" class="section philosophy" style="background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%202.jpg');">
         <h2>Philosophy</h2>
-        
-        <!-- Mission Statement -->
         <h3>Mission Statement</h3>
         <p class="story">
             Driven by a deep-rooted belief in the power of connection, my mission is to lead with integrity, precision, and a collaborative spirit. Throughout my 21-year career in construction and telecommunications, I've consistently sought to foster a work environment that values honesty, respect, and innovation.
         </p>
-        
-        <!-- Impact Statement -->
         <h3>Impact Statement</h3>
-        <p class="philosophy-details" style="display: none;">
+        <p class="story">
             I am passionate about empowering companies to not only achieve their goals but to surpass them. Through strategic leadership and an unwavering commitment to operational efficiency, I help organizations optimize processes, enhance productivity, and deliver exceptional results. Whether I'm leading a team, managing a complex project, or ensuring client satisfaction, my focus remains on creating lasting value. By cultivating a culture of respect and teamwork, I empower individuals to reach their full potential and drive innovation. Ultimately, I strive to help organizations strengthen their industry leadership and make a positive impact on the world.
         </p>
-        
-        <!-- Professional Summary -->
         <h3>Professional Summary</h3>
-        <p class="philosophy-details" style="display: none;">
+        <p class="story">
             As a seasoned professional with over 21 years of experience in the construction and telecommunications fields, I possess a unique blend of technical expertise and leadership acumen. My career has been defined by a passion for building critical infrastructure that connects people and empowers communities. From overseeing complex wireless communication installations to managing multimillion-dollar projects, I have a proven track record of delivering high-quality results while prioritizing safety, regulatory compliance, and operational efficiency.
         </p>
-        
         <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
     </section><!-- Experience Section -->
     <section id="experience" class="section experience" style="background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%203.jpg');">
         <h2>Experience</h2>
 
-        <!-- Boise's Best Auto Sales -->
         <div class="job fade-in">
             <h3>Boise's Best Auto Sales</h3>
             <p><strong>Finance and Marketing Manager | June 2023 - Present</strong></p>
-            <p>At Boise's Best Auto Sales, I spearheaded the development and implementation of financial strategies to enhance profitability.</p>
+            <p>At Boise's Best Auto Sales, I spearheaded the development and implementation of financial strategies to enhance profitability...</p>
             <div class="job-details" style="display: none;">
                 <ul>
                     <li>Increased gross profit margin through strategic cost management and targeted marketing initiatives.</li>
                     <li>Implemented a customer loyalty program and personalized marketing campaigns to enhance customer retention.</li>
                     <li>Reduced operational costs by renegotiating vendor contracts and streamlining financial processes.</li>
+                    <li>Developed and executed advanced marketing strategies encompassing digital advertising, social media campaigns, and public relations...</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
 
-        <!-- Westland Towers -->
         <div class="job fade-in">
             <h3>Westland Towers</h3>
             <p><strong>Senior Field Technician (Contract) | July 2022 - June 2023</strong></p>
-            <p>Directed the installation, commissioning, and calibration of wireless communication systems, ensuring optimal network performance.</p>
+            <p>During my time at Westland Towers, I played a critical role in directing the installation, commissioning, and calibration of wireless...</p>
             <div class="job-details" style="display: none;">
                 <ul>
                     <li>Spearheaded successful cellular site upgrades, resulting in improved network performance and reduced downtime.</li>
-                    <li>Implemented a proactive maintenance schedule that significantly reduced emergency callouts.</li>
-                    <li>Mentored junior technicians, ensuring safety and operational standards were consistently met.</li>
+                    <li>Implemented a proactive maintenance schedule that significantly reduced emergency callouts and enhanced overall system uptime.</li>
+                    <li>Enhanced team productivity and compliance by providing hands-on training and mentorship to junior technicians...</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
 
-        <!-- First Point Group - Ericsson -->
+        <!-- Additional job entries would continue in the same format here, with the 'story' section followed by 'job-details' -->
+    </section><!-- Continued Experience Section -->
+
         <div class="job fade-in">
             <h3>First Point Group – Ericsson</h3>
             <p><strong>Telecommunications Construction Coordinator / Network Engineer (Contract) | October 2021 - July 2022</strong></p>
-            <p>Coordinated all aspects of cell tower construction and network projects, ensuring efficient execution and adherence to project milestones.</p>
+            <p>At First Point Group, I served as the Telecommunications Construction Coordinator and Network Engineer for Ericsson projects...</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Reduced project delays and cost overruns by optimizing resource allocation and streamlining workflows.</li>
-                    <li>Accelerated project completion by enhancing work package review processes.</li>
-                    <li>Oversaw multiple projects, optimizing field operations to reduce bottlenecks.</li>
+                    <li>Significantly reduced project delays and cost overruns by improving coordination and optimizing resource allocation.</li>
+                    <li>Enhanced operational efficiency by streamlining work package review processes, accelerating project completion...</li>
+                    <li>Managed multi-million dollar project budgets, tracking expenditures, optimizing resource allocation...</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
 
-        <!-- KGP Co -->
         <div class="job fade-in">
             <h3>KGP Co</h3>
             <p><strong>Outside Plant (OSP) Construction Manager (Contract) | February 2021 - October 2021</strong></p>
-            <p>Managed high-profile fiber optic projects, ensuring timely completion and adherence to industry standards.</p>
+            <p>During my tenure at KGP Co, I managed high-profile Fiber-to-the-Home (FTTH) and Fiber-to-the-Curb (FTTC) projects...</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Completed a major fiber installation project ahead of schedule, exceeding client expectations.</li>
-                    <li>Developed safety protocols resulting in zero work-related incidents.</li>
-                    <li>Improved project efficiency through streamlined permitting and scheduling processes.</li>
+                    <li>Successfully completed a major fiber installation project ahead of schedule, exceeding client expectations.</li>
+                    <li>Developed and implemented comprehensive safety protocols resulting in zero work-related incidents.</li>
+                    <li>Streamlined permitting and scheduling processes, improving overall project efficiency and compliance...</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
 
-        <!-- MasTec Network Solutions -->
         <div class="job fade-in">
             <h3>MasTec Network Solutions</h3>
             <p><strong>Construction Manager | January 2018 - April 2020</strong></p>
-            <p>Directed large-scale construction projects across multiple states, including overseeing new builds and technology enhancements.</p>
+            <p>As a Construction Manager at MasTec Network Solutions, I directed large-scale construction projects across multiple states...</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Delivered multiple cell site construction projects on time and within budget.</li>
-                    <li>Reduced project rework by implementing quality assurance processes.</li>
-                    <li>Led LTE and 5G technology upgrades, strategically positioning the network for future growth.</li>
+                    <li>Delivered multiple cell site construction projects on time and within budget, significantly improving network coverage...</li>
+                    <li>Reduced project rework by implementing stricter quality assurance processes and monitoring contractor performance...</li>
+                    <li>Successfully led the integration of LTE and 5G technology upgrades...</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
-    </section><!-- Broken Arrow Communications -->
+</section><!-- Continuing Experience Section -->
+
         <div class="job fade-in">
             <h3>Broken Arrow Communications</h3>
             <p><strong>Regional Manager | July 2015 - May 2017</strong></p>
-            <p>Oversaw cell tower construction and maintenance across a large region, managing a team of field crews and optimizing project delivery strategies.</p>
+            <p>At Broken Arrow Communications, I oversaw cell tower construction and maintenance across a large region...</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Improved project efficiency with strategic scheduling and crew coordination.</li>
-                    <li>Implemented a comprehensive training program that streamlined onboarding processes.</li>
-                    <li>Initiated a regional focus on project financial controls, increasing transparency and accountability.</li>
+                    <li>Significantly improved project efficiency by developing a strategic scheduling and crew coordination strategy.</li>
+                    <li>Designed and implemented a comprehensive training program that streamlined onboarding processes.</li>
+                    <li>Spearheaded a regional initiative focused on improving project financial controls.</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
 
-        <!-- Cold Souls LLC -->
         <div class="job fade-in">
             <h3>Cold Souls LLC</h3>
             <p><strong>Owner/Operator | December 2007 - March 2013</strong></p>
-            <p>Managed all aspects of business operations for a custom clothing line, from product design to customer relationship management.</p>
+            <p>As the Owner/Operator of Cold Souls LLC, I managed all aspects of business operations for a custom clothing line...</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Increased customer satisfaction through efficient delivery and enhanced operational processes.</li>
-                    <li>Drove significant online traffic and sales growth with effective marketing strategies.</li>
-                    <li>Maintained sustainable profitability, navigating various business challenges.</li>
+                    <li>Increased customer satisfaction by streamlining delivery processes and enhancing operational efficiency.</li>
+                    <li>Drove substantial online traffic and achieved impressive sales growth through effective marketing strategies.</li>
+                    <li>Successfully navigated the business through various challenges, achieving sustainable profitability.</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
 
-        <!-- Unit Drilling -->
         <div class="job fade-in">
             <h3>Unit Drilling</h3>
             <p><strong>Floor Hand/Chain Hand | March 2005 - November 2007</strong></p>
-            <p>Gained foundational skills in hands-on operations and safety protocols in a demanding industry environment.</p>
+            <p>At Unit Drilling, I gained a solid foundation in hands-on operations and safety protocols within a demanding industry...</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Assisted with drilling rig operations, equipment maintenance, and rig setup.</li>
-                    <li>Managed work permits, ensuring compliance with health and safety standards.</li>
-                    <li>Secured and stabilized drilling pipes, gaining valuable experience in safety protocols.</li>
+                    <li>Played a vital role in assisting with drilling rig operations, equipment maintenance, and rig setup.</li>
+                    <li>Managed work permits, ensuring compliance with on-site health and safety standards.</li>
+                    <li>Secured and stabilized drilling pipes and equipment, gaining valuable experience in safety protocols.</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
+</section><!-- Additional Job Entry -->
 
-        <!-- Tower Technician Summary -->
         <div class="job fade-in">
             <h3>Tower Technician Summary</h3>
             <p><strong>(1999 - 2015)</strong></p>
-            <p>Summary of extensive experience as a Tower Technician, demonstrating skill development in telecommunications construction and maintenance.</p>
+            <p>This summary encapsulates my extensive experience as a Tower Technician, demonstrating progressive skill development and accomplishments in telecommunications construction and maintenance.</p>
             <div class="job-details" style="display: none;">
                 <ul>
-                    <li>Assembled and erected steel towers, ensuring alignment and structural integrity.</li>
-                    <li>Prepared sites, including excavation and concrete foundation work.</li>
-                    <li>Adhered to safety protocols, conducting daily toolbox meetings and inspections.</li>
+                    <li>Expertly assembled and erected steel towers, ensuring precise alignment and structural integrity.</li>
+                    <li>Conducted comprehensive site preparation, including excavation and concrete foundation work.</li>
+                    <li>Maintained strict adherence to safety protocols, conducting daily toolbox meetings and site inspections.</li>
                 </ul>
             </div>
             <button class="toggle-button" onclick="toggleDetails(this)">Show More</button>
         </div>
-</section><!-- Skills & Proficiencies Section -->
+    </section>
+
+    <!-- Skills Section -->
     <section id="skills" class="section skills" style="background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%204.jpg');">
         <h2>Skills & Proficiencies</h2>
         
@@ -236,8 +231,7 @@
                     <li>RF equipment & antenna sweeps: Signal performance optimization and troubleshooting</li>
                     <li>Coaxial cabling: Installation, testing, and maintenance of wireless communication systems</li>
                 </ul>
-            </div>
-            <div class="skill-category">
+            </div><div class="skill-category">
                 <h3>Construction Management</h3>
                 <ul>
                     <li>Project planning and scheduling: Overseeing all phases of construction from conception to completion</li>
@@ -257,13 +251,14 @@
                 </ul>
             </div>
         </div>
-    </section><!-- Resume Download Section -->
+    </section>
+
+    <!-- Resume Download Section -->
     <section id="resume" class="section resume" style="background-image: url('https://raw.githubusercontent.com/JadeBowen/jadesresume/80e6c475de43c22ceb239df1211140677902160a/background%205.jpg');">
         <h2>Download Resume</h2>
         <p>
             I offer three tailored resume versions to showcase my extensive experience and adapt to specific roles in today’s competitive market. Each version emphasizes different skills, helping hiring managers see the expertise most relevant to their needs. This approach maximizes alignment with distinct job opportunities.
         </p>
-
         <div class="download-options">
             <div class="resume-option">
                 <a href="https://github.com/JadeBowen/jadesresume/raw/main/Jade%20Bowen%20-%20Full%20Resume%20-%202024.pdf" class="download-button" target="_blank" rel="noopener">Full Resume</a>
@@ -290,7 +285,9 @@
             <p>Scan to connect on LinkedIn:</p>
             <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code">
         </div>
-    </section><!-- Footer Section -->
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <p>© 2024 Jade Bowen. All rights reserved.</p>
         <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
