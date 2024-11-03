@@ -1,4 +1,3 @@
-/* CSS Part 1: Base Styling and General Layout */
 * {
     margin: 0;
     padding: 0;
@@ -27,8 +26,7 @@ body {
 .fade-in-visible {
     opacity: 1;
     transform: translateY(0);
-}/* CSS Part 2: Header and Navigation Styling */
-.fixed-header {
+}.fixed-header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -90,8 +88,7 @@ body {
         padding: 20px;
         border-radius: 5px;
     }
-}/* CSS Part 3: About Section Styling */
-.about {
+}.about {
     background-size: cover;
     color: #333;
     text-align: center;
@@ -121,8 +118,7 @@ body {
 
 .social-links a:hover {
     color: #1a76d2;
-}/* CSS Part 4: Philosophy Section Styling */
-.philosophy {
+}.philosophy {
     background-size: cover;
     color: #333;
     text-align: center;
@@ -152,8 +148,7 @@ body {
 
 .toggle-button:hover {
     background-color: #1a76d2;
-}/* CSS Part 5: Experience Section Styling */
-.experience {
+}.experience {
     background-size: cover;
     color: #333;
     padding: 40px 20px;
@@ -193,8 +188,7 @@ body {
 
 .toggle-button:hover {
     background-color: #1a76d2;
-}/* CSS Part 6: Skills Section Styling */
-.skills {
+}.skills {
     background-size: cover;
     color: #333;
     padding: 40px 20px;
@@ -231,8 +225,7 @@ body {
 
 .skill-category li {
     margin-bottom: 5px;
-}/* CSS Part 7: Resume Download Section Styling */
-.resume {
+}.resume {
     background-size: cover;
     color: #333;
     padding: 40px 20px;
@@ -269,8 +262,7 @@ body {
 
 .download-button:hover {
     background-color: #1c86ee;
-}/* CSS Part 8: Contact Section Styling */
-.contact {
+}.contact {
     background-size: cover;
     color: #333;
     padding: 40px 20px;
@@ -303,10 +295,7 @@ body {
     border: 4px solid #1e90ff; /* Updated to blue color */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer and Back to Top Button Styling */
-footer {
+}footer {
     background-color: #333;
     color: #1e90ff; /* Updated to blue color */
     text-align: center;
