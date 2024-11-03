@@ -1,64 +1,41 @@
-// Mobile Navigation Toggle
-const mobileNav = document.querySelector('.mobile-nav');
-const navToggle = document.querySelector('.nav-toggle');
-
-navToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('active');
-});
-
 // Smooth Scrolling for Navigation Links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
         e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        targetElement.scrollIntoView({
-            behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute("href"));
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
     });
 });
 
-// Show More/Show Less Buttons
-const showMoreBtns = document.querySelectorAll('.show-more-btn');
-
-showMoreBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
-        const extraContent = document.getElementById(targetId);
-
-        extraContent.classList.toggle('show');
-
-        if (extraContent.classList.contains('show')) {
-            btn.textContent = 'Show Less';
-        } else {
-            btn.textContent = 'Show More';
-        }
+// "Show More" Toggle Functionality
+document.querySelectorAll(".show-more-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        const content = this.previousElementSibling;
+        content.classList.toggle("expanded");
+        this.textContent = content.classList.contains("expanded") ? "Show Less" : "Show More";
     });
-});
-// Back to Top Button
-const backToTopBtn = document.getElementById('back-to-top');
+});// Mobile Navigation Toggle
+const menuIcon = document.getElementById("menu-icon");
+const navMenu = document.getElementById("nav-menu");
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+menuIcon.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    menuIcon.setAttribute("aria-expanded", navMenu.classList.contains("open"));
 });
 
-// Intersection Observer for Scroll Animations (implementation will depend on the specific animations)
+// Intersection Observer for Scroll Animations
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Add animation class to the element
-            entry.target.classList.add('animate');
+            entry.target.classList.add("fade-in");
+            observer.unobserve(entry.target);
         }
     });
-});
+}, { threshold: 0.1 });
 
-// Select the elements to animate and observe them
-const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-elementsToAnimate.forEach(element => {
-    observer.observe(element);
+document.querySelectorAll(".fade-in-section").forEach(section => {
+    observer.observe(section);
 });
