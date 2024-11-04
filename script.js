@@ -1,79 +1,21 @@
-// Mobile Navigation Toggle
-const mobileMenuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-    });
-}
-
-// Smooth Scrolling for Navigation Links
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
-        }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 
-// Show More/Show Less Functionality for Experience and Philosophy Sections
-const toggleButtons = document.querySelectorAll('.toggle-button');
-
-toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const contentId = button.getAttribute('data-content');
-        const content = document.getElementById(contentId);
-        const isExpanded = button.getAttribute('data-expanded') === 'true';
-
-        if (content) {
-            if (isExpanded) {
-                content.style.display = 'none';
-                button.innerText = 'Show More';
-            } else {
-                content.style.display = 'block';
-                button.innerText = 'Show Less';
-            }
-            button.setAttribute('data-expanded', !isExpanded);
-        }
-    });
-});// Intersection Observer for Scroll Animations
-const scrollElements = document.querySelectorAll('.scroll-animation');
-
-const observerOptions = {
-    threshold: 0.1
-};
-
-const scrollObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-scrollElements.forEach(element => {
-    scrollObserver.observe(element);
-});
-
-// Back to Top Button
-const backToTopButton = document.getElementById('back-to-top');
+// Back-to-Top Button Logic
+const backToTopButton = document.querySelector('.back-to-top');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
+        backToTopButton.classList.add('visible');
     } else {
-        backToTopButton.style.display = 'none';
+        backToTopButton.classList.remove('visible');
     }
 });
 
@@ -82,37 +24,56 @@ backToTopButton.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
-});// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
+});// Accordion Functionality for Job Experiences and Statements
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const accordionContent = header.nextElementSibling;
+        const isActive = header.classList.contains('active');
+
+        // Close any open accordion sections
+        document.querySelectorAll('.accordion-header.active').forEach(activeHeader => {
+            activeHeader.classList.remove('active');
+            activeHeader.nextElementSibling.style.maxHeight = null;
+        });
+
+        // Toggle the clicked section
+        if (!isActive) {
+            header.classList.add('active');
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        } else {
+            header.classList.remove('active');
+            accordionContent.style.maxHeight = null;
         }
+    });
+});// Tooltip Functionality for Skills
+document.querySelectorAll('.skill-item').forEach(skill => {
+    skill.addEventListener('mouseenter', () => {
+        const tooltip = document.createElement('div');
+        tooltip.classList.add('tooltip');
+        tooltip.innerText = skill.getAttribute('data-tooltip');  // Skill description set in HTML
+        document.body.appendChild(tooltip);
+
+        // Position tooltip near the hovered skill
+        const rect = skill.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight}px`;
+        
+        skill.addEventListener('mouseleave', () => {
+            tooltip.remove();
+        });
     });
 });
 
-// Show More / Show Less Functionality for Job Descriptions
-document.querySelectorAll('.show-more-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const contentId = button.getAttribute('data-content');
-        const content = document.getElementById(contentId);
-        const isExpanded = button.getAttribute('data-expanded') === 'true';
-
-        if (isExpanded) {
-            content.style.display = 'none';
-            button.innerText = 'Show More';
-        } else {
-            content.style.display = 'block';
-            button.innerText = 'Show Less';
+// Scroll Reveal Animation using Intersection Observer
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
         }
-
-        button.setAttribute('data-expanded', !isExpanded);
     });
+}, { threshold: 0.1 });
+
+// Apply scroll reveal to each section with 'scroll-reveal' class
+document.querySelectorAll('.scroll-reveal').forEach(section => {
+    observer.observe(section);
 });
