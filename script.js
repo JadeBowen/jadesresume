@@ -1,71 +1,59 @@
 // Mobile Navigation Toggle
-const mobileNav = document.querySelector('.mobile-nav');
-const navToggle = document.querySelector('.nav-toggle');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-navToggle.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
-});
-
-mobileNavLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mobileNav.classList.remove('active');
-  });
+mobileMenuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
 });
 
 // Smooth Scrolling for Navigation Links
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-
-    targetElement.scrollIntoView({
-      behavior: 'smooth'
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
     });
-  });
 });
 
-// Show More/Show Less Buttons
-const showMoreBtns = document.querySelectorAll('.show-more-btn');
-
-showMoreBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.getAttribute('data-target');
-    const extraContent = document.getElementById(targetId);
-
-    extraContent.classList.toggle('show');
-
-    if (extraContent.classList.contains('show')) {
-      btn.textContent = 'Show Less';
-    } else {
-      btn.textContent = 'Show More';
-    }
-  });
-});
-// Back to Top Button
-const backToTopBtn = document.getElementById('back-to-top');
-
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+// Show More / Show Less Functionality
+document.querySelectorAll('.show-more-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.previousElementSibling;
+        const isExpanded = button.getAttribute('data-expanded') === 'true';
+        
+        if (isExpanded) {
+            content.style.display = 'none';
+            button.innerText = 'Show More';
+        } else {
+            content.style.display = 'block';
+            button.innerText = 'Show Less';
+        }
+        
+        button.setAttribute('data-expanded', !isExpanded);
+    });
 });
 
-// Intersection Observer for Scroll Animations (implementation will depend on the specific animations)
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Add animation class to the element
-      entry.target.classList.add('animate');
-    }
-  });
-});
+// Intersection Observer for Scroll Animations
+const observerOptions = {
+    threshold: 0.1
+};
 
-// Select the elements to animate and observe them
-const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-elementsToAnimate.forEach(element => {
-  observer.observe(element);
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+revealElements.forEach(el => {
+    observer.observe(el);
 });
