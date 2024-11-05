@@ -573,7 +573,6 @@ header {
     background-color: var(--background-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 /* Compact and Horizontal Navigation on Mobile */
 @media (max-width: 768px) {
     .nav-menu ul {
@@ -596,4 +595,23 @@ header {
         display: block;
         width: 100%;
     }
+}
+/* Download Button Styling */
+.download-button {
+    display: inline-block;
+    padding: 12px 24px; /* Adds space around the text */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff; /* Text color */
+    background-color: var(--primary-color); /* Button background color */
+    border: none; /* Removes any border */
+    border-radius: 5px; /* Rounds the corners for a button-like appearance */
+    text-align: center;
+    text-decoration: none; /* Removes underline from links */
+    transition: background-color 0.3s ease; /* Adds smooth color change on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+}
+
+.download-button:hover {
+    background-color: var(--accent-color); /* Changes background color on hover */
 }
