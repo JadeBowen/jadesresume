@@ -565,3 +565,24 @@ header {
     background-color: var(--background-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Compact and Horizontal Navigation on Mobile */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .nav-menu ul li {
+        flex: 1 1 45%; /* Makes each menu item occupy 45% width, fitting two items per row */
+        text-align: center;
+    }
+
+    .nav-menu ul li a {
+        font-size: 0.9rem;
+        padding: 8px;
+        display: block;
+        width: 100%;
+    }
+}
