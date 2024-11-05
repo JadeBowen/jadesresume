@@ -615,3 +615,116 @@ header {
 .download-button:hover {
     background-color: var(--accent-color); /* Changes background color on hover */
 }
+/* 1. Navigation Menu - Reduce Overall Height on Mobile */
+@media (max-width: 768px) {
+    header {
+        height: 50px; /* Reduce height of header */
+        padding: 5px 10px; /* Adjust padding for a more compact look */
+    }
+
+    .nav-menu ul {
+        gap: 5px; /* Decrease gap between menu items */
+    }
+
+    .nav-menu ul li a {
+        padding: 5px 10px; /* Reduce padding within each link */
+    }
+}
+
+/* 2. Resume Download Section - Center and Space Buttons */
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.download-button {
+    width: 90%; /* Center-align the buttons and give a consistent width */
+    max-width: 300px; /* Limit button width on larger screens */
+    text-align: center;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* 3. Footer Text - Improve Readability */
+.footer {
+    background-color: #222;
+    color: #ffffff;
+}
+
+.footer .contact-info p,
+.footer .footer-text {
+    color: #ccc; /* Lighter shade for better readability */
+}
+
+.footer .social-links img.footer-icon {
+    filter: brightness(1.2); /* Brighten icons slightly */
+}
+
+/* 4. "Show More" Buttons - Ensure Visibility and Display First Bullet Only */
+.accordion-content {
+    display: none;
+    padding: 15px 10px;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    background-color: #f7f9fc;
+    border-left: 3px solid var(--primary-color);
+}
+
+.accordion-content.showing {
+    display: block;
+}
+
+.accordion-content ul {
+    list-style: disc inside;
+}
+
+.job-entry .show-more,
+.accordion-section .show-more {
+    display: inline-block;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.job-entry .show-more:hover,
+.accordion-section .show-more:hover {
+    color: var(--accent-color);
+}
+
+.job-entry .more-content,
+.accordion-section .more-content {
+    display: none;
+}
+
+/* Ensure first line or bullet is visible before "Show More" is clicked */
+.job-entry p:first-of-type,
+.job-entry ul li:first-of-type,
+.accordion-section p:first-of-type,
+.accordion-section ul li:first-of-type {
+    display: block;
+}
+
+/* 5. Font Update for a Modern Professional Look */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Set a clean, modern font */
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', Arial, sans-serif; /* Ensure headings use the same font */
+    color: #222;
+}
