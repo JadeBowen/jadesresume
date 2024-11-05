@@ -15,13 +15,9 @@
 </head>
 <body>
 
-    <!-- Header Section with Logo and Navigation -->
+    <!-- Header Section with Navigation -->
     <header class="main-header" role="banner">
         <div class="header-content">
-            <!-- Logo Placeholder (Removed SVG as per plan) -->
-            <div class="logo-wrapper">
-                <!-- Optional small logo in footer, if desired -->
-            </div>
             <!-- Navigation Menu with ARIA Attributes for Accessibility -->
             <nav class="nav-menu" aria-label="Primary Navigation">
                 <ul>
@@ -29,36 +25,41 @@
                     <li><a href="#mission" aria-label="Mission Statement">Mission Statement</a></li>
                     <li><a href="#impact" aria-label="Impact Statement">Impact Statement</a></li>
                     <li><a href="#experience" aria-label="Professional Experience">Experience</a></li>
-                    <li><a href="#skills" aria-label="Skills and Proficiencies">Skills & Proficiencies</a></li>
-                    <li><a href="#download" aria-label="Download Resume">Download Resume</a></li>
+                    <li><a href="#skills-proficiencies" aria-label="Skills and Proficiencies">Skills & Proficiencies</a></li>
+                    <li><a href="#download-resume" aria-label="Download Resume">Download Resume</a></li>
                 </ul>
             </nav>
         </div>
+    </header>
 
-        <!-- Contact Information and Social Links with Icons -->
+    <!-- About Me Section with Contact Info and Social Links -->
+    <section id="about" class="about-section" aria-labelledby="about-heading">
+        <div class="profile-photo-wrapper">
+            <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Profile Photo" class="profile-photo">
+        </div>
+        <h1 id="about-heading">About Me</h1>
+
+        <!-- Moved Contact Information Below Photo -->
         <div class="contact-info">
             <p>Email: <a href="mailto:Jade.Bowen.Career@Gmail.com">Jade.Bowen.Career@Gmail.com</a></p>
             <p>Phone: <a href="tel:+12083710647">208-371-0647</a></p>
             <div class="social-links">
                 <a href="https://github.com/JadeBowen" target="_blank" aria-label="GitHub Profile">
                     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="icon">
+                    <span>Visit my GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/jadebowen" target="_blank" aria-label="LinkedIn Profile">
-                    <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn Profile QR Code" class="icon qr-code">
+                    <img src="https://github.com/JadeBowen/jadesresume/blob/main/linked%20in%20qr%20code.png?raw=true" alt="LinkedIn QR Code" class="icon qr-code">
+                    <span>Visit my LinkedIn</span>
                 </a>
             </div>
         </div>
-    </header>
 
-    <!-- Profile Photo and Introductory Section -->
-    <section id="about" class="about-section" aria-labelledby="about-heading">
-        <div class="profile-photo-wrapper">
-            <img src="https://github.com/JadeBowen/jadesresume/blob/main/head%20shot%20suit.jpg?raw=true" alt="Jade Bowen Profile Photo" class="profile-photo">
-        </div>
-        <h1 id="about-heading">About Me</h1>
         <p>My journey into telecommunications began at the age of 12 when I visited my first cell phone site with my father, a seasoned telecommunications engineer, and witnessed the intricate workings of wireless communication. Watching communication flow effortlessly through the air ignited a passion in me. My father, who I've always looked up to as my hero, not only introduced me to this fascinating world but also taught me the importance of patience and precision—skills that have shaped my career. His words, "Take the time to get it right, because what we build connects people," have guided me ever since.</p>
         <p>With over 21 years of experience in construction and telecommunications, I've carried that lesson with me while overseeing large-scale projects and leading diverse teams. As a single father of four, I've mastered multitasking and time management, which have been invaluable in both my personal and professional life. My true passion lies in building systems that impact people and improve their lives—creating connections that bring the world closer together.</p>
-    </section><!-- Mission Statement Section with Accordion -->
+    </section>
+
+    <!-- Mission Statement Section with Accordion -->
     <section id="mission" class="accordion-section" aria-labelledby="mission-heading">
         <h2 id="mission-heading">Mission Statement</h2>
         <button class="accordion-toggle" aria-expanded="false" aria-controls="mission-content">View Mission Statement</button>
@@ -75,6 +76,10 @@
             <p>Through strategic leadership and a commitment to operational efficiency, I aim to help companies not only meet their goals but exceed them. My passion for building infrastructure that impacts lives drives me to optimize processes, improve productivity, and deliver high-quality results that fuel long-term success. I work to create value that resonates across the organization by fostering an environment of respect and teamwork, empowering others to achieve bold strides in innovation and growth. Ultimately, I strive to help organizations enhance their reputation and leadership in the industry.</p>
         </div>
     </section>
+
+    <!-- Continue with the rest of the page sections as they are -->
+</body>
+</html>
 
     <!-- Professional Summary Section with Accordion -->
     <section id="professional-summary" class="accordion-section" aria-labelledby="professional-summary-heading">
