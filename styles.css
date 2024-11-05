@@ -8,11 +8,12 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -26,7 +27,6 @@ ul {
 
 /* Global Styles */
 body {
-    font-size: 16px;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -58,29 +58,22 @@ p {
     padding: 20px;
 }
 
-/* Header & Navigation */
+/* Header Adjustments */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--background-color);
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-.logo-wrapper img {
-    width: 150px;
+    justify-content: center;
+    background-color: var(--background-color);
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-menu ul {
     display: flex;
     gap: 15px;
+    list-style-type: none;
+    padding: 0;
 }
 
 .nav-menu ul li a {
@@ -92,41 +85,20 @@ header {
 
 .nav-menu ul li a:hover {
     color: var(--primary-color);
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    .nav-menu ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: var(--background-color);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-menu.active ul {
-        display: flex;
-    }
-
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-/* End of Part 1 *//* About Me Section */
+}/* About Me Section */
 .about-section {
-    background-color: var(--background-color);
+    text-align: center;
     padding: 40px 0;
 }
 
-.about-section h1 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    text-align: center;
+.contact-info {
     margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.contact-info p {
+    margin: 5px 0;
 }
 
 .profile-photo-wrapper {
@@ -152,22 +124,6 @@ header {
     color: var(--secondary-color);
 }
 
-/* Contact Information Section */
-.contact-info {
-    text-align: center;
-    margin: 30px 0;
-    color: var(--secondary-color);
-}
-
-.contact-info p {
-    margin: 8px 0;
-}
-
-.contact-info a {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
 .social-links {
     display: flex;
     justify-content: center;
@@ -187,16 +143,22 @@ header {
     width: 80px; /* QR code specific size */
 }
 
+.social-links a {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 .social-links a:hover img.icon,
 .social-links a:hover img.qr-code {
     transform: scale(1.1);
-}
-
-/* Philosophy Section */
+}/* Accordion Section */
 .accordion-section {
     background-color: var(--background-color);
-    border-top: 1px solid var(--border-color);
     padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .accordion-section h2 {
@@ -211,8 +173,6 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
     padding: 10px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -230,44 +190,28 @@ header {
 }
 
 .accordion-content {
-    max-width: 800px;
-    margin: 0 auto;
+    display: none; /* Initially hidden */
     padding: 15px 10px;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--secondary-color);
     background-color: #f7f9fc;
     border-left: 3px solid var(--primary-color);
-    display: none;
 }
 
-.accordion-toggle.active + .accordion-content {
-    display: block;
+.show-more {
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    .about-section h1 {
-        font-size: 2rem;
-    }
-
-    .profile-photo-wrapper img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .accordion-toggle {
-        font-size: 1rem;
-        padding: 8px;
-    }
-
-    .accordion-content {
-        font-size: 0.95rem;
-        padding: 12px 8px;
-    }
-}
-
-/* End of Part 2 *//* Professional Experience Section */
+.show-more:hover {
+    color: var(--accent-color);
+}/* Professional Experience Section */
 .professional-experience {
     padding: 40px 0;
     background-color: var(--background-color);
@@ -309,25 +253,25 @@ header {
     color: var(--secondary-color);
 }
 
-.job-entry ul li {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-/* Show More Toggle */
-.show-more-btn {
-    display: none; /* Display only on mobile */
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    text-decoration: underline;
+/* Show More Button for Job Details */
+.job-entry .show-more {
+    display: inline-block;
     margin-top: 10px;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
-/* Skills & Proficiencies Section */
+.job-entry .show-more:hover {
+    color: var(--accent-color);
+}
+
+/* Initially hide full job details (except the first bullet) */
+.job-entry .more-content {
+    display: none; /* Hidden until "Show More" is clicked */
+}/* Skills & Proficiencies Section */
 .skills-section {
     background-color: var(--background-color);
     padding: 40px 0;
@@ -389,115 +333,45 @@ header {
     border-radius: 4px;
     white-space: nowrap;
     z-index: 10;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .job-entry {
-        font-size: 0.95rem;
-        padding: 10px;
-    }
-
-    .show-more-btn {
-        display: inline-block;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .skill-item {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-}
-
-/* End of Part 3 *//* Resume Download Section */
-.download-section {
-    background-color: var(--background-color);
-    padding: 40px 0;
-    text-align: center;
-}
-
-.download-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.download-description {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-    max-width: 800px;
-    margin: 0 auto 20px;
-}
-
-.download-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.download-button {
-    display: inline-block;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-    background-color: var(--primary-dark-color);
-}
-
-.download-button:focus {
-    outline: 3px solid var(--highlight-color);
-}
-
-/* Footer Section */
+}/* Footer Section */
 .footer {
-    background-color: var(--footer-background-color);
-    padding: 30px 0;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #222;
     color: #ffffff;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .footer-logo-img {
-    max-width: 80px;
-    margin-bottom: 10px;
+    width: 60px;
+    height: auto;
 }
 
-.footer .contact-info p {
+.footer .contact-info {
     font-size: 1rem;
     color: #ffffff;
 }
 
-.footer .contact-info a {
-    color: #ffffff;
-    text-decoration: underline;
+.footer .contact-info p {
+    margin: 0;
 }
 
 .footer .social-links {
     display: flex;
     gap: 15px;
-    justify-content: center;
 }
 
 .footer .social-links img.footer-icon {
-    max-width: 30px;
+    width: 30px;
+    height: 30px;
     transition: transform 0.2s ease;
 }
 
@@ -507,16 +381,13 @@ header {
 
 .footer .footer-text {
     font-size: 0.9rem;
-    margin-top: 10px;
     color: #ccc;
-}
-
-/* Back-to-Top Button */
+}/* Back-to-Top Button */
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
+    display: none; /* Hidden by default, will appear when scrolling */
     padding: 10px 15px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -524,15 +395,150 @@ header {
     background-color: var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensures the button stays above other elements */
 }
 
 .back-to-top:hover {
-    background-color: var(--primary-dark-color);
+    background-color: var(--accent-color);
+    transform: scale(1.1);
 }
 
-/* Responsive Adjustments */
+.back-to-top.visible {
+    display: block; /* Button appears when the "visible" class is added */
+}/* General Text Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Modern, clean font */
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* Button Hover and Link Transitions */
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Section Headers */
+.section-header {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Smooth Hover Effects */
+button, .show-more, .download-button {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Subtle Background Styling */
+.container {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+}
+
+/* Icon Alignment for Menu and Headers */
+.nav-menu ul li a::before,
+.section-header::before,
+.job-entry h3::before {
+    content: '•'; /* Icon placeholder, can be replaced with a custom icon */
+    margin-right: 8px;
+    color: var(--primary-color);
+    font-weight: bold;
+}/* Responsive Design for Mobile */
 @media (max-width: 768px) {
+    /* Header Adjustments */
+    header {
+        padding: 10px 20px;
+        height: auto; /* Allow height to adjust */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* About Me Section */
+    .about-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-photo-wrapper img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-info p, .social-links a {
+        font-size: 1rem;
+    }
+
+    /* Accordion and Job Entry Adjustments */
+    .accordion-toggle {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .accordion-content, .job-entry .more-content {
+        font-size: 0.95rem;
+        padding: 12px 8px;
+    }
+
+    .job-entry {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    /* Skills Section Grid */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* More compact layout */
+        gap: 15px;
+    }
+
+    .skill-item {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer Adjustments */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer .social-links {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer .social-links img.footer-icon {
+        max-width: 25px;
+    }
+
+    .footer-text, .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    /* Download Section Button Adjustments */
     .download-buttons {
         flex-direction: column;
         gap: 15px;
@@ -543,14 +549,11 @@ header {
         padding: 10px 15px;
     }
 
-    .footer .contact-info p,
-    .footer .footer-text {
-        font-size: 0.9rem;
-    }
-
-    .footer .social-links img.footer-icon {
-        max-width: 25px;
+    /* Back-to-Top Button */
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        font-size: 1rem;
+        padding: 8px 10px;
     }
 }
-
-/* End of Part 4 */
