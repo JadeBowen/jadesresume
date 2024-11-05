@@ -578,12 +578,12 @@ header {
 @media (max-width: 768px) {
     .nav-menu ul {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
-        gap: 10px;
+        grid-template-columns: repeat(3, 1fr); /* Three columns per row */
+        gap: 5px; /* Less gap between items */
         justify-items: center;
-        padding: 10px 0;
+        padding: 5px 0; /* Reduce top/bottom padding */
         margin: 0;
-        background-color: var(--background-color); /* Ensures background color while sticky */
+        background-color: var(--background-color);
     }
 
     .nav-menu ul li {
@@ -591,8 +591,8 @@ header {
     }
 
     .nav-menu ul li a {
-        font-size: 0.9rem;
-        padding: 8px;
+        font-size: 0.8rem; /* Slightly smaller font */
+        padding: 5px 8px; /* Reduce padding within each link */
         display: block;
         width: 100%;
     }
