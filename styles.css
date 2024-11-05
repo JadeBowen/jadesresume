@@ -575,7 +575,7 @@ header {
     }
 
     .nav-menu ul li {
-        flex: 1 1 45%; /* Makes each menu item occupy 45% width, fitting two items per row */
+        flex: 1 1 30%; /* Makes each menu item occupy approximately 30% width, fitting three items per row */
         text-align: center;
     }
 
