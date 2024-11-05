@@ -1,10 +1,17 @@
-// Smooth Scrolling for Anchor Links
+// Smooth Scrolling with Error Handling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetSection = document.querySelector(this.getAttribute('href'));
+
+        // Check if the target section exists
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        } else {
+            console.error(`Target section not found: ${this.getAttribute('href')}`);
+        }
     });
 });
 
@@ -24,122 +31,48 @@ backToTopButton.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
-});// Accordion Functionality for Sections
-document.querySelectorAll('.accordion-toggle').forEach(toggle => {
-    toggle.addEventListener('click', () => {
-        const accordionContent = toggle.nextElementSibling;
-        const isOpen = toggle.classList.contains('active');
-
-        // Close any open accordion sections
-        document.querySelectorAll('.accordion-toggle.active').forEach(activeToggle => {
-            activeToggle.classList.remove('active');
-            activeToggle.nextElementSibling.style.maxHeight = null;
-        });
-
-        // Toggle the clicked section
-        if (!isOpen) {
-            toggle.classList.add('active');
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-        } else {
-            toggle.classList.remove('active');
-            accordionContent.style.maxHeight = null;
-        }
-    });
-});// Tooltip Functionality for Skills & Proficiencies
-document.querySelectorAll('.skill-item').forEach(skill => {
-    skill.addEventListener('mouseenter', () => {
-        const tooltip = document.createElement('div');
-        tooltip.classList.add('tooltip');
-        tooltip.innerText = skill.getAttribute('data-tooltip');  // Tooltip text is stored in data-tooltip attribute
-        document.body.appendChild(tooltip);
-
-        // Position tooltip near the hovered skill
-        const rect = skill.getBoundingClientRect();
-        tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 5}px`;
-        
-        // Remove tooltip on mouse leave
-        skill.addEventListener('mouseleave', () => {
-            tooltip.remove();
-        });
-    });
-});// Scroll Reveal Animation using Intersection Observer API
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal'); // Add 'reveal' class when in viewport
-        }
-    });
-}, { threshold: 0.1 }); // Adjusts sensitivity; lower values trigger earlier
-
-// Apply scroll reveal to each section marked with the 'scroll-reveal' class
-document.querySelectorAll('.scroll-reveal').forEach((section) => {
-    observer.observe(section);
-});// Smooth Scrolling for Anchor Links with Error Handling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetSection = document.querySelector(this.getAttribute('href'));
-        
-        // Check if target section exists
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        } else {
-            console.error(`Target section not found: ${this.getAttribute('href')}`);
-        }
-    });
 });
 
-// Back-to-Top Button with Error Handling
-const backToTopButton = document.querySelector('.back-to-top');
+// Accordion Functionality (Mobile-Only) for Sections
+function setupAccordion() {
+    document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const accordionContent = toggle.nextElementSibling;
+            const isOpen = toggle.classList.contains('active');
 
-if (backToTopButton) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
+            // Close any open accordion sections
+            document.querySelectorAll('.accordion-toggle.active').forEach(activeToggle => {
+                activeToggle.classList.remove('active');
+                activeToggle.nextElementSibling.style.maxHeight = null;
+            });
 
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+            // Toggle the clicked section
+            if (!isOpen) {
+                toggle.classList.add('active');
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                toggle.classList.remove('active');
+                accordionContent.style.maxHeight = null;
+            }
         });
     });
-} else {
-    console.warn("Back-to-Top button element not found.");
 }
 
-// Enhanced Accordion Functionality for Accessibility
-document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const accordionContent = header.nextElementSibling;
-        const isActive = header.classList.contains('active');
-
-        // Accessibility: Set ARIA attributes for better screen reader support
-        header.setAttribute('aria-expanded', !isActive);
-        accordionContent.setAttribute('aria-hidden', isActive);
-
-        // Close other open sections
-        document.querySelectorAll('.accordion-header.active').forEach(activeHeader => {
-            activeHeader.classList.remove('active');
-            activeHeader.nextElementSibling.style.maxHeight = null;
+// Apply accordion only on mobile
+function adjustAccordionForDevice() {
+    if (window.innerWidth <= 768) {
+        setupAccordion();
+    } else {
+        // Remove accordion behavior for desktop
+        document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+            toggle.classList.remove('active');
+            const content = toggle.nextElementSibling;
+            if (content) content.style.maxHeight = 'none'; // Ensure all content is visible on desktop
         });
+    }
+}
 
-        // Toggle clicked section
-        if (!isActive) {
-            header.classList.add('active');
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-        } else {
-            header.classList.remove('active');
-            accordionContent.style.maxHeight = null;
-        }
-    });
-});// Lazy Loading for Images
+// Lazy Loading for Images
 document.querySelectorAll('img[data-src]').forEach(img => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -151,28 +84,25 @@ document.querySelectorAll('img[data-src]').forEach(img => {
             }
         });
     }, {
-        rootMargin: '100px', // Load images slightly before they appear
+        rootMargin: '100px',
         threshold: 0.1
     });
     observer.observe(img);
 });
 
-// Throttling Scroll Event for Performance
-let throttleTimeout;
-window.addEventListener('scroll', () => {
-    if (!throttleTimeout) {
-        throttleTimeout = setTimeout(() => {
-            throttleTimeout = null;
-            // Execute any heavy operations here, like revealing elements
-        }, 100);
-    }
+// Scroll Reveal Animation
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.scroll-reveal').forEach((section) => {
+    revealObserver.observe(section);
 });
 
-// Debounce for Resize Event to Improve Performance
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        // Perform resize-dependent tasks here
-    }, 200);
-});
+// Resize Listener for Accordion Toggle (Desktop vs Mobile)
+window.addEventListener('resize', adjustAccordionForDevice);
+adjustAccordionForDevice(); // Initialize on load
