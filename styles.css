@@ -557,3 +557,11 @@ button, .show-more, .download-button {
         padding: 8px 10px;
     }
 }
+/* Sticky Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
