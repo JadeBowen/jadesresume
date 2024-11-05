@@ -728,3 +728,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', Arial, sans-serif; /* Ensure headings use the same font */
     color: #222;
 }
+/* Final Adjustments for Header on Mobile */
+@media (max-width: 768px) {
+    header {
+        min-height: 60px; /* Ensure a minimum height */
+        padding: 8px 10px; /* Minimal padding for compact look */
+    }
+
+    .nav-menu ul li a {
+        padding: 8px 10px; /* Adjust padding within each link */
+    }
+}
