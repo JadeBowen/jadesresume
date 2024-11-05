@@ -106,3 +106,52 @@ document.querySelectorAll('.scroll-reveal').forEach((section) => {
 // Resize Listener for Accordion Toggle (Desktop vs Mobile)
 window.addEventListener('resize', adjustAccordionForDevice);
 adjustAccordionForDevice(); // Initialize on load
+// Accordion and Show More Functionality for Mission, Impact, and Professional Summary Sections
+document.querySelectorAll('.accordion-section').forEach(section => {
+    const content = section.querySelector('.accordion-content');
+    const showMoreBtn = document.createElement('span');
+    showMoreBtn.classList.add('show-more');
+    showMoreBtn.textContent = 'Show More';
+
+    // Append the Show More button after the first sentence
+    content.insertAdjacentElement('afterend', showMoreBtn);
+
+    showMoreBtn.addEventListener('click', () => {
+        // Toggle display of the full content
+        if (content.style.display === 'none' || !content.style.display) {
+            content.style.display = 'block';
+            showMoreBtn.textContent = 'Show Less';
+        } else {
+            content.style.display = 'none';
+            showMoreBtn.textContent = 'Show More';
+        }
+    });
+
+    // Initially hide the content beyond the first sentence
+    content.style.display = 'none';
+});
+
+// Accordion and Show More Functionality for Professional Experience Section
+document.querySelectorAll('.job-entry').forEach(entry => {
+    const moreContent = entry.querySelector('.more-content');
+    const showMoreBtn = document.createElement('span');
+    showMoreBtn.classList.add('show-more');
+    showMoreBtn.textContent = 'Show More';
+
+    // Append the Show More button after the first bullet point
+    moreContent.insertAdjacentElement('afterend', showMoreBtn);
+
+    showMoreBtn.addEventListener('click', () => {
+        // Toggle display of the full job details
+        if (moreContent.style.display === 'none' || !moreContent.style.display) {
+            moreContent.style.display = 'block';
+            showMoreBtn.textContent = 'Show Less';
+        } else {
+            moreContent.style.display = 'none';
+            showMoreBtn.textContent = 'Show More';
+        }
+    });
+
+    // Initially hide the content beyond the first bullet point
+    moreContent.style.display = 'none';
+});
