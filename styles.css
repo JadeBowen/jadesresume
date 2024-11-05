@@ -565,17 +565,28 @@ header {
     background-color: var(--background-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Sticky Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Compact and Horizontal Navigation on Mobile */
 @media (max-width: 768px) {
     .nav-menu ul {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
         gap: 10px;
-        justify-content: center;
+        justify-items: center;
+        padding: 10px 0;
+        margin: 0;
+        background-color: var(--background-color); /* Ensures background color while sticky */
     }
 
     .nav-menu ul li {
-        flex: 1 1 30%; /* Makes each menu item occupy approximately 30% width, fitting three items per row */
         text-align: center;
     }
 
