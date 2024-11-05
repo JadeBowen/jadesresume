@@ -1,1 +1,817 @@
+/* Reset and Global Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html, body {
+    font-family: 'Arial', sans-serif; /* Use preferred clean, professional font */
+    color: #333; /* Base text color */
+    background-color: #f4f7f8; /* Light background for readability */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container and Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #1e90ff; /* Primary accent color */
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Base Section Styles */
+header, footer {
+    background-color: #1e90ff; /* Consistent branding */
+    color: white;
+    padding: 15px 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
+
+/* Accessibility Enhancements */
+a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #005f99; /* Hover color for better visibility */
+}/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f9f9f9;
+}
+
+/* Logo Styling */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo-wrapper img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Typography and Headings */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin: 15px 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Section Spacing */
+section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #1e90ff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}/* About Me Section */
+.about-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Profile Photo */
+.profile-photo-wrapper {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #1e90ff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #007acc;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+.social-links .icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-links .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+}/* Mission, Impact, and Professional Summary Section */
+.section-container {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.section-container h2 {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-container p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Hover Effect for Section */
+.section-container:hover {
+    background-color: #f9f9f9;
+}
+
+/* Accordion for Mobile - Mission, Impact, Professional Summary */
+.accordion-toggle {
+    background-color: #1e90ff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.accordion-toggle:hover {
+    background-color: #007acc;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #ffffff;
+    padding: 0 15px;
+    border-radius: 0 0 8px 8px;
+}
+
+.section-container.open .accordion-content {
+    padding: 15px 15px;
+    max-height: 100vh;
+}
+
+/* Section Divider Styling */
+.section-divider {
+    height: 1px;
+    width: 80%;
+    margin: 25px auto;
+    background-color: #ddd;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+    .section-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-container p {
+        font-size: 1rem;
+    }
+
+    /* Accordion style for smaller devices */
+    .accordion-toggle {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}/* Professional Experience Section */
+.professional-experience {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.professional-experience h2 {
+    font-size: 2.2rem;
+    color: #1e90ff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Job Entry Styling */
+.job-entry {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Job Header - Title and Dates */
+.job-header {
+    padding: 15px;
+    background-color: #1e90ff;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.job-title {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.job-dates {
+    font-size: 0.9rem;
+    color: #d0e8ff;
+}
+
+/* Job Content */
+.job-content {
+    padding: 15px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.job-content p {
+    margin-bottom: 10px;
+}
+
+.key-achievements {
+    margin-top: 15px;
+    font-style: italic;
+    color: #1e90ff;
+}
+
+.key-achievements ul {
+    padding-left: 20px;
+}
+
+.key-achievements li {
+    margin-bottom: 8px;
+}
+
+/* Show More Button for Mobile */
+.show-more-btn {
+    display: none;
+    background-color: #1e90ff;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: #007acc;
+}
+
+.job-entry.collapsed .job-content {
+    max-height: 80px; /* Initial height for collapsed view */
+    overflow: hidden;
+}
+
+.job-entry.collapsed .show-more-btn {
+    display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .job-header {
+        font-size: 1rem;
+    }
+
+    .job-title {
+        font-size: 1rem;
+    }
+
+    .job-dates {
+        font-size: 0.8rem;
+    }
+
+    .job-content {
+        font-size: 0.95rem;
+    }
+
+    /* Show More Button Styling for Mobile */
+    .show-more-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}/* Skills & Proficiencies Section */
+.skills-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2.2rem;
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+/* Skills Grid Layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Individual Skill Item */
+.skill-item {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Icon */
+.skill-item .icon {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+/* Skill Category Name */
+.skill-item h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Skills List */
+.skill-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-list li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skills-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-item {
+        font-size: 0.9rem;
+    }
+}/* Download Resume Section */
+.download-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.download-section h2 {
+    font-size: 2.4rem;
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+.download-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Download Buttons */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.download-button {
+    background-color: #1e90ff;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+.download-button:hover {
+    background-color: #007acc;
+    transform: translateY(-3px);
+}
+
+.download-button:active {
+    background-color: #005f99;
+    transform: translateY(1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .download-section h2 {
+        font-size: 2rem;
+    }
+    
+    .download-button {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+}/* Footer Section */
+.footer {
+    padding: 30px 20px;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #007acc;
+}
+
+/* Social Icons in Footer */
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer .social-links img {
+    height: 24px;
+    width: auto;
+    transition: transform 0.2s ease;
+}
+
+.footer .social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Back-to-Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    display: none; /* Initially hidden, displayed on scroll */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+    background-color: #007acc;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.9rem;
+    }
+
+    .back-to-top {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+}/* General Responsive Adjustments */
+body {
+    line-height: 1.6;
+}
+
+/* Section Padding and Alignment */
+section {
+    padding: 20px 40px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Typography Enhancement for Small Screens */
+@media (max-width: 768px) {
+    section h2 {
+        font-size: 1.6rem;
+    }
+    section p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Grid Layout Adjustments for Smaller Screens */
+.skills-grid, .experience-grid, .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+.skills-grid div, .experience-grid div, .achievements-grid div {
+    padding: 15px;
+}
+
+/* Button Interaction Enhancements */
+button, .download-button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Accordion Content Transitions */
+.accordion-content {
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+    max-height: 100vh; /* Ensures full opening of accordions */
+}
+
+.accordion-trigger:focus, button:focus, .download-button:focus {
+    outline: 2px solid #1e90ff;
+    outline-offset: 3px;
+}
+
+/* Back-to-Top Button Visibility on Scroll */
+@media (min-width: 600px) {
+    .back-to-top {
+        display: block;
+    }
+}
+
+/* Enhanced Section Dividers */
+.section-divider {
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    opacity: 0.8;
+}
+
+/* Final Color and Contrast Tweaks for Accessibility */
+body, p, ul, li, h1, h2, h3, h4, h5, h6 {
+    color: #333; /* Consistent dark color for readability */
+}
+
+a, .footer a, .social-links a {
+    color: #1e90ff;
+}
+
+a:hover, .footer a:hover, .social-links a:hover {
+    color: #007acc;
+}
+
+/* CSS Variables for Theme Consistency */
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #007acc;
+    --text-color: #333;
+    --background-light: #f4f7f8;
+}
