@@ -739,3 +739,24 @@ h1, h2, h3, h4, h5, h6 {
         padding: 8px 10px; /* Adjust padding within each link */
     }
 }
+/* Adjust header height for better visibility */
+header {
+    height: 60px; /* Increase height to ensure all menu items are visible */
+    padding: 5px 10px;
+}
+
+/* Add padding to top of the content section to prevent overlap */
+body {
+    padding-top: 80px; /* Adds space below header for content visibility */
+}
+
+/* Ensure this padding only applies on smaller screens */
+@media (max-width: 768px) {
+    header {
+        height: 50px; /* Smaller height on mobile */
+    }
+
+    body {
+        padding-top: 70px; /* Reduced padding on mobile */
+    }
+}
