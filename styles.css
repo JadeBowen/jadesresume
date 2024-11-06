@@ -907,3 +907,34 @@ body {
         padding-top: 70px; /* Reduced padding on mobile */
     }
 }
+/* Increase padding around each job entry in Professional Experience section */
+.job-entry {
+    padding: 20px; /* Increase as needed */
+    margin-bottom: 15px;
+}
+
+/* Adjust footer height by reducing padding */
+.footer {
+    padding: 10px 15px; /* Adjust for desired height */
+}
+
+/* Consistent spacing across all sections */
+.section {
+    margin-bottom: 20px; /* Ensures consistent spacing between sections */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Media Query for Responsive Spacing */
+@media (max-width: 768px) {
+    .job-entry {
+        padding: 15px; /* Adjust padding on smaller screens */
+    }
+    .footer {
+        padding: 8px 10px; /* Reduced padding on mobile */
+    }
+    .section {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
