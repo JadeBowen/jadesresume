@@ -117,3 +117,26 @@ document.querySelectorAll('.scroll-reveal').forEach((section) => {
 // Initialize the script
 window.addEventListener('resize', adjustAccordionForDevice);
 adjustAccordionForDevice(); // Initialize on load
+// Add Show More functionality to all job entries
+document.querySelectorAll('.job-entry').forEach(entry => {
+    const content = entry.querySelector('.accordion-content');
+    const showMoreBtn = document.createElement('span');
+    showMoreBtn.classList.add('show-more');
+    showMoreBtn.textContent = 'Show More';
+
+    // Append the Show More button to each job entry
+    content.insertAdjacentElement('afterend', showMoreBtn);
+
+    showMoreBtn.addEventListener('click', () => {
+        if (content.style.display === 'none' || !content.style.display) {
+            content.style.display = 'block';
+            showMoreBtn.textContent = 'Show Less';
+        } else {
+            content.style.display = 'none';
+            showMoreBtn.textContent = 'Show More';
+        }
+    });
+
+    // Initially hide the extra content
+    content.style.display = 'none';
+});
