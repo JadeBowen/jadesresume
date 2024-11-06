@@ -907,19 +907,3 @@ body {
         padding-top: 70px; /* Reduced padding on mobile */
     }
 }
-/* Scroll Reveal Animation */
-.reveal {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(20px); /* Adjust as needed */
-}
-
-/* Accordion Content Overflow Handling */
-.accordion-content, .more-content {
-    padding: 15px; /* Ensures proper spacing within accordion content */
-    overflow: hidden; /* Prevents any accidental overflow */
-}
