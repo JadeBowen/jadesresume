@@ -1613,3 +1613,57 @@ a, .show-more, .download-button, button {
         flex-direction: row;
     }
 }
+/* Footer Adjustments */
+.footer {
+    padding: 5px 10px; /* Reduce padding to make the footer box smaller */
+    background-color: #222; /* Keep the black background */
+    color: #ffffff; /* Set footer text to white */
+    margin-top: 20px; /* Add space between the download section and footer */
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Reduce space between items inside the footer */
+}
+
+.footer .contact-info,
+.footer .footer-text {
+    color: #ffffff; /* Ensure all footer text is white */
+}
+
+/* Header Menu Adjustments */
+.nav-menu ul {
+    display: flex;
+    justify-content: space-around; /* Ensure items fit within screen width */
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    list-style: none;
+}
+
+.nav-menu ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-menu ul li a {
+    display: block;
+    padding: 10px 5px; /* Adjust padding for better fit on smaller screens */
+    color: #333; /* Use desired color for menu links */
+    white-space: nowrap; /* Prevent wrapping within each item */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Enable horizontal scrolling if needed on very small screens */
+    }
+
+    .nav-menu ul li {
+        flex: initial; /* Allow more flexibility for fitting links in a row */
+    }
+}
