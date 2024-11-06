@@ -1571,3 +1571,45 @@ a, .show-more, .download-button, button {
     height: 24px;
     margin: 0 4px; /* Reduce space between social icons */
 }
+/* Make the navigation menu horizontal, sticky, and smaller in height on mobile */
+.main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Adjust color as needed */
+    z-index: 1000; /* Keeps it above other content */
+    display: flex;
+    justify-content: center;
+    padding: 5px 0; /* Adjusted padding to reduce height */
+}
+
+.nav-menu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.nav-menu li {
+    flex: 1;
+    text-align: center;
+    padding: 5px 0; /* Smaller padding for reduced height */
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 5px 10px; /* Adjusted padding for smaller height */
+    color: white; /* Change color as desired */
+    text-decoration: none;
+}
+
+.nav-menu li a:hover {
+    background-color: #555; /* Add hover effect if desired */
+}
+
+/* Ensure menu is responsive and doesn't collapse on small screens */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-direction: row;
+    }
+}
