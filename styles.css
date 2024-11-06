@@ -1552,3 +1552,22 @@ a, .show-more, .download-button, button {
         padding: 8px 10px;
     }
 }
+/* Footer height adjustment */
+.footer {
+    padding: 10px 0; /* Reduce padding to decrease overall height */
+}
+
+.footer-logo img {
+    max-height: 40px; /* Reduce logo height */
+    margin-bottom: 5px; /* Reduce space below the logo */
+}
+
+.contact-info, .social-links {
+    margin: 5px 0; /* Minimize space between text sections */
+}
+
+.footer-icon {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    margin: 0 4px; /* Reduce space between social icons */
+}
