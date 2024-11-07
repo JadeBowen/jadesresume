@@ -328,3 +328,21 @@ document.querySelectorAll('.footer-content a, .contact-info a, .nav-menu ul li a
         });
     }
 });
+// Auto-hide Header on Scroll
+let lastScrollTop = 0;
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY;
+
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        header.classList.remove('scrolling-up');
+        header.classList.add('scrolling-down');
+    } else {
+        // Scrolling up
+        header.classList.remove('scrolling-down');
+        header.classList.add('scrolling-up');
+    }
+    lastScrollTop = scrollTop;
+});
