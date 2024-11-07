@@ -11,8 +11,9 @@ html, body {
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 16px;
     color: #333;
-    background-color: #f4f6f9; /* Soft background for a modern, professional look */
     line-height: 1.6;
+    background-color: #f4f6f9;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -34,9 +35,9 @@ ul {
 
 /* Color Scheme */
 :root {
-    --primary-color: #2a9df4;
+    --primary-color: #00aaff;
     --secondary-color: #333;
-    --accent-color: #f4a261;
+    --accent-color: #ff5722;
     --background-color: #ffffff;
     --border-color: #eaeaea;
 }
@@ -46,11 +47,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #222;
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 15px;
 }
 
 p {
     margin-bottom: 1em;
-    font-size: 1rem;
     color: var(--secondary-color);
 }
 
@@ -59,1840 +60,182 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--background-color);
-    height: 50px; /* Reduced height as requested */
+    background: linear-gradient(to right, #111, #333);
+    color: #ffffff;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .nav-menu ul {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .nav-menu ul li a {
     font-weight: 600;
     padding: 8px 12px;
-    color: var(--secondary-color);
-    transition: color 0.3s ease;
-}
-
-.nav-menu ul li a:hover {
-    color: var(--primary-color);
-}
-
-/* Background and Layout Enhancements */
-body {
-    background: linear-gradient(180deg, #ffffff 0%, #f4f6f9 50%, #e8f0ff 100%);
-}
-
-.section {
-    margin-bottom: 40px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: var(--background-color);
-}
-
-/* Footer Adjustments */
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 15px; /* Reduced height */
-    background-color: #222;
     color: #ffffff;
-}
-
-.footer-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-}
-
-.footer .contact-info p,
-.footer .footer-text {
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-.footer-logo img {
-    width: 60px;
-    height: 60px; /* Ensures square dimensions */
-}
-
-.footer .social-links img.footer-icon {
-    width: 30px;
-    height: 30px;
-    filter: brightness(1.2); /* Enhanced visibility */
-}
-
-.footer .social-links img.footer-icon:hover {
-    transform: scale(1.1);
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.back-to-top:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.1);
-}
-
-.back-to-top.visible {
-    display: block;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    header {
-        height: 45px; /* Slightly reduced for mobile */
-    }
-
-    .nav-menu ul {
-        gap: 8px;
-    }
-
-    .footer {
-        padding: 8px 10px; /* Mobile-specific adjustments */
-    }
-
-    .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        font-size: 1rem;
-        padding: 8px 10px;
-    }
-}/* Professional Experience Section */
-.professional-experience {
-    padding: 40px 0;
-    background-color: var(--background-color);
-}
-
-.professional-experience h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.job-entry {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #f7f9fc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.job-entry h3 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.job-entry p,
-.job-entry ul {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-}
-
-.job-entry ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-/* Show More Button for Job Entries */
-.job-entry .show-more {
-    display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.job-entry .show-more:hover {
-    color: var(--accent-color);
-}
-
-.job-entry .more-content {
-    display: none;
-}
-
-/* Accordion Section */
-.accordion-section {
-    background-color: var(--background-color);
-    padding: 40px 0;
-    border-top: 1px solid var(--border-color);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.accordion-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.accordion-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    background-color: var(--background-color);
-    border: none;
-    border-bottom: 2px solid var(--border-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.accordion-toggle:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.accordion-content {
-    display: none;
-    padding: 15px 10px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    background-color: #f7f9fc;
-    border-left: 3px solid var(--primary-color);
-}
-
-/* Skills & Proficiencies Section */
-.skills-section {
-    background-color: var(--background-color);
-    padding: 40px 0;
-}
-
-.skills-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.skill-item {
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #f7f9fc;
     position: relative;
 }
 
-.skill-item h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.skill-item ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: var(--secondary-color);
-    font-size: 1rem;
-}
-
-/* Tooltip Styling */
-.skill-item[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
+.nav-menu ul li a::after {
+    content: '';
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 10px;
-    padding: 8px;
-    font-size: 0.9rem;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border-radius: 4px;
-    white-space: nowrap;
-    z-index: 10;
-}
-
-/* Download Buttons */
-.download-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.download-button {
-    padding: 10px 15px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
     background-color: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
-/* Responsive Design for Skills Section */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+.nav-menu ul li a:hover::after {
+    width: 100%;
+}
 
-    .skill-item {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-}/* Footer Section */
+/* Section Layout */
+.section {
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: #222;
+    background: #222;
     color: #ffffff;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 20px;
     text-align: center;
-    gap: 10px;
-}
-
-.footer-logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px; /* Makes QR codes square while slightly rounding corners */
-}
-
-.footer .contact-info,
-.footer .footer-text {
     font-size: 0.9rem;
-    color: #ccc;
-    margin: 0;
 }
 
 .footer .social-links {
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
-.footer .social-links img.footer-icon {
+.footer .social-links img {
     width: 30px;
     height: 30px;
     transition: transform 0.2s ease;
 }
 
-.footer .social-links img.footer-icon:hover {
+.footer .social-links img:hover {
     transform: scale(1.1);
 }
 
-.footer .footer-text {
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: #ccc;
-}
-
-/* Header Adjustments */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--background-color);
-    height: 50px; /* Reduced height */
-    padding: 5px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-menu ul {
-    display: flex;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-}
-
-.nav-menu ul li a {
-    font-weight: 600;
-    padding: 5px 10px;
-    color: var(--secondary-color);
-    transition: color 0.3s ease;
-}
-
-.nav-menu ul li a:hover {
-    color: var(--primary-color);
-}
-
-/* General Layout & Spacing Adjustments */
-.container {
-    background-color: var(--background-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.section {
-    margin-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Responsive Design for Mobile Views */
-@media (max-width: 768px) {
-    /* Footer Adjustments */
-    .footer {
-        padding: 8px;
-    }
-
-    .footer .social-links img.footer-icon {
-        max-width: 25px;
-    }
-
-    .footer-text,
-    .contact-info p {
-        font-size: 0.85rem;
-    }
-
-    /* Header Adjustments */
-    header {
-        height: 50px;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
-    }
-
-    .nav-menu ul li a {
-        font-size: 0.9rem;
-        padding: 5px;
-    }
-
-    /* Professional Experience Adjustments */
-    .job-entry {
-        padding: 15px;
-        font-size: 0.95rem;
-    }
-
-    /* Skills & Proficiencies Grid */
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Back-to-Top Button */
-    .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        font-size: 1rem;
-        padding: 8px 10px;
-    }
-}
-
-/* Enhanced Background Styling */
-body {
-    background: linear-gradient(180deg, #f9f9f9, #e0e0e0); /* Subtle gradient background for modern look */
-    font-family: 'Roboto', Arial, sans-serif;
-    color: var(--secondary-color);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #222;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-p {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-}
-
-/* Enhanced Button Styles */
-button, .show-more, .download-button {
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-color);
-}
-
-.show-more {
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.show-more:hover {
-    color: var(--accent-color);
-}/* Professional Experience Section Enhancements */
-.professional-experience {
-    padding: 40px 0;
-    background-color: var(--background-color);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-}
-
-.professional-experience h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.job-entry {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #f7f9fc;
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    color: var(--secondary-color);
-    transition: background-color 0.3s ease;
-}
-
-.job-entry:hover {
-    background-color: #eef3f9; /* Light background change on hover */
-}
-
-.job-entry h3 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.job-entry ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-/* Show More Button Adjustments for Job Entries */
-.job-entry .show-more {
-    display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.job-entry .show-more:hover {
-    color: var(--accent-color);
-}
-
-/* Ensure First Bullet Point or Sentence is Shown Before Expand */
-.job-entry .more-content {
-    display: none;
-}
-
-/* Skills & Proficiencies Section Styling */
-.skills-section {
-    background-color: #f9f9f9;
-    padding: 40px 0;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.skills-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.skill-item {
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #eef3f9;
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    color: var(--secondary-color);
-    transition: background-color 0.3s ease;
-}
-
-.skill-item:hover {
-    background-color: #dde7f2;
-}
-
-.skill-item h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-/* Tooltip Styling for Skills */
-.skill-item[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 10px;
-    padding: 8px;
-    font-size: 0.9rem;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border-radius: 4px;
-    white-space: nowrap;
-    z-index: 10;
-}
-
-.skill-item ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.skill-item ul li {
-    margin-bottom: 5px;
-}
-
-/* Consistent Font & Color Adjustments */
-h1, h2, h3, h4, h5, h6 {
-    color: #222;
-    font-family: 'Roboto', Arial, sans-serif;
-    line-height: 1.2;
-}
-
-p, ul, li, a {
-    font-family: 'Arial', sans-serif;
-    color: var(--secondary-color);
-}
-
-/* Enhanced Button Styles */
-button, .download-button, .show-more {
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-/* Download Section Button Adjustments */
-.download-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.download-button {
-    width: 90%;
-    max-width: 300px;
-    text-align: center;
-    padding: 10px 15px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 5px;
-}
-
-.download-button:hover {
-    background-color: var(--accent-color);
-}
-
-/* Consistent Bullet Point Style */
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    color: var(--secondary-color);
-}/* Mobile Optimizations for Professional Experience Section */
-@media (max-width: 768px) {
-    .job-entry {
-        padding: 15px;
-        font-size: 0.95rem;
-    }
-
-    .job-entry h3 {
-        font-size: 1.2rem;
-    }
-
-    .accordion-toggle {
-        font-size: 1rem;
-        padding: 8px;
-    }
-
-    .accordion-content,
-    .job-entry .more-content {
-        font-size: 0.95rem;
-        padding: 12px 8px;
-    }
-    
-    .job-entry .show-more {
-        font-size: 0.9rem;
-        padding: 5px;
-    }
-}
-
-/* Mobile Optimizations for Skills & Proficiencies Section */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Compacts layout */
-        gap: 15px;
-    }
-
-    .skill-item {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-    
-    .skills-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .skill-item h3 {
-        font-size: 1.1rem;
-    }
-}
-
-/* Header Optimizations */
-@media (max-width: 768px) {
-    header {
-        height: 50px; /* Reduced header height */
-        padding: 5px 10px;
-    }
-
-    .nav-menu ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
-        justify-items: center;
-        background-color: var(--background-color);
-    }
-
-    .nav-menu ul li a {
-        font-size: 0.8rem;
-        padding: 5px 8px;
-        display: block;
-        width: 100%;
-    }
-}
-
-/* Footer Adjustments for Mobile */
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-        padding: 8px 10px;
-    }
-
-    .footer .social-links {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .footer .social-links img.footer-icon {
-        max-width: 25px;
-    }
-
-    .footer .footer-text,
-    .footer .contact-info p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Mobile-Specific Show More Button Adjustment */
-@media (max-width: 768px) {
-    .show-more {
-        font-size: 0.9rem;
-        padding: 8px 10px;
-    }
-}
-
-/* Consistent Spacing Across Sections */
-.section {
-    margin-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-@media (max-width: 768px) {
-    .section {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-}
-
-/* Gradient Background for Visual Depth */
-body {
-    background: linear-gradient(to bottom, #ffffff, #f2f5fa);
-}
-
-/* Final Button and Icon Enhancements */
-.download-button,
-.back-to-top {
-    transition: transform 0.2s ease;
-}
-
-.download-button:hover,
-.back-to-top:hover {
-    transform: scale(1.05); /* Subtle enlarge on hover */
-}
-
-/* Back-to-Top Button - Adjustments for Mobile */
-@media (max-width: 768px) {
-    .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        font-size: 1rem;
-        padding: 8px 10px;
-    }
-}
-
-/* Footer Height Minimization */
-.footer {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-    background-color: #222;
-    color: #ffffff;
-}
-
-.footer .contact-info,
-.footer .footer-text {
-    color: #ccc;
-}/* Accordion Enhancements */
-.accordion-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    background-color: var(--background-color);
-    border: none;
-    border-bottom: 2px solid var(--border-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.accordion-toggle:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.accordion-content {
-    display: none;
-    padding: 15px 10px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    background-color: #f7f9fc;
-    border-left: 3px solid var(--primary-color);
-}
-
-.accordion-content.showing {
-    display: block;
-}
-
-.show-more {
-    display: inline-block;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-    margin-top: 10px;
-    transition: color 0.3s ease;
-}
-
-.show-more:hover {
-    color: var(--accent-color);
-}
-
-/* Back-to-Top Button Styling */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top.visible {
-    display: block;
-}
-
-.back-to-top:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.1);
-}
-
-/* Download Button Styling */
-.download-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.download-button:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.05);
-}
-
-/* Responsive Download Button Adjustments */
-@media (max-width: 768px) {
-    .download-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .download-button {
-        width: 90%;
-        max-width: 300px;
-        padding: 10px 15px;
-    }
-}/* Professional Experience Section */
-.professional-experience {
-    padding: 40px 0;
-    background-color: var(--background-color);
-}
-
-.professional-experience h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.job-entry {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #f7f9fc;
-    transition: box-shadow 0.3s ease;
-}
-
-.job-entry:hover {
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.job-entry h3 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.job-entry p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-.job-entry ul {
-    margin-top: 10px;
-    padding-left: 20px;
-    color: var(--secondary-color);
-}
-
-.job-entry ul li {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-/* Show More Button for Job Details */
-.job-entry .show-more {
-    display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.job-entry .show-more:hover {
-    color: var(--accent-color);
-}
-
-/* Skills & Proficiencies Section */
-.skills-section {
-    background-color: var(--background-color);
-    padding: 40px 0;
-}
-
-.skills-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.skill-item {
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #f7f9fc;
-    position: relative;
-    transition: box-shadow 0.3s ease;
-}
-
-.skill-item:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.skill-item h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.skill-item ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: var(--secondary-color);
-}
-
-.skill-item ul li {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-/* Responsive Adjustments for Skills Section */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .skill-item {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-}/* About Me Section */
+/* About Section */
 .about-section {
     text-align: center;
+    background: linear-gradient(to bottom right, #ffffff, #e0eafc);
     padding: 40px 0;
-    background: linear-gradient(to bottom, #ffffff, #f2f4f7); /* Subtle gradient background */
 }
 
 .profile-name {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--primary-color);
-    margin-bottom: 10px;
 }
 
-.contact-info {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-.profile-photo-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.profile-photo-wrapper img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.profile-photo-wrapper img:hover {
-    transform: scale(1.05); /* Hover effect for profile image */
-}
-
-.about-section p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--secondary-color);
-}
-
-/* Social Links in About Section */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.social-links img.icon,
-.social-links img.qr-code {
-    width: 40px;
-    height: 40px;
-    border-radius: 10%; /* Change to make it square with rounded corners */
-    transition: transform 0.3s;
-}
-
-.social-links img.qr-code {
-    width: 80px; /* Larger size for LinkedIn QR code */
-}
-
-.social-links a {
-    font-size: 1rem;
-    color: var(--primary-color);
+/* Show More Button */
+.show-more {
+    color: var(--accent-color);
     font-weight: bold;
-}
-
-.social-links a:hover img.icon,
-.social-links a:hover img.qr-code {
-    transform: scale(1.1);
-}
-
-/* Global Background Enhancement */
-body {
-    background: linear-gradient(135deg, #e3edf7, #ffffff); /* Light gradient background for modern look */
-}
-
-/* Buttons - Consistent Style and Hover */
-button, .show-more, .download-button {
-    font-family: 'Roboto', Arial, sans-serif;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-}
-
-/* Download Button Specific Styling */
-.download-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.download-button:hover {
-    background-color: var(--accent-color);
-}
-
-/* Consistent Link Hover */
-a {
+    text-decoration: underline;
+    display: inline-block;
     transition: color 0.3s ease;
 }
 
-a:hover {
+.show-more:hover {
     color: var(--primary-color);
 }
 
-/* Responsive Styling for About Section */
-@media (max-width: 768px) {
-    .profile-name {
-        font-size: 2rem;
-    }
-
-    .profile-photo-wrapper img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .contact-info p, .social-links a {
-        font-size: 1rem;
-    }
-}/* Skills & Proficiencies Section */
-.skills-section {
-    background-color: var(--background-color);
+/* Professional Experience */
+.professional-experience {
     padding: 40px 0;
-    background: linear-gradient(to bottom, #f7f9fc, #ffffff); /* Adds a soft gradient */
 }
 
-.skills-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
+.job-entry {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Grid */
+.skills-section {
+    padding: 40px 0;
+    background: #f8fbff;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .skill-item {
-    padding: 15px;
+    background: #ffffff;
     border: 1px solid var(--border-color);
+    padding: 20px;
     border-radius: 8px;
-    background-color: #f7f9fc;
-    transition: transform 0.3s ease;
-    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
-    transform: scale(1.02); /* Slight hover effect for interactivity */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.skill-item h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.skill-item ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: var(--secondary-color);
-}
-
-.skill-item ul li {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-/* Footer Section */
-.footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Buttons */
+.download-button, .back-to-top {
+    background: var(--primary-color);
+    color: #ffffff;
     padding: 10px 20px;
-    background-color: #222;
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-}
-
-.footer-logo-img {
-    width: 60px;
-    height: auto;
-}
-
-.footer .contact-info p,
-.footer .footer-text {
-    color: #ccc; /* Softer color for readability */
-}
-
-.footer .social-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.footer .social-links img.footer-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 10%; /* Square with rounded corners */
-    transition: transform 0.2s ease;
-}
-
-.footer .social-links img.footer-icon:hover {
-    transform: scale(1.1);
-}
-
-/* Back-to-Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    color: #ffffff;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.1);
-}
-
-.back-to-top.visible {
-    display: block; /* Appears when "visible" class is added */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .skill-item {
-        padding: 10px;
-    }
-
-    .footer {
-        padding: 8px 10px;
-    }
-
-    .footer .contact-info p,
-    .footer .footer-text {
-        font-size: 0.9rem;
-    }
-
-    .footer .social-links img.footer-icon {
-        max-width: 25px;
-    }
-}/* Background and Global Enhancements */
-body {
-    background: linear-gradient(to bottom, #ffffff, #f1f3f5); /* Soft gradient background */
-    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    padding-top: 80px; /* Compensates for sticky header */
-}
-
-/* Section Styling */
-.section {
-    padding: 40px 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background-color: var(--background-color); /* Subtle background for all sections */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
-}
-
-/* Header Adjustments */
-header {
-    height: 60px;
-    padding: 5px 10px;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for definition */
-}
-
-.nav-menu ul {
-    display: flex;
-    gap: 15px;
-    list-style-type: none;
-}
-
-.nav-menu ul li a {
-    padding: 10px 15px;
-    color: var(--secondary-color);
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.nav-menu ul li a:hover {
-    color: var(--primary-color); /* Interactive hover color */
-}
-
-/* Accordion Section Adjustments */
-.accordion-section {
-    background-color: var(--background-color);
-    padding: 40px 0;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.accordion-toggle {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    background-color: var(--background-color);
-    border: none;
-    border-bottom: 2px solid var(--border-color);
-    color: var(--secondary-color);
-    cursor: pointer;
-}
-
-.accordion-content {
-    padding: 15px 10px;
-    font-size: 1rem;
-    color: var(--secondary-color);
-    background-color: #f7f9fc;
-    border-left: 3px solid var(--primary-color);
-    display: none; /* Initially hidden */
-}
-
-/* Button and Link Styling */
-a, .show-more, .download-button, button {
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.download-button {
-    padding: 10px 15px;
-    text-align: center;
     border-radius: 5px;
+    text-align: center;
     font-weight: bold;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.download-button:hover {
-    background-color: var(--accent-color);
+.download-button:hover, .back-to-top:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
 }
 
-.show-more {
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.show-more:hover {
-    color: var(--accent-color);
-}
-
-/* Responsive Grid and Section Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     header {
-        height: 50px;
         padding: 5px 10px;
     }
 
     .nav-menu ul {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 10px;
-        align-items: center;
-    }
-
-    .accordion-toggle {
-        font-size: 1rem;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
     }
 
-    .footer {
-        padding: 8px 10px;
+    .download-button, .back-to-top {
+        width: 100%;
+        padding: 15px;
     }
-}
-/* Footer height adjustment */
-.footer {
-    padding: 10px 0; /* Reduce padding to decrease overall height */
-}
-
-.footer-logo img {
-    max-height: 40px; /* Reduce logo height */
-    margin-bottom: 5px; /* Reduce space below the logo */
-}
-
-.contact-info, .social-links {
-    margin: 5px 0; /* Minimize space between text sections */
-}
-
-.footer-icon {
-    width: 24px; /* Adjust icon size */
-    height: 24px;
-    margin: 0 4px; /* Reduce space between social icons */
-}
-/* Make the navigation menu horizontal, sticky, and smaller in height on mobile */
-.main-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #333; /* Adjust color as needed */
-    z-index: 1000; /* Keeps it above other content */
-    display: flex;
-    justify-content: center;
-    padding: 5px 0; /* Adjusted padding to reduce height */
-}
-
-.nav-menu ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-.nav-menu li {
-    flex: 1;
-    text-align: center;
-    padding: 5px 0; /* Smaller padding for reduced height */
-}
-
-.nav-menu li a {
-    display: block;
-    padding: 5px 10px; /* Adjusted padding for smaller height */
-    color: white; /* Change color as desired */
-    text-decoration: none;
-}
-
-.nav-menu li a:hover {
-    background-color: #555; /* Add hover effect if desired */
-}
-
-/* Ensure menu is responsive and doesn't collapse on small screens */
-@media (max-width: 768px) {
-    .nav-menu ul {
-        flex-direction: row;
-    }
-}
-/* Footer Adjustments */
-.footer {
-    padding: 5px 10px; /* Reduce padding to make the footer box smaller */
-    background-color: #222; /* Keep the black background */
-    color: #ffffff; /* Set footer text to white */
-    margin-top: 20px; /* Add space between the download section and footer */
-}
-
-.footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; /* Reduce space between items inside the footer */
-}
-
-.footer .contact-info,
-.footer .footer-text {
-    color: #ffffff; /* Ensure all footer text is white */
-}
-
-/* Header Menu Adjustments */
-.nav-menu ul {
-    display: flex;
-    justify-content: space-around; /* Ensure items fit within screen width */
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    list-style: none;
-}
-
-.nav-menu ul li {
-    flex: 1;
-    text-align: center;
-}
-
-.nav-menu ul li a {
-    display: block;
-    padding: 10px 5px; /* Adjust padding for better fit on smaller screens */
-    color: #333; /* Use desired color for menu links */
-    white-space: nowrap; /* Prevent wrapping within each item */
-    text-decoration: none;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .nav-menu ul {
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Enable horizontal scrolling if needed on very small screens */
-    }
-
-    .nav-menu ul li {
-        flex: initial; /* Allow more flexibility for fitting links in a row */
-    }
-}
-/* Header Styling */
-header.main-header {
-    background-color: black;
-    color: white;
-    padding: 5px 0; /* Minimize header padding to reduce height */
-}
-
-/* Adjusting Menu Items for Single Row Layout */
-header.main-header .nav-menu ul {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping if items don’t fit */
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-header.main-header .nav-menu ul li {
-    flex: 1 1 auto; /* Allow items to adjust their width */
-    text-align: center;
-    padding: 5px; /* Reduce padding for compact layout */
-}
-
-header.main-header .nav-menu ul li a {
-    color: white; /* White text on black background */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Ensure Menu is on One Line on Mobile, Two Lines if Needed */
-@media (max-width: 768px) {
-    header.main-header .nav-menu ul {
-        flex-wrap: wrap;
-    }
-
-    header.main-header .nav-menu ul li {
-        flex: 1 1 25%; /* Adjust width to fit four items per row on small screens */
-    }
-}
-
-/* Footer Adjustments */
-.footer {
-    background-color: black;
-    color: white;
-    padding: 5px 10px; /* Minimize padding for reduced height */
-}
-
-.footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer .footer-content p,
-.footer .contact-info p,
-.footer .footer-text {
-    color: white;
-    margin: 0; /* Remove extra margin for compact layout */
-}
-
-.footer .social-links {
-    display: flex;
-    gap: 8px; /* Add space between social icons */
-}
-
-.footer .social-links img.footer-icon {
-    margin: 0 5px; /* Reduce spacing around icons */
-}
-/* Header/Menu Styling */
-header.main-header {
-    background-color: black; /* Black background */
-    color: white; /* White text */
-    padding: 5px 10px; /* Minimal padding for compact height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header.main-header .nav-menu ul {
-    display: flex;
-    gap: 10px; /* Small gap between items */
-    justify-content: center; /* Centers items within header */
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    flex-wrap: nowrap; /* Ensures a single row on larger screens */
-}
-
-header.main-header .nav-menu ul li {
-    flex: 1; /* Evenly distribute items */
-    text-align: center;
-}
-
-header.main-header .nav-menu ul li a {
-    color: white; /* White text on black background */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px; /* Minimal padding to keep items compact */
-    white-space: nowrap; /* Prevents text wrapping */
-}
-
-@media (max-width: 768px) {
-    header.main-header .nav-menu ul {
-        flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    }
-
-    header.main-header .nav-menu ul li {
-        flex: 1 1 25%; /* Display four items per row on small screens */
-    }
-}
-
-/* Footer Styling */
-.footer {
-    background-color: black; /* Black background */
-    color: white; /* White text */
-    padding: 5px 10px; /* Reduced padding for compact footer height */
-    text-align: center;
-    margin-top: 20px; /* Space above footer */
-}
-
-.footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; /* Minimal space between items */
-}
-
-.footer .contact-info, .footer .footer-text {
-    color: white; /* White text */
-    font-size: inherit; /* Keeps font size as specified elsewhere */
-    margin: 0;
-}
-
-.footer .social-links {
-    display: flex;
-    gap: 8px; /* Space between social icons */
-}
-
-.footer .social-links img.footer-icon {
-    width: auto; /* Maintain icon size */
-    height: auto;
-    margin: 0 4px; /* Small space around icons */
-}
-
-/* Mobile Footer Adjustments */
-@media (max-width: 768px) {
-    .footer {
-        padding: 5px 10px; /* Compact padding for mobile */
-    }
-}
-/* Header and Menu Adjustments */
-header.main-header {
-    background-color: black;
-    color: white;
-    padding: 5px 0; /* Minimize header padding */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header.main-header .nav-menu ul {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping if needed */
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-header.main-header .nav-menu ul li {
-    flex: 1 1 auto; /* Allow items to adjust their width */
-    text-align: center;
-    padding: 5px; /* Reduce padding for compact layout */
-}
-
-header.main-header .nav-menu ul li a {
-    color: white; /* White text on black background */
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap; /* Prevent text wrapping inside each menu item */
-}
-
-@media (max-width: 768px) {
-    header.main-header .nav-menu ul {
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Enable horizontal scrolling if needed */
-    }
-
-    header.main-header .nav-menu ul li {
-        flex: initial; /* Allow more flexibility for fitting links in a row */
-    }
-}
-
-/* Remove any redundant banner or padding above the header */
-body {
-    padding-top: 0; /* Remove extra padding if any */
-}
-
-/* Footer Adjustments */
-.footer {
-    background-color: black;
-    color: white;
-    padding: 5px 10px; /* Minimize footer padding to reduce height */
-    text-align: center;
-}
-
-.footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; /* Reduce space between items */
-}
-
-.footer .contact-info,
-.footer .footer-text {
-    color: white; /* Ensure all footer text is white */
-    margin: 0;
-}
-
-.footer .social-links {
-    display: flex;
-    gap: 8px; /* Add space between social icons */
-}
-
-.footer .social-links img.footer-icon {
-    margin: 0 5px;
 }
