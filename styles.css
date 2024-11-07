@@ -1,4 +1,4 @@
-/* Reset and Global Styles */
+/* Global Styles */
 *,
 *::before,
 *::after {
@@ -7,77 +7,104 @@
     padding: 0;
 }
 
-html, body {
+body {
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f5f7fa;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
 }
 
-/* Sticky Top Menu */
+/* Color Variables */
+:root {
+    --primary-color: #2a9df4;
+    --secondary-color: #333;
+    --accent-color: #f4a261;
+    --background-color: #ffffff;
+    --border-color: #eaeaea;
+    --dark-bg-color: #222;
+    --text-light-color: #fff;
+}
+
+/* Reset Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
     background-color: #333;
-    padding: 8px 10px;
+    padding: 8px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
+    z-index: 1000;
 }
 
 .nav-menu ul {
     display: flex;
     gap: 15px;
     list-style: none;
-    margin: 0;
     padding: 0;
     justify-content: center;
 }
 
 .nav-menu ul li a {
-    color: #fff;
-    font-weight: bold;
-    padding: 8px 12px;
-    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-light-color);
+    padding: 10px 12px;
     transition: color 0.3s;
 }
 
 .nav-menu ul li a:hover {
-    color: #2a9df4;
+    color: var(--primary-color);
 }
 
-/* Profile Section */
-.profile-photo-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--background-color);
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
 }
 
 .profile-photo-wrapper img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #2a9df4;
-    transition: transform 0.3s ease;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.profile-photo-wrapper img:hover {
-    transform: scale(1.05);
-}
-
-/* Contact and Icons */
 .contact-info {
-    text-align: center;
-    margin: 10px 0 20px;
+    font-size: 1rem;
+    margin: 10px 0;
+    color: var(--secondary-color);
 }
 
 .contact-info p {
     margin: 5px 0;
 }
 
+/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -85,78 +112,167 @@ header {
     margin-top: 15px;
 }
 
-.social-links img {
+.social-links img.icon,
+.social-links img.qr-code {
     width: 30px;
     height: 30px;
     transition: transform 0.3s;
 }
 
-.social-links img:hover {
+.social-links img.qr-code {
+    width: 60px;
+}
+
+.social-links a {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.social-links a:hover img.icon,
+.social-links a:hover img.qr-code {
     transform: scale(1.1);
 }
 
-/* Section Styling */
+/* Section Headers */
+h2.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Mission, Impact, and Professional Summary Sections */
 .section {
-    padding: 30px 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.section + .section {
-    margin-top: 40px;
-}
-
-/* Job Entry Cards */
-.job-entry {
-    background-color: #f9fafc;
+    background-color: var(--background-color);
     padding: 20px;
-    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    margin-top: 20px;
-    transition: box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
 }
 
-.job-entry:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.job-entry h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2a9df4;
-}
-
-/* Show More/Less Button */
+/* Show More Button */
 .show-more {
     display: inline-block;
-    margin-top: 10px;
     cursor: pointer;
-    color: #2a9df4;
+    color: var(--primary-color);
     font-weight: bold;
     text-decoration: underline;
-    transition: color 0.3s ease;
+    margin-top: 10px;
+    transition: color 0.3s;
 }
 
 .show-more:hover {
-    color: #f4a261;
+    color: var(--accent-color);
 }
 
-/* Skills Grid */
+/* Skills and Proficiencies Section */
+.skills-section {
+    background-color: var(--background-color);
+    padding: 40px 0;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f7f9fc;
+    transition: box-shadow 0.3s;
+}
+
+.skill-item:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.skill-item ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: var(--secondary-color);
+}
+
+.skill-item ul li {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+/* Job Entry Show More Button */
+.job-entry {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f7f9fc;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.job-entry:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-entry h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.job-entry .accordion-content {
+    display: none;
+}
+
+.job-entry .show-more {
+    display: inline-block;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.job-entry .show-more:hover {
+    color: var(--accent-color);
+}
+
+/* Download Buttons */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.download-button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: var(--accent-color);
 }
 
 /* Footer */
 .footer {
-    background-color: #222;
-    color: #ddd;
-    padding: 15px 10px;
+    padding: 15px;
+    background-color: var(--dark-bg-color);
+    color: var(--text-light-color);
     text-align: center;
 }
 
@@ -164,72 +280,45 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.footer .social-links {
+    margin: 10px 0;
+    display: flex;
     gap: 10px;
 }
 
-.footer-content img {
-    width: 50px;
-    height: auto;
-}
-
-.footer-content p {
-    font-size: 0.9rem;
-    margin: 5px 0;
-}
-
-.footer-content .social-links img {
+.footer .social-links img.footer-icon {
     width: 25px;
     height: 25px;
-    filter: brightness(1.2);
-    margin: 0 5px;
-}
-
-/* Back-to-Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #2a9df4;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.back-to-top.visible {
-    display: block;
-}
-
-.back-to-top:hover {
-    background-color: #f4a261;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
+    header {
+        padding: 5px;
+    }
+
     .nav-menu ul {
-        flex-direction: row;
-        overflow-x: auto;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: space-around;
+    }
+
+    .profile-photo-wrapper img {
+        width: 90px;
+        height: 90px;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
-    .profile-photo-wrapper img {
-        width: 100px;
-        height: 100px;
+    .download-buttons {
+        flex-direction: column;
     }
 
-    .social-links img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .footer-content .social-links img {
-        width: 20px;
-        height: 20px;
+    .footer-content {
+        padding: 8px;
     }
 }
