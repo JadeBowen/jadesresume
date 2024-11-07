@@ -18,33 +18,33 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #222; /* Slightly darker background for a modern look */
+    background-color: #333;
     z-index: 1000;
 }
 
 .nav-menu ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows wrapping into two rows if space is limited */
     justify-content: center;
     list-style-type: none;
-    padding: 5px 0; /* Reduced padding for minimal height */
-    margin: 0;
+    padding: 10px 0;
+    margin: 0; /* Remove any additional margins */
 }
 
 .nav-menu ul li {
-    margin: 2px 10px; /* Reduced vertical spacing */
+    margin: 0 10px; /* Minimal horizontal space between items */
 }
 
 .nav-menu ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 6px 10px; /* Slightly reduced padding */
-    font-size: 1em;
+    padding: 8px 12px;
+    font-size: 0.9em;
 }
 
 .nav-menu ul li a:hover {
-    background-color: #444;
-    border-radius: 3px;
+    background-color: #555;
+    border-radius: 5px;
 }
 
 /* Responsive adjustment to allow for two-row layout on smaller screens */
@@ -53,10 +53,10 @@ body {
         justify-content: space-around;
     }
     .nav-menu ul li {
-        margin: 3px;
+        margin: 5px;
     }
     .nav-menu ul li a {
-        padding: 6px 8px;
+        padding: 6px 10px;
     }
 }
 
@@ -213,11 +213,11 @@ h2 {
     background-color: #0056b3;
 }
 
-/* Simplified Footer */
+/* Footer */
 .footer {
-    background-color: #222; /* Darker background for modern look */
+    background-color: #333;
     color: #fff;
-    padding: 10px; /* Reduced padding for minimal impact */
+    padding: 20px;
     text-align: center;
 }
 
@@ -227,11 +227,16 @@ h2 {
     align-items: center;
 }
 
-.footer .contact-info p,
-.footer .contact-info a {
-    color: #fff;
-    text-decoration: none;
-    margin: 5px 0;
+.footer-logo-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-icon {
+    width: 25px;
+    height: auto;
+    margin: 0 10px;
 }
 
 /* Accessibility and Spacing Enhancements */
@@ -239,8 +244,6 @@ section {
     padding: 20px 10px;
     margin-bottom: 20px;
     border-radius: 10px;
-    background: linear-gradient(to right, #e0e0e0, #f7f7f7); /* Subtle gradient for a modern touch */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 h2,
