@@ -1,5 +1,3 @@
-/* Part 1: Overall Structure and Typography */
-
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -42,8 +40,6 @@ footer {
     max-width: 24px; /* Adjusted size */
     height: auto;
 }
-/* Part 2: Header and Navigation */
-
 .main-header {
     background-color: #2c3238;
     padding: 10px 15px; /* Reduced padding */
@@ -83,8 +79,6 @@ footer {
 .nav-menu a:hover {
     color: #00bfff;
 }
-/* Part 3: About Me Section */
-
 #about {
     display: flex;
     flex-direction: column;
@@ -139,8 +133,10 @@ footer {
 .social-links a:hover {
     color: #00bfff;
 }
-/* Part 4: Accordion Sections */
 
+#about p {
+    font-size: 1.1em; /* Increased font size */
+}
 .accordion-section,
 .job-entry {
     margin-bottom: 15px; /* Reduced margin for mobile */
@@ -158,14 +154,16 @@ footer {
     text-align: left;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1em; /* Adjusted for mobile */
+    font-size: 1.1em; /* Increased font size */
     border-radius: 5px 5px 0 0;
     position: relative;
     transition: background-color 0.2s ease;
+    background: linear-gradient(to bottom, #373e47, #444c56); /* Subtle gradient */
 }
 
 .accordion-toggle:hover {
-    background-color: #444c56;
+    background: linear-gradient(to bottom, #444c56, #515a65); /* Hover gradient */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle glow */
 }
 
 .accordion-toggle::after {
@@ -175,6 +173,7 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     transition: transform 0.2s ease;
+    color: red; /* Changed arrow color */
 }
 
 .accordion-toggle[aria-expanded="true"]::after {
@@ -191,8 +190,6 @@ footer {
 .accordion-content.expanded {
     max-height: 1000px; /* Adjusted for more content */
 }
-/* Part 5: Skills and Proficiencies Section */
-
 #skills-proficiencies {
     background-color: #2c3238;
     border-radius: 5px;
@@ -226,8 +223,6 @@ footer {
     color: #ccd;
     padding-left: 20px;
 }
-/* Part 6: Download Section and Footer */
-
 #download-resume {
     background-color: #2c3238;
     border-radius: 5px;
@@ -274,4 +269,36 @@ footer {
 
 .footer a:hover {
     color: #00bfff;
+}
+
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .download-buttons {
+        display: flex;
+        justify-content: space-around; /* Distribute buttons evenly */
+    }
+
+    .download-button {
+        margin: 10px; /* Increased margin */
+    }
+}
+.social-links {
+    display: flex; /* Use flexbox for easy alignment */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Adjust spacing as needed */
+}
+
+.social-links a img {
+    max-width: 32px; /* Increased icon size */
+    height: auto;
+    transition: transform 0.2s ease; /* Add hover transition */
+}
+
+.social-links a:hover img {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.qr-code {
+    /* ... existing styles ... */
+    position: static; /* Remove absolute positioning */
+    width: 40px; /* Adjust size as needed */
 }
