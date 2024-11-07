@@ -1,8 +1,10 @@
-/* Import Google Fonts and Font Awesome */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+/* Part 1: Overall Structure and Typography */
 
-/* General Reset and Layout Adjustments */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); /* Added for headings */
+
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,357 +12,238 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
-    color: #333;
-    background-color: #f0f4f8;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5; /* Light text color for contrast */
+    background-color: #24292f; /* Dark background color */
     line-height: 1.6;
-    padding-top: 50px;
 }
 
-/* Header and Navigation with Scroll Hide/Reveal */
+/* Basic Layout */
+header,
+section,
+footer {
+    padding: 20px;
+}
+
+/* Profile Photo and QR Code Scaling */
+.profile-photo,
+.qr-code {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+}
+/* Part 2: Header and Navigation */
+
 .main-header {
-    position: sticky;
+    background-color: #2c3238; /* Slightly lighter background for header */
+    padding: 10px 20px; /* Reduced padding */
+    position: fixed; /* Fixed header */
     top: 0;
+    left: 0;
     width: 100%;
-    background-color: #222;
     z-index: 1000;
-    transition: top 0.3s ease;
-    padding: 5px 0; /* Reduced padding for minimal impact */
+    transition: top 0.3s ease; /* Smooth transition for scroll effects */
 }
 
-.hidden-header {
-    top: -60px; /* Hides header off-screen */
+.main-header.hidden {
+    top: -70px; /* Hide off-screen when scrolling down */
 }
 
 .nav-menu ul {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu ul li {
-    margin: 0 10px;
-}
-
-.nav-menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 8px;
-    font-size: 0.9em;
-    display: flex;
     align-items: center;
 }
 
-.nav-menu ul li a:hover {
-    background-color: #444;
-    border-radius: 3px;
+.nav-menu li {
+    margin: 0 15px;
 }
 
-/* Font Awesome icons for navigation menu */
-.nav-menu ul li:nth-child(1) a::before { content: "\f406"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 5px; } /* About Me Icon */
-.nav-menu ul li:nth-child(2) a::before { content: "\f48b"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 5px; } /* Mission Icon */
-.nav-menu ul li:nth-child(3) a::before { content: "\f559"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 5px; } /* Impact Icon */
-.nav-menu ul li:nth-child(4) a::before { content: "\f4c0"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 5px; } /* Experience Icon */
-.nav-menu ul li:nth-child(5) a::before { content: "\f5da"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 5px; } /* Skills Icon */
-.nav-menu ul li:nth-child(6) a::before { content: "\f019"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 5px; } /* Download Icon */
+.nav-menu a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: 600;
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
 
-@media (max-width: 600px) {
-    .nav-menu ul {
-        justify-content: space-around;
-    }
-    .nav-menu ul li {
-        margin: 3px;
-    }
-    .nav-menu ul li a {
-        padding: 5px;
-    }
-}/* Profile Section */
+.nav-menu a:hover {
+    color: #00bfff; /* Accent color on hover */
+}
+/* Part 3: About Me Section */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text within the section */
+    padding-top: 80px; /* Adjust top padding to account for fixed header */
+}
+
+.profile-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
 .profile-photo {
     width: 150px;
-    height: auto;
+    height: 150px;
     border-radius: 50%;
-    display: block;
-    margin: 10px auto;
-    border: 4px solid #333;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-}
-
-.profile-name,
-section h2 {
-    text-align: center;
-    color: #333;
-    font-size: 2em;
-    margin-top: 10px;
-}
-
-/* Contact Info and Font Awesome Icons */
-.contact-info,
-.social-links {
-    text-align: center;
-    margin: 10px 0;
-}
-
-.contact-info a[href^="mailto:"]::before {
-    content: "\f0e0"; /* Envelope icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.contact-info a[href^="tel:"]::before {
-    content: "\f095"; /* Phone icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-/* Social Links Styling */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-}
-
-.social-links a[href*="linkedin.com"]::before {
-    content: "\f08c"; /* LinkedIn Icon */
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    margin-right: 5px;
-}
-
-.social-links a[href*="github.com"]::before {
-    content: "\f09b"; /* GitHub Icon */
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    margin-right: 5px;
-}
-
-.icon, .qr-code {
-    width: 30px;
-    height: auto;
+    object-fit: cover; /* Ensures the image covers the circular area */
+    margin-bottom: 20px;
 }
 
 .qr-code {
-    margin-left: 5px;
-}/* Section Headings */
-h2 {
-    text-align: center;
-    font-size: 1.75em;
-    color: #333;
-    margin: 20px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 10px;
 }
 
-/* Accordion Sections */
-.accordion-section .accordion-toggle {
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    padding: 12px;
-    background-color: #e0e0e0;
+.contact-info,
+.social-links {
+    margin-bottom: 20px;
+}
+
+.contact-info a,
+.social-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover,
+.social-links a:hover {
+    color: #00bfff; /* Accent color on hover */
+}
+/* Part 4: Accordion Sections */
+
+.accordion-section,
+.job-entry {
+    margin-bottom: 20px;
+    background-color: #2c3238; /* Slightly lighter background for sections */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-toggle {
+    background-color: #373e47; /* Darker background for toggle */
+    color: #f5f5f5;
+    padding: 15px;
     border: none;
     width: 100%;
-    position: relative;
-    transition: background-color 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
+    position: relative; /* For positioning the arrow */
+    transition: background-color 0.2s ease;
 }
 
 .accordion-toggle:hover {
-    background-color: #d0d0d0;
+    background-color: #444c56; /* Slightly lighter on hover */
 }
 
 .accordion-toggle::after {
-    content: '▼';
-    font-size: 0.8em;
+    content: '\25BC'; /* Downward arrow */
     position: absolute;
     right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+}
+
+.accordion-toggle[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow when expanded */
 }
 
 .accordion-content {
-    padding: 10px;
-    background-color: #f9f9f9;
-    display: none;
-    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 15px;
+    max-height: 0; /* Initially hide the content */
     overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
-/* Font Awesome Icons for Job Titles in Experience Section */
-.job-entry:nth-of-type(1) .accordion-toggle::before {
-    content: "\f085"; /* Finance icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
+.accordion-content.expanded {
+    max-height: 500px; /* Adjust as needed */
+}
+/* Part 5: Skills and Proficiencies Section */
+
+#skills-proficiencies {
+    background-color: #2c3238;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.job-entry:nth-of-type(2) .accordion-toggle::before {
-    content: "\f0ac"; /* Telecom icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.job-entry:nth-of-type(3) .accordion-toggle::before {
-    content: "\f6d3"; /* Management icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.job-entry:nth-of-type(4) .accordion-toggle::before {
-    content: "\f0ae"; /* Labor role icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.job-entry:nth-of-type(5) .accordion-toggle::before {
-    content: "\f019"; /* Owner/finance icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}/* Skills & Proficiencies Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
     gap: 20px;
     padding: 20px;
 }
 
 .skill-item {
-    background-color: #fff;
-    padding: 15px;
+    background-color: #373e47;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .skill-item h3 {
-    text-align: center;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-/* Font Awesome Icons for Skills Section */
-.skill-item[data-skill="leadership"]::before {
-    content: "\f0e3"; /* Leadership icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: inline-block;
-    margin-right: 8px;
+.skill-item ul {
+    list-style: none;
+    color: #ccd; /* Slightly lighter text for list items */
 }
+/* Part 6: Download Section and Footer */
 
-.skill-item[data-skill="telecom"]::before {
-    content: "\f7c5"; /* Telecom infrastructure icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-.skill-item[data-skill="construction"]::before {
-    content: "\f0f7"; /* Construction icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-.skill-item[data-skill="efficiency"]::before {
-    content: "\f013"; /* Efficiency/optimization icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-.skill-item[data-skill="software"]::before {
-    content: "\f7c6"; /* Software/tools icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-.skill-item[data-skill="certifications"]::before {
-    content: "\f091"; /* Certifications icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: inline-block;
-    margin-right: 8px;
-}/* Tooltip Styling */
-.tooltip {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #222;
-    color: #fff;
-    padding: 5px 8px;
+#download-resume {
+    background-color: #2c3238;
     border-radius: 5px;
-    font-size: 0.8em;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.footer-content a:hover .tooltip,
-.contact-info a:hover .tooltip {
-    opacity: 1;
+.download-description {
+    margin-bottom: 20px;
 }
 
-/* Back-to-Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
+.download-button {
+    display: inline-block;
+    background-color: #00bfff; /* Accent color for buttons */
     color: #fff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    cursor: pointer;
-    visibility: hidden;
-    transition: visibility 0.3s ease, background-color 0.3s ease;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
 }
 
-.back-to-top.visible {
-    visibility: visible;
+.download-button:hover {
+    background-color: #009bcf; /* Darker accent color on hover */
 }
 
-.back-to-top:hover {
-    background-color: #0056b3;
+.footer {
+    background-color: #222;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 0.9em;
 }
 
-/* Auto-hide Header on Scroll */
-.main-header {
-    transition: top 0.3s;
+.footer a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.scrolling-down .main-header {
-    top: -100px; /* Hide header while scrolling down */
-}
-
-.scrolling-up .main-header {
-    top: 0; /* Show header when scrolling up */
+.footer a:hover {
+    color: #00bfff;
 }
