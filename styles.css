@@ -1,7 +1,3 @@
-/* Import Google Fonts and Font Awesome */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* Example font */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-
 /* General Reset and Layout Adjustments */
 * {
     margin: 0;
@@ -10,7 +6,7 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Google Font applied */
+    font-family: Arial, sans-serif;
     color: #333;
     background-color: #f0f4f8;
     line-height: 1.6;
@@ -29,35 +25,27 @@ body {
 .nav-menu ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    padding: 5px 0; /* Reduced padding for minimal height */
+    justify-content: space-around; /* Adjusted for balanced alignment */
+    gap: 10px; /* Reduced gap to fit items more compactly */
+    padding: 5px 0;
     margin: 0;
 }
 
 .nav-menu ul li {
-    margin: 0 15px; /* Adjusted spacing for even distribution */
+    margin: 5px 10px; /* Adjusted for tighter alignment */
 }
 
 .nav-menu ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 6px 10px; /* Slightly reduced padding */
-    font-size: 1em;
+    padding: 4px 8px; /* Reduced padding to allow for more items per row */
+    font-size: 0.9em; /* Slightly smaller font to help fit more items */
 }
 
 .nav-menu ul li a:hover {
     background-color: #444;
     border-radius: 3px;
 }
-
-/* Font Awesome icons for navigation menu */
-.nav-menu ul li:nth-child(1) a::before { content: "\f406"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* About Me Icon */
-.nav-menu ul li:nth-child(2) a::before { content: "\f48b"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Mission Icon */
-.nav-menu ul li:nth-child(3) a::before { content: "\f559"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Impact Icon */
-.nav-menu ul li:nth-child(4) a::before { content: "\f4c0"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Experience Icon */
-.nav-menu ul li:nth-child(5) a::before { content: "\f5da"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Skills Icon */
-.nav-menu ul li:nth-child(6) a::before { content: "\f019"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Download Icon */
 
 /* Responsive adjustment for smaller screens */
 @media (max-width: 600px) {
@@ -70,327 +58,210 @@ body {
     .nav-menu ul li a {
         padding: 6px 8px;
     }
-}/* About Section */
-.profile-photo {
-    width: 180px;
-    height: auto;
-    border-radius: 50%;
-    display: block;
-    margin: 10px auto;
-    border: 5px solid #333;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-}
-
-.profile-name,
-section h2 {
-    text-align: center;
-    color: #333;
-    font-size: 2em;
-    margin-top: 10px;
-}
-
-/* Font Awesome Icons for Contact Info */
-.contact-info,
-.social-links {
-    text-align: center;
-    margin: 10px 0;
-}
-
-.contact-info a[href^="mailto:"]::before {
-    content: "\f0e0"; /* Envelope icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.contact-info a[href^="tel:"]::before {
-    content: "\f095"; /* Phone icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-}
-
-.social-links a[href*="linkedin.com"]::before {
-    content: "\f08c"; /* LinkedIn Icon */
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    margin-right: 8px;
-}
-
-.icon, .qr-code {
-    width: 30px;
-    height: auto;
-}
-
-.qr-code {
-    margin-left: 5px;
-}
-
-/* Section Headings */
-h2 {
-    text-align: center;
-    font-size: 1.75em;
-    color: #333;
-    margin: 20px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
-}
-
-/* Accordion Sections */
-.accordion-section .accordion-toggle {
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    padding: 12px;
-    background-color: #e0e0e0;
-    border: none;
-    width: 100%;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.accordion-toggle:hover {
-    background-color: #d0d0d0;
-}
-
-.accordion-toggle::after {
-    content: '▼';
-    font-size: 0.8em;
-    position: absolute;
-    right: 15px;
-}
-
-.accordion-content {
-    padding: 10px;
-    background-color: #f9f9f9;
-    display: none;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-    overflow: hidden;
-}/* Professional Experience Section */
-.job-entry {
-    margin: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Font Awesome Icons for Job Titles in Experience Section */
+}/* Employer Icons */
 .job-entry:nth-of-type(1) .accordion-toggle::before {
-    content: "\f085"; /* Custom icon */
+    content: "\f4b8"; /* Finance icon for Boise's Best Auto Sales */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     margin-right: 8px;
 }
 
-.job-entry:nth-of-type(2) .accordion-toggle::before {
-    content: "\f576"; /* Custom icon */
+.job-entry:nth-of-type(2) .accordion-toggle::before,
+.job-entry:nth-of-type(4) .accordion-toggle::before,
+.job-entry:nth-of-type(5) .accordion-toggle::before,
+.job-entry:nth-of-type(6) .accordion-toggle::before {
+    content: "\f6a7"; /* Telecom Management icon for First Point Group, MasTec, Broken Arrow, KGP Co */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     margin-right: 8px;
 }
 
 .job-entry:nth-of-type(3) .accordion-toggle::before {
-    content: "\f549"; /* Custom icon */
+    content: "\f0b1"; /* Labor and Management icon for Benchmark Electric */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     margin-right: 8px;
 }
 
-/* Skills & Proficiencies Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.skill-item {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.skill-item h3 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Font Awesome Icons for Skills Section (Example Usage) */
-.skill-item[data-skill="leadership"]::before {
-    content: "\f0e3"; /* Example icon for leadership */
+.job-entry:nth-of-type(7) .accordion-toggle::before {
+    content: "\f807"; /* Labor icon for Unit Drilling */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    display: inline-block;
     margin-right: 8px;
 }
 
-.skill-item[data-skill="telecom"]::before {
-    content: "\f7c5"; /* Example icon for telecom */
+.job-entry:nth-of-type(8) .accordion-toggle::before {
+    content: "\f4d1"; /* Finance and Marketing icon for Cold Souls LLC */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    display: inline-block;
+    margin-right: 8px;
+}/* Skills & Proficiencies Section Icons */
+.skill-item:nth-of-type(1) h3::before {
+    content: "\f0c0"; /* Leadership icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     margin-right: 8px;
 }
 
-/* Download Resume Section */
-.download-section {
-    text-align: center;
-    padding: 20px;
+.skill-item:nth-of-type(2) h3::before {
+    content: "\f0e8"; /* Telecom icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
 }
 
-.download-buttons {
+.skill-item:nth-of-type(3) h3::before {
+    content: "\f685"; /* Construction Management icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item:nth-of-type(4) h3::before {
+    content: "\f02d"; /* Operational Efficiency icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item:nth-of-type(5) h3::before {
+    content: "\f121"; /* Software & Tools icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item:nth-of-type(6) h3::before {
+    content: "\f5da"; /* Certifications icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}/* Menu Item Alignment and Row Adjustments */
+.nav-menu ul {
     display: flex;
-    justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+    gap: 15px; /* Space between items for balanced layout */
 }
 
-.download-button {
-    background-color: #007bff;
+.nav-menu ul li {
+    flex: 1 1 30%; /* Allows items to break into multiple rows dynamically */
+    max-width: 150px; /* Limits the width of each menu item to fit better in rows */
+    text-align: center; /* Center-aligns each item */
+}
+
+.nav-menu ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-    background-color: #0056b3;
-}/* Simplified Footer */
-.footer {
-    background-color: #222; /* Darker background for modern look */
-    color: #fff;
-    padding: 10px; /* Reduced padding for minimal impact */
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-content p,
-.footer-content a {
-    color: #fff;
-    margin: 5px 0;
-    text-decoration: none;
-}
-
-.footer-content a:hover {
-    text-decoration: underline;
-}
-
-/* Font Awesome Icons for Contact Info in Footer */
-.footer-content a[href^="mailto:"]::before {
-    content: "\f0e0"; /* Envelope icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.footer-content a[href^="tel:"]::before {
-    content: "\f095"; /* Phone icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.footer-content a[href*="linkedin.com"]::before {
-    content: "\f08c"; /* LinkedIn icon */
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    margin-right: 8px;
-}
-
-/* Accessibility and Spacing Enhancements */
-section {
-    padding: 20px 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-h2,
-h3 {
-    color: #333;
-}
-
-p,
-li {
-    color: #555;
+    padding: 8px 12px; /* Slight padding for a balanced look */
     font-size: 1em;
 }
 
-/* Tooltip Styling */
-.tooltip {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #222;
-    color: #fff;
-    padding: 5px 8px;
+.nav-menu ul li a:hover {
+    background-color: #444;
     border-radius: 5px;
-    font-size: 0.8em;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 100;
 }
 
-.footer-content a:hover .tooltip {
-    opacity: 1;
+/* Responsive Menu Adjustment for Smaller Screens */
+@media (max-width: 600px) {
+    .nav-menu ul {
+        gap: 10px;
+    }
+    .nav-menu ul li {
+        flex: 1 1 45%; /* Adapts to two items per row on smaller screens */
+    }
+}/* Professional Experience - Individual Icons for Each Job Entry */
+.job-entry:nth-of-type(1) .accordion-toggle::before {
+    content: "\f53d"; /* Money icon for finance role (Boise's Best Auto Sales) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
 }
 
-/* Back-to-Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    cursor: pointer;
-    visibility: hidden;
-    transition: visibility 0.3s ease, background-color 0.3s ease;
+.job-entry:nth-of-type(2) .accordion-toggle::before {
+    content: "\f3ed"; /* Network icon for telecom role (First Point Group) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
 }
 
-.back-to-top.visible {
-    visibility: visible;
+.job-entry:nth-of-type(3) .accordion-toggle::before {
+    content: "\f3ed"; /* Network icon for telecom role (Westland Towers) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
 }
 
-.back-to-top:hover {
-    background-color: #0056b3;
+.job-entry:nth-of-type(4) .accordion-toggle::before {
+    content: "\f0c7"; /* File icon for management role (MasTec Network Solutions) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.job-entry:nth-of-type(5) .accordion-toggle::before {
+    content: "\f7e8"; /* Hammer icon for labor role (Benchmark Electric) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.job-entry:nth-of-type(6) .accordion-toggle::before {
+    content: "\f2b5"; /* Handshake icon for owner/finance role (Cold Souls LLC) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.job-entry:nth-of-type(7) .accordion-toggle::before {
+    content: "\f0d1"; /* Industry icon for labor role (Unit Drilling) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* Skills & Proficiencies - Icons for Each Skill Category */
+.skill-item[data-tooltip*="Leadership"] h3::before {
+    content: "\f0c0"; /* Users icon for leadership */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item[data-tooltip*="Telecom"] h3::before {
+    content: "\f3ed"; /* Network icon for telecom */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item[data-tooltip*="Construction"] h3::before {
+    content: "\f7e8"; /* Hammer icon for construction */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item[data-tooltip*="Optimization"] h3::before {
+    content: "\f0ae"; /* Gear icon for optimization */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item[data-tooltip*="Software"] h3::before {
+    content: "\f121"; /* Code icon for software skills */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.skill-item[data-tooltip*="Certifications"] h3::before {
+    content: "\f5da"; /* Certificate icon for certifications */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
 }
