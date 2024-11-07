@@ -1819,3 +1819,80 @@ header.main-header .nav-menu ul li a {
         padding: 5px 10px; /* Compact padding for mobile */
     }
 }
+/* Header and Menu Adjustments */
+header.main-header {
+    background-color: black;
+    color: white;
+    padding: 5px 0; /* Minimize header padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header.main-header .nav-menu ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header.main-header .nav-menu ul li {
+    flex: 1 1 auto; /* Allow items to adjust their width */
+    text-align: center;
+    padding: 5px; /* Reduce padding for compact layout */
+}
+
+header.main-header .nav-menu ul li a {
+    color: white; /* White text on black background */
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text wrapping inside each menu item */
+}
+
+@media (max-width: 768px) {
+    header.main-header .nav-menu ul {
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+    }
+
+    header.main-header .nav-menu ul li {
+        flex: initial; /* Allow more flexibility for fitting links in a row */
+    }
+}
+
+/* Remove any redundant banner or padding above the header */
+body {
+    padding-top: 0; /* Remove extra padding if any */
+}
+
+/* Footer Adjustments */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 5px 10px; /* Minimize footer padding to reduce height */
+    text-align: center;
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Reduce space between items */
+}
+
+.footer .contact-info,
+.footer .footer-text {
+    color: white; /* Ensure all footer text is white */
+    margin: 0;
+}
+
+.footer .social-links {
+    display: flex;
+    gap: 8px; /* Add space between social icons */
+}
+
+.footer .social-links img.footer-icon {
+    margin: 0 5px;
+}
