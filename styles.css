@@ -282,3 +282,46 @@ li {
 .back-to-top:hover {
     background-color: #0056b3;
 }
+/* Font Awesome Icons Using Pseudo-elements */
+.footer-content a[href^="mailto:"]::before {
+    content: "\f0e0"; /* Envelope icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.footer-content a[href^="tel:"]::before {
+    content: "\f095"; /* Phone icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.footer-content a[href*="linkedin.com"]::before {
+    content: "\f08c"; /* LinkedIn icon */
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-right: 8px;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.footer-content a:hover .tooltip {
+    opacity: 1;
+}
