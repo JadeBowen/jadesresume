@@ -1667,3 +1667,70 @@ a, .show-more, .download-button, button {
         flex: initial; /* Allow more flexibility for fitting links in a row */
     }
 }
+/* Header Styling */
+header.main-header {
+    background-color: black;
+    color: white;
+    padding: 5px 0; /* Minimize header padding to reduce height */
+}
+
+/* Adjusting Menu Items for Single Row Layout */
+header.main-header .nav-menu ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if items don’t fit */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+header.main-header .nav-menu ul li {
+    flex: 1 1 auto; /* Allow items to adjust their width */
+    text-align: center;
+    padding: 5px; /* Reduce padding for compact layout */
+}
+
+header.main-header .nav-menu ul li a {
+    color: white; /* White text on black background */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Ensure Menu is on One Line on Mobile, Two Lines if Needed */
+@media (max-width: 768px) {
+    header.main-header .nav-menu ul {
+        flex-wrap: wrap;
+    }
+
+    header.main-header .nav-menu ul li {
+        flex: 1 1 25%; /* Adjust width to fit four items per row on small screens */
+    }
+}
+
+/* Footer Adjustments */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 5px 10px; /* Minimize padding for reduced height */
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .footer-content p,
+.footer .contact-info p,
+.footer .footer-text {
+    color: white;
+    margin: 0; /* Remove extra margin for compact layout */
+}
+
+.footer .social-links {
+    display: flex;
+    gap: 8px; /* Add space between social icons */
+}
+
+.footer .social-links img.footer-icon {
+    margin: 0 5px; /* Reduce spacing around icons */
+}
