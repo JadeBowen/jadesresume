@@ -1,3 +1,7 @@
+/* Import Google Fonts and Font Awesome */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* Example font */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 /* General Reset and Layout Adjustments */
 * {
     margin: 0;
@@ -6,7 +10,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Google Font applied */
     color: #333;
     background-color: #f0f4f8;
     line-height: 1.6;
@@ -47,6 +51,14 @@ body {
     border-radius: 3px;
 }
 
+/* Font Awesome icons for navigation menu */
+.nav-menu ul li:nth-child(1) a::before { content: "\f406"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* About Me Icon */
+.nav-menu ul li:nth-child(2) a::before { content: "\f48b"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Mission Icon */
+.nav-menu ul li:nth-child(3) a::before { content: "\f559"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Impact Icon */
+.nav-menu ul li:nth-child(4) a::before { content: "\f4c0"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Experience Icon */
+.nav-menu ul li:nth-child(5) a::before { content: "\f5da"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Skills Icon */
+.nav-menu ul li:nth-child(6) a::before { content: "\f019"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; } /* Download Icon */
+
 /* Responsive adjustment for smaller screens */
 @media (max-width: 600px) {
     .nav-menu ul {
@@ -58,9 +70,7 @@ body {
     .nav-menu ul li a {
         padding: 6px 8px;
     }
-}
-
-/* About Section */
+}/* About Section */
 .profile-photo {
     width: 180px;
     height: auto;
@@ -84,12 +94,28 @@ section h2 {
     margin-top: 10px;
 }
 
+/* Font Awesome Icons for Contact Info */
 .contact-info,
 .social-links {
     text-align: center;
     margin: 10px 0;
 }
 
+.contact-info a[href^="mailto:"]::before {
+    content: "\f0e0"; /* Envelope icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.contact-info a[href^="tel:"]::before {
+    content: "\f095"; /* Phone icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -101,6 +127,13 @@ section h2 {
     align-items: center;
     text-decoration: none;
     color: #333;
+}
+
+.social-links a[href*="linkedin.com"]::before {
+    content: "\f08c"; /* LinkedIn Icon */
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-right: 8px;
 }
 
 .icon, .qr-code {
@@ -154,9 +187,7 @@ h2 {
     display: none;
     transition: max-height 0.5s ease, padding 0.3s ease;
     overflow: hidden;
-}
-
-/* Professional Experience Section */
+}/* Professional Experience Section */
 .job-entry {
     margin: 20px;
     padding: 15px;
@@ -164,6 +195,28 @@ h2 {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Font Awesome Icons for Job Titles in Experience Section */
+.job-entry:nth-of-type(1) .accordion-toggle::before {
+    content: "\f085"; /* Custom icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.job-entry:nth-of-type(2) .accordion-toggle::before {
+    content: "\f576"; /* Custom icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.job-entry:nth-of-type(3) .accordion-toggle::before {
+    content: "\f549"; /* Custom icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
 }
 
 /* Skills & Proficiencies Grid */
@@ -184,6 +237,23 @@ h2 {
 .skill-item h3 {
     text-align: center;
     margin-bottom: 10px;
+}
+
+/* Font Awesome Icons for Skills Section (Example Usage) */
+.skill-item[data-skill="leadership"]::before {
+    content: "\f0e3"; /* Example icon for leadership */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.skill-item[data-skill="telecom"]::before {
+    content: "\f7c5"; /* Example icon for telecom */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: inline-block;
+    margin-right: 8px;
 }
 
 /* Download Resume Section */
@@ -211,9 +281,7 @@ h2 {
 
 .download-button:hover {
     background-color: #0056b3;
-}
-
-/* Simplified Footer */
+}/* Simplified Footer */
 .footer {
     background-color: #222; /* Darker background for modern look */
     color: #fff;
@@ -238,6 +306,28 @@ h2 {
     text-decoration: underline;
 }
 
+/* Font Awesome Icons for Contact Info in Footer */
+.footer-content a[href^="mailto:"]::before {
+    content: "\f0e0"; /* Envelope icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.footer-content a[href^="tel:"]::before {
+    content: "\f095"; /* Phone icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.footer-content a[href*="linkedin.com"]::before {
+    content: "\f08c"; /* LinkedIn icon */
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-right: 8px;
+}
+
 /* Accessibility and Spacing Enhancements */
 section {
     padding: 20px 10px;
@@ -254,6 +344,28 @@ p,
 li {
     color: #555;
     font-size: 1em;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.footer-content a:hover .tooltip {
+    opacity: 1;
 }
 
 /* Back-to-Top Button */
@@ -281,47 +393,4 @@ li {
 
 .back-to-top:hover {
     background-color: #0056b3;
-}
-/* Font Awesome Icons Using Pseudo-elements */
-.footer-content a[href^="mailto:"]::before {
-    content: "\f0e0"; /* Envelope icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.footer-content a[href^="tel:"]::before {
-    content: "\f095"; /* Phone icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 8px;
-}
-
-.footer-content a[href*="linkedin.com"]::before {
-    content: "\f08c"; /* LinkedIn icon */
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    margin-right: 8px;
-}
-
-/* Tooltip Styling */
-.tooltip {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #222;
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 0.8em;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 100;
-}
-
-.footer-content a:hover .tooltip {
-    opacity: 1;
 }
