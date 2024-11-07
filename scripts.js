@@ -295,3 +295,20 @@ mobileMenuToggle.addEventListener('click', () => {
         navMenu.style.maxHeight = '0px';
     }
 });
+// Add a tooltip on hover for links with a 'data-tooltip' attribute
+document.querySelectorAll('.footer-content a').forEach(link => {
+    // Check if link has a tooltip attribute
+    if (link.getAttribute('data-tooltip')) {
+        link.addEventListener('mouseenter', () => {
+            const tooltip = document.createElement('span');
+            tooltip.className = 'tooltip';
+            tooltip.innerText = link.getAttribute('data-tooltip');
+            link.appendChild(tooltip);
+        });
+        
+        link.addEventListener('mouseleave', () => {
+            const tooltip = link.querySelector('.tooltip');
+            if (tooltip) tooltip.remove();
+        });
+    }
+});
