@@ -217,7 +217,7 @@ h2 {
 .footer {
     background-color: #222; /* Darker background for modern look */
     color: #fff;
-    padding: 10px; /* Reduced padding for minimal impact */
+    padding: 10px; /* Minimal padding */
     text-align: center;
 }
 
@@ -225,6 +225,11 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.footer-logo-img,
+.footer-icon {
+    display: none; /* Hide the logo and GitHub icon */
 }
 
 .footer-content p,
