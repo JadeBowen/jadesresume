@@ -2,7 +2,7 @@
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); /* Added for headings */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* General Reset */
 * {
@@ -13,8 +13,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #f5f5f5; /* Light text color for contrast */
-    background-color: #24292f; /* Dark background color */
+    color: #f5f5f5;
+    background-color: #24292f;
     line-height: 1.6;
 }
 
@@ -22,52 +22,66 @@ body {
 header,
 section,
 footer {
-    padding: 20px;
+    padding: 15px; /* Reduced padding for mobile */
 }
 
 /* Profile Photo and QR Code Scaling */
-.profile-photo,
+.profile-photo {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
 .qr-code {
-    max-width: 150px; /* Adjust as needed */
+    max-width: 80px; /* Adjusted size */
+    height: auto;
+}
+
+/* GitHub Icon Scaling */
+.social-links a[href*="github.com"] img {
+    max-width: 24px; /* Adjusted size */
     height: auto;
 }
 /* Part 2: Header and Navigation */
 
 .main-header {
-    background-color: #2c3238; /* Slightly lighter background for header */
-    padding: 10px 20px; /* Reduced padding */
-    position: fixed; /* Fixed header */
+    background-color: #2c3238;
+    padding: 10px 15px; /* Reduced padding */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: top 0.3s ease; /* Smooth transition for scroll effects */
+    transition: top 0.3s ease;
 }
 
 .main-header.hidden {
-    top: -70px; /* Hide off-screen when scrolling down */
+    top: -70px;
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
 .nav-menu li {
-    margin: 0 15px;
+    margin: 2px 5px;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #f5f5f5;
     font-weight: 600;
-    transition: color 0.2s ease; /* Smooth color transition on hover */
+    font-size: 0.9em; /* Slightly smaller font size for mobile */
+    transition: color 0.2s ease;
 }
 
 .nav-menu a:hover {
-    color: #00bfff; /* Accent color on hover */
+    color: #00bfff;
 }
 /* Part 3: About Me Section */
 
@@ -75,34 +89,42 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Center text within the section */
-    padding-top: 80px; /* Adjust top padding to account for fixed header */
+    text-align: center;
+    padding-top: 80px; /* Space for the fixed header */
 }
 
 .profile-name {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
+    font-size: 1.8em; /* Adjusted for mobile */
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover; /* Ensures the image covers the circular area */
+.profile-photo-wrapper {
+    position: relative; /* To position the QR code */
+    width: 100px; /* Set a fixed width for the wrapper */
+    height: 100px; /* Set a fixed height for the wrapper */
     margin-bottom: 20px;
 }
 
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .qr-code {
-    width: 100px; /* Adjust size as needed */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px; /* Adjust size as needed */
     height: auto;
-    margin-top: 10px;
 }
 
 .contact-info,
 .social-links {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced margin */
 }
 
 .contact-info a,
@@ -110,42 +132,44 @@ footer {
     color: #f5f5f5;
     text-decoration: none;
     transition: color 0.2s ease;
+    font-size: 0.9em; /* Slightly smaller font size */
 }
 
 .contact-info a:hover,
 .social-links a:hover {
-    color: #00bfff; /* Accent color on hover */
+    color: #00bfff;
 }
 /* Part 4: Accordion Sections */
 
 .accordion-section,
 .job-entry {
-    margin-bottom: 20px;
-    background-color: #2c3238; /* Slightly lighter background for sections */
+    margin-bottom: 15px; /* Reduced margin for mobile */
+    background-color: #2c3238;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .accordion-toggle {
-    background-color: #373e47; /* Darker background for toggle */
+    background-color: #373e47;
     color: #f5f5f5;
-    padding: 15px;
+    padding: 12px 15px; /* Reduced padding */
     border: none;
     width: 100%;
     text-align: left;
     cursor: pointer;
     font-weight: 600;
-    border-radius: 5px 5px 0 0; /* Rounded top corners */
-    position: relative; /* For positioning the arrow */
+    font-size: 1em; /* Adjusted for mobile */
+    border-radius: 5px 5px 0 0;
+    position: relative;
     transition: background-color 0.2s ease;
 }
 
 .accordion-toggle:hover {
-    background-color: #444c56; /* Slightly lighter on hover */
+    background-color: #444c56;
 }
 
 .accordion-toggle::after {
-    content: '\25BC'; /* Downward arrow */
+    content: '\25BC';
     position: absolute;
     right: 15px;
     top: 50%;
@@ -154,18 +178,18 @@ footer {
 }
 
 .accordion-toggle[aria-expanded="true"]::after {
-    transform: translateY(-50%) rotate(180deg); /* Rotate arrow when expanded */
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .accordion-content {
     padding: 15px;
-    max-height: 0; /* Initially hide the content */
+    max-height: 120px; /* Increased initial visible content */
     overflow: hidden;
     transition: max-height 0.3s ease;
 }
 
 .accordion-content.expanded {
-    max-height: 500px; /* Adjust as needed */
+    max-height: 1000px; /* Adjusted for more content */
 }
 /* Part 5: Skills and Proficiencies Section */
 
@@ -177,29 +201,30 @@ footer {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px; /* Reduced gap */
+    padding: 15px; /* Reduced padding */
 }
 
 .skill-item {
     background-color: #373e47;
     border-radius: 5px;
-    padding: 15px;
+    padding: 12px; /* Reduced padding */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .skill-item h3 {
     color: #f5f5f5;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.1em; /* Adjusted for mobile */
+    margin-bottom: 8px; /* Reduced margin */
     text-align: center;
 }
 
 .skill-item ul {
-    list-style: none;
-    color: #ccd; /* Slightly lighter text for list items */
+    list-style: disc;
+    color: #ccd;
+    padding-left: 20px;
 }
 /* Part 6: Download Section and Footer */
 
@@ -208,34 +233,37 @@ footer {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-bottom: 15px; /* Added margin */
 }
 
 .download-description {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 0.9em; /* Reduced font size */
 }
 
 .download-button {
     display: inline-block;
-    background-color: #00bfff; /* Accent color for buttons */
+    background-color: #00bfff;
     color: #fff;
-    padding: 12px 20px;
+    padding: 10px 15px; /* Reduced padding */
     text-decoration: none;
-    margin: 10px;
+    margin: 5px; /* Reduced margin */
     border-radius: 5px;
     font-weight: 600;
+    font-size: 0.9em; /* Reduced font size */
     transition: background-color 0.2s ease;
 }
 
 .download-button:hover {
-    background-color: #009bcf; /* Darker accent color on hover */
+    background-color: #009bcf;
 }
 
 .footer {
     background-color: #222;
     color: #f5f5f5;
     text-align: center;
-    padding: 10px 20px; /* Reduced padding */
-    font-size: 0.9em;
+    padding: 10px 15px; /* Reduced padding */
+    font-size: 0.8em; /* Reduced font size */
 }
 
 .footer a {
