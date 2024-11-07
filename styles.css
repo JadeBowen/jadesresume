@@ -1734,3 +1734,88 @@ header.main-header .nav-menu ul li a {
 .footer .social-links img.footer-icon {
     margin: 0 5px; /* Reduce spacing around icons */
 }
+/* Header/Menu Styling */
+header.main-header {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 5px 10px; /* Minimal padding for compact height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header.main-header .nav-menu ul {
+    display: flex;
+    gap: 10px; /* Small gap between items */
+    justify-content: center; /* Centers items within header */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    flex-wrap: nowrap; /* Ensures a single row on larger screens */
+}
+
+header.main-header .nav-menu ul li {
+    flex: 1; /* Evenly distribute items */
+    text-align: center;
+}
+
+header.main-header .nav-menu ul li a {
+    color: white; /* White text on black background */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px; /* Minimal padding to keep items compact */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+@media (max-width: 768px) {
+    header.main-header .nav-menu ul {
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    }
+
+    header.main-header .nav-menu ul li {
+        flex: 1 1 25%; /* Display four items per row on small screens */
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 5px 10px; /* Reduced padding for compact footer height */
+    text-align: center;
+    margin-top: 20px; /* Space above footer */
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Minimal space between items */
+}
+
+.footer .contact-info, .footer .footer-text {
+    color: white; /* White text */
+    font-size: inherit; /* Keeps font size as specified elsewhere */
+    margin: 0;
+}
+
+.footer .social-links {
+    display: flex;
+    gap: 8px; /* Space between social icons */
+}
+
+.footer .social-links img.footer-icon {
+    width: auto; /* Maintain icon size */
+    height: auto;
+    margin: 0 4px; /* Small space around icons */
+}
+
+/* Mobile Footer Adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 5px 10px; /* Compact padding for mobile */
+    }
+}
