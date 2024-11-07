@@ -312,3 +312,19 @@ document.querySelectorAll('.footer-content a').forEach(link => {
         });
     }
 });
+// Tooltip enhancement for icons within links (optional)
+document.querySelectorAll('.footer-content a, .contact-info a, .nav-menu ul li a').forEach(link => {
+    if (link.getAttribute('data-tooltip')) {
+        link.addEventListener('mouseenter', () => {
+            const tooltip = document.createElement('span');
+            tooltip.className = 'tooltip';
+            tooltip.innerText = link.getAttribute('data-tooltip');
+            link.appendChild(tooltip);
+        });
+
+        link.addEventListener('mouseleave', () => {
+            const tooltip = link.querySelector('.tooltip');
+            if (tooltip) tooltip.remove();
+        });
+    }
+});
