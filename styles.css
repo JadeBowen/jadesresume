@@ -18,45 +18,45 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #222; /* Slightly darker background for a modern look */
     z-index: 1000;
 }
 
 .nav-menu ul {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping into two rows if space is limited */
+    flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
-    padding: 10px 0;
-    margin: 0; /* Remove any additional margins */
+    padding: 5px 0; /* Reduced padding for minimal height */
+    margin: 0;
 }
 
 .nav-menu ul li {
-    margin: 0 10px; /* Minimal horizontal space between items */
+    margin: 0 15px; /* Adjusted spacing for even distribution */
 }
 
 .nav-menu ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 8px 12px;
-    font-size: 0.9em;
+    padding: 6px 10px; /* Slightly reduced padding */
+    font-size: 1em;
 }
 
 .nav-menu ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
+    background-color: #444;
+    border-radius: 3px;
 }
 
-/* Responsive adjustment to allow for two-row layout on smaller screens */
+/* Responsive adjustment for smaller screens */
 @media (max-width: 600px) {
     .nav-menu ul {
         justify-content: space-around;
     }
     .nav-menu ul li {
-        margin: 5px;
+        margin: 3px;
     }
     .nav-menu ul li a {
-        padding: 6px 10px;
+        padding: 6px 8px;
     }
 }
 
@@ -213,11 +213,11 @@ h2 {
     background-color: #0056b3;
 }
 
-/* Footer */
+/* Simplified Footer */
 .footer {
-    background-color: #333;
+    background-color: #222; /* Darker background for modern look */
     color: #fff;
-    padding: 20px;
+    padding: 10px; /* Reduced padding for minimal impact */
     text-align: center;
 }
 
@@ -227,16 +227,15 @@ h2 {
     align-items: center;
 }
 
-.footer-logo-img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
+.footer-content p,
+.footer-content a {
+    color: #fff;
+    margin: 5px 0;
+    text-decoration: none;
 }
 
-.footer-icon {
-    width: 25px;
-    height: auto;
-    margin: 0 10px;
+.footer-content a:hover {
+    text-decoration: underline;
 }
 
 /* Accessibility and Spacing Enhancements */
