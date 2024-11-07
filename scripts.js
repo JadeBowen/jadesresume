@@ -295,6 +295,3 @@ mobileMenuToggle.addEventListener('click', () => {
         navMenu.style.maxHeight = '0px';
     }
 });
-document.querySelector('.main-header').addEventListener('click', function() {
-    this.classList.toggle('active');
-});
